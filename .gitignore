@@ -1,0 +1,29 @@
+# secrets and local env — never commit
+.env
+.env.local
+*.pem
+id_rsa
+id_ed25519
+
+# python / tool caches
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.numba_cache/
+.DS_Store
+
+# large derived binaries (see README "Excluded from this bundle")
+*.npz
+*.pkl
+data/cache/
+data/ohlcv/
+data/live/
+data/daily/
+hunt/data_last48/
+live/data/
+
+# editor
+.idea/
+.vscode/

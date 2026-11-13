@@ -1,0 +1,16 @@
+{
+  "model": "small-account Solana meme-coin cost model used in the lab backtests",
+  "per_side_pct": {
+    "established_pools": 0.0075,
+    "new_launch_pools": 0.0175,
+    "pumpfun_bonding_curve": 0.03
+  },
+  "price_impact": "0.5 * size / bar_usd_volume",
+  "fill_cap_frac_of_bar_volume": 0.05,
+  "executor_agent_fill_cap": 0.01,
+  "swap_fee_sol": 0.000105,
+  "token_account_rent_sol": 0.00203928,
+  "rent_unreclaimed_frac": 0.25,
+  "approx_fixed_round_trip_usd_at_sol_89": 0.064,
+  "note": "Fees dominate accounts below about $30. H6-01098 needs about $1.88 per buy to break even."
+}

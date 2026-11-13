@@ -1,0 +1,40 @@
+{
+  "id": "H6-01094",
+  "batch": "6",
+  "family": "washout_gate",
+  "entry": "Washout-gate: first hour of a 8-bar closing low above its 120h SMA only if the token dumped 16%+ in an hour within the last 16h",
+  "exit": "stop -30%, trail 20% after +60%, exit after 384h",
+  "sizing": "15.5% of balance per trade, up to 6 open",
+  "balance": 320.0,
+  "params": {
+    "entry": "dn8_120",
+    "gate": "dump_16_16",
+    "desc": "Washout-gate: first hour of a 8-bar closing low above its 120h SMA only if the token dumped 16%+ in an hour within the last 16h"
+  },
+  "exit_params": [
+    1000000000.0,
+    0.3,
+    0.6,
+    0.2,
+    384.0,
+    1000000000.0,
+    1.0
+  ],
+  "walk_forward": {
+    "n_folds": 26,
+    "roll_n": 17,
+    "roll_oos_profitable_pct": 94.12,
+    "roll_median_oos_ret": 0.451,
+    "full_ret": 3.0953,
+    "full_profit": 990.487,
+    "full_trades": 97,
+    "full_dd": 0.3277
+  },
+  "original_split": {
+    "is_ret": 0.2641,
+    "oos_ret": 2.1321,
+    "oos_profit": 682.2611,
+    "both_windows": true
+  },
+  "passed": true
+}

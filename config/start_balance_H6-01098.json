@@ -1,0 +1,74 @@
+{
+  "id": "H6-01098",
+  "family": "washout_gate",
+  "native_start": 175,
+  "span": "Full hourly history, 2026-05-18 through 2026-11-13 15:00 CT (America/Chicago). Same engine and cost model as the Page.",
+  "note": "Ending equity is the full-span result. The +95% over 30 days is reported only for the $200 start, where it was measured. Do not infer 30-day returns for the other sizes. Below about $30, fixed fees (~$0.064 per round trip) dominate.",
+  "rows": [
+    {
+      "start": 5,
+      "end": 0.15
+    },
+    {
+      "start": 10,
+      "end": 0.12
+    },
+    {
+      "start": 20,
+      "end": 7.61
+    },
+    {
+      "start": 30,
+      "end": 101
+    },
+    {
+      "start": 50,
+      "end": 406
+    },
+    {
+      "start": 100,
+      "end": 545
+    },
+    {
+      "start": 125,
+      "end": 1070
+    },
+    {
+      "start": 175,
+      "end": 1149,
+      "full_return_pct": 556.7,
+      "trades": 96,
+      "max_dd_pct": 54.5
+    },
+    {
+      "start": 200,
+      "end": 1396,
+      "ret_30d_pct": 95
+    },
+    {
+      "start": 280,
+      "end": 1511
+    },
+    {
+      "start": 500,
+      "end": 1614
+    },
+    {
+      "start": 1000,
+      "end": 1491
+    }
+  ],
+  "best_ending_equity": {
+    "start": 500,
+    "end": 1614
+  },
+  "best_native_size": {
+    "start": 175,
+    "end": 1149,
+    "return_pct": 556.7
+  },
+  "lowest_start_that_stays_clearly_profitable": {
+    "start": 30,
+    "end": 101
+  }
+}

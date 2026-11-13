@@ -1,0 +1,41 @@
+{
+  "id": "H3-09335",
+  "batch": "3",
+  "family": "green_stack",
+  "entry": "Buy the close of the 3th consecutive green hour, each hour up 2%+",
+  "exit": "stop -40%, trail 28% after +60%, exit after 600h",
+  "sizing": "7% of balance per trade, up to 14 open",
+  "balance": 280.0,
+  "params": [
+    3.0,
+    0.0,
+    0.02,
+    0.0
+  ],
+  "exit_params": [
+    1000000000.0,
+    0.4,
+    0.6,
+    0.28,
+    600.0,
+    1000000000.0,
+    1.0
+  ],
+  "walk_forward": {
+    "n_folds": 26,
+    "roll_n": 17,
+    "roll_oos_profitable_pct": 88.24,
+    "roll_median_oos_ret": 0.2655,
+    "full_ret": 0.1691,
+    "full_profit": 47.3341,
+    "full_trades": 191,
+    "full_dd": 0.4846
+  },
+  "original_split": {
+    "is_ret": 0.0269,
+    "oos_ret": 0.4206,
+    "oos_profit": 117.7815,
+    "both_windows": true
+  },
+  "passed": true
+}

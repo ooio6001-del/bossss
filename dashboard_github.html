@@ -1,0 +1,2526 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SOLSTRATS // GitHub Edition</title>
+<style>
+:root{
+  --canvas:#0d1117; --surface:#161b22; --surface2:#1c2129; --border:#30363d;
+  --text:#e6edf3; --muted:#7d8590; --accent:#2f81f7; --green:#3fb950; --red:#f85149;
+  --orange:#d29922; --purple:#ab7df8; --link:#2f81f7; --header:#010409;
+  --green-bg:#23863626; --red-bg:#f8514920; --accent-bg:#2f81f71a;
+  --font:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans",Helvetica,Arial,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--canvas);color:var(--text);font:14px/1.5 var(--font)}
+a{color:var(--link);text-decoration:none}a:hover{text-decoration:underline}
+code,kbd,.mono{font-family:var(--mono);font-size:12px}
+/* header */
+.topbar{background:var(--header);border-bottom:1px solid var(--border);padding:16px 24px 0}
+.crumb{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.crumb .mark{width:24px;height:24px;border-radius:6px;background:#161b22;border:1px solid var(--border);display:grid;place-items:center;color:var(--muted)}
+.crumb a.owner{color:var(--text);font-weight:600;font-size:16px}
+.crumb .slash{color:var(--muted)}
+.crumb a.repo{color:var(--text);font-weight:600;font-size:16px}
+.pill{display:inline-flex;align-items:center;padding:0 7px;height:20px;border:1px solid var(--border);border-radius:2em;color:var(--muted);font-size:12px;font-weight:500}
+.header-actions{margin-left:auto;display:flex;gap:8px;align-items:center}
+.btn{background:var(--surface);border:1px solid var(--border);color:var(--text);border-radius:6px;padding:5px 12px;font:12px/20px var(--font);cursor:pointer}
+.btn:hover{background:#21262d;border-color:#8b949e}
+.btn.primary{background:#238636;border-color:#238636;color:#fff}
+.tabs{display:flex;gap:0;margin-top:16px;overflow-x:auto}
+.tab{background:transparent;border:0;border-bottom:2px solid transparent;color:var(--muted);padding:8px 16px;font:14px var(--font);cursor:pointer;white-space:nowrap}
+.tab:hover{color:var(--text)}
+.tab.on{color:var(--text);border-bottom-color:#f78166;font-weight:600}
+.tab .n{margin-left:6px;background:rgba(110,118,129,.4);color:var(--text);border-radius:2em;padding:0 6px;font-size:12px}
+/* page */
+main{max-width:1280px;margin:0 auto;padding:24px 24px 80px}
+.warn{background:#161b22;border:1px solid #9e6a03;border-radius:6px;padding:12px 16px;color:#e3b341;margin:0 0 16px}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:16px;margin:0 0 16px}
+.card h2,.sec h2{font-size:16px;margin:0 0 8px;font-weight:600}
+.card h3{font-size:14px;margin:16px 0 8px;color:var(--text);font-weight:600}
+.muted{color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px}
+.metric{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:16px}
+.metric .k{color:var(--muted);font-size:12px}
+.metric .v{font-family:var(--mono);font-size:20px;font-weight:600;margin-top:4px;letter-spacing:-0.02em}
+.pos{color:var(--green)}.neg{color:var(--red)}.warnc{color:var(--orange)}
+.label{display:inline-block;padding:0 7px;font-size:12px;font-weight:500;border-radius:2em;line-height:18px;border:1px solid transparent}
+.label.green{background:#23863626;color:var(--green);border-color:#23863666}
+.label.red{background:#f8514920;color:var(--red);border-color:#f8514966}
+.label.blue{background:#2f81f71a;color:#58a6ff;border-color:#2f81f766}
+.label.gray{background:#6e76811a;color:var(--muted);border-color:var(--border)}
+.label.orange{background:#d2992220;color:var(--orange);border-color:#d2992266}
+.props{width:100%;border-collapse:collapse}
+.props th{text-align:left;color:var(--muted);font-weight:500;width:160px;padding:8px 12px 8px 0;vertical-align:top;border-bottom:1px solid var(--border)}
+.props td{padding:8px 0;border-bottom:1px solid var(--border)}
+.scroll{overflow-x:auto;border:1px solid var(--border);border-radius:6px;background:var(--surface)}
+table.data{border-collapse:collapse;width:100%;font-size:12px;font-family:var(--mono)}
+table.data th,table.data td{padding:8px 12px;border-bottom:1px solid var(--border);text-align:right;white-space:nowrap}
+table.data th{text-align:right;color:var(--muted);font-weight:600;font-family:var(--font);background:#161b22;position:sticky;top:0;cursor:pointer;user-select:none}
+table.data th.l,table.data td.l{text-align:left;white-space:normal;font-family:var(--font)}
+table.data tr:hover td{background:#1c2129}
+.seg{display:flex;flex-wrap:wrap;gap:0;border:1px solid var(--border);border-radius:6px;overflow:hidden;width:max-content;margin:0 0 16px}
+.seg button{background:var(--canvas);border:0;border-right:1px solid var(--border);color:var(--muted);padding:6px 12px;font:12px var(--font);cursor:pointer}
+.seg button:last-child{border-right:0}
+.seg button.on{background:var(--surface);color:var(--text);font-weight:600}
+.row{display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin:0 0 16px}
+select,input[type=text]{background:var(--canvas);color:var(--text);border:1px solid var(--border);border-radius:6px;padding:5px 12px;font:12px var(--font)}
+.strip{display:flex;gap:16px;overflow-x:auto;padding:8px 0 16px}
+.strip .tile{flex:0 0 176px;background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:16px;position:relative}
+.strip .tile.first{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent) inset}
+.strip .id{font-weight:600;margin-top:4px}
+.strip .rk{font-family:var(--mono);color:var(--accent);font-weight:600;font-size:16px}
+.hidden{display:none}
+.toc a{display:block;padding:4px 0;color:var(--muted)}
+.toc a:hover{color:var(--accent)}
+/* repo browser */
+.repo-layout{display:grid;grid-template-columns:280px 1fr;gap:16px}
+@media(max-width:900px){.repo-layout{grid-template-columns:1fr}}
+.filetree{background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:8px 0;max-height:640px;overflow:auto;font-family:var(--mono);font-size:12px}
+.filetree .item{display:flex;gap:8px;align-items:center;padding:4px 16px;cursor:pointer;color:var(--text)}
+.filetree .item:hover,.filetree .item.on{background:#1c2129}
+.filetree .dir{color:var(--accent);font-weight:600}
+.blob{background:var(--surface);border:1px solid var(--border);border-radius:6px;overflow:hidden}
+.blob .bar{display:flex;justify-content:space-between;align-items:center;padding:8px 16px;border-bottom:1px solid var(--border);background:#0d1117;font-size:12px;color:var(--muted)}
+.blob pre{margin:0;padding:16px;overflow:auto;font:12px/1.5 var(--mono);white-space:pre-wrap}
+.readme{padding:16px 24px}
+.readme h1{font-size:24px;border-bottom:1px solid var(--border);padding-bottom:8px}
+.readme h2{font-size:18px;border-bottom:1px solid var(--border);padding-bottom:8px;margin-top:24px}
+.readme table{border-collapse:collapse;width:100%;font-size:13px}
+.readme th,.readme td{border:1px solid var(--border);padding:6px 10px;text-align:left}
+.readme th{background:#161b22}
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:800px){.compare{grid-template-columns:1fr}}
+.colh{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px}
+footer{color:var(--muted);font-size:12px;padding:24px;border-top:1px solid var(--border);text-align:center}
+.bars{display:flex;flex-direction:column;gap:6px}
+.bar{display:grid;grid-template-columns:70px 1fr 90px;gap:8px;align-items:center;font-family:var(--mono);font-size:12px}
+.bar .track{height:8px;background:#21262d;border-radius:6px;overflow:hidden}
+.bar .fill{height:100%;background:var(--green);border-radius:6px}
+.bar .fill.neg{background:var(--red)}
+
+</style>
+</head>
+<body>
+<header class="topbar">
+  <div class="crumb">
+    <span class="mark" title="repository">⌁</span>
+    <a class="owner" href="https://github.com/ooio6001-del" target="_blank" rel="noopener">ooio6001-del</a>
+    <span class="slash">/</span>
+    <a class="repo" href="https://github.com/ooio6001-del/bossss" target="_blank" rel="noopener">bossss</a>
+    <span class="pill">Public</span>
+    <div class="header-actions">
+      <span class="pill">paper only</span>
+      <span class="muted mono" style="font-size:12px">main · initial import</span>
+    </div>
+  </div>
+  <nav class="tabs" aria-label="Repository">
+    <button class="tab on" data-tab="overview">Overview</button>
+    <button class="tab" data-tab="leaderboard">Leaderboard</button>
+    <button class="tab" data-tab="strategies">Strategies</button>
+    <button class="tab" data-tab="backtests">Backtests</button>
+    <button class="tab" data-tab="live">Live</button>
+    <button class="tab" data-tab="repository">Repository</button>
+    <button class="tab" data-tab="compare">Compare</button>
+  </nav>
+</header>
+<main>
+<div class="warn"><strong>Backtest and paper trading only.</strong> Not financial advice. No real trades, no wallet, no private keys. Meme coins routinely go to zero. With millions of configs the best number is partly luck.</div>
+
+<!-- OVERVIEW -->
+<section id="tab-overview" class="panel">
+  <div class="grid" style="margin-bottom:16px">
+    <div class="metric"><div class="k">Headline (walk-forward)</div><div class="v">H6-01098</div><div class="muted" style="font-size:12px">washout_gate · hunter batch 6</div></div>
+    <div class="metric"><div class="k">Rolling folds profitable</div><div class="v pos">94.1%</div><div class="muted" style="font-size:12px">17 rolling folds, 26 total</div></div>
+    <div class="metric"><div class="k">Median OOS per fold</div><div class="v pos">+67.7%</div></div>
+    <div class="metric"><div class="k">Full period, $175 start</div><div class="v pos">+556.7%</div><div class="muted" style="font-size:12px">$175 → $1,149 · 96 trades</div></div>
+    <div class="metric"><div class="k">Max drawdown</div><div class="v warnc">54.5%</div></div>
+    <div class="metric"><div class="k">SOL buy &amp; hold, OOS</div><div class="v neg">−12.5%</div></div>
+  </div>
+  <div class="card">
+    <h2>H6-01098 rules <span class="label green">ROBUST</span></h2>
+    <table class="props">
+      <tr><th>Entry</th><td>First hour of an 8-bar closing low that is still above the 120h SMA, only if the token dumped 16%+ in a single hour within the last 16h</td></tr>
+      <tr><th>Exit</th><td>Stop −30%, 20% trailing stop after +60%, time exit after 384h</td></tr>
+      <tr><th>Sizing</th><td>28% of balance per trade, up to 3 open, $175 start (native)</td></tr>
+      <tr><th>Original split</th><td>IS +37.2%, OOS +400.0% (both windows profitable)</td></tr>
+      <tr><th>Stress</th><td>+47% at 2× costs, −94% at 3×, +164% one bar late, +272% without its best token; random-entry null p = 0.0066; neighbour median +70%</td></tr>
+    </table>
+    <p class="muted">With about 21,258 effective trials, the best Sharpe you would expect from pure noise is about 20.5. The champion was picked on walk-forward stability, not peak return. August (+207%) did most of the work; it lost money in May, June and July.</p>
+  </div>
+  <div class="card">
+    <h2>Starting-balance sweep (H6-01098)</h2>
+    <p class="muted">Same engine and cost model, full hourly history 2026-05-18 → 2026-11-13 15:00 CT. The +95% over 30 days was measured only at a $200 start. Among these sizes, $500 had the highest ending equity ($1,614). $30 is the lowest start that stayed clearly profitable. Below that, fixed fees wreck the account.</p>
+    <div id="start-bars"></div>
+    <div id="start-table" style="margin-top:16px"></div>
+  </div>
+  <div class="card" id="overview-win">
+    <h2>Ranked strip — best to worst</h2>
+    <p class="muted">Walk-forward robust strategies first, then the rest, each group by the date-range ranking. Follows the picker (custom ranges use the 16 strategies with embedded trades).</p>
+    <div class="seg">
+      <button class="wmode" data-v="1h">1h</button><button class="wmode" data-v="4h">4h</button><button class="wmode" data-v="12h">12h</button>
+      <button class="wmode on" data-v="24h">24h</button><button class="wmode" data-v="48h">48h</button><button class="wmode" data-v="7d">7d</button>
+      <button class="wmode" data-v="30d">30d</button><button class="wmode" data-v="90d">90d</button><button class="wmode" data-v="ytd">YTD</button>
+      <button class="wmode" data-v="12m">12m</button><button class="wmode" data-v="custom">Custom</button>
+    </div>
+    <div data-strip></div>
+  </div>
+  <div class="card">
+    <h2>Live paper settings transferred from the public repo</h2>
+    <p class="muted">Read-only snapshot of <a href="https://github.com/ooio6001-del/solstrats-dashboard" target="_blank" rel="noopener">ooio6001-del/solstrats-dashboard</a> <code>data</code> branch, exported 2026-11-13 17:36:01 CT. These are a <strong>different</strong> system than the hourly backtest above. Details are on the Live and Compare tabs.</p>
+    <table class="props">
+      <tr><th>Qualification</th><td>Start $100, min $3 per buy (fixed $3–$100 or % of equity), up to 25 open; ≥ 20 closed trades; net equity &gt; $100 after fees; profit factor &gt; 1.2; not busted</td></tr>
+      <tr><th>Candidates</th><td>Same rule with 8–19 closed trades</td></tr>
+      <tr><th>Ranking</th><td>Net return % × trades/(trades+10) (small-sample discount)</td></tr>
+      <tr><th>Grid</th><td><code>72x8x6x4x4x4x7</code> = 1,548,288 combos</td></tr>
+      <tr><th>Hunt #1 in snapshot</th><td>Variant #100781: $100 → $5,056.14 (+4,956%), 118 trades, 92.4% win, 21.3% max DD. Sell-side text is truncated with an ellipsis in the source <code>data.json</code>.</td></tr>
+    </table>
+  </div>
+</section>
+
+<!-- LEADERBOARD -->
+<section id="tab-leaderboard" class="panel hidden">
+  <div class="card" id="leaderboard-win">
+    <h2>Date range — re-rank any window</h2>
+    <p class="muted">Each strategy starts flat at the window start. Open positions are marked to the window's last hourly close. Presets are exact engine results for 30 strategies. Custom covers the last 48h for the 16 strategies with embedded trades (matches the engine to within 0.1%). Hourly data ends at the 3 PM CT bar on Nov 13.</p>
+    <div class="seg">
+      <button class="wmode" data-v="1h">1h</button><button class="wmode" data-v="4h">4h</button><button class="wmode" data-v="12h">12h</button>
+      <button class="wmode on" data-v="24h">24h</button><button class="wmode" data-v="48h">48h</button><button class="wmode" data-v="7d">7d</button>
+      <button class="wmode" data-v="30d">30d</button><button class="wmode" data-v="90d">90d</button><button class="wmode" data-v="ytd">YTD</button>
+      <button class="wmode" data-v="12m">12m</button><button class="wmode" data-v="custom">Custom</button>
+    </div>
+    <div class="row">
+      <label class="custom-only hidden">Start hour <select id="cs"></select></label>
+      <label class="custom-only hidden">End hour <select id="ce"></select></label>
+      <label>Rank by <select id="wsort"><option value="ret">Return %</option><option value="profit">Profit $</option><option value="win">Win rate</option><option value="dd">Lowest drawdown</option></select></label>
+      <label>Board <select id="wtag"><option value="all">All boards</option><option value="robust">Walk-forward robust</option><option value="top100">Top by Sharpe</option><option value="top100_profit">Top by profit</option></select></label>
+    </div>
+    <div id="win-metrics" class="grid" style="margin-bottom:16px"></div>
+    <div data-strip></div>
+    <div id="window-board"></div>
+  </div>
+  <div class="card">
+    <h2>Walk-forward robust leaderboard</h2>
+    <p class="muted">117 of the hunter's variants pass rolling walk-forward (≥50% OOS-profitable folds, ≥10 traded folds). Top 16 shown; the full list is in <code>hunt/robust_leaderboard.csv</code> and <code>config/strategies.json</code>.</p>
+    <div class="row"><label>Sort <select id="rsort"><option value="wf">Fold win %</option><option value="median">Median OOS</option><option value="full">Full return</option><option value="dd">Lowest DD</option></select></label></div>
+    <div id="robust-table"></div>
+  </div>
+  <div class="card">
+    <h2>Top leaderboards</h2>
+    <p class="muted">Ranked on the original 60/40 IS/OOS split (OOS columns). Full Top 100 lists: <code>results/top100.csv</code> and <code>results/top100_by_profit.csv</code>. Highest raw profit is not the same as walk-forward robust — G9680-S2 made +$2,182 OOS from $230 but failed walk-forward and lost 72% over the full 6 months.</p>
+    <div class="row">
+      <label>Board <select id="board"><option value="sharpe">Top by Sharpe</option><option value="profit">Top by $ profit</option></select></label>
+      <label>Sort <select id="tsort"><option value="sharpe">OOS Sharpe</option><option value="profit">OOS profit $</option><option value="ret">OOS return %</option><option value="win">Win rate</option><option value="dd">Lowest drawdown</option></select></label>
+      <label>Family <select id="fam"><option>all</option></select></label>
+    </div>
+    <div id="top-table"></div>
+  </div>
+</section>
+
+<!-- STRATEGIES -->
+<section id="tab-strategies" class="panel hidden">
+  <div class="card">
+    <h2>Strategy definitions</h2>
+    <p class="muted">JSON for the walk-forward robust set lives in <code>config/strategies.json</code> (117 configs). The headline and the other top-16 robust IDs also have individual files under <code>config/strategies/</code>. Open them in the Repository tab.</p>
+    <table class="props">
+      <tr><th>H6-01098 params</th><td><code>entry: dn8_120</code>, <code>gate: dump_16_16</code>; exits <code>[inf, 0.3, 0.6, 0.2, 384, inf, 1.0]</code> (no fixed TP, stop 30%, trail after +60% by 20%, 384h time exit)</td></tr>
+      <tr><th>Cost model</th><td>0.75% established / 1.75% launch / 3% bonding curve per side, plus impact, 0.000105 SOL swap fee, 25% of 0.00203928 SOL rent unreclaimed. See <code>config/costs.json</code>.</td></tr>
+    </table>
+  </div>
+  <div class="card">
+    <h2>Individual config files</h2>
+    <p>H6-01098, H6-01094, H6-01718, H6-01689, H6-01064, H6-01714, H7-02417, H7-02423, H7-00668, H7-06668, H6-01097, H3-09335, H6-00468, H6-00464, H6-00439, H6-01722.</p>
+  </div>
+</section>
+
+<!-- BACKTESTS -->
+<section id="tab-backtests" class="panel hidden">
+  <div class="card">
+    <h2>Moonshot take-profit sweep</h2>
+    <p class="muted">4,032 configs per TP level on 97 launch tokens. Hit rate is the share of launches whose close ever reached the TP. The median config lost money at every level. No moonshot config survives the hunter's rolling walk-forward.</p>
+    <div id="moon-bars"></div>
+    <div id="moon-table" style="margin-top:16px"></div>
+    <p>The best take-profit is +300% by best config (+452% out of sample), and +400% has the least-bad median (−10.2%). On closes, 10× (+1,000%) hits 7.5% of launches; above +5,000% almost nothing reaches the target.</p>
+  </div>
+  <div class="card">
+    <h2>90%+ win-rate hunt</h2>
+    <div class="grid">
+      <div class="metric"><div class="k">Strategies ≥90% win, ≥30 OOS trades</div><div class="v neg">0</div></div>
+      <div class="metric"><div class="k">Closest OOS win rate</div><div class="v">75.1%</div><div class="muted" style="font-size:12px">G7161-S1 dip_buy, 205 trades</div></div>
+      <div class="metric"><div class="k">Average win</div><div class="v">$1.36</div></div>
+      <div class="metric"><div class="k">Average loss</div><div class="v neg">$8.53</div></div>
+      <div class="metric"><div class="k">Its OOS return</div><div class="v neg">−90.1%</div></div>
+    </div>
+    <p class="muted">The closest buys 50% drops from the 24h high and takes +10% profits against a −35% stop: many small wins, then losses six times larger. A high win rate here signals negative skew, not an edge.</p>
+  </div>
+  <div class="card">
+    <h2>Extreme upside</h2>
+    <div class="grid">
+      <div class="metric"><div class="k">Highest IS return</div><div class="v warnc">+170,200%</div><div class="muted" style="font-size:12px">G9703-S4 moonshot all-in, 6 trades, $10</div></div>
+      <div class="metric"><div class="k">Same config OOS</div><div class="v neg">−83%</div></div>
+      <div class="metric"><div class="k">Highest OOS return</div><div class="v warnc">+9,040%</div><div class="muted" style="font-size:12px">G10974-S4 moonshot, 4 trades, $10</div></div>
+      <div class="metric"><div class="k">Reached 100,000%?</div><div class="v">Yes, IS only</div><div class="muted" style="font-size:12px">luck on a handful of trades</div></div>
+    </div>
+  </div>
+  <div class="card">
+    <h2>Desk pipeline vs the viral claim</h2>
+    <div class="scroll"><table class="data">
+      <thead><tr><th class="l"></th><th>Start</th><th>End</th><th>Trades</th><th>W / L</th><th>Best</th><th>Worst</th></tr></thead>
+      <tbody>
+        <tr><td class="l">Claim (unverified)</td><td>$280</td><td>$3,412</td><td>38</td><td>26 / 12</td><td>+$810</td><td>−$37</td></tr>
+        <tr><td class="l">Desk exact, OOS backtest</td><td>$280</td><td>$268.66</td><td>12</td><td>2 / 10</td><td>+$0.93</td><td>−$2.16</td></tr>
+        <tr><td class="l">Desk exact, full window</td><td>$280</td><td>$251</td><td>30</td><td>5 / 25</td><td></td><td></td></tr>
+      </tbody>
+    </table></div>
+    <p class="muted">The SCOUT → FILTER → ANALYST → EXECUTOR → RISK → LOGGER rules, run on real data, reject 99.9% of pairs and lose slowly. We could not reproduce the viral equity path ($280 → $388 → $1,395 → $2,942 → $3,412).</p>
+  </div>
+  <div class="card">
+    <h2>Benchmarks and launch reality</h2>
+    <div class="grid">
+      <div class="metric"><div class="k">SOL, OOS</div><div class="v neg">−12.5%</div></div>
+      <div class="metric"><div class="k">Meme basket, OOS (24 alive)</div><div class="v pos">+14.4%</div></div>
+      <div class="metric"><div class="k">SOL, IS</div><div class="v pos">+16.7%</div></div>
+      <div class="metric"><div class="k">Basket, full period (21 alive)</div><div class="v neg">−40.3%</div></div>
+      <div class="metric"><div class="k">Launches that ever 2× (close)</div><div class="v">30.9%</div></div>
+      <div class="metric"><div class="k">Ever 10×</div><div class="v">11.3%</div></div>
+      <div class="metric"><div class="k">Ever 100×</div><div class="v">4.1%</div></div>
+      <div class="metric"><div class="k">Died 90%+ from peak</div><div class="v neg">28.9%</div></div>
+    </div>
+  </div>
+  <div class="card">
+    <h2>Robustness checks</h2>
+    <p class="muted">Every walk-forward robust strategy re-run over the full hourly span with its own balance and sizing. 75 of 115 survive all three stresses (2× costs, 1 bar late, minus best token). 105 stay profitable at 2× costs, 81 at 3×. 103 of 115 beat random entries (p ≤ 0.05, 300 draws).</p>
+    <div id="stress-table"></div>
+    <h3>Month-by-month (America/Chicago)</h3>
+    <div id="monthly-table"></div>
+    <p class="muted">H6-01098 makes +557% at modelled costs, +47% at 2×, and loses 94% at 3×. Treat +557% as a selected, best-case number. The H7 variants look stronger at 3× costs but fall sharply one bar late, so their timing is fragile.</p>
+  </div>
+  <div class="card">
+    <h2>Micro buy sizes: break-even</h2>
+    <p class="muted">Fixed dollars per trade with the real fee model. Fixed round-trip cost is about $0.064 at SOL $89. H6-01098 needs a buy of about $1.88 to break even.</p>
+    <div id="micro-table"></div>
+  </div>
+  <div class="card">
+    <h2>Backtest vs live paper (lab runner)</h2>
+    <p class="muted">Live paper books at $100 during a 9-minute run (5:09 → 5:18 PM CT; 17 polls, 0 errors). Nine live minutes say nothing about edge. This is a plumbing check, not validation. The Live tab is a different, longer public paper hunt.</p>
+    <div id="btl-table"></div>
+  </div>
+  <div class="card">
+    <h2>Methodology and limitations</h2>
+    <ul>
+      <li>Data: GeckoTerminal hourly OHLCV, 2026-05-18 → 2026-11-13, 141 tokens (44 established, 97 launches), dead ones included. Public API caps at 180 days.</li>
+      <li>Costs per side: 0.75% established, 1.75% launch, 3% bonding curve, plus impact, priority and base fees, and token-account rent. Fills capped at 5% of bar volume.</li>
+      <li>Search: 10,326,582 brute-force configs, 538,560 overlay configs, 2,400 Optuna evaluations, plus the hunter (117 pass rolling walk-forward).</li>
+      <li>Fills at the next bar's open; stop checked before TP inside a bar. No LP-pull, holder-growth, smart-wallet or social gates in the historical set.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- LIVE -->
+<section id="tab-live" class="panel hidden">
+  <div class="card">
+    <h2>Public live dashboard snapshot</h2>
+    <p id="live-asof" class="muted"></p>
+    <p>Source: <a href="https://github.com/ooio6001-del/solstrats-dashboard" target="_blank" rel="noopener">github.com/ooio6001-del/solstrats-dashboard</a>. Default branch <code>data</code> holds only <code>data.json</code>. Branch <code>main</code> is a static GitHub Pages site (no <code>package.json</code>, no start script, no server) already hosted at <a href="https://ooio6001-del.github.io/solstrats-dashboard/" target="_blank" rel="noopener">ooio6001-del.github.io/solstrats-dashboard</a>.</p>
+    <div id="live-metrics" class="grid"></div>
+  </div>
+  <div class="card">
+    <h2>Transferred settings</h2>
+    <table class="props">
+      <tr><th>Paper only</th><td>True. Each hunt variant is forward-tested from the moment it was created. Short runs are noise (from the snapshot's own note).</td></tr>
+      <tr><th>Qualification</th><td>Start $100, min $3 per buy (fixed $3–$100 or % of equity), up to 25 open; ≥20 closed trades; net equity &gt; $100 after all fees/slippage; profit factor &gt; 1.2; not busted.</td></tr>
+      <tr><th>Candidates</th><td>Same as qualification but 8–19 closed trades.</td></tr>
+      <tr><th>Ranking</th><td>Net return % × trades/(trades+10) (small-sample discount).</td></tr>
+      <tr><th>Grid</th><td><code>72x8x6x4x4x4x7</code> = 1,548,288 combos. Leaderboard generated 2026-11-13 06:33:49 CST.</td></tr>
+      <tr><th>Hunt book</th><td>Generation 131, population 88,000, 555,249 variants tried, 49,854 profitable, 33,673 qualified ever, 50 qualified now / 50 candidates in the snapshot. Last cull 2026-11-13 06:08:44 CST (585 replaced).</td></tr>
+      <tr><th>Glitch filter</th><td>4,947 excluded glitch suspects; 8,715 glitch ticks rejected. The snapshot note says combos inflated by bad ticks (FLOAT/SKHY 19,000×, TTWO 300,000×) were reset, and any combo above 50× is left off the leaderboard as a glitch suspect.</td></tr>
+      <tr><th>Equity history</th><td>360 points from 2026-11-13 10:49:16 CT to 17:35:29 CT for 11 variant IDs were <strong>unchanged</strong> across every point (flat series).</td></tr>
+    </table>
+    <p class="muted">Rule strings for the hunt top 10 are stored at 180 characters in <code>data.json</code> and end with an ellipsis, so the sell-side is incomplete in the source file itself.</p>
+  </div>
+  <div class="card">
+    <h2>Hunt top 10 (ranked, $100 start)</h2>
+    <div id="hunt-top"></div>
+  </div>
+  <div class="card">
+    <h2>Grid leaderboard top 20</h2>
+    <p class="muted">These grid names (rsi / breakout / dip / …) are not the H6/H7 washout-gate IDs from the lab backtest. Several show very high returns with huge drawdowns (the #1 row is +4,894.61% from $500 to $24,973.04 with a 94% max drawdown and a 10.9% win rate). Read them with the glitch-filter note above.</p>
+    <div id="grid-top"></div>
+  </div>
+  <div class="card">
+    <h2>Grid families (median return of traded variants)</h2>
+    <div id="live-fams"></div>
+    <p class="muted">Every family's median variant lost money (about −76% to −93%). A thin right tail, plus the glitch policy, is what the top-20 list is drawing from.</p>
+  </div>
+  <div class="card">
+    <h2>Data-health rate limits (from the snapshot)</h2>
+    <div id="health-sources"></div>
+  </div>
+</section>
+
+<!-- REPOSITORY -->
+<section id="tab-repository" class="panel hidden">
+  <div class="card">
+    <h2>bossss <span class="label gray">main</span></h2>
+    <p class="muted">Intended remote: <a href="https://github.com/ooio6001-del/bossss" target="_blank" rel="noopener">github.com/ooio6001-del/bossss</a>. This page ships in the local bundle; the parent pushes the tarball. Commit message below is the local initial import.</p>
+    <p><span class="label blue">main</span> &nbsp; <span class="mono">Initial import: SOLSTRATS lab, hunt results, and GitHub Edition dashboard (paper only)</span></p>
+  </div>
+  <div class="repo-layout">
+    <div class="filetree" id="filetree"></div>
+    <div class="blob">
+      <div class="bar"><span id="blob-name">README.md</span><span>preview</span></div>
+      <div id="blob-body"></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARE -->
+<section id="tab-compare" class="panel hidden">
+  <div class="card">
+    <h2>Old SOLSTRATS vs this GitHub Edition</h2>
+    <p><strong>They do not share the same underlying data or the same strategies.</strong> The original Page is a historical hourly backtest (May–November 2026, 141 tokens, walk-forward robust washout-gate rules, H6-01098 at the top). The settings and series added in this edition come from a live paper-trading hunt and a 1.5M-combo grid on live prices, snapshotted 2026-11-13 17:36:01 CT from the public <code>solstrats-dashboard</code> repo. Performance numbers from one side must not be treated as a rerun of the other.</p>
+  </div>
+  <div class="compare">
+    <div class="card">
+      <div class="colh">Old — original Page / lab backtest</div>
+      <h2>SOLSTRATS terminal</h2>
+      <table class="props">
+        <tr><th>What it is</th><td>Historical backtest + walk-forward, neon terminal Page (canvas ed312468…, left untouched) and <code>dashboard.html</code> (left untouched in the lab tree; this bundle has a verbatim copy).</td></tr>
+        <tr><th>Data</th><td>GeckoTerminal hourly OHLCV, 2026-05-18 → 2026-11-13 15:00 CT, 141 tokens.</td></tr>
+        <tr><th>Search</th><td>10.3M brute-force configs + overlays + Optuna + hunter. 117 pass rolling walk-forward.</td></tr>
+        <tr><th>Headline</th><td>H6-01098, $175 → $1,149 (+556.7%), 94.1% folds, 96 trades, 54.5% DD.</td></tr>
+        <tr><th>Best raw OOS profit</th><td>G9680-S2, $230 → +$2,182 (+949%) OOS, 12 trades, failed walk-forward; lost 72% over the full 6 months.</td></tr>
+        <tr><th>Start-balance (H6-01098)</th><td>$5→$0.15, $20→$7.61, $30→$101, $175→$1,149, $200→$1,396 (+95% / 30d), $500→$1,614 (highest ending equity among tested sizes).</td></tr>
+        <tr><th>Costs</th><td>~$0.064 fixed round trip plus %-of-notional fees. Kills sub-$30 accounts.</td></tr>
+        <tr><th>90% win hunt</th><td>None reached 90% with ≥30 OOS trades. Closest 75.1% lost 90.1% OOS.</td></tr>
+        <tr><th>Look</th><td>Dark neon terminal (green / magenta / cyan glow).</td></tr>
+      </table>
+    </div>
+    <div class="card">
+      <div class="colh">New — GitHub Edition + transferred live settings</div>
+      <h2>GitHub Edition + public data.json</h2>
+      <table class="props">
+        <tr><th>What it is</th><td>This page: same lab backtest boards, restyled to GitHub Primer dark, plus the public live paper snapshot and a repo browser.</td></tr>
+        <tr><th>Live data</th><td>Forward paper test on live prices; snapshot exported 2026-11-13 17:36:01 CT. Hunt status time in the file is 06:38:15 CT (older than the export).</td></tr>
+        <tr><th>Search</th><td>Evolutionary hunt (88k population, gen 131) + grid 1,548,288 combos.</td></tr>
+        <tr><th>Hunt #1</th><td>#100781, $100 → $5,056.14 (+4,956%), 118 trades, 92.4% win, 21.3% DD, +5% TP / −30% SL style 5-minute mcap-momentum rule (sell-side truncated in source).</td></tr>
+        <tr><th>Grid #1</th><td>rsi(p=14,th=25,liq&gt;50k) TP100% SL35% hold15m size10%, $500 → $24,973.04 (+4,894.61%), 751 trades, 10.9% win, 94% DD, 3 identical variants, open SKHY / mihao / FOOD.</td></tr>
+        <tr><th>Family medians</th><td>All six grid families have negative median returns (−76% to −93%).</td></tr>
+        <tr><th>Quality flags in the source itself</th><td>4,947 glitch suspects excluded; note about 19,000× and 300,000× bad ticks. Equity history for the plotted hunt IDs was flat for ~7 hours in the snapshot window.</td></tr>
+        <tr><th>Runnable app?</th><td>No package.json or server in the public repo. Static Pages site only. Lab <code>serve.py</code> is in this bundle for the original dashboard.</td></tr>
+        <tr><th>Look</th><td>GitHub dark (canvas #0d1117, surfaces #161b22, Primer labels, 6px cards).</td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="card">
+    <h2>Settings differences (real, not invented)</h2>
+    <div class="scroll"><table class="data">
+      <thead><tr><th class="l">Setting</th><th class="l">Old lab / original Page</th><th class="l">Transferred from data.json</th></tr></thead>
+      <tbody>
+        <tr><td class="l">Bar size</td><td class="l">Hourly candles</td><td class="l">Live ticks / 1–5 minute conditions in the hunt rules</td></tr>
+        <tr><td class="l">Start balance (headline)</td><td class="l">$175 native for H6-01098 (sweep $5–$1,000)</td><td class="l">$100 hunt; grid rows at $25 / $50 / $500 / $1,000 etc.</td></tr>
+        <tr><td class="l">Min buy</td><td class="l">Fraction of equity, skipped if size too small vs fees</td><td class="l">Min $3 per buy, $3–$100 or % of equity, up to 25 open</td></tr>
+        <tr><td class="l">Qualify / rank</td><td class="l">Rolling walk-forward, IS+OOS, deflated-Sharpe caveat</td><td class="l">≥20 trades, equity &gt; $100, PF &gt; 1.2; rank = return × trades/(trades+10)</td></tr>
+        <tr><td class="l">Headline family</td><td class="l">washout_gate (dip after a dump, still above a long SMA)</td><td class="l">5-minute mcap momentum (hunt) and rsi / volsurge / dip / ema / early / breakout (grid)</td></tr>
+        <tr><td class="l">IDs</td><td class="l">H6-01098, G9680-S2, …</td><td class="l">Numeric hunt IDs (100781, …) and rsi(…) strings — no overlap</td></tr>
+      </tbody>
+    </table></div>
+  </div>
+</section>
+</main>
+<footer>SOLSTRATS // GitHub Edition · paper trading only · original Page and lab dashboard.html were not modified</footer>
+<script>
+const ROBUST = [
+  ["H6-01098","washout_gate","8-bar closing low above its 120h SMA, only after a 16%+ hourly dump within 16h","stop -30%, trail 20% after +60%, exit after 384h","28% of balance, up to 3 open",175,94.12,67.7,556.7,54.5,96,400.0,37.2],
+  ["H6-01094","washout_gate","8-bar closing low above its 120h SMA, only after a 16%+ hourly dump within 16h","stop -30%, trail 20% after +60%, exit after 384h","15.5% of balance, up to 6 open",320,94.12,45.1,309.5,32.8,97,213.2,26.4],
+  ["H6-01718","washout_gate","8-bar closing low above its 288h SMA, only after a 16%+ hourly dump within 16h","stop -30%, trail 20% after +60%, exit after 384h","15.5% of balance, up to 6 open",175,94.12,39.3,328.5,52.7,137,182.5,52.2],
+  ["H6-01689","washout_gate","8-bar closing low above its 288h SMA, only after a 16%+ hourly dump within 16h","TP +140%, stop -26%, exit after 288h","9.5% of balance, up to 10 open",320,94.12,34.9,154.7,37.8,125,152.0,0.3],
+  ["H6-01064","washout_gate","8-bar closing low above its 120h SMA, only after a 16%+ hourly dump within 16h","TP +140%, stop -26%, exit after 288h","9.5% of balance, up to 10 open",320,94.12,33.2,128.5,37.2,99,123.4,1.9],
+  ["H6-01714","washout_gate","8-bar closing low above its 288h SMA, only after a 16%+ hourly dump within 16h","stop -30%, trail 20% after +60%, exit after 384h","9.5% of balance, up to 10 open",320,94.12,24.2,94.2,36.8,147,117.9,36.0],
+  ["H7-02417","washout_gate","8-bar closing low above its 132h SMA, only after a 17%+ hourly dump within 14h","stop -33%, trail 22% after +65%, exit after 408h","29% of balance, up to 3 open",190,93.33,85.9,735.2,53.6,70,498.9,70.2],
+  ["H7-02423","washout_gate","8-bar closing low above its 132h SMA, only after a 17%+ hourly dump within 14h","stop -33%, trail 22% after +65%, exit after 408h","33% of balance, up to 3 open",240,93.33,51.8,502.7,62.6,67,471.3,6.2],
+  ["H7-00668","washout_gate","8-bar closing low above its 120h SMA, only after a 15%+ hourly dump","stop -33%, trail 22% after +65%, exit after 408h","29% of balance, up to 3 open",240,93.33,49.5,356.0,48.4,72,387.4,10.3],
+  ["H7-06668","washout_gate","8-bar closing low above its 288h SMA, only after an 18%+ hourly dump","stop -33%, trail 22% after +65%, exit after 408h","29% of balance, up to 3 open",240,93.33,20.4,406.2,56.2,65,393.4,114.3],
+  ["H6-01097","washout_gate","8-bar closing low above its 120h SMA, only after a 16%+ hourly dump within 16h","stop -30%, trail 20% after +60%, exit after 384h","28% of balance, up to 3 open",85,88.24,118.7,527.6,57.4,115,386.9,55.5],
+  ["H3-09335","green_stack","Close of the 3rd consecutive green hour, each up 2%+","stop -40%, trail 28% after +60%, exit after 600h","7% of balance, up to 14 open",280,88.24,26.6,16.9,48.5,191,42.1,2.7],
+  ["H6-00468","washout_gate","10-bar closing low above its 288h SMA, only after a 16%+ hourly dump within 16h","stop -30%, trail 20% after +60%, exit after 384h","15.5% of balance, up to 6 open",175,88.24,25.9,442.5,45.5,113,183.7,221.1],
+  ["H6-00464","washout_gate","10-bar closing low above its 288h SMA, only after a 16%+ hourly dump within 16h","stop -30%, trail 20% after +60%, exit after 384h","9.5% of balance, up to 10 open",320,88.24,16.0,142.5,35.5,130,107.6,63.0],
+  ["H6-00439","washout_gate","10-bar closing low above its 288h SMA, only after a 16%+ hourly dump within 16h","TP +140%, stop -26%, exit after 288h","9.5% of balance, up to 10 open",320,88.24,10.6,131.8,22.4,120,96.0,8.9],
+  ["H6-01722","washout_gate","8-bar closing low above its 288h SMA, only after a 16%+ hourly dump within 16h","stop -30%, trail 20% after +60%, exit after 384h","28% of balance, up to 3 open",85,82.35,55.6,680.0,71.3,133,458.8,39.6],
+];
+const TOP_SHARPE = [
+  ["H2-02971","climax_reversal","Buy the first green hour after a climax dump of 18%+ on 3x average vol | take profit +200%, stop -40%, trail 30% after +100%, | 25%, 4 open",5,30.8,616.6,65,20,13,5.61,36.4,"both"],
+  ["H2-02957","climax_reversal","Buy the first green hour after a climax dump of 18%+ on 3x average vol | take profit +200%, stop -40%, trail 30% after +100%, | 6%, 15 open",25,17.1,68.5,62,21,4,5.35,3.4,"both"],
+  ["H7-04927","washout_gate","Washout: 8-bar low above 288h SMA, after 17%+/1h dump in 28h | take profit +130%, stop -25%, exit after 264h | 10.5%, 9 open",190,189.2,99.6,29,52,26,5.1,3.0,"both"],
+  ["H7-05431","washout_gate","Washout: 8-bar low above 312h SMA, after 17%+/1h dump in 20h | take profit +130%, stop -25%, exit after 264h | 18.5%, 5 open",110,216.2,196.5,30,46,36,5.09,3.9,"both"],
+  ["H7-05427","washout_gate","Washout: 8-bar low above 312h SMA, after 17%+/1h dump in 20h | take profit +130%, stop -25%, exit after 264h | 10.5%, 9 open",190,184.3,97.0,30,47,22,5.06,17.4,"both"],
+  ["H2-02967","climax_reversal","Buy the first green hour after a climax dump of 18%+ on 3x average vol | take profit +200%, stop -40%, trail 30% after +100%, | 15%, 6 open",25,49.7,198.8,65,17,9,5.04,12.1,"both"],
+  ["H2-02962","climax_reversal","Buy the first green hour after a climax dump of 18%+ on 3x average vol | take profit +200%, stop -40%, trail 30% after +100%, | 10%, 10 open",25,28.9,115.4,63,19,6,5.02,7.6,"both"],
+  ["H2-02958","climax_reversal","Buy the first green hour after a climax dump of 18%+ on 3x average vol | take profit +200%, stop -40%, trail 30% after +100%, | 6%, 15 open",100,60.6,60.6,65,17,4,5.01,5.7,"both"],
+  ["H2-02953","climax_reversal","Buy the first green hour after a climax dump of 18%+ on 3x average vol | take profit +200%, stop -40%, trail 30% after +100%, | 4%, 25 open",100,38.3,38.3,63,19,3,4.99,3.7,"both"],
+  ["H7-05806","washout_gate","Washout: 8-bar low above 264h SMA, after 16%+/1h dump in 20h | take profit +130%, stop -25%, exit after 264h | 18.5%, 5 open",110,208.8,189.8,30,47,41,4.98,0.0,"both"],
+  ["H6-01689","washout_gate","Washout: 8-bar low above 288h SMA, after 16%+/1h dump in 24h | take profit +140%, stop -26%, exit after 288h | 9.5%, 10 open",320,486.3,152.0,30,66,29,4.91,0.3,"wf"],
+  ["H7-02428","washout_gate","Washout: 8-bar low above 132h SMA, after 17%+/1h dump in 14h | take profit +130%, stop -25%, exit after 264h | 10.5%, 9 open",240,223.7,93.2,32,38,17,4.87,1.3,"both"],
+  ["G7268-S0","dip_buy","Buy after a 50% drop from the 24h high | take profit +100%, stop -35%, trail 10% after +10% | 8%, 12 open",280,241.8,86.3,59,195,16,4.82,6.2,"both"],
+  ["G7268-S1","dip_buy","Buy after a 50% drop from the 24h high | take profit +100%, stop -35%, trail 10% after +10% | 20%, 5 open",65,194.6,299.4,60,196,37,4.79,10.9,"both"],
+  ["H7-05210","washout_gate","Washout: 9-bar low above 312h SMA, after 17%+/1h dump in 28h | take profit +160%, stop -28%, trail 18% after +50% | 24%, 4 open",65,167.8,258.2,51,55,37,4.79,137.7,"both"],
+  ["H7-05206","washout_gate","Washout: 9-bar low above 312h SMA, after 17%+/1h dump in 28h | take profit +160%, stop -28%, trail 18% after +50% | 18.5%, 5 open",110,202.0,183.6,51,53,30,4.75,126.3,"both"],
+  ["H7-04928","washout_gate","Washout: 8-bar low above 288h SMA, after 17%+/1h dump in 28h | take profit +130%, stop -25%, exit after 264h | 10.5%, 9 open",240,200.2,83.4,28,50,26,4.71,11.6,"both"],
+  ["H7-05802","washout_gate","Washout: 8-bar low above 264h SMA, after 16%+/1h dump in 20h | take profit +130%, stop -25%, exit after 264h | 10.5%, 9 open",190,165.2,87.0,29,49,26,4.67,19.1,"both"],
+  ["H7-04431","washout_gate","Washout: 8-bar low above 288h SMA, after 16%+/1h dump in 20h | take profit +130%, stop -25%, exit after 264h | 18.5%, 5 open",110,181.4,164.9,29,49,44,4.65,15.0,"both"],
+  ["H7-05428","washout_gate","Washout: 8-bar low above 312h SMA, after 17%+/1h dump in 20h | take profit +130%, stop -25%, exit after 264h | 10.5%, 9 open",240,189.2,78.8,29,45,26,4.64,27.2,"both"],
+];
+const TOP_PROFIT = [
+  ["G26462-S4","flash_wick","Buy the next open after a single-hour dump of 10%+ on 3x volume | stop -5%, exit after 240h | 100%, 1 open",95,1069.1,1125.3,14,22,61,2.36,411.2,"both"],
+  ["G9680-S2","moonshot","Buy a new launch in its first 6h, hourly volume over $1k, hour up 0%+ | take profit +3000%, trail 50% after +200% | 34%, 3 open",230,2182.4,948.9,42,12,43,2.3,262.7,"both"],
+  ["G26489-S1","flash_wick","Buy the next open after a single-hour dump of 10%+ on 3x volume | stop -35%, exit after 240h | 20%, 5 open",50,446.9,893.8,30,47,39,3.31,112.8,"both"],
+  ["G9680-S3","moonshot","Buy a new launch in its first 6h, hourly volume over $1k, hour up 0%+ | take profit +3000%, trail 50% after +200% | 50%, 2 open",215,1864.1,867.0,40,10,57,2.29,50.2,"both"],
+  ["G26480-S4","flash_wick","Buy the next open after a single-hour dump of 10%+ on 3x volume | stop -20%, exit after 240h | 100%, 1 open",115,930.2,808.9,45,11,58,2.46,208.9,"both"],
+  ["H7-02421","washout_gate","Washout: 8-bar low above 132h SMA, after 17%+/1h dump in 14h | stop -33%, trail 22% after +65%, exit after 408h | 33%, 3 open",110,849.8,772.6,63,27,24,4.47,158.6,"both"],
+  ["G27281-S3","flash_wick","Buy the next open after a single-hour dump of 20%+ on 3x volume | stop -35%, exit after 240h | 50%, 2 open",280,2112.7,754.5,33,15,54,2.92,10.0,"both"],
+  ["G7895-S4","dip_buy","Buy after a 30% drop from the 72h high once an hour closes green | stop -35%, exit after 240h | 100%, 1 open",25,182.5,729.9,38,13,96,2.89,190.4,"both"],
+  ["G8075-S3","dip_buy","Buy after a 50% drop from the 72h high | stop -10%, exit after 240h | 50%, 2 open",100,687.0,687.0,9,86,90,2.77,13.4,"both"],
+  ["G7094-S1","dip_buy","Buy after a 30% drop from the 24h high once an hour closes green | stop -20%, exit after 240h | 20%, 5 open",15,101.0,673.3,16,82,70,3.0,149.1,"both"],
+  ["G14288-S2","moonshot","Buy a new launch in its first 72h, hourly volume over $1k, hour up 0%+ | take profit +3000%, trail 50% after +200% | 34%, 3 open",280,1854.1,662.2,31,13,43,2.27,88.3,"both"],
+  ["G7688-S1","dip_buy","Buy after a 30% drop from the 72h high | stop -20%, exit after 240h | 20%, 5 open",50,322.9,645.8,18,83,68,3.0,71.7,"both"],
+  ["G11814-S2","moonshot","Buy a new launch in its first 24h, hourly volume over $1k, hour up 0%+ | take profit +300%, exit after 720h | 34%, 3 open",15,95.7,638.3,40,10,37,3.89,1173.9,"both"],
+  ["H2-02971","climax_reversal","Buy the first green hour after a climax dump of 18%+ on 3x average vol | take profit +200%, stop -40%, trail 30% after +100% | 25%, 4 open",5,30.8,616.6,65,20,13,5.61,36.4,"both"],
+  ["H6-00720","washout_gate","Washout: 14-bar low above 200h SMA, after 9%+/1h dump in 18h | stop -30%, trail 20% after +60%, exit after 384h | 28%, 3 open",35,214.8,613.6,44,61,47,3.56,41.5,"both"],
+  ["G9728-S3","moonshot","Buy a new launch in its first 6h, hourly volume over $1k, hour up 0%+ | take profit +7500%, trail 50% after +200% | 50%, 2 open",215,1267.7,589.6,40,10,57,2.29,50.2,"both"],
+];
+const MOON = [
+  { tp: 250, hit: 27.6, med: -17.3, best: 347.7 }, { tp: 300, hit: 26.7, med: -11.7, best: 452.1 },
+  { tp: 400, hit: 20.0, med: -10.2, best: 344.3 }, { tp: 500, hit: 17.6, med: -12.7, best: 404.0 },
+  { tp: 750, hit: 8.4, med: -14.2, best: 220.1 }, { tp: 1000, hit: 7.5, med: -16.6, best: 265.0 },
+  { tp: 1500, hit: 4.7, med: -17.9, best: 242.8 }, { tp: 2000, hit: 3.8, med: -17.5, best: 263.4 },
+  { tp: 3000, hit: 3.5, med: -17.0, best: 430.9 }, { tp: 5000, hit: 0.5, med: -20.2, best: 269.2 },
+  { tp: 7500, hit: 0.0, med: -20.2, best: 269.2 }, { tp: 10000, hit: 0.0, med: -20.2, best: 269.2 },
+];
+const MICRO = [
+  ["H6-01098", "washout_gate", 192, 23.3, 1.875, -0.06512, -0.06352, -0.05916, -0.0524],
+  ["H6-01718", "washout_gate", 254, 20.1, 1.611, -0.06649, -0.06328, -0.04729, -0.02668],
+  ["H6-01689", "washout_gate", 227, 6.4, 1.419, -0.06725, -0.06371, -0.04598, -0.02239],
+  ["H6-01064", "washout_gate", 173, 5.5, 3.198, -0.06648, -0.06307, -0.04992, -0.03022],
+  ["H7-02417", "washout_gate", 189, 29.1, 0.665, -0.06575, -0.05594, -0.01104, 0.03213],
+  ["H7-00668", "washout_gate", 201, 25.6, 1.465, -0.0659, -0.06181, -0.03752, -0.02579],
+  ["H7-06668", "washout_gate", 234, 26.9, 0.738, -0.06523, -0.05666, -0.02101, 0.03443],
+  ["H3-09335", "green_stack", 240, 5.8, 0.926, -0.06564, -0.06031, -0.02962, 0.00511],
+  ["H6-00468", "washout_gate", 246, 25.1, 0.628, -0.06594, -0.05445, -0.01662, 0.0426],
+  ["H6-00439", "washout_gate", 207, 8.1, 0.96, -0.067, -0.06075, -0.03619, 0.00272],
+  ["H2-02971", "climax_reversal", 49, 26.3, 0.256, -0.0668, -0.04318, 0.06674, 0.20126],
+  ["H7-04927", "washout_gate", 227, 4.1, 1.63, -0.06761, -0.06471, -0.05062, -0.03162],
+  ["H7-05431", "washout_gate", 220, 5.3, 1.395, -0.06707, -0.06326, -0.04532, -0.01935],
+  ["G7268-S0", "dip_buy", 524, 1.5, 2.527, -0.06627, -0.06432, -0.05628, -0.04483],
+  ["G26462-S4", "flash_wick", 302, 126.7, 0.293, -0.06471, -0.04, 0.05035, 0.17393],
+  ["G9680-S2", "moonshot", 36, 187.0, 0.04, -0.06307, 0.12426, 0.95662, 1.9965],
+  ["G26489-S1", "flash_wick", 187, 22.3, 0.176, -0.06546, -0.03912, 0.10455, 0.28356],
+  ["G26480-S4", "flash_wick", 220, 172.9, 0.119, -0.06451, -0.01123, 0.25619, 0.58296],
+];
+const STRESS = [["H6-01098", 175.0, 96, 556.7, 47.0, -93.9, 164.0, 271.7, 42.4, 0.0066, 1], ["H6-01094", 320.0, 97, 309.5, 116.6, -46.4, 93.3, 155.8, 43.7, 0.0066, 1], ["H6-01718", 175.0, 137, 328.5, 17.4, -67.0, 331.4, 118.2, 21.8, 0.0066, 1], ["H6-01689", 320.0, 125, 154.7, 63.7, -4.5, 65.2, 81.2, 42.3, 0.0033, 1], ["H6-01064", 320.0, 99, 128.5, 21.2, -20.5, -30.6, 54.4, 16.6, 0.0033, 0], ["H6-01714", 320.0, 147, 94.2, 35.1, -30.0, 92.1, 34.7, 10.9, 0.0299, 1], ["H7-02417", 190.0, 76, 1652.3, 675.4, 178.9, 145.8, 888.3, 299.2, 0.0033, 1], ["H7-02423", 240.0, 73, 1273.2, 523.1, 132.3, 116.0, 634.7, 281.6, 0.0033, 1], ["H7-00668", 240.0, 83, 715.5, 492.2, 67.0, 72.6, 355.4, 143.8, 0.0033, 1], ["H7-06668", 240.0, 76, 1269.5, 562.1, 87.0, 174.2, 403.2, 235.2, 0.0033, 1], ["H6-01097", 85.0, 115, 527.6, -22.1, -99.8, 73.1, 37.1, -26.6, 0.0033, 0], ["H3-09335", 280.0, 194, 8.9, -15.8, -54.8, -41.6, -8.6, -23.8, 0.3355, 0], ["H6-00468", 175.0, 113, 442.5, 114.2, 45.2, 393.0, 195.1, 77.6, 0.0033, 1], ["H6-00464", 320.0, 130, 142.5, 28.5, 2.8, 190.2, 83.1, 44.3, 0.0199, 1], ["H6-00439", 320.0, 120, 131.8, 43.3, -4.7, -17.8, 47.7, 34.1, 0.0066, 0], ["H7-02422", 190.0, 75, 1647.0, 618.8, 195.0, 130.8, 834.5, 272.2, 0.0033, 1]];
+const MONTHLY = {"labels": ["2026-05", "2026-06", "2026-07", "2026-08", "2026-09", "2026-10", "2026-11"], "rows": [["H6-01098", -17.4, -16.5, -23.3, 206.8, 37.5, 72.0, 71.1, 556.7], ["H6-01094", -9.8, -7.7, -16.1, 97.6, 31.9, 51.7, 48.4, 309.5], ["H6-01718", 0.0, -23.0, -5.8, 115.0, 2.8, 90.4, 40.5, 328.5], ["H6-01689", 0.0, -24.4, 0.1, 28.4, 9.4, 82.6, 31.2, 154.7], ["H6-01714", 0.0, -14.1, -2.4, 63.6, -28.1, 61.9, 21.6, 94.2], ["H7-02417", -27.8, 202.5, -27.6, 33.5, 181.2, 40.6, 109.8, 1652.3]]};
+const BTL = [
+  ["G20471-S2", "desk", 464.25, 448.2, 0, 2, 0.0, -9.9, 77],
+  ["G23627-S2", "graduation", 464.25, 448.2, 0, 2, 0.0, 781.5, 31],
+  ["G13254-S1", "moonshot", 282.6, 275.67, 1, 5, 0.0, 190.3, 20],
+  ["G10950-S1", "moonshot", 282.6, 275.67, 1, 5, 0.0, 190.3, 20],
+  ["G13230-S1", "moonshot", 282.6, 275.67, 1, 5, 0.0, 316.3, 21],
+  ["G7268-S0", "dip_buy", 100.0, 100.0, 0, 0, 0.0, 94.0, 402],
+  ["G7268-S1", "dip_buy", 100.0, 100.0, 0, 0, 0.0, 199.2, 370],
+  ["G7267-S0", "dip_buy", 100.0, 100.0, 0, 0, 0.0, 67.0, 405],
+  ["G7267-S1", "dip_buy", 100.0, 100.0, 0, 0, 0.0, 177.9, 372],
+  ["G21891-S0", "fast_mc", 72.1, 69.25, 8, 9, 0.0, 86.9, 44],
+];
+const WIN = {"venue":[1,1,1,1,1,1,1,2,1],"sol":[83.7,83.2,83.5,83.1,83.3,83.1,82.9,82.9,82.7,82.7,82.8,82.9,83.1,82.2,82.3,81.5,81.0,81.6,81.4,81.5,81.4,81.7,81.4,81.5,81.3,81.5,81.3,81.4,80.2,78.3,78.4,78.6,80.0,79.8,79.8,79.8,80.3,80.6,80.7,81.6,80.8,79.8,79.4,80.1,80.0,80.1,80.3,89.0],"marks":[[5.339e-05,5.12e-05,5.191e-05,6.073e-05,5.958e-05,6.057e-05,7.934e-05,7.313e-05,6.238e-05,5.816e-05,5.983e-05,6.815e-05,6.653e-05,6.553e-05,5.79e-05,5.662e-05,5.265e-05,7.89e-05,0.0001156,0.0001013,9.003e-05,8.144e-05,7.711e-05,7.536e-05,7.597e-05,7.605e-05,7.954e-05,8.09e-05,8.991e-05,8.173e-05,6.666e-05,6.077e-05,5.993e-05,6.542e-05,6.547e-05,6.793e-05,8.277e-05,8.601e-05,9.031e-05,0.0001015,9.798e-05,0.0001006,9.698e-05,9.251e-05,9.686e-05,8.93e-05,9.123e-05,0.0],[0.0003422,0.0003236,0.0003269,0.0003306,0.0003575,0.0002911,0.0002568,0.0002503,0.0002329,0.0002331,0.0002557,0.0002492,0.0002337,0.0002139,0.000228,0.0002468,0.0002389,0.0002406,0.0002361,0.00025,0.0002429,0.000226,0.0002044,0.0002182,0.00021,0.0002188,0.0001986,0.0001947,0.0002004,0.0002034,0.0001663,0.0001774,0.0001795,0.0001878,0.0001715,0.0001626,0.0001786,0.0001703,0.000178,0.0001711,0.0002295,0.0002207,0.0002158,0.0002123,0.0002303,0.0002227,0.0002135,0.0],[2.681e-05,2.697e-05,2.697e-05,2.604e-05,2.603e-05,2.603e-05,2.681e-05,2.481e-05,2.076e-05,2.274e-05,2.297e-05,2.177e-05,1.906e-05,2.085e-05,2.354e-05,2.38e-05,2.25e-05,3.201e-05,2.953e-05,2.83e-05,2.83e-05,2.899e-05,3.09e-05,3.293e-05,3.288e-05,3.129e-05,2.936e-05,2.708e-05,2.683e-05,2.53e-05,2.454e-05,2.368e-05,2.094e-05,2.195e-05,2.191e-05,2.198e-05,2.198e-05,2.327e-05,2.022e-05,2.098e-05,2.098e-05,2.004e-05,2.004e-05,1.834e-05,1.787e-05,1.787e-05,1.891e-05,2.08e-05],[1.905e-05,1.905e-05,1.857e-05,1.857e-05,1.857e-05,1.857e-05,1.307e-05,1.266e-05,1.241e-05,1.226e-05,1.226e-05,1.226e-05,1.226e-05,1.226e-05,1.226e-05,1.226e-05,1.226e-05,1.235e-05,1.235e-05,1.235e-05,1.235e-05,1.235e-05,1.235e-05,1.235e-05,1.235e-05,1.235e-05,1.235e-05,1.235e-05,1.235e-05,1.235e-05,1.235e-05,1.235e-05,1.235e-05,1.235e-05,1.235e-05,1.235e-05,1.235e-05,1.235e-05,1.241e-05,1.241e-05,1.241e-05,1.241e-05,1.241e-05,1.241e-05,1.247e-05,0.0,0.0,0.0],[0.488,0.488,0.488,0.488,0.488,0.488,0.488,0.488,0.488,0.488,0.488,0.488,0.488,0.488,0.488,0.488,0.488,0.488,0.4345,0.4345,0.4345,0.4345,0.4345,0.4345,0.4345,0.4345,0.4345,0.4345,0.4345,0.4345,0.4345,0.4345,0.4345,0.4345,0.4345,0.4345,0.4345,0.4345,0.4345,0.4345,0.4345,0.4345,0.4345,0.4345,0.4411,0.0,0.0,0.0],[4.919e-06,4.919e-06,4.919e-06,4.919e-06,4.919e-06,4.919e-06,4.919e-06,4.919e-06,4.919e-06,4.872e-06,4.876e-06,4.876e-06,4.876e-06,4.876e-06,4.876e-06,4.876e-06,4.687e-06,4.687e-06,4.778e-06,4.778e-06,4.949e-06,4.949e-06,4.949e-06,4.949e-06,4.949e-06,4.949e-06,4.949e-06,4.949e-06,4.949e-06,4.949e-06,4.949e-06,4.949e-06,4.949e-06,4.176e-06,4.176e-06,4.176e-06,4.176e-06,4.176e-06,4.348e-06,4.348e-06,4.348e-06,4.348e-06,4.348e-06,4.348e-06,4.335e-06,4.516e-06,4.691e-06,0.0],[2.61e-05,2.347e-05,2.347e-05,2.129e-05,2.078e-05,2.452e-05,2.36e-05,2.34e-05,2.34e-05,2.34e-05,2.524e-05,2.405e-05,2.582e-05,2.593e-05,2.593e-05,2.329e-05,2.25e-05,2.35e-05,2.197e-05,2.197e-05,2.097e-05,2.097e-05,2.097e-05,2.097e-05,2.097e-05,2.097e-05,2.097e-05,2.097e-05,2.138e-05,2.138e-05,2.077e-05,2.077e-05,1.756e-05,1.756e-05,1.756e-05,1.663e-05,1.663e-05,1.615e-05,1.615e-05,1.615e-05,1.615e-05,1.528e-05,1.528e-05,1.528e-05,1.708e-05,0.0,0.0,0.0],[3.655e-06,3.655e-06,3.655e-06,3.655e-06,3.655e-06,3.655e-06,3.655e-06,3.655e-06,3.655e-06,3.655e-06,3.655e-06,3.655e-06,3.655e-06,3.655e-06,3.655e-06,3.655e-06,3.655e-06,3.655e-06,3.655e-06,3.655e-06,3.655e-06,3.655e-06,3.655e-06,3.655e-06,3e-06,3e-06,3.191e-06,3.191e-06,3.191e-06,2.935e-06,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0],[7.409e-06,7.211e-06,7.211e-06,7.219e-06,7.219e-06,7.219e-06,7.143e-06,7.143e-06,6.755e-06,6.755e-06,6.579e-06,6.579e-06,6.579e-06,6.913e-06,6.801e-06,6.801e-06,7.036e-06,6.978e-06,6.978e-06,6.957e-06,6.957e-06,6.957e-06,6.514e-06,6.936e-06,6.269e-06,6.269e-06,6.026e-06,6.009e-06,5.416e-06,5.416e-06,5.763e-06,5.81e-06,5.467e-06,5.503e-06,5.503e-06,5.503e-06,5.503e-06,5.683e-06,6.434e-06,6.434e-06,6.434e-06,6.434e-06,6.061e-06,4.906e-06,4.906e-06,4.746e-06,0.0,0.0]],"b":{"1h":[47,1,"2026-11-13 15:00 CST","2026-11-13 15:00 CST",0],"4h":[44,4,"2026-11-13 12:00 CST","2026-11-13 15:00 CST",0],"12h":[36,12,"2026-11-13 04:00 CST","2026-11-13 15:00 CST",0],"24h":[24,24,"2026-11-12 16:00 CST","2026-11-13 15:00 CST",0],"48h":[0,48,"2026-11-11 16:00 CST","2026-11-13 15:00 CST",0],"7d":[-120,168,"2026-11-06 16:00 CST","2026-11-13 15:00 CST",0],"30d":[-672,720,"2026-10-14 17:00 CDT","2026-11-13 15:00 CST",0],"90d":[-2112,2160,"2026-08-15 17:00 CDT","2026-11-13 15:00 CST",0],"12m":[-4249,4297,"2026-05-18 16:00 CDT","2026-11-13 15:00 CST",1]},"g":["0,15,16,0.7000,5.7896e-05,1.97e+03,0;0,31,46,1.3686,6.6658e-05,4.65e+03,0;0,46,46,1.0216,8.9297e-05,479,0;1,2,6,0.7000,0.00032356,1.78e+04,0;1,6,6,0.7000,0.00029109,2.41e+04,0","2,28,32,0.7000,2.7077e-05,247,0;0,15,16,0.7000,5.7896e-05,1.97e+03,0;0,31,46,1.3686,6.6658e-05,4.65e+03,0;0,46,46,1.0216,8.9297e-05,479,0;1,2,6,0.7000,0.00032356,1.78e+04,0;1,6,6,0.7000,0.00029109,2.41e+04,0;1,14,46,0.9982,0.00021386,8.17e+03,0;1,22,30,0.7000,0.00022603,3.35e+03,0;1,27,41,1.1557,0.00019857,5.75e+03,0;1,31,41,1.3804,0.00016625,2.1e+04,0","2,28,32,0.7400,2.7077e-05,247,0;0,15,16,0.7400,5.7896e-05,1.97e+03,0;0,31,46,1.3686,6.6658e-05,4.65e+03,0;0,46,46,1.0216,8.9297e-05,479,0;1,2,6,0.7400,0.00032356,1.78e+04,0;1,6,6,0.7400,0.00029109,2.41e+04,0;1,14,30,0.7400,0.00021386,8.17e+03,0;1,22,30,0.7400,0.00022603,3.35e+03,0;1,27,46,1.0750,0.00019857,5.75e+03,0;1,31,46,1.2840,0.00016625,2.1e+04,0","0,15,16,0.7400,5.7896e-05,1.97e+03,0;0,31,46,1.3686,6.6658e-05,4.65e+03,0;0,46,46,1.0216,8.9297e-05,479,0;1,2,6,0.7400,0.00032356,1.78e+04,0;1,6,6,0.7400,0.00029109,2.41e+04,0","0,31,46,1.3686,6.6658e-05,4.65e+03,0;1,2,6,0.6700,0.00032356,1.78e+04,0;1,6,6,0.6700,0.00029109,2.41e+04,0","1,32,46,1.2034,0.00017739,7.22e+03,0","0,15,16,0.7500,5.7896e-05,1.97e+03,0;0,31,46,1.3686,6.6658e-05,4.65e+03,0;0,46,46,1.0216,8.9297e-05,479,0;1,2,6,0.7500,0.00032356,1.78e+04,0;1,6,6,0.7500,0.00029109,2.41e+04,0;1,14,30,0.7500,0.00021386,8.17e+03,0;1,22,30,0.7500,0.00022603,3.35e+03,0;1,27,46,1.0750,0.00019857,5.75e+03,0;1,31,46,1.2840,0.00016625,2.1e+04,0","0,15,16,0.7500,5.7896e-05,1.97e+03,0;0,31,46,1.3686,6.6658e-05,4.65e+03,0;0,46,46,1.0216,8.9297e-05,479,0;1,2,6,0.7500,0.00032356,1.78e+04,0;1,6,6,0.7500,0.00029109,2.41e+04,0;1,14,30,0.7500,0.00021386,8.17e+03,0;1,22,30,0.7500,0.00022603,3.35e+03,0;1,31,46,1.2840,0.00016625,2.1e+04,0;1,36,46,1.3128,0.0001626,7.97e+03,0","3,7,8,0.9500,1.3068e-05,1.15e+03,0;4,19,44,1.0152,0.43453,11.9,0;5,34,46,1.1233,4.1756e-06,247,0;2,9,12,0.9500,2.0755e-05,602,0;2,13,43,0.9500,1.9064e-05,875,0;2,33,38,0.9500,2.0937e-05,1.18e+03,0;2,39,43,0.9500,2.0216e-05,875,0;6,33,35,0.9500,1.7562e-05,1.56,0;7,25,29,0.9783,2.9998e-06,234,0;8,44,45,0.9674,4.9062e-06,309,0"],"s":[["H6-01098","robust","washout_gate","Washout-gate: first hour of a 8-bar closing low above its 120h S",175.0,0.28,3,0,0,[[175.0,0,0.0,0.0,0,0.0],[175.0,0,0.0,0.0,0,0.0],[175.0,0,0.0,0.0,0,0.0],[189.98,1,1.0,0.0,0,0.0],[156.18,3,0.33,0.18,0,0.0],[250.23,8,0.62,0.18,0,0.0],[230.84,27,0.52,0.36,0,0.0],[1574.38,50,0.54,0.38,0,0.0],[1149.24,96,0.45,0.55,0,0.0]]],["H6-01094","robust","washout_gate","Washout-gate: first hour of a 8-bar closing low above its 120h S",320.0,0.155,6,0,0,[[320.0,0,0.0,0.0,0,0.0],[320.0,0,0.0,0.0,0,0.0],[320.0,0,0.0,0.0,0,0.0],[335.16,1,1.0,0.0,0,0.0],[301.35,3,0.33,0.1,0,0.0],[397.62,8,0.62,0.1,0,0.0],[372.93,28,0.5,0.17,0,0.0],[1457.79,55,0.55,0.2,0,0.0],[1310.49,97,0.46,0.33,0,0.0]]],["H6-01718","robust","washout_gate","Washout-gate: first hour of a 8-bar closing low above its 288h S",175.0,0.155,6,0,1,[[175.0,0,0.0,0.0,0,0.0],[175.0,0,0.0,0.0,0,0.0],[175.0,0,0.0,0.0,0,0.0],[186.37,2,1.0,0.0,0,0.0],[164.01,4,0.25,0.11,0,0.0],[250.58,16,0.5,0.15,0,0.0],[228.03,47,0.49,0.25,0,0.0],[481.26,98,0.48,0.54,0,0.0],[749.93,137,0.45,0.53,0,0.0]]],["H6-01689","robust","washout_gate","Washout-gate: first hour of a 8-bar closing low above its 288h S",320.0,0.095,10,0,2,[[320.0,0,0.0,0.0,0,0.0],[320.0,0,0.0,0.0,0,0.0],[320.0,0,0.0,0.0,0,0.0],[330.36,2,1.0,0.0,0,0.0],[302.49,4,0.25,0.08,0,0.0],[415.47,13,0.39,0.12,0,0.0],[485.55,38,0.29,0.23,0,0.0],[1051.08,79,0.3,0.27,0,0.0],[814.99,125,0.26,0.38,0,0.0]]],["H6-01064","robust","washout_gate","Washout-gate: first hour of a 8-bar closing low above its 120h S",320.0,0.095,10,0,3,[[320.0,0,0.0,0.0,0,0.0],[320.0,0,0.0,0.0,0,0.0],[320.0,0,0.0,0.0,0,0.0],[329.44,1,1.0,0.0,0,0.0],[311.32,3,0.33,0.06,0,0.0],[392.09,10,0.4,0.09,0,0.0],[393.04,30,0.27,0.29,0,0.0],[945.03,56,0.34,0.21,0,0.0],[731.13,99,0.27,0.37,0,0.0]]],["H6-01714","robust","washout_gate","Washout-gate: first hour of a 8-bar closing low above its 288h S",320.0,0.095,10,0,1,[[320.0,0,0.0,0.0,0,0.0],[320.0,0,0.0,0.0,0,0.0],[320.0,0,0.0,0.0,0,0.0],[332.71,2,1.0,0.0,0,0.0],[307.76,4,0.25,0.07,0,0.0],[360.92,15,0.47,0.1,0,0.0],[342.68,46,0.48,0.16,0,0.0],[685.84,100,0.49,0.37,0,0.0],[621.51,147,0.45,0.37,0,0.0]]],["H7-02417","robust","washout_gate","Washout-gate: first hour of a 8-bar closing low above its 132h S",190.0,0.29,3,0,4,[[190.0,0,0.0,0.0,0,0.0],[190.0,0,0.0,0.0,0,0.0],[190.0,0,0.0,0.0,0,0.0],[206.76,1,1.0,0.0,0,0.0],[185.47,2,0.5,0.1,0,0.0],[259.68,6,0.67,0.2,0,0.0],[345.31,25,0.52,0.41,0,0.0],[3125.26,38,0.63,0.28,0,0.0],[3329.33,76,0.51,0.54,0,0.0]]],["H7-02423","robust","washout_gate","Washout-gate: first hour of a 8-bar closing low above its 132h S",240.0,0.33,3,0,4,[[240.0,0,0.0,0.0,0,0.0],[240.0,0,0.0,0.0,0,0.0],[240.0,0,0.0,0.0,0,0.0],[263.57,1,1.0,0.0,0,0.0],[232.71,2,0.5,0.12,0,0.0],[385.07,5,0.8,0.12,0,0.0],[577.81,23,0.56,0.36,0,0.0],[2358.06,40,0.6,0.31,0,0.0],[3295.76,73,0.51,0.63,0,0.0]]],["H2-02971","top100","climax_reversal","Buy the first green hour after a climax dump of 18%+ on 3x avera",5.0,0.25,4,0,5,[[5.0,0,0.0,0.0,0,0.0],[5.0,0,0.0,0.0,0,0.0],[5.0,0,0.0,0.0,0,0.0],[5.14,1,1.0,0.0,0,0.0],[5.14,1,1.0,0.0,0,0.0],[8.2,3,1.0,0.0,0,0.0],[6.77,9,0.56,0.14,0,0.0],[36.04,25,0.56,0.15,0,0.0],[29.45,38,0.45,0.47,0,0.0]]],["H2-02957","top100","climax_reversal","Buy the first green hour after a climax dump of 18%+ on 3x avera",25.0,0.06,15,0,5,[[25.0,0,0.0,0.0,0,0.0],[25.0,0,0.0,0.0,0,0.0],[25.0,0,0.0,0.0,0,0.0],[25.18,1,1.0,0.0,0,0.0],[25.18,1,1.0,0.0,0,0.0],[28.58,3,1.0,0.0,0,0.0],[27.08,9,0.56,0.04,0,0.0],[41.81,29,0.52,0.06,0,0.0],[41.03,42,0.43,0.19,0,0.0]]],["H7-04927","top100","washout_gate","Washout-gate: first hour of a 8-bar closing low above its 288h S",190.0,0.105,9,0,6,[[190.0,0,0.0,0.0,0,0.0],[188.84,1,0.0,0.01,0,0.0],[188.84,1,0.0,0.01,0,0.0],[196.85,2,1.0,0.0,0,0.0],[179.14,4,0.25,0.09,0,0.0],[206.5,14,0.29,0.18,0,0.0],[269.93,40,0.28,0.24,0,0.0],[730.53,92,0.3,0.26,0,0.0],[578.89,141,0.28,0.37,0,0.0]]],["H7-05431","top100","washout_gate","Washout-gate: first hour of a 8-bar closing low above its 312h S",110.0,0.185,5,0,7,[[110.0,0,0.0,0.0,0,0.0],[108.8,1,0.0,0.01,0,0.0],[114.12,2,0.5,0.01,0,0.0],[121.15,2,1.0,0.0,0,0.0],[103.28,5,0.4,0.15,0,0.0],[135.76,14,0.36,0.26,0,0.0],[208.67,40,0.3,0.39,0,0.0],[441.93,79,0.29,0.38,0,0.0],[430.9,135,0.28,0.61,0,0.0]]],["H7-05427","top100","washout_gate","Washout-gate: first hour of a 8-bar closing low above its 312h S",190.0,0.105,9,0,7,[[190.0,0,0.0,0.0,0,0.0],[188.84,1,0.0,0.01,0,0.0],[194.05,2,0.5,0.01,0,0.0],[200.93,2,1.0,0.0,0,0.0],[183.89,5,0.4,0.09,0,0.0],[218.31,14,0.36,0.15,0,0.0],[277.08,41,0.29,0.24,0,0.0],[732.12,88,0.32,0.26,0,0.0],[591.47,137,0.28,0.38,0,0.0]]],["H2-02967","top100","climax_reversal","Buy the first green hour after a climax dump of 18%+ on 3x avera",25.0,0.15,6,0,5,[[25.0,0,0.0,0.0,0,0.0],[25.0,0,0.0,0.0,0,0.0],[25.0,0,0.0,0.0,0,0.0],[25.55,1,1.0,0.0,0,0.0],[25.55,1,1.0,0.0,0,0.0],[34.54,3,1.0,0.0,0,0.0],[31.3,9,0.56,0.07,0,0.0],[75.3,25,0.52,0.13,0,0.0],[72.79,38,0.42,0.38,0,0.0]]],["G26462-S4","top100_profit","flash_wick","Buy the next open after a single-hour dump of 10%+ on 3x volume ",95.0,1.0,1,0,8,[[95.0,0,0.0,0.0,0,0.0],[95.0,0,0.0,0.0,0,0.0],[95.0,0,0.0,0.0,0,0.0],[95.0,0,0.0,0.0,0,0.0],[95.0,0,0.0,0.0,0,0.0],[35.97,9,0.0,0.62,0,0.0],[21.86,17,0.06,0.77,0,0.0],[472.22,35,0.11,0.61,0,0.0],[48.01,48,0.06,0.97,0,0.0]]],["G9680-S2","top100_profit","moonshot","Buy a new launch in its first 6h, hourly volume over $1k, hour u",230.0,0.34,3,1,-2,[[230.0,0,0.0,0.0,0,0.0],[230.0,0,0.0,0.0,0,0.0],[230.0,0,0.0,0.0,0,0.0],[230.0,0,0.0,0.0,0,0.0],[230.0,0,0.0,0.0,0,0.0],[230.0,0,0.0,0.0,0,0.0],[1113.08,6,0.5,0.38,0,0.0],[469.76,17,0.41,0.43,0,0.0],[65.43,27,0.41,0.97,0,0.0]]],["H7-00668","robust","washout_gate","Washout-gate: first hour of a 8-bar closing low above its 120h S",240.0,0.29,3,0,-1,[[240.0,0,0.0,0.0,0,0.0],[240.0,0,0.0,0.0,0,0.0],[240.0,0,0.0,0.0,0,0.0],[260.89,1,1.0,0.0,0,0.0],[208.7,3,0.33,0.2,0,0.0],[406.05,6,0.83,0.1,0,0.0],[493.98,22,0.55,0.23,0,0.0],[2034.61,48,0.54,0.28,0,0.0],[1957.32,83,0.48,0.48,0,0.0]]],["H7-06668","robust","washout_gate","Washout-gate: first hour of a 8-bar closing low above its 288h S",240.0,0.29,3,0,-1,[[240.0,0,0.0,0.0,0,0.0],[240.0,0,0.0,0.0,0,0.0],[240.0,0,0.0,0.0,0,0.0],[267.93,2,1.0,0.0,0,0.0],[205.9,4,0.25,0.21,0,0.0],[260.9,11,0.46,0.22,0,0.0],[455.7,25,0.52,0.32,0,0.0],[3083.86,58,0.57,0.43,0,0.0],[3286.8,76,0.5,0.56,0,0.0]]],["H6-01097","robust","washout_gate","Washout-gate: first hour of a 8-bar closing low above its 120h S",85.0,0.28,3,0,-1,[[85.0,0,0.0,0.0,0,0.0],[83.44,1,0.0,0.02,0,0.0],[83.44,1,0.0,0.02,0,0.0],[92.42,1,1.0,0.0,0,0.0],[76.1,3,0.33,0.18,0,0.0],[104.43,10,0.5,0.24,0,0.0],[106.32,32,0.47,0.42,0,0.0],[1066.07,55,0.55,0.36,0,0.0],[533.44,115,0.44,0.57,0,0.0]]],["H3-09335","robust","green_stack","Buy the close of the 3th consecutive green hour, each hour up 2%",280.0,0.07,14,0,-1,[[280.0,0,0.0,0.0,0,0.0],[280.0,0,0.0,0.0,0,0.0],[279.81,1,0.0,0.0,0,0.0],[279.81,1,0.0,0.0,0,0.0],[279.81,1,0.0,0.0,0,0.0],[272.71,12,0.5,0.06,1,-0.53],[313.49,34,0.47,0.12,1,-4.78],[366.97,94,0.42,0.31,1,-5.5],[305.03,193,0.4,0.48,1,-5.59]]],["H2-02962","top100","climax_reversal","Buy the first green hour after a climax dump of 18%+ on 3x avera",25.0,0.1,10,0,-1,[[25.0,0,0.0,0.0,0,0.0],[25.0,0,0.0,0.0,0,0.0],[25.0,0,0.0,0.0,0,0.0],[25.34,1,1.0,0.0,0,0.0],[25.34,1,1.0,0.0,0,0.0],[31.19,3,1.0,0.0,0,0.0],[28.94,9,0.56,0.05,0,0.0],[53.98,27,0.52,0.09,0,0.0],[52.88,40,0.42,0.28,0,0.0]]],["H2-02958","top100","climax_reversal","Buy the first green hour after a climax dump of 18%+ on 3x avera",100.0,0.06,15,0,-1,[[100.0,0,0.0,0.0,0,0.0],[100.0,0,0.0,0.0,0,0.0],[100.0,0,0.0,0.0,0,0.0],[100.91,1,1.0,0.0,0,0.0],[100.91,1,1.0,0.0,0,0.0],[114.63,3,1.0,0.0,0,0.0],[109.58,9,0.56,0.03,0,0.0],[161.47,25,0.52,0.05,0,0.0],[161.29,38,0.42,0.17,0,0.0]]],["H2-02953","top100","climax_reversal","Buy the first green hour after a climax dump of 18%+ on 3x avera",100.0,0.04,25,0,-1,[[100.0,0,0.0,0.0,0,0.0],[100.0,0,0.0,0.0,0,0.0],[100.0,0,0.0,0.0,0,0.0],[100.59,1,1.0,0.0,0,0.0],[100.59,1,1.0,0.0,0,0.0],[109.69,3,1.0,0.0,0,0.0],[106.32,9,0.56,0.02,0,0.0],[138.73,27,0.52,0.04,0,0.0],[138.65,40,0.42,0.12,0,0.0]]],["H7-05806","top100","washout_gate","Washout-gate: first hour of a 8-bar closing low above its 264h S",110.0,0.185,5,0,-1,[[110.0,0,0.0,0.0,0,0.0],[108.8,1,0.0,0.01,0,0.0],[108.8,1,0.0,0.01,0,0.0],[116.36,1,1.0,0.0,0,0.0],[98.77,4,0.25,0.15,0,0.0],[123.86,14,0.29,0.3,0,0.0],[170.03,42,0.26,0.42,0,0.0],[401.22,80,0.28,0.44,0,0.0],[414.96,136,0.28,0.59,0,0.0]]],["G26489-S1","top100_profit","flash_wick","Buy the next open after a single-hour dump of 10%+ on 3x volume ",50.0,0.2,5,0,-1,[[50.0,0,0.0,0.0,0,0.0],[48.98,1,0.0,0.02,0,0.0],[48.74,1,0.0,0.03,1,-0.24],[47.57,3,0.33,0.05,1,-0.54],[46.63,4,0.25,0.07,1,-0.55],[152.91,6,0.17,0.3,2,2.74],[183.6,19,0.26,0.36,2,-2.3],[170.98,59,0.24,0.6,2,6.05],[231.93,91,0.28,0.76,4,18.44]]],["G9680-S3","top100_profit","moonshot","Buy a new launch in its first 6h, hourly volume over $1k, hour u",215.0,0.5,2,1,-1,[[215.0,0,0.0,0.0,0,0.0],[215.0,0,0.0,0.0,0,0.0],[215.0,0,0.0,0.0,0,0.0],[215.0,0,0.0,0.0,0,0.0],[215.0,0,0.0,0.0,0,0.0],[215.0,0,0.0,0.0,0,0.0],[1882.24,3,0.67,0.22,0,0.0],[358.75,14,0.43,0.58,0,0.0],[537.76,25,0.48,0.96,0,0.0]]],["G26480-S4","top100_profit","flash_wick","Buy the next open after a single-hour dump of 10%+ on 3x volume ",115.0,1.0,1,0,-1,[[115.0,0,0.0,0.0,0,0.0],[115.0,0,0.0,0.0,0,0.0],[115.0,0,0.0,0.0,0,0.0],[115.0,0,0.0,0.0,0,0.0],[115.0,0,0.0,0.0,0,0.0],[92.79,2,0.0,0.43,1,27.44],[25.79,6,0.0,0.78,1,-4.31],[428.35,15,0.27,0.83,1,124.3],[1159.53,20,0.25,0.86,0,0.0]]],["G27281-S3","top100_profit","flash_wick","Buy the next open after a single-hour dump of 20%+ on 3x volume ",280.0,0.5,2,0,-1,[[280.0,0,0.0,0.0,0,0.0],[280.0,0,0.0,0.0,0,0.0],[280.0,0,0.0,0.0,0,0.0],[280.0,0,0.0,0.0,0,0.0],[280.0,0,0.0,0.0,0,0.0],[227.65,1,0.0,0.19,0,0.0],[233.0,6,0.17,0.63,0,0.0],[550.04,22,0.32,0.76,0,0.0],[690.69,26,0.35,0.78,0,0.0]]],["G7895-S4","top100_profit","dip_buy","Buy after a 30% drop from the 72h high once an hour closes green",25.0,1.0,1,0,-1,[[23.22,0,0.0,0.07,1,-1.78],[23.63,0,0.0,0.06,1,-1.37],[25.33,0,0.0,0.0,1,0.33],[23.54,1,0.0,0.06,0,0.0],[17.3,2,0.5,0.38,0,0.0],[23.41,3,0.33,0.61,0,0.0],[0.79,8,0.0,0.97,1,-0.15],[0.15,15,0.13,0.99,0,0.0],[2.1,30,0.3,1.0,1,-0.34]]],["G8075-S3","top100_profit","dip_buy","Buy after a 50% drop from the 72h high · stop -10%, exit after 2",100.0,0.5,2,0,-1,[[100.0,0,0.0,0.0,0,0.0],[98.18,1,0.0,0.02,0,0.0],[112.9,1,1.0,0.0,0,0.0],[82.5,5,0.2,0.25,0,0.0],[52.79,12,0.08,0.52,0,0.0],[101.78,10,0.1,0.48,1,0.52],[139.59,31,0.13,0.83,0,0.0],[13.34,101,0.09,0.98,0,0.0],[369.8,140,0.09,0.98,0,0.0]]]]};
+const WPRE = ["1h", "4h", "12h", "24h", "48h", "7d", "30d", "90d", "12m"];
+
+const LIVE = {
+  "exported_ct": "2026-11-13 17:36:01 CT",
+  "source": "https://raw.githubusercontent.com/ooio6001-del/solstrats-dashboard/data/data.json",
+  "repo": "https://github.com/ooio6001-del/solstrats-dashboard",
+  "pages": "https://ooio6001-del.github.io/solstrats-dashboard/",
+  "branches": [
+    "data (default, data.json only)",
+    "main (static Pages site)"
+  ],
+  "status": {
+    "time": 1794573495.9474,
+    "ticks": 7771,
+    "tracked": 240,
+    "priced": 209,
+    "tradable": 181,
+    "open_positions": 934538,
+    "entries": 1586,
+    "exits": 2999,
+    "total_trades": 103665767,
+    "signals": 35,
+    "fetch_s": 0.23,
+    "tick_s": 2.58,
+    "combos": 1548288,
+    "runtime_min": 4023.2,
+    "restarts": 22,
+    "pid": 12664,
+    "spikes_held": 9130,
+    "live_variants": 103400
+  },
+  "status_hunt": {
+    "buys": 9,
+    "adds": 0,
+    "sells": 26,
+    "open": 8144,
+    "generation": 131,
+    "variants_tried": 555249,
+    "qualified": 33677,
+    "hunt_s": 1.49
+  },
+  "status_exploit": {
+    "buys": 0,
+    "adds": 0,
+    "sells": 42,
+    "open": 12025,
+    "micro": {
+      "buys": 0,
+      "adds": 0,
+      "sells": 0,
+      "open": 0
+    },
+    "rocket": {
+      "buys": 0,
+      "partial_sells": 0,
+      "sells": 0,
+      "open": 5,
+      "signals": 0
+    },
+    "fams": {
+      "fam_all": 0,
+      "rocket": 0,
+      "fam_dip": 0,
+      "fam_grad": 0,
+      "fam_volign": 0,
+      "fam_leg2": 0,
+      "fam_liq": 0,
+      "fam_herd": 0,
+      "fam_tod": 0,
+      "fam_ladder": 0,
+      "fam_strict": 1,
+      "fam_glitch": 0,
+      "fam_top20": 0
+    },
+    "fams_open": 5493,
+    "fams_s": 0.05,
+    "round": 84,
+    "families": 12,
+    "variants_tried": 307559,
+    "exploit_s": 0.23
+  },
+  "data_health": {
+    "updated": 1794573498.5473127,
+    "total_requests": 46924,
+    "total_429": 0,
+    "total_errors": 40,
+    "error_rate_pct": 0.085,
+    "jupiter_fallback_prices": 7316,
+    "status": "ok",
+    "sources": {
+      "ds_fast": {
+        "documented_limit_per_min": 300,
+        "our_cap_per_min": 150,
+        "requests": 42297,
+        "ok": 42274,
+        "http_429": 0,
+        "http_5xx": 0,
+        "timeouts": 5,
+        "net_errors": 18,
+        "circuit": "closed",
+        "circuit_trips": 3
+      },
+      "ds_slow": {
+        "documented_limit_per_min": 60,
+        "our_cap_per_min": 30,
+        "requests": 1234,
+        "ok": 1233,
+        "http_429": 0,
+        "http_5xx": 0,
+        "timeouts": 0,
+        "net_errors": 1,
+        "circuit": "closed",
+        "circuit_trips": 0
+      },
+      "gecko": {
+        "documented_limit_per_min": 10,
+        "our_cap_per_min": 4,
+        "requests": 2885,
+        "ok": 2878,
+        "http_429": 0,
+        "http_5xx": 0,
+        "timeouts": 2,
+        "net_errors": 5,
+        "circuit": "closed",
+        "circuit_trips": 0
+      },
+      "jup": {
+        "documented_limit_per_min": 30,
+        "our_cap_per_min": 18,
+        "requests": 508,
+        "ok": 499,
+        "http_429": 0,
+        "http_5xx": 0,
+        "timeouts": 0,
+        "net_errors": 9,
+        "circuit": "closed",
+        "circuit_trips": 2
+      }
+    }
+  },
+  "hunt_scalars": {
+    "generated": "2026-11-13 06:36:48 CST",
+    "paper_only": true,
+    "hunt_runtime_min": 3999.5,
+    "generation": 131,
+    "variants_tried_total": 555249,
+    "population": 88000,
+    "replaced_total": 447249,
+    "next_cull_in_min": 1.9,
+    "qualification_rule": "Start $100, min $3 per buy (fixed $3-$100 or % of equity), up to 25 open; >= 20 closed trades; net equity > $100 after all fees/slippage; profit factor > 1.2; not busted.",
+    "candidate_rule": "same as qualification but 8-19 closed trades",
+    "ranking": "net return % x trades/(trades+10) (small-sample discount)",
+    "variants_with_closed_trades": 78991,
+    "variants_profitable": 49854,
+    "busted": 0,
+    "open_positions": 8253,
+    "closed_trades_total": 754059,
+    "note": "PAPER trading only. Each variant is forward-tested from the moment it was created. Short runs are noise.",
+    "live_variants_total": 114900,
+    "live_variants_hunt": 88000,
+    "live_variants_exploit": 15400,
+    "qualified_ever_total": 33673,
+    "candidates_total": 50,
+    "qualified_now_total": 50
+  },
+  "last_cull": {
+    "time": "2026-11-13 06:08:44 CST",
+    "replaced": 585,
+    "busted": 3,
+    "worst": 582,
+    "idle": 0,
+    "mutants": 351,
+    "crossovers": 87,
+    "fresh": 147,
+    "parents": 19078
+  },
+  "top10_ranked": [
+    {
+      "id": 100781,
+      "gen": 4,
+      "trades": 118,
+      "avg_pnl_per_trade": 42.0,
+      "win_rate": 92.4,
+      "profit_factor": 30.0,
+      "equity": 5056.14,
+      "net_return_pct": 4956.14,
+      "rank_score": 4568.95,
+      "realized_pnl": 4956.14,
+      "max_drawdown_pct": 21.3,
+      "busted": false,
+      "open_positions": 0,
+      "age_min": 3862.7,
+      "rule": "BUY when mcap up >=5% in last 5m, mcap $1M-any, 5m buys/sells >=1.5, 1h change >=100%, 5m volume >=$5,000, pool <180m old, liq >=$25k. SELL whole coin position at +5% TP, -30% SL,\u2026",
+      "holding": [],
+      "identical_variants": 1
+    },
+    {
+      "id": 181979,
+      "gen": 17,
+      "trades": 83,
+      "avg_pnl_per_trade": 42.03,
+      "win_rate": 98.8,
+      "profit_factor": 3730.18,
+      "equity": 3588.38,
+      "net_return_pct": 3488.38,
+      "rank_score": 3113.28,
+      "realized_pnl": 3488.38,
+      "max_drawdown_pct": 4.1,
+      "busted": false,
+      "open_positions": 0,
+      "age_min": 3478.8,
+      "rule": "BUY when mcap up >=2% in last 5m, mcap $1M-any, 5m buys/sells >=1.5, 1h change >=100%, 5m volume >=$5,000, pool <180m old, liq >=$25k. SELL whole coin position at +5% TP, -30% SL,\u2026",
+      "holding": [],
+      "identical_variants": 1
+    },
+    {
+      "id": 283080,
+      "gen": 44,
+      "trades": 80,
+      "avg_pnl_per_trade": 41.11,
+      "win_rate": 100.0,
+      "profit_factor": null,
+      "equity": 3388.57,
+      "net_return_pct": 3288.57,
+      "rank_score": 2923.18,
+      "realized_pnl": 3288.57,
+      "max_drawdown_pct": 4.1,
+      "busted": false,
+      "open_positions": 0,
+      "age_min": 2667.9,
+      "rule": "BUY when mcap up >=5% in last 5m, mcap $1M-any, 5m buys/sells >=1.5, 5m change >=0%, 1h change >=100%, 5m volume >=$5,000, pool <180m old, liq >=$25k. SELL whole coin position at \u2026",
+      "holding": [],
+      "identical_variants": 2
+    },
+    {
+      "id": 171688,
+      "gen": 15,
+      "trades": 56,
+      "avg_pnl_per_trade": 51.82,
+      "win_rate": 96.4,
+      "profit_factor": 40.15,
+      "equity": 3001.97,
+      "net_return_pct": 2901.97,
+      "rank_score": 2462.28,
+      "realized_pnl": 2901.97,
+      "max_drawdown_pct": 14.0,
+      "busted": false,
+      "open_positions": 0,
+      "age_min": 3538.9,
+      "rule": "BUY when mcap up >=5% in last 5m, rise accelerating over 5m, mcap $1M-any, 5m buys/sells >=1.5, 1h change >=100%, 5m volume >=$5,000, pool <180m old, liq >=$25k. SELL whole coin p\u2026",
+      "holding": [],
+      "identical_variants": 1
+    },
+    {
+      "id": 250540,
+      "gen": 33,
+      "trades": 83,
+      "avg_pnl_per_trade": 32.72,
+      "win_rate": 97.6,
+      "profit_factor": 6.36,
+      "equity": 2815.35,
+      "net_return_pct": 2715.35,
+      "rank_score": 2423.37,
+      "realized_pnl": 2715.35,
+      "max_drawdown_pct": 15.5,
+      "busted": false,
+      "open_positions": 0,
+      "age_min": 2998.3,
+      "rule": "BUY when mcap up >=5% in last 5m, mcap $1M-any, 5m buys/sells >=1.5, 1h change >=100%, 5m volume >=$5,000, pool <1440m old, liq >=$25k. SELL whole coin position at +5% TP, -30% SL\u2026",
+      "holding": [],
+      "identical_variants": 1
+    },
+    {
+      "id": 496748,
+      "gen": 109,
+      "trades": 75,
+      "avg_pnl_per_trade": 24.5,
+      "win_rate": 100.0,
+      "profit_factor": null,
+      "equity": 1937.41,
+      "net_return_pct": 1837.41,
+      "rank_score": 1621.24,
+      "realized_pnl": 1837.41,
+      "max_drawdown_pct": 3.9,
+      "busted": false,
+      "open_positions": 0,
+      "age_min": 688.4,
+      "rule": "BUY when mcap up >=2% in last 5m, mcap $1M-any, 5m buys/sells >=1.5, 1h change >=100%, 5m volume >=$5,000, pool <180m old, liq >=$25k. SELL whole coin position at +5% TP, -30% SL,\u2026",
+      "holding": [],
+      "identical_variants": 1
+    },
+    {
+      "id": 150862,
+      "gen": 13,
+      "trades": 71,
+      "avg_pnl_per_trade": 25.14,
+      "win_rate": 95.8,
+      "profit_factor": 46.52,
+      "equity": 1884.76,
+      "net_return_pct": 1784.76,
+      "rank_score": 1564.42,
+      "realized_pnl": 1784.76,
+      "max_drawdown_pct": 24.3,
+      "busted": false,
+      "open_positions": 0,
+      "age_min": 3598.9,
+      "rule": "BUY when mcap up >=10% in last 5m, mcap $1M-any, 5m buys/sells >=1.5, 1h change >=100%, 5m volume >=$5,000, pool <180m old, liq >=$25k. SELL whole coin position at +5% TP, -30% SL\u2026",
+      "holding": [],
+      "identical_variants": 1
+    },
+    {
+      "id": 108528,
+      "gen": 5,
+      "trades": 93,
+      "avg_pnl_per_trade": 14.67,
+      "win_rate": 50.5,
+      "profit_factor": 2.41,
+      "equity": 1488.33,
+      "net_return_pct": 1388.33,
+      "rank_score": 1253.54,
+      "realized_pnl": 1364.36,
+      "max_drawdown_pct": 42.4,
+      "busted": false,
+      "open_positions": 1,
+      "age_min": 3840.3,
+      "rule": "BUY when mcap up >=2% in last 2m, mcap $1M-any, 5m buys/sells >=1.2, 1h change >=50%, 5m volume >=$5,000, liq >=$25k. SELL whole coin position at +300% TP, -30% SL, max 30m hold, \u2026",
+      "holding": [
+        "inuhao"
+      ],
+      "identical_variants": 1
+    },
+    {
+      "id": 40997,
+      "gen": 4,
+      "trades": 48,
+      "avg_pnl_per_trade": 28.42,
+      "win_rate": 83.3,
+      "profit_factor": 1.95,
+      "equity": 1464.01,
+      "net_return_pct": 1364.01,
+      "rank_score": 1128.84,
+      "realized_pnl": 1364.01,
+      "max_drawdown_pct": 47.4,
+      "busted": false,
+      "open_positions": 0,
+      "age_min": 3862.7,
+      "rule": "BUY when mcap up >=5% in last 5m, mcap $1M-any, 5m buys/sells >=1.5, 5m volume >=$20,000, liquidity growing >=5% over 5m, pool <60m old, liq >=$10k. SELL whole coin position at +5\u2026",
+      "holding": [],
+      "identical_variants": 1
+    },
+    {
+      "id": 59986,
+      "gen": 4,
+      "trades": 12,
+      "avg_pnl_per_trade": 169.72,
+      "win_rate": 66.7,
+      "profit_factor": 1.34,
+      "equity": 2136.68,
+      "net_return_pct": 2036.68,
+      "rank_score": 1110.92,
+      "realized_pnl": 2036.68,
+      "max_drawdown_pct": 82.8,
+      "busted": false,
+      "open_positions": 0,
+      "age_min": 3862.7,
+      "rule": "BUY when mcap up >=10% in last 1m, mcap $100k-any, 5m buys/sells >=1.5, 5m change >=10%, 1h change >=100%, 5m volume >=2x normal, 5m volume >=$1,000, liquidity growing >=2% over 1\u2026",
+      "holding": [],
+      "identical_variants": 1
+    }
+  ],
+  "leaderboard_scalars": {
+    "generated": "2026-11-13 06:33:49 Central Standard Time",
+    "runtime_min": 4018.8,
+    "ticks": 7762,
+    "combos": 1548288,
+    "grid": "72x8x6x4x4x4x7",
+    "tokens_tracked": 240,
+    "total_closed_trades": 103618995,
+    "open_positions": 928008,
+    "variants_traded": 1543341,
+    "busted_total": 1012096,
+    "excluded_glitch_suspects": 4947,
+    "exits_held_for_confirmation": 12302,
+    "glitch_ticks_rejected": 8715,
+    "note": "PAPER trading only. Forward test on live prices since engine start; early results are noise. Price-spike filter on since 2:15 PM CST Nov 10; combos inflated by bad ticks (FLOAT/SKHY 19,000x, TTWO 300,000x glitches) were reset to their start balance. Since ~3:30 PM CST: >20x one-tick jumps are rejected unless pool liquidity moved with them, a >50x single trade only closes once 2+ ticks confirm the price, and any combo above 50x is left off the leaderboard as a glitch suspect."
+  },
+  "leaderboard_top20": [
+    {
+      "rank": 1,
+      "strategy": "rsi(p=14,th=25,liq>50k) TP100% SL35% trail- hold15m size10%",
+      "family": "rsi",
+      "start_balance": 500.0,
+      "equity": 24973.04,
+      "return_pct": 4894.61,
+      "trades": 751,
+      "win_rate": 10.9,
+      "max_drawdown_pct": 94.0,
+      "busted": false,
+      "fees_paid_usd": 75.25,
+      "open_positions": [
+        "SKHY",
+        "mihao",
+        "FOOD"
+      ],
+      "identical_variants": 3
+    },
+    {
+      "rank": 2,
+      "strategy": "rsi(p=7,th=25,liq>50k) TP50% SL35% trail35% hold60m size25%",
+      "family": "rsi",
+      "start_balance": 250.0,
+      "equity": 12388.77,
+      "return_pct": 4855.51,
+      "trades": 207,
+      "win_rate": 18.8,
+      "max_drawdown_pct": 97.7,
+      "busted": false,
+      "fees_paid_usd": 20.85,
+      "open_positions": [
+        "Sakura",
+        "NVDAx",
+        "GTA6"
+      ],
+      "identical_variants": 2
+    },
+    {
+      "rank": 3,
+      "strategy": "rsi(p=14,th=20,liq>10k) TP500% SL50% trail- hold240m size50%",
+      "family": "rsi",
+      "start_balance": 500.0,
+      "equity": 24403.5,
+      "return_pct": 4780.7,
+      "trades": 40,
+      "win_rate": 7.5,
+      "max_drawdown_pct": 97.3,
+      "busted": false,
+      "fees_paid_usd": 4.1,
+      "open_positions": [
+        "GTA6",
+        "ZEC"
+      ],
+      "identical_variants": 1
+    },
+    {
+      "rank": 4,
+      "strategy": "rsi(p=14,th=25,liq>50k) TP100% SL10% trail- hold60m size25%",
+      "family": "rsi",
+      "start_balance": 100.0,
+      "equity": 4863.24,
+      "return_pct": 4763.24,
+      "trades": 211,
+      "win_rate": 11.8,
+      "max_drawdown_pct": 99.2,
+      "busted": false,
+      "fees_paid_usd": 21.25,
+      "open_positions": [
+        "NVDAx",
+        "RAMBO",
+        "SKHY"
+      ],
+      "identical_variants": 2
+    },
+    {
+      "rank": 5,
+      "strategy": "rsi(p=7,th=20,liq>50k) TP100% SL5% trail20% hold60m size10%",
+      "family": "rsi",
+      "start_balance": 1000.0,
+      "equity": 47377.03,
+      "return_pct": 4637.7,
+      "trades": 245,
+      "win_rate": 10.2,
+      "max_drawdown_pct": 95.0,
+      "busted": false,
+      "fees_paid_usd": 24.65,
+      "open_positions": [
+        "NVDAx",
+        "SPCX",
+        "ZEC"
+      ],
+      "identical_variants": 4
+    },
+    {
+      "rank": 6,
+      "strategy": "rsi(p=14,th=20,liq>10k) TP100% SL5% trail10% hold240m size25%",
+      "family": "rsi",
+      "start_balance": 1000.0,
+      "equity": 47234.33,
+      "return_pct": 4623.43,
+      "trades": 94,
+      "win_rate": 19.1,
+      "max_drawdown_pct": 95.4,
+      "busted": false,
+      "fees_paid_usd": 9.55,
+      "open_positions": [
+        "NVDAx",
+        "tSpaceX",
+        "NVDA"
+      ],
+      "identical_variants": 1
+    },
+    {
+      "rank": 7,
+      "strategy": "rsi(p=14,th=25,liq>10k) TP300% SL5% trail35% hold60m size25%",
+      "family": "rsi",
+      "start_balance": 50.0,
+      "equity": 2329.59,
+      "return_pct": 4559.18,
+      "trades": 297,
+      "win_rate": 17.2,
+      "max_drawdown_pct": 99.0,
+      "busted": false,
+      "fees_paid_usd": 29.85,
+      "open_positions": [
+        "FOOD",
+        "NVDAx",
+        "Sakura"
+      ],
+      "identical_variants": 1
+    },
+    {
+      "rank": 8,
+      "strategy": "rsi(p=14,th=25,liq>50k) TP200% SL15% trail- hold15m size10%",
+      "family": "rsi",
+      "start_balance": 500.0,
+      "equity": 23149.48,
+      "return_pct": 4529.9,
+      "trades": 757,
+      "win_rate": 11.0,
+      "max_drawdown_pct": 95.6,
+      "busted": false,
+      "fees_paid_usd": 75.85,
+      "open_positions": [
+        "Sakura",
+        "SKHY",
+        "SPCX"
+      ],
+      "identical_variants": 3
+    },
+    {
+      "rank": 9,
+      "strategy": "rsi(p=14,th=25,liq>50k) TP35% SL15% trail- hold15m size10%",
+      "family": "rsi",
+      "start_balance": 500.0,
+      "equity": 22797.2,
+      "return_pct": 4459.44,
+      "trades": 809,
+      "win_rate": 13.0,
+      "max_drawdown_pct": 95.3,
+      "busted": false,
+      "fees_paid_usd": 81.05,
+      "open_positions": [
+        "Sakura",
+        "SKHY",
+        "SPCX"
+      ],
+      "identical_variants": 2
+    },
+    {
+      "rank": 10,
+      "strategy": "rsi(p=14,th=25,liq>50k) TP20% SL15% trail- hold15m size10%",
+      "family": "rsi",
+      "start_balance": 500.0,
+      "equity": 22741.28,
+      "return_pct": 4448.26,
+      "trades": 765,
+      "win_rate": 11.6,
+      "max_drawdown_pct": 96.1,
+      "busted": false,
+      "fees_paid_usd": 76.65,
+      "open_positions": [
+        "SKHY",
+        "SPCX",
+        "Sakura"
+      ],
+      "identical_variants": 2
+    },
+    {
+      "rank": 11,
+      "strategy": "rsi(p=14,th=25,liq>50k) TP100% SL15% trail- hold15m size10%",
+      "family": "rsi",
+      "start_balance": 500.0,
+      "equity": 22704.37,
+      "return_pct": 4440.87,
+      "trades": 762,
+      "win_rate": 10.8,
+      "max_drawdown_pct": 95.2,
+      "busted": false,
+      "fees_paid_usd": 76.35,
+      "open_positions": [
+        "Sakura",
+        "SKHY",
+        "SPCX"
+      ],
+      "identical_variants": 2
+    },
+    {
+      "rank": 12,
+      "strategy": "rsi(p=14,th=25,liq>50k) TP200% SL15% trail35% hold15m size10%",
+      "family": "rsi",
+      "start_balance": 500.0,
+      "equity": 22682.34,
+      "return_pct": 4436.47,
+      "trades": 758,
+      "win_rate": 10.9,
+      "max_drawdown_pct": 95.2,
+      "busted": false,
+      "fees_paid_usd": 75.95,
+      "open_positions": [
+        "Sakura",
+        "SKHY",
+        "SPCX"
+      ],
+      "identical_variants": 3
+    },
+    {
+      "rank": 13,
+      "strategy": "rsi(p=14,th=25,liq>50k) TP50% SL15% trail- hold15m size10%",
+      "family": "rsi",
+      "start_balance": 500.0,
+      "equity": 22557.25,
+      "return_pct": 4411.45,
+      "trades": 762,
+      "win_rate": 10.9,
+      "max_drawdown_pct": 95.1,
+      "busted": false,
+      "fees_paid_usd": 76.35,
+      "open_positions": [
+        "Sakura",
+        "SKHY",
+        "SPCX"
+      ],
+      "identical_variants": 2
+    },
+    {
+      "rank": 14,
+      "strategy": "rsi(p=7,th=30,liq>10k) TP10% SL25% trail- hold60m size10%",
+      "family": "rsi",
+      "start_balance": 500.0,
+      "equity": 22385.21,
+      "return_pct": 4377.04,
+      "trades": 324,
+      "win_rate": 28.7,
+      "max_drawdown_pct": 91.6,
+      "busted": false,
+      "fees_paid_usd": 32.55,
+      "open_positions": [
+        "SKHY",
+        "ZEC",
+        "HYPE"
+      ],
+      "identical_variants": 2
+    },
+    {
+      "rank": 15,
+      "strategy": "rsi(p=7,th=20,liq>50k) TP35% SL10% trail- hold240m size25%",
+      "family": "rsi",
+      "start_balance": 500.0,
+      "equity": 21338.04,
+      "return_pct": 4167.61,
+      "trades": 71,
+      "win_rate": 16.9,
+      "max_drawdown_pct": 97.9,
+      "busted": false,
+      "fees_paid_usd": 7.25,
+      "open_positions": [
+        "CLOUD",
+        "SPCX",
+        "HYPE"
+      ],
+      "identical_variants": 2
+    },
+    {
+      "rank": 16,
+      "strategy": "rsi(p=7,th=20,liq>50k) TP20% SL10% trail- hold60m size10%",
+      "family": "rsi",
+      "start_balance": 1000.0,
+      "equity": 42446.16,
+      "return_pct": 4144.62,
+      "trades": 232,
+      "win_rate": 12.9,
+      "max_drawdown_pct": 95.5,
+      "busted": false,
+      "fees_paid_usd": 23.35,
+      "open_positions": [
+        "tSpaceX",
+        "GTA6",
+        "SKHY"
+      ],
+      "identical_variants": 3
+    },
+    {
+      "rank": 17,
+      "strategy": "rsi(p=7,th=25,liq>10k) TP10% SL25% trail- hold60m size10%",
+      "family": "rsi",
+      "start_balance": 1000.0,
+      "equity": 42082.58,
+      "return_pct": 4108.26,
+      "trades": 301,
+      "win_rate": 26.6,
+      "max_drawdown_pct": 92.4,
+      "busted": false,
+      "fees_paid_usd": 30.25,
+      "open_positions": [
+        "ZEC",
+        "SKHY",
+        "NVDAx"
+      ],
+      "identical_variants": 2
+    },
+    {
+      "rank": 18,
+      "strategy": "rsi(p=7,th=20,liq>50k) TP35% SL10% trail20% hold240m size10%",
+      "family": "rsi",
+      "start_balance": 5000.0,
+      "equity": 208323.26,
+      "return_pct": 4066.47,
+      "trades": 70,
+      "win_rate": 12.9,
+      "max_drawdown_pct": 82.0,
+      "busted": false,
+      "fees_paid_usd": 7.15,
+      "open_positions": [
+        "GTA6",
+        "NVDAx",
+        "HYPE"
+      ],
+      "identical_variants": 1
+    },
+    {
+      "rank": 19,
+      "strategy": "rsi(p=14,th=20,liq>50k) TP200% SL10% trail35% hold240m size25%",
+      "family": "rsi",
+      "start_balance": 1000.0,
+      "equity": 41517.56,
+      "return_pct": 4051.76,
+      "trades": 63,
+      "win_rate": 19.0,
+      "max_drawdown_pct": 95.3,
+      "busted": false,
+      "fees_paid_usd": 6.45,
+      "open_positions": [
+        "tSpaceX",
+        "HYPE",
+        "Sakura"
+      ],
+      "identical_variants": 3
+    },
+    {
+      "rank": 20,
+      "strategy": "rsi(p=7,th=20,liq>50k) TP100% SL5% trail20% hold60m size25%",
+      "family": "rsi",
+      "start_balance": 100.0,
+      "equity": 4054.05,
+      "return_pct": 3954.05,
+      "trades": 245,
+      "win_rate": 12.2,
+      "max_drawdown_pct": 99.1,
+      "busted": false,
+      "fees_paid_usd": 24.65,
+      "open_positions": [
+        "NVDAx",
+        "SPCX",
+        "ZEC"
+      ],
+      "identical_variants": 4
+    }
+  ],
+  "leaderboard_tiers": [
+    {
+      "balance": 25,
+      "variants": 221184,
+      "traded": 220970,
+      "profitable": 8543,
+      "busted": 100122,
+      "median_return_pct": -86.49,
+      "best_return_pct": 3238.22,
+      "top5": [
+        {
+          "rank": 1,
+          "strategy": "rsi(p=14,th=25,liq>10k) TP200% SL5% trail- hold60m size25%",
+          "family": "rsi",
+          "start_balance": 25.0,
+          "equity": 834.55,
+          "return_pct": 3238.22,
+          "trades": 285,
+          "win_rate": 15.1,
+          "max_drawdown_pct": 98.3,
+          "busted": false,
+          "fees_paid_usd": 28.65,
+          "open_positions": [
+            "Sakura",
+            "mihao",
+            "FOOD"
+          ],
+          "identical_variants": 1
+        },
+        {
+          "rank": 2,
+          "strategy": "rsi(p=14,th=25,liq>10k) TP200% SL5% trail35% hold60m size25%",
+          "family": "rsi",
+          "start_balance": 25.0,
+          "equity": 804.04,
+          "return_pct": 3116.16,
+          "trades": 284,
+          "win_rate": 16.2,
+          "max_drawdown_pct": 98.9,
+          "busted": false,
+          "fees_paid_usd": 28.55,
+          "open_positions": [
+            "Sakura",
+            "mihao",
+            "FOOD"
+          ],
+          "identical_variants": 1
+        },
+        {
+          "rank": 3,
+          "strategy": "volsurge(k=2,up=0.0,liq>10k) TP100% SL25% trail20% hold\u221e size100%",
+          "family": "volsurge",
+          "start_balance": 25.0,
+          "equity": 469.03,
+          "return_pct": 1776.11,
+          "trades": 10,
+          "win_rate": 60.0,
+          "max_drawdown_pct": 48.8,
+          "busted": false,
+          "fees_paid_usd": 1.05,
+          "open_positions": [
+            "FASTMOON"
+          ],
+          "identical_variants": 3
+        },
+        {
+          "rank": 4,
+          "strategy": "dip(L=20,X=0.1,liq>50k) TP35% SL15% trail- hold60m size100%",
+          "family": "dip",
+          "start_balance": 25.0,
+          "equity": 382.7,
+          "return_pct": 1430.8,
+          "trades": 93,
+          "win_rate": 47.3,
+          "max_drawdown_pct": 82.1,
+          "busted": false,
+          "fees_paid_usd": 9.3,
+          "open_positions": [],
+          "identical_variants": 2
+        },
+        {
+          "rank": 5,
+          "strategy": "rsi(p=14,th=30,liq>50k) TP100% SL50% trail- hold240m size100%",
+          "family": "rsi",
+          "start_balance": 25.0,
+          "equity": 356.35,
+          "return_pct": 1325.38,
+          "trades": 18,
+          "win_rate": 50.0,
+          "max_drawdown_pct": 51.0,
+          "busted": false,
+          "fees_paid_usd": 1.85,
+          "open_positions": [
+            "NVDAx"
+          ],
+          "identical_variants": 1
+        }
+      ]
+    },
+    {
+      "balance": 50,
+      "variants": 221184,
+      "traded": 220791,
+      "profitable": 8870,
+      "busted": 132833,
+      "median_return_pct": -90.18,
+      "best_return_pct": 4559.18,
+      "top5": [
+        {
+          "rank": 1,
+          "strategy": "rsi(p=14,th=25,liq>10k) TP300% SL5% trail35% hold60m size25%",
+          "family": "rsi",
+          "start_balance": 50.0,
+          "equity": 2329.59,
+          "return_pct": 4559.18,
+          "trades": 297,
+          "win_rate": 17.2,
+          "max_drawdown_pct": 99.0,
+          "busted": false,
+          "fees_paid_usd": 29.85,
+          "open_positions": [
+            "FOOD",
+            "NVDAx",
+            "Sakura"
+          ],
+          "identical_variants": 1
+        },
+        {
+          "rank": 2,
+          "strategy": "rsi(p=7,th=25,liq>50k) TP20% SL5% trail- hold60m size25%",
+          "family": "rsi",
+          "start_balance": 50.0,
+          "equity": 1826.98,
+          "return_pct": 3553.96,
+          "trades": 273,
+          "win_rate": 12.8,
+          "max_drawdown_pct": 98.0,
+          "busted": false,
+          "fees_paid_usd": 27.45,
+          "open_positions": [
+            "NVDAx",
+            "GTA6",
+            "ZEC"
+          ],
+          "identical_variants": 3
+        },
+        {
+          "rank": 3,
+          "strategy": "rsi(p=14,th=20,liq>50k) TP50% SL5% trail20% hold60m size50%",
+          "family": "rsi",
+          "start_balance": 50.0,
+          "equity": 1457.46,
+          "return_pct": 2814.92,
+          "trades": 169,
+          "win_rate": 14.8,
+          "max_drawdown_pct": 99.3,
+          "busted": false,
+          "fees_paid_usd": 17.0,
+          "open_positions": [
+            "RAMBO",
+            "NVDAx"
+          ],
+          "identical_variants": 1
+        },
+        {
+          "rank": 4,
+          "strategy": "rsi(p=14,th=20,liq>50k) TP50% SL10% trail- hold240m size100%",
+          "family": "rsi",
+          "start_balance": 50.0,
+          "equity": 1348.59,
+          "return_pct": 2597.18,
+          "trades": 22,
+          "win_rate": 27.3,
+          "max_drawdown_pct": 99.8,
+          "busted": false,
+          "fees_paid_usd": 2.25,
+          "open_positions": [
+            "tSpaceX"
+          ],
+          "identical_variants": 10
+        },
+        {
+          "rank": 5,
+          "strategy": "rsi(p=14,th=25,liq>10k) TP200% SL5% trail- hold60m size25%",
+          "family": "rsi",
+          "start_balance": 50.0,
+          "equity": 897.3,
+          "return_pct": 1694.59,
+          "trades": 285,
+          "win_rate": 15.8,
+          "max_drawdown_pct": 99.5,
+          "busted": false,
+          "fees_paid_usd": 28.65,
+          "open_positions": [
+            "Sakura",
+            "mihao",
+            "FOOD"
+          ],
+          "identical_variants": 1
+        }
+      ]
+    },
+    {
+      "balance": 100,
+      "variants": 221184,
+      "traded": 220498,
+      "profitable": 9392,
+      "busted": 159144,
+      "median_return_pct": -90.5,
+      "best_return_pct": 4763.24,
+      "top5": [
+        {
+          "rank": 1,
+          "strategy": "rsi(p=14,th=25,liq>50k) TP100% SL10% trail- hold60m size25%",
+          "family": "rsi",
+          "start_balance": 100.0,
+          "equity": 4863.24,
+          "return_pct": 4763.24,
+          "trades": 211,
+          "win_rate": 11.8,
+          "max_drawdown_pct": 99.2,
+          "busted": false,
+          "fees_paid_usd": 21.25,
+          "open_positions": [
+            "NVDAx",
+            "RAMBO",
+            "SKHY"
+          ],
+          "identical_variants": 2
+        },
+        {
+          "rank": 2,
+          "strategy": "rsi(p=7,th=20,liq>50k) TP100% SL5% trail20% hold60m size25%",
+          "family": "rsi",
+          "start_balance": 100.0,
+          "equity": 4054.05,
+          "return_pct": 3954.05,
+          "trades": 245,
+          "win_rate": 12.2,
+          "max_drawdown_pct": 99.1,
+          "busted": false,
+          "fees_paid_usd": 24.65,
+          "open_positions": [
+            "NVDAx",
+            "SPCX",
+            "ZEC"
+          ],
+          "identical_variants": 4
+        },
+        {
+          "rank": 3,
+          "strategy": "rsi(p=7,th=20,liq>50k) TP200% SL25% trail35% hold60m size25%",
+          "family": "rsi",
+          "start_balance": 100.0,
+          "equity": 3775.86,
+          "return_pct": 3675.86,
+          "trades": 212,
+          "win_rate": 14.6,
+          "max_drawdown_pct": 99.2,
+          "busted": false,
+          "fees_paid_usd": 21.35,
+          "open_positions": [
+            "SKHY",
+            "JOB",
+            "ZEC"
+          ],
+          "identical_variants": 3
+        },
+        {
+          "rank": 4,
+          "strategy": "rsi(p=7,th=20,liq>50k) TP20% SL10% trail- hold60m size25%",
+          "family": "rsi",
+          "start_balance": 100.0,
+          "equity": 2803.36,
+          "return_pct": 2703.36,
+          "trades": 232,
+          "win_rate": 16.4,
+          "max_drawdown_pct": 99.4,
+          "busted": false,
+          "fees_paid_usd": 23.35,
+          "open_positions": [
+            "tSpaceX",
+            "GTA6",
+            "SKHY"
+          ],
+          "identical_variants": 3
+        },
+        {
+          "rank": 5,
+          "strategy": "rsi(p=14,th=25,liq>10k) TP300% SL5% trail35% hold60m size25%",
+          "family": "rsi",
+          "start_balance": 100.0,
+          "equity": 2362.47,
+          "return_pct": 2262.47,
+          "trades": 295,
+          "win_rate": 16.9,
+          "max_drawdown_pct": 99.3,
+          "busted": false,
+          "fees_paid_usd": 29.65,
+          "open_positions": [
+            "FOOD",
+            "Sakura",
+            "NVDAx"
+          ],
+          "identical_variants": 1
+        }
+      ]
+    },
+    {
+      "balance": 250,
+      "variants": 221184,
+      "traded": 220236,
+      "profitable": 9789,
+      "busted": 154865,
+      "median_return_pct": -90.52,
+      "best_return_pct": 4855.51,
+      "top5": [
+        {
+          "rank": 1,
+          "strategy": "rsi(p=7,th=25,liq>50k) TP50% SL35% trail35% hold60m size25%",
+          "family": "rsi",
+          "start_balance": 250.0,
+          "equity": 12388.77,
+          "return_pct": 4855.51,
+          "trades": 207,
+          "win_rate": 18.8,
+          "max_drawdown_pct": 97.7,
+          "busted": false,
+          "fees_paid_usd": 20.85,
+          "open_positions": [
+            "Sakura",
+            "NVDAx",
+            "GTA6"
+          ],
+          "identical_variants": 2
+        },
+        {
+          "rank": 2,
+          "strategy": "rsi(p=7,th=25,liq>50k) TP50% SL35% trail35% hold60m size50%",
+          "family": "rsi",
+          "start_balance": 250.0,
+          "equity": 6764.89,
+          "return_pct": 2605.96,
+          "trades": 139,
+          "win_rate": 22.3,
+          "max_drawdown_pct": 98.9,
+          "busted": false,
+          "fees_paid_usd": 14.0,
+          "open_positions": [
+            "Sakura",
+            "NVDAx"
+          ],
+          "identical_variants": 2
+        },
+        {
+          "rank": 3,
+          "strategy": "rsi(p=7,th=25,liq>50k) TP200% SL35% trail35% hold60m size25%",
+          "family": "rsi",
+          "start_balance": 250.0,
+          "equity": 6352.71,
+          "return_pct": 2441.08,
+          "trades": 212,
+          "win_rate": 16.0,
+          "max_drawdown_pct": 97.8,
+          "busted": false,
+          "fees_paid_usd": 21.35,
+          "open_positions": [
+            "Sakura",
+            "GTA6",
+            "HYPE"
+          ],
+          "identical_variants": 6
+        },
+        {
+          "rank": 4,
+          "strategy": "rsi(p=7,th=25,liq>10k) TP100% SL35% trail- hold15m size10%",
+          "family": "rsi",
+          "start_balance": 250.0,
+          "equity": 5562.06,
+          "return_pct": 2124.83,
+          "trades": 842,
+          "win_rate": 13.5,
+          "max_drawdown_pct": 99.9,
+          "busted": false,
+          "fees_paid_usd": 84.35,
+          "open_positions": [
+            "BOME",
+            "FOOD",
+            "SKHY"
+          ],
+          "identical_variants": 1
+        },
+        {
+          "rank": 5,
+          "strategy": "rsi(p=7,th=20,liq>10k) TP35% SL25% trail20% hold15m size10%",
+          "family": "rsi",
+          "start_balance": 250.0,
+          "equity": 5231.05,
+          "return_pct": 1992.42,
+          "trades": 940,
+          "win_rate": 14.0,
+          "max_drawdown_pct": 99.9,
+          "busted": false,
+          "fees_paid_usd": 94.15,
+          "open_positions": [
+            "Sakura",
+            "BOME",
+            "SKHY"
+          ],
+          "identical_variants": 3
+        }
+      ]
+    },
+    {
+      "balance": 500,
+      "variants": 221184,
+      "traded": 220190,
+      "profitable": 9658,
+      "busted": 153403,
+      "median_return_pct": -90.56,
+      "best_return_pct": 4894.61,
+      "top5": [
+        {
+          "rank": 1,
+          "strategy": "rsi(p=14,th=25,liq>50k) TP100% SL35% trail- hold15m size10%",
+          "family": "rsi",
+          "start_balance": 500.0,
+          "equity": 24973.04,
+          "return_pct": 4894.61,
+          "trades": 751,
+          "win_rate": 10.9,
+          "max_drawdown_pct": 94.0,
+          "busted": false,
+          "fees_paid_usd": 75.25,
+          "open_positions": [
+            "SKHY",
+            "mihao",
+            "FOOD"
+          ],
+          "identical_variants": 3
+        },
+        {
+          "rank": 2,
+          "strategy": "rsi(p=14,th=20,liq>10k) TP500% SL50% trail- hold240m size50%",
+          "family": "rsi",
+          "start_balance": 500.0,
+          "equity": 24403.5,
+          "return_pct": 4780.7,
+          "trades": 40,
+          "win_rate": 7.5,
+          "max_drawdown_pct": 97.3,
+          "busted": false,
+          "fees_paid_usd": 4.1,
+          "open_positions": [
+            "GTA6",
+            "ZEC"
+          ],
+          "identical_variants": 1
+        },
+        {
+          "rank": 3,
+          "strategy": "rsi(p=14,th=25,liq>50k) TP200% SL15% trail- hold15m size10%",
+          "family": "rsi",
+          "start_balance": 500.0,
+          "equity": 23149.48,
+          "return_pct": 4529.9,
+          "trades": 757,
+          "win_rate": 11.0,
+          "max_drawdown_pct": 95.6,
+          "busted": false,
+          "fees_paid_usd": 75.85,
+          "open_positions": [
+            "Sakura",
+            "SKHY",
+            "SPCX"
+          ],
+          "identical_variants": 3
+        },
+        {
+          "rank": 4,
+          "strategy": "rsi(p=14,th=25,liq>50k) TP35% SL15% trail- hold15m size10%",
+          "family": "rsi",
+          "start_balance": 500.0,
+          "equity": 22797.2,
+          "return_pct": 4459.44,
+          "trades": 809,
+          "win_rate": 13.0,
+          "max_drawdown_pct": 95.3,
+          "busted": false,
+          "fees_paid_usd": 81.05,
+          "open_positions": [
+            "Sakura",
+            "SKHY",
+            "SPCX"
+          ],
+          "identical_variants": 2
+        },
+        {
+          "rank": 5,
+          "strategy": "rsi(p=14,th=25,liq>50k) TP20% SL15% trail- hold15m size10%",
+          "family": "rsi",
+          "start_balance": 500.0,
+          "equity": 22741.28,
+          "return_pct": 4448.26,
+          "trades": 765,
+          "win_rate": 11.6,
+          "max_drawdown_pct": 96.1,
+          "busted": false,
+          "fees_paid_usd": 76.65,
+          "open_positions": [
+            "SKHY",
+            "SPCX",
+            "Sakura"
+          ],
+          "identical_variants": 2
+        }
+      ]
+    },
+    {
+      "balance": 1000,
+      "variants": 221184,
+      "traded": 220248,
+      "profitable": 9377,
+      "busted": 153331,
+      "median_return_pct": -90.57,
+      "best_return_pct": 4637.7,
+      "top5": [
+        {
+          "rank": 1,
+          "strategy": "rsi(p=7,th=20,liq>50k) TP100% SL5% trail20% hold60m size10%",
+          "family": "rsi",
+          "start_balance": 1000.0,
+          "equity": 47377.03,
+          "return_pct": 4637.7,
+          "trades": 245,
+          "win_rate": 10.2,
+          "max_drawdown_pct": 95.0,
+          "busted": false,
+          "fees_paid_usd": 24.65,
+          "open_positions": [
+            "NVDAx",
+            "SPCX",
+            "ZEC"
+          ],
+          "identical_variants": 4
+        },
+        {
+          "rank": 2,
+          "strategy": "rsi(p=14,th=20,liq>10k) TP100% SL5% trail10% hold240m size25%",
+          "family": "rsi",
+          "start_balance": 1000.0,
+          "equity": 47234.33,
+          "return_pct": 4623.43,
+          "trades": 94,
+          "win_rate": 19.1,
+          "max_drawdown_pct": 95.4,
+          "busted": false,
+          "fees_paid_usd": 9.55,
+          "open_positions": [
+            "NVDAx",
+            "tSpaceX",
+            "NVDA"
+          ],
+          "identical_variants": 1
+        },
+        {
+          "rank": 3,
+          "strategy": "rsi(p=7,th=20,liq>50k) TP20% SL10% trail- hold60m size10%",
+          "family": "rsi",
+          "start_balance": 1000.0,
+          "equity": 42446.16,
+          "return_pct": 4144.62,
+          "trades": 232,
+          "win_rate": 12.9,
+          "max_drawdown_pct": 95.5,
+          "busted": false,
+          "fees_paid_usd": 23.35,
+          "open_positions": [
+            "tSpaceX",
+            "GTA6",
+            "SKHY"
+          ],
+          "identical_variants": 3
+        },
+        {
+          "rank": 4,
+          "strategy": "rsi(p=7,th=25,liq>10k) TP10% SL25% trail- hold60m size10%",
+          "family": "rsi",
+          "start_balance": 1000.0,
+          "equity": 42082.58,
+          "return_pct": 4108.26,
+          "trades": 301,
+          "win_rate": 26.6,
+          "max_drawdown_pct": 92.4,
+          "busted": false,
+          "fees_paid_usd": 30.25,
+          "open_positions": [
+            "ZEC",
+            "SKHY",
+            "NVDAx"
+          ],
+          "identical_variants": 2
+        },
+        {
+          "rank": 5,
+          "strategy": "rsi(p=14,th=20,liq>50k) TP200% SL10% trail35% hold240m size25%",
+          "family": "rsi",
+          "start_balance": 1000.0,
+          "equity": 41517.56,
+          "return_pct": 4051.76,
+          "trades": 63,
+          "win_rate": 19.0,
+          "max_drawdown_pct": 95.3,
+          "busted": false,
+          "fees_paid_usd": 6.45,
+          "open_positions": [
+            "tSpaceX",
+            "HYPE",
+            "Sakura"
+          ],
+          "identical_variants": 3
+        }
+      ]
+    },
+    {
+      "balance": 5000,
+      "variants": 221184,
+      "traded": 220408,
+      "profitable": 5216,
+      "busted": 158398,
+      "median_return_pct": -90.66,
+      "best_return_pct": 4066.47,
+      "top5": [
+        {
+          "rank": 1,
+          "strategy": "rsi(p=7,th=20,liq>50k) TP35% SL10% trail20% hold240m size10%",
+          "family": "rsi",
+          "start_balance": 5000.0,
+          "equity": 208323.26,
+          "return_pct": 4066.47,
+          "trades": 70,
+          "win_rate": 12.9,
+          "max_drawdown_pct": 82.0,
+          "busted": false,
+          "fees_paid_usd": 7.15,
+          "open_positions": [
+            "GTA6",
+            "NVDAx",
+            "HYPE"
+          ],
+          "identical_variants": 1
+        },
+        {
+          "rank": 2,
+          "strategy": "rsi(p=7,th=20,liq>50k) TP35% SL10% trail- hold240m size10%",
+          "family": "rsi",
+          "start_balance": 5000.0,
+          "equity": 191668.42,
+          "return_pct": 3733.37,
+          "trades": 71,
+          "win_rate": 14.1,
+          "max_drawdown_pct": 83.5,
+          "busted": false,
+          "fees_paid_usd": 7.25,
+          "open_positions": [
+            "CLOUD",
+            "SPCX",
+            "HYPE"
+          ],
+          "identical_variants": 2
+        },
+        {
+          "rank": 3,
+          "strategy": "rsi(p=14,th=20,liq>50k) TP50% SL25% trail- hold240m size25%",
+          "family": "rsi",
+          "start_balance": 5000.0,
+          "equity": 165837.5,
+          "return_pct": 3216.75,
+          "trades": 56,
+          "win_rate": 19.6,
+          "max_drawdown_pct": 85.2,
+          "busted": false,
+          "fees_paid_usd": 5.75,
+          "open_positions": [
+            "ZEC",
+            "CYBERLEEK",
+            "tSpaceX"
+          ],
+          "identical_variants": 1
+        },
+        {
+          "rank": 4,
+          "strategy": "rsi(p=7,th=25,liq>50k) TP100% SL35% trail35% hold60m size10%",
+          "family": "rsi",
+          "start_balance": 5000.0,
+          "equity": 152603.38,
+          "return_pct": 2952.07,
+          "trades": 210,
+          "win_rate": 15.2,
+          "max_drawdown_pct": 86.7,
+          "busted": false,
+          "fees_paid_usd": 21.15,
+          "open_positions": [
+            "BOME",
+            "Sakura",
+            "HYPE"
+          ],
+          "identical_variants": 2
+        },
+        {
+          "rank": 5,
+          "strategy": "rsi(p=7,th=30,liq>50k) TP50% SL35% trail35% hold60m size10%",
+          "family": "rsi",
+          "start_balance": 5000.0,
+          "equity": 152264.95,
+          "return_pct": 2945.3,
+          "trades": 210,
+          "win_rate": 17.6,
+          "max_drawdown_pct": 86.3,
+          "busted": false,
+          "fees_paid_usd": 21.15,
+          "open_positions": [
+            "HYPE",
+            "NVDAx",
+            "GTA6"
+          ],
+          "identical_variants": 2
+        }
+      ]
+    }
+  ],
+  "leaderboard_families": [
+    {
+      "family": "breakout",
+      "traded_variants": 387072,
+      "median_return_pct": -90.85,
+      "pct_profitable": 0.7,
+      "busted": 290231
+    },
+    {
+      "family": "volsurge",
+      "traded_variants": 258048,
+      "median_return_pct": -90.53,
+      "pct_profitable": 6.3,
+      "busted": 162515
+    },
+    {
+      "family": "dip",
+      "traded_variants": 344064,
+      "median_return_pct": -90.74,
+      "pct_profitable": 0.3,
+      "busted": 258539
+    },
+    {
+      "family": "rsi",
+      "traded_variants": 253101,
+      "median_return_pct": -86.11,
+      "pct_profitable": 8.5,
+      "busted": 122255
+    },
+    {
+      "family": "ema",
+      "traded_variants": 129024,
+      "median_return_pct": -76.41,
+      "pct_profitable": 5.2,
+      "busted": 50946
+    },
+    {
+      "family": "early",
+      "traded_variants": 172032,
+      "median_return_pct": -92.81,
+      "pct_profitable": 7.3,
+      "busted": 127595
+    }
+  ],
+  "best_overall": {
+    "id": 1034472,
+    "gen": 4,
+    "trades": 141,
+    "avg_pnl_per_trade": 7.8,
+    "win_rate": 29.1,
+    "profit_factor": 1.94,
+    "equity": 1200.01,
+    "net_return_pct": 1100.01,
+    "rank_score": 1027.16,
+    "realized_pnl": 1100.01,
+    "max_drawdown_pct": 30.0,
+    "busted": false,
+    "open_positions": 0,
+    "age_min": 3681.2,
+    "rule": "BUY when mcap $250k-$20M, 5m buys/sells >=1, 1h change >=25%, 5m volume >=2x normal, pool <720m old, liq >=$10k. SELL whole coin position at +200% TP, -12% SL, 30% trailing, max 4h hold, or when sellers outnumber buyers. SIZE $35 per buy, up to 3 open. PYRAMID: add up to 5 more lot(s) on a winning coin when the position is up >=5% and the entry signal fires again, >= 5m apart.",
+    "score": 1012.15,
+    "avg_win": 55.29,
+    "avg_loss": -11.67,
+    "wins": 41,
+    "losses": 100
+  },
+  "history_window": {
+    "from": "2026-11-13 10:49:16 CT",
+    "to": "2026-11-13 17:35:29 CT",
+    "n": 360,
+    "note": "Equity series for the 11 plotted variant IDs was unchanged across all 360 points."
+  }
+};
+
+const START_BAL = [[5, 0.15, null], [10, 0.12, null], [20, 7.61, null], [30, 101, null], [50, 406, null], [100, 545, null], [125, 1070, null], [175, 1149, null], [200, 1396, 95], [280, 1511, null], [500, 1614, null], [1000, 1491, null]];
+const TREE = [{"path": ".env.example", "size": 353}, {"path": ".gitignore", "size": 357}, {"path": "README.md", "size": 7890}, {"path": "backtest_vs_live.py", "size": 1990}, {"path": "build_html.py", "size": 28040}, {"path": "build_report.py", "size": 30473}, {"path": "compute_windows.py", "size": 4881}, {"path": "config/costs.json", "size": 586}, {"path": "config/live_snapshot.json", "size": 237013}, {"path": "config/start_balance_H6-01098.json", "size": 1415}, {"path": "config/strategies/H3-09335.json", "size": 820}, {"path": "config/strategies/H6-00439.json", "size": 1041}, {"path": "config/strategies/H6-00464.json", "size": 1044}, {"path": "config/strategies/H6-00468.json", "size": 1044}, {"path": "config/strategies/H6-01064.json", "size": 1038}, {"path": "config/strategies/H6-01094.json", "size": 1038}, {"path": "config/strategies/H6-01097.json", "size": 1035}, {"path": "config/strategies/H6-01098.json", "size": 1038}, {"path": "config/strategies/H6-01689.json", "size": 1039}, {"path": "config/strategies/H6-01714.json", "size": 1039}, {"path": "config/strategies/H6-01718.json", "size": 1041}, {"path": "config/strategies/H6-01722.json", "size": 1038}, {"path": "config/strategies/H7-00668.json", "size": 1040}, {"path": "config/strategies/H7-02417.json", "size": 1042}, {"path": "config/strategies/H7-02423.json", "size": 1043}, {"path": "config/strategies/H7-06668.json", "size": 1040}, {"path": "config/strategies.json", "size": 134087}, {"path": "dashboard.html", "size": 5181530}, {"path": "data/fetch_failures.json", "size": 2}, {"path": "data/onchain.json", "size": 82189}, {"path": "data/universe.json", "size": 80489}, {"path": "data/universe_raw.json", "size": 38404}, {"path": "discover.py", "size": 2225}, {"path": "discover2.py", "size": 1743}, {"path": "fetch.py", "size": 3011}, {"path": "fetch_history.py", "size": 3241}, {"path": "fetch_year.py", "size": 1420}, {"path": "hunt/batch_1_summary.json", "size": 4837}, {"path": "hunt/batch_2_summary.json", "size": 13799}, {"path": "hunt/batch_3_summary.json", "size": 14348}, {"path": "hunt/batch_4_summary.json", "size": 15729}, {"path": "hunt/batch_5_summary.json", "size": 105599}, {"path": "hunt/batch_6_summary.json", "size": 81640}, {"path": "hunt/batch_7_summary.json", "size": 75427}, {"path": "hunt/batch_8_summary.json", "size": 70938}, {"path": "hunt/best_bal10.py", "size": 697}, {"path": "hunt/best_bal_sweep.py", "size": 595}, {"path": "hunt/holdout_eval.csv", "size": 20707}, {"path": "hunt/holdout_eval.json", "size": 41341}, {"path": "hunt/holdout_eval_batch8.csv", "size": 16371}, {"path": "hunt/holdout_eval_batch8.json", "size": 37180}, {"path": "hunt/hunt.py", "size": 33387}, {"path": "hunt/hunt_batch2.py", "size": 27421}, {"path": "hunt/hunt_batch3.py", "size": 33034}, {"path": "hunt/hunt_batch4.py", "size": 49363}, {"path": "hunt/hunt_batch5.py", "size": 29609}, {"path": "hunt/hunt_batch6.py", "size": 27363}, {"path": "hunt/hunt_batch7.py", "size": 25489}, {"path": "hunt/hunt_batch8.py", "size": 33357}, {"path": "hunt/ideas.md", "size": 55159}, {"path": "hunt/last24_bal10.csv", "size": 335541}, {"path": "hunt/last24_bal10.py", "size": 988}, {"path": "hunt/last48.py", "size": 31771}, {"path": "hunt/last48_results.json", "size": 55924}, {"path": "hunt/moonshot_wf_configs.json", "size": 24920}, {"path": "hunt/robust_leaderboard.csv", "size": 69108}, {"path": "hunt/screen20.py", "size": 4487}, {"path": "hunt/walkforward_H1-00094.csv", "size": 6916}, {"path": "hunt/walkforward_H1-00094.json", "size": 2768}, {"path": "hunt/walkforward_batch6.csv", "size": 24541}, {"path": "hunt/walkforward_batch6.json", "size": 50553}, {"path": "hunt/walkforward_batch6_folds.csv", "size": 305381}, {"path": "hunt/walkforward_batch7.csv", "size": 13278}, {"path": "hunt/walkforward_batch7_folds.csv", "size": 134306}, {"path": "hunt/walkforward_batch8.csv", "size": 8790}, {"path": "hunt/walkforward_batch8_folds.csv", "size": 134440}, {"path": "hunt/walkforward_shortlist.csv", "size": 54461}, {"path": "hunt/walkforward_shortlist.json", "size": 148670}, {"path": "hunt/walkforward_shortlist_folds.csv", "size": 690614}, {"path": "hunt/wf_lib.py", "size": 19227}, {"path": "live/events.log", "size": 278}, {"path": "live/flat_ho.py", "size": 2024}, {"path": "live/keepalive.sh", "size": 371}, {"path": "live/live_panel.py", "size": 4867}, {"path": "live/live_paper.py", "size": 12284}, {"path": "live/screen20.log", "size": 613}, {"path": "live/screen20_top.csv", "size": 201998}, {"path": "live/state.json", "size": 4038}, {"path": "live/state_template.json", "size": 3990}, {"path": "live/table20.py", "size": 1924}, {"path": "live/top5_at20.json", "size": 3628}, {"path": "make_zip.py", "size": 2315}, {"path": "micro_breakeven.py", "size": 4624}, {"path": "monthly.py", "size": 2174}, {"path": "null_test.py", "size": 2479}, {"path": "onchain.py", "size": 896}, {"path": "page_compact.py", "size": 1562}, {"path": "page_data.py", "size": 4934}, {"path": "page_robust.py", "size": 1299}, {"path": "page_window.py", "size": 3326}, {"path": "plateau.py", "size": 2283}, {"path": "render_check.mjs", "size": 4325}, {"path": "requirements.txt", "size": 63}, {"path": "results/backtest_vs_live.json", "size": 4063}, {"path": "results/best_of_year.csv", "size": 36827}, {"path": "results/best_of_year_12m_daily.csv", "size": 21131}, {"path": "results/families.csv", "size": 628}, {"path": "results/hunter_robust_leaderboard.csv", "size": 69108}, {"path": "results/leaderboard_per_balance.csv", "size": 434550}, {"path": "results/max_return_oos.csv", "size": 8103}, {"path": "results/micro_breakeven.csv", "size": 5389}, {"path": "results/micro_breakeven.json", "size": 20900}, {"path": "results/monthly.json", "size": 983}, {"path": "results/moonshot_tp.csv", "size": 745}, {"path": "results/null_test.json", "size": 26325}, {"path": "results/page_data.json", "size": 85472}, {"path": "results/page_robust.json", "size": 2170}, {"path": "results/page_window.json", "size": 28122}, {"path": "results/page_window_compact.json", "size": 17744}, {"path": "results/plateau.json", "size": 1009}, {"path": "results/stress.csv", "size": 25829}, {"path": "results/stress.json", "size": 52265}, {"path": "results/top100.csv", "size": 39241}, {"path": "results/top100_by_profit.csv", "size": 38192}, {"path": "results/win90.csv", "size": 4958}, {"path": "results/window_payload.json", "size": 2256863}, {"path": "results/windows.json", "size": 1215195}, {"path": "results/year.json", "size": 36246}, {"path": "run_all.sh", "size": 1107}, {"path": "run_backtest.py", "size": 4819}, {"path": "run_live.py", "size": 2424}, {"path": "run_overlays.py", "size": 4741}, {"path": "run_year.py", "size": 7998}, {"path": "search_smart.py", "size": 6094}, {"path": "serve.py", "size": 3880}, {"path": "solstrats/__init__.py", "size": 129}, {"path": "solstrats/costs.py", "size": 1042}, {"path": "solstrats/data.py", "size": 3872}, {"path": "solstrats/describe.py", "size": 3254}, {"path": "solstrats/engine.py", "size": 20662}, {"path": "solstrats/grid.py", "size": 6920}, {"path": "solstrats/http.py", "size": 7277}, {"path": "solstrats/live.py", "size": 22656}, {"path": "solstrats/overlay.py", "size": 2903}, {"path": "solstrats/providers.py", "size": 10188}, {"path": "solstrats/walkforward.py", "size": 1680}, {"path": "solstrats/window.py", "size": 8852}, {"path": "strategies.py", "size": 4150}, {"path": "stress.py", "size": 4432}, {"path": "tests/__init__.py", "size": 0}, {"path": "tests/test_engine.py", "size": 4756}, {"path": "tests/test_http.py", "size": 3306}, {"path": "tests/test_providers.py", "size": 2755}, {"path": "tests/test_robustness.py", "size": 4317}, {"path": "tests/test_window.py", "size": 2780}, {"path": "upstream/solstrats-dashboard/.nojekyll", "size": 0}, {"path": "upstream/solstrats-dashboard/README.md", "size": 288}, {"path": "upstream/solstrats-dashboard/SOURCE.txt", "size": 1253}, {"path": "upstream/solstrats-dashboard/data.json", "size": 508816}, {"path": "upstream/solstrats-dashboard/data.main.json", "size": 508816}, {"path": "upstream/solstrats-dashboard/index.html", "size": 33090}, {"path": "upstream/solstrats-dashboard/solstrats-dashboard.html", "size": 541594}, {"path": "window_js.py", "size": 9808}, {"path": "dashboard_github.html", "size": 0, "pending": true}];
+const BLOBS = {"README.md": "# SOLSTRATS\n\nSolana meme-coin strategy lab: historical backtests, walk-forward robust strategies, and a GitHub-styled paper-trading dashboard.\n\n**Backtest and paper trading only. Not financial advice. No real trades, no wallet, no private keys. Meme coins routinely go to zero.**\n\nIntended GitHub remote (do not put secrets in it): [https://github.com/ooio6001-del/bossss](https://github.com/ooio6001-del/bossss)\n\nA separate public live-dashboard repo, [ooio6001-del/solstrats-dashboard](https://github.com/ooio6001-del/solstrats-dashboard), was copied **read-only** into `upstream/solstrats-dashboard/`. This bundle does not write to that repository.\n\n## Headline strategy: H6-01098\n\nWalk-forward champion from hunter batch 6 (`washout_gate`).\n\n| | |\n|---|---|\n| **Entry** | First hour of an 8-bar closing low that is still above the 120h SMA, only if the token dumped 16%+ in a single hour within the last 16h |\n| **Exit** | Stop \u221230%, 20% trailing stop after +60%, time exit after 384h |\n| **Sizing** | 28% of balance per trade, up to 3 open; native start **$175** |\n| **Walk-forward** | 94.1% of 17 rolling folds profitable (26 folds total); median OOS per fold +67.7% |\n| **Full span at $175** | +556.7% ($175 \u2192 $1,149), 96 trades, max drawdown 54.5% |\n| **Original 60/40 split** | IS +37.2%, OOS +400.0% (both windows profitable) |\n| **Stress** | +47% at 2\u00d7 costs, \u221294% at 3\u00d7, +164% if every entry fills one bar late, +272% without its best token; random-entry null p = 0.0066; 72% of 3,500 neighbouring configs profitable, median +70% |\n\nIt falls apart below about $30 because fixed fees (~$0.064 per round trip) eat the buys. Start-balance sweep on the same hourly history (ending equity):\n\n| Start | End |\n|---:|---:|\n| $5 | $0.15 |\n| $10 | $0.12 |\n| $20 | $7.61 |\n| $30 | $101 |\n| $50 | $406 |\n| $100 | $545 |\n| $125 | $1,070 |\n| $175 | $1,149 |\n| $200 | $1,396 (and +95% over the last 30 days) |\n| $280 | $1,511 |\n| $500 | $1,614 |\n| $1,000 | $1,491 |\n\nAmong those sizes, **$500** had the highest ending equity ($1,614). **$175** is the native size the walk-forward picked. **$30** is the lowest start that stayed clearly profitable. $1,000 ended lower than $500. Full params: `config/strategies/H6-01098.json` and `config/start_balance_H6-01098.json`.\n\nTreat +557% as a selected, best-case number: most of the gain was in August, and the strategy lost money in May, June and July.\n\n## What's in this repo\n\n| Path | What |\n|---|---|\n| `solstrats/` | Python package: engine, costs, HTTP/providers, overlays, walk-forward, window engine, live paper runner |\n| `tests/` | pytest suite |\n| `*.py`, `run_all.sh`, `serve.py` | Lab scripts (backtest, overlays, live paper, report, date-window API) |\n| `results/` | Selected CSV/JSON leaderboards, stress, windows, micro break-even (not the huge `.npz` sweeps) |\n| `data/` | Token universe and on-chain snapshots (not the hourly OHLCV cache) |\n| `hunt/` | Strategy hunter scripts, `robust_leaderboard.csv`, walk-forward / holdout evals, batch summaries, `ideas.md` |\n| `live/` | $20 paper-trader scripts and state templates (no private keys) |\n| `config/` | Strategy definitions (JSON), cost model, H6-01098 start-balance table, compact live snapshot |\n| `dashboard.html` | Original standalone terminal (verbatim copy) |\n| `dashboard_github.html` | GitHub-styled edition: same backtest boards plus live-repo settings, a Repository tab, and an Old vs New Compare tab |\n| `upstream/solstrats-dashboard/` | Read-only copy of the public live dashboard (`data.json` from the `data` branch, plus `main` static files) |\n| `.env.example` | Placeholder names only (`HELIUS_API_KEY=`, `BIRDEYE_API_KEY=`) |\n\n## How to run\n\n```bash\npython3 -m venv .venv && . .venv/bin/activate\npip install -r requirements.txt\ncp .env.example .env      # optional: add keys locally; never commit .env\npython -m pytest -q tests\n```\n\n```bash\npython serve.py            # http://127.0.0.1:8765/dashboard.html and /api/window?preset=24h\n# or open the GitHub-styled file directly:\n#   dashboard_github.html\n```\n\nHourly OHLCV and the large sweep matrices are **not** in this bundle (see below), so a full re-sweep needs a data refetch (`fetch_history.py` / `run_all.sh`). The checked-in result tables and both HTML dashboards are enough to read the findings without refetching.\n\n`serve.py` binds to `127.0.0.1:8765`.\n\n## Public live dashboard (settings transferred into the GitHub Edition)\n\nCopied read-only from [ooio6001-del/solstrats-dashboard](https://github.com/ooio6001-del/solstrats-dashboard).\n\n- Branches: `data` (default, `data.json` only) and `main` (static GitHub Pages site: `index.html`, `data.json`, `solstrats-dashboard.html`, `README.md`, `.nojekyll`).\n- There is **no** `package.json`, start script, or app server. The Pages site is already live at [https://ooio6001-del.github.io/solstrats-dashboard/](https://ooio6001-del.github.io/solstrats-dashboard/).\n- `data.json` snapshot used here was exported **2026-11-13 17:36:01 CT** from the `data` branch (commit `521eee3`, message \"data update 2026-11-13 17:34:12\").\n\nTransferred settings (see `config/live_snapshot.json` and the Live / Compare tabs):\n\n- Paper only. Hunt start **$100**, min **$3** per buy (fixed $3\u2013$100 or % of equity), up to **25** open; qualify at \u226520 closed trades, net equity > $100 after fees, profit factor > 1.2, not busted. Candidates: 8\u201319 closed trades. Ranking: net return % \u00d7 trades/(trades+10).\n- Grid shape `72x8x6x4x4x4x7` = 1,548,288 combos.\n- Hunt population 88,000 (generation 131); 4,947 glitch-suspect combos excluded from the live leaderboard.\n\nThis live paper run is **not** the same data or the same strategies as the H6-01098 hourly backtest. See the Compare tab.\n\n## Excluded from this bundle\n\nKept out so `solstrats_repo.tar.gz` stays under 24 MB, and so secrets never ship. None of these are required to read the dashboards or the checked-in result tables.\n\n| Path (in the lab workspace, not here) | Why |\n|---|---|\n| `results/sweep.npz` (~1.2 GB), `results/trades.npz` (~84 MB), `results/overlay.npz` (~27 MB) | Huge binary matrices |\n| `results_smoke/sweep.npz` (~841 MB) and other smoke binaries | Derived smoke run |\n| `results/hunter_leaderboard.csv` (~32 MB), `hunt/leaderboard.csv` (~41 MB), `hunt/batch_1.csv`\u2026`batch_8.csv` (4\u20137 MB each) | Full hunter grids; summaries and `robust_leaderboard.csv` are included |\n| `results/sweep_meta.json`, `smart_search.json`, `report.json`, `overlay_meta.json` | Large derived JSON; key tables are included |\n| `solstrats.zip` (~20 MB) | Earlier pack of the lab |\n| `data/ohlcv/`, `data/cache/`, `data/live/`, `data/daily/`, `hunt/data_last48/`, `live/data/` | Hourly caches and live ticks (refetch to rebuild) |\n| `live/screen20.pkl` (~3 MB) | Pickled screen |\n| `__pycache__/`, `.numba_cache/`, `.pytest_cache/`, `.env` | Caches and secrets |\n\n## Secrets\n\nA scan of the lab, hunt, live, and upstream files found **no live API keys, tokens, or private keys**. Test fixtures use obvious placeholders (`k-123`, `secret123`). Provider snapshots may say `\"helius\": true` when a key was present in the *environment at runtime*; the key itself is not stored. Use `.env.example` as the only template.\n\n## Method (lab backtest)\n\n- Data: GeckoTerminal hourly OHLCV, 2026-05-18 \u2192 2026-11-13 15:00 CT, 141 tokens (44 established, 97 launches). Public API caps history at 180 days.\n- Split: first 60% of hours in-sample, last 40% out-of-sample. Rolling walk-forward is the headline robustness test.\n- No look-ahead: signals on bar t, fills at bar t+1 open; stop before take-profit in the same bar.\n- Multiple testing: millions of configs; the best number is partly luck. The Page states the caveat in full.\n- Cost model: `config/costs.json`.\n\n## License / use\n\nResearch and paper trading only. Not an offer to invest. Do not trade real size from these numbers without your own independent verification.\n", "config/strategies/H3-09335.json": "{\n  \"id\": \"H3-09335\",\n  \"batch\": \"3\",\n  \"family\": \"green_stack\",\n  \"entry\": \"Buy the close of the 3th consecutive green hour, each hour up 2%+\",\n  \"exit\": \"stop -40%, trail 28% after +60%, exit after 600h\",\n  \"sizing\": \"7% of balance per trade, up to 14 open\",\n  \"balance\": 280.0,\n  \"params\": [\n    3.0,\n    0.0,\n    0.02,\n    0.0\n  ],\n  \"exit_params\": [\n    1000000000.0,\n    0.4,\n    0.6,\n    0.28,\n    600.0,\n    1000000000.0,\n    1.0\n  ],\n  \"walk_forward\": {\n    \"n_folds\": 26,\n    \"roll_n\": 17,\n    \"roll_oos_profitable_pct\": 88.24,\n    \"roll_median_oos_ret\": 0.2655,\n    \"full_ret\": 0.1691,\n    \"full_profit\": 47.3341,\n    \"full_trades\": 191,\n    \"full_dd\": 0.4846\n  },\n  \"original_split\": {\n    \"is_ret\": 0.0269,\n    \"oos_ret\": 0.4206,\n    \"oos_profit\": 117.7815,\n    \"both_windows\": true\n  },\n  \"passed\": true\n}\n", "config/strategies/H6-00439.json": "{\n  \"id\": \"H6-00439\",\n  \"batch\": \"6\",\n  \"family\": \"washout_gate\",\n  \"entry\": \"Washout-gate: first hour of a 10-bar closing low above its 288h SMA only if the token dumped 16%+ in an hour within the last 36h\",\n  \"exit\": \"take profit +140%, stop -26%, exit after 288h\",\n  \"sizing\": \"9.5% of balance per trade, up to 10 open\",\n  \"balance\": 320.0,\n  \"params\": {\n    \"entry\": \"dn10_288\",\n    \"gate\": \"dump_16_36\",\n    \"desc\": \"Washout-gate: first hour of a 10-bar closing low above its 288h SMA only if the token dumped 16%+ in an hour within the last 36h\"\n  },\n  \"exit_params\": [\n    1.4,\n    0.26,\n    1000000000.0,\n    0.0,\n    288.0,\n    1000000000.0,\n    1.0\n  ],\n  \"walk_forward\": {\n    \"n_folds\": 26,\n    \"roll_n\": 17,\n    \"roll_oos_profitable_pct\": 88.24,\n    \"roll_median_oos_ret\": 0.1061,\n    \"full_ret\": 1.3182,\n    \"full_profit\": 421.8395,\n    \"full_trades\": 120,\n    \"full_dd\": 0.2243\n  },\n  \"original_split\": {\n    \"is_ret\": 0.089,\n    \"oos_ret\": 0.9602,\n    \"oos_profit\": 307.2656,\n    \"both_windows\": true\n  },\n  \"passed\": true\n}\n", "config/strategies/H6-00464.json": "{\n  \"id\": \"H6-00464\",\n  \"batch\": \"6\",\n  \"family\": \"washout_gate\",\n  \"entry\": \"Washout-gate: first hour of a 10-bar closing low above its 288h SMA only if the token dumped 16%+ in an hour within the last 36h\",\n  \"exit\": \"stop -30%, trail 20% after +60%, exit after 384h\",\n  \"sizing\": \"9.5% of balance per trade, up to 10 open\",\n  \"balance\": 320.0,\n  \"params\": {\n    \"entry\": \"dn10_288\",\n    \"gate\": \"dump_16_36\",\n    \"desc\": \"Washout-gate: first hour of a 10-bar closing low above its 288h SMA only if the token dumped 16%+ in an hour within the last 36h\"\n  },\n  \"exit_params\": [\n    1000000000.0,\n    0.3,\n    0.6,\n    0.2,\n    384.0,\n    1000000000.0,\n    1.0\n  ],\n  \"walk_forward\": {\n    \"n_folds\": 26,\n    \"roll_n\": 17,\n    \"roll_oos_profitable_pct\": 88.24,\n    \"roll_median_oos_ret\": 0.1603,\n    \"full_ret\": 1.4248,\n    \"full_profit\": 455.9333,\n    \"full_trades\": 130,\n    \"full_dd\": 0.3553\n  },\n  \"original_split\": {\n    \"is_ret\": 0.6305,\n    \"oos_ret\": 1.0757,\n    \"oos_profit\": 344.2225,\n    \"both_windows\": true\n  },\n  \"passed\": true\n}\n", "config/strategies/H6-00468.json": "{\n  \"id\": \"H6-00468\",\n  \"batch\": \"6\",\n  \"family\": \"washout_gate\",\n  \"entry\": \"Washout-gate: first hour of a 10-bar closing low above its 288h SMA only if the token dumped 16%+ in an hour within the last 36h\",\n  \"exit\": \"stop -30%, trail 20% after +60%, exit after 384h\",\n  \"sizing\": \"15.5% of balance per trade, up to 6 open\",\n  \"balance\": 175.0,\n  \"params\": {\n    \"entry\": \"dn10_288\",\n    \"gate\": \"dump_16_36\",\n    \"desc\": \"Washout-gate: first hour of a 10-bar closing low above its 288h SMA only if the token dumped 16%+ in an hour within the last 36h\"\n  },\n  \"exit_params\": [\n    1000000000.0,\n    0.3,\n    0.6,\n    0.2,\n    384.0,\n    1000000000.0,\n    1.0\n  ],\n  \"walk_forward\": {\n    \"n_folds\": 26,\n    \"roll_n\": 17,\n    \"roll_oos_profitable_pct\": 88.24,\n    \"roll_median_oos_ret\": 0.2591,\n    \"full_ret\": 4.4248,\n    \"full_profit\": 774.3321,\n    \"full_trades\": 113,\n    \"full_dd\": 0.4553\n  },\n  \"original_split\": {\n    \"is_ret\": 2.2105,\n    \"oos_ret\": 1.8373,\n    \"oos_profit\": 321.5258,\n    \"both_windows\": true\n  },\n  \"passed\": true\n}\n", "config/strategies/H6-01064.json": "{\n  \"id\": \"H6-01064\",\n  \"batch\": \"6\",\n  \"family\": \"washout_gate\",\n  \"entry\": \"Washout-gate: first hour of a 8-bar closing low above its 120h SMA only if the token dumped 16%+ in an hour within the last 16h\",\n  \"exit\": \"take profit +140%, stop -26%, exit after 288h\",\n  \"sizing\": \"9.5% of balance per trade, up to 10 open\",\n  \"balance\": 320.0,\n  \"params\": {\n    \"entry\": \"dn8_120\",\n    \"gate\": \"dump_16_16\",\n    \"desc\": \"Washout-gate: first hour of a 8-bar closing low above its 120h SMA only if the token dumped 16%+ in an hour within the last 16h\"\n  },\n  \"exit_params\": [\n    1.4,\n    0.26,\n    1000000000.0,\n    0.0,\n    288.0,\n    1000000000.0,\n    1.0\n  ],\n  \"walk_forward\": {\n    \"n_folds\": 26,\n    \"roll_n\": 17,\n    \"roll_oos_profitable_pct\": 94.12,\n    \"roll_median_oos_ret\": 0.3322,\n    \"full_ret\": 1.2848,\n    \"full_profit\": 411.1339,\n    \"full_trades\": 99,\n    \"full_dd\": 0.3716\n  },\n  \"original_split\": {\n    \"is_ret\": 0.0187,\n    \"oos_ret\": 1.2344,\n    \"oos_profit\": 395.0066,\n    \"both_windows\": true\n  },\n  \"passed\": true\n}\n", "config/strategies/H6-01094.json": "{\n  \"id\": \"H6-01094\",\n  \"batch\": \"6\",\n  \"family\": \"washout_gate\",\n  \"entry\": \"Washout-gate: first hour of a 8-bar closing low above its 120h SMA only if the token dumped 16%+ in an hour within the last 16h\",\n  \"exit\": \"stop -30%, trail 20% after +60%, exit after 384h\",\n  \"sizing\": \"15.5% of balance per trade, up to 6 open\",\n  \"balance\": 320.0,\n  \"params\": {\n    \"entry\": \"dn8_120\",\n    \"gate\": \"dump_16_16\",\n    \"desc\": \"Washout-gate: first hour of a 8-bar closing low above its 120h SMA only if the token dumped 16%+ in an hour within the last 16h\"\n  },\n  \"exit_params\": [\n    1000000000.0,\n    0.3,\n    0.6,\n    0.2,\n    384.0,\n    1000000000.0,\n    1.0\n  ],\n  \"walk_forward\": {\n    \"n_folds\": 26,\n    \"roll_n\": 17,\n    \"roll_oos_profitable_pct\": 94.12,\n    \"roll_median_oos_ret\": 0.451,\n    \"full_ret\": 3.0953,\n    \"full_profit\": 990.487,\n    \"full_trades\": 97,\n    \"full_dd\": 0.3277\n  },\n  \"original_split\": {\n    \"is_ret\": 0.2641,\n    \"oos_ret\": 2.1321,\n    \"oos_profit\": 682.2611,\n    \"both_windows\": true\n  },\n  \"passed\": true\n}\n", "config/strategies/H6-01097.json": "{\n  \"id\": \"H6-01097\",\n  \"batch\": \"6\",\n  \"family\": \"washout_gate\",\n  \"entry\": \"Washout-gate: first hour of a 8-bar closing low above its 120h SMA only if the token dumped 16%+ in an hour within the last 16h\",\n  \"exit\": \"stop -30%, trail 20% after +60%, exit after 384h\",\n  \"sizing\": \"28% of balance per trade, up to 3 open\",\n  \"balance\": 85.0,\n  \"params\": {\n    \"entry\": \"dn8_120\",\n    \"gate\": \"dump_16_16\",\n    \"desc\": \"Washout-gate: first hour of a 8-bar closing low above its 120h SMA only if the token dumped 16%+ in an hour within the last 16h\"\n  },\n  \"exit_params\": [\n    1000000000.0,\n    0.3,\n    0.6,\n    0.2,\n    384.0,\n    1000000000.0,\n    1.0\n  ],\n  \"walk_forward\": {\n    \"n_folds\": 26,\n    \"roll_n\": 17,\n    \"roll_oos_profitable_pct\": 88.24,\n    \"roll_median_oos_ret\": 1.187,\n    \"full_ret\": 5.2758,\n    \"full_profit\": 448.4449,\n    \"full_trades\": 115,\n    \"full_dd\": 0.574\n  },\n  \"original_split\": {\n    \"is_ret\": 0.5555,\n    \"oos_ret\": 3.869,\n    \"oos_profit\": 328.8619,\n    \"both_windows\": true\n  },\n  \"passed\": true\n}\n", "config/strategies/H6-01098.json": "{\n  \"id\": \"H6-01098\",\n  \"batch\": \"6\",\n  \"family\": \"washout_gate\",\n  \"entry\": \"Washout-gate: first hour of a 8-bar closing low above its 120h SMA only if the token dumped 16%+ in an hour within the last 16h\",\n  \"exit\": \"stop -30%, trail 20% after +60%, exit after 384h\",\n  \"sizing\": \"28% of balance per trade, up to 3 open\",\n  \"balance\": 175.0,\n  \"params\": {\n    \"entry\": \"dn8_120\",\n    \"gate\": \"dump_16_16\",\n    \"desc\": \"Washout-gate: first hour of a 8-bar closing low above its 120h SMA only if the token dumped 16%+ in an hour within the last 16h\"\n  },\n  \"exit_params\": [\n    1000000000.0,\n    0.3,\n    0.6,\n    0.2,\n    384.0,\n    1000000000.0,\n    1.0\n  ],\n  \"walk_forward\": {\n    \"n_folds\": 26,\n    \"roll_n\": 17,\n    \"roll_oos_profitable_pct\": 94.12,\n    \"roll_median_oos_ret\": 0.6772,\n    \"full_ret\": 5.5671,\n    \"full_profit\": 974.2419,\n    \"full_trades\": 96,\n    \"full_dd\": 0.5449\n  },\n  \"original_split\": {\n    \"is_ret\": 0.3725,\n    \"oos_ret\": 4.0005,\n    \"oos_profit\": 700.0899,\n    \"both_windows\": true\n  },\n  \"passed\": true\n}\n", "config/strategies/H6-01689.json": "{\n  \"id\": \"H6-01689\",\n  \"batch\": \"6\",\n  \"family\": \"washout_gate\",\n  \"entry\": \"Washout-gate: first hour of a 8-bar closing low above its 288h SMA only if the token dumped 16%+ in an hour within the last 24h\",\n  \"exit\": \"take profit +140%, stop -26%, exit after 288h\",\n  \"sizing\": \"9.5% of balance per trade, up to 10 open\",\n  \"balance\": 320.0,\n  \"params\": {\n    \"entry\": \"dn8_288\",\n    \"gate\": \"dump_16_24\",\n    \"desc\": \"Washout-gate: first hour of a 8-bar closing low above its 288h SMA only if the token dumped 16%+ in an hour within the last 24h\"\n  },\n  \"exit_params\": [\n    1.4,\n    0.26,\n    1000000000.0,\n    0.0,\n    288.0,\n    1000000000.0,\n    1.0\n  ],\n  \"walk_forward\": {\n    \"n_folds\": 26,\n    \"roll_n\": 17,\n    \"roll_oos_profitable_pct\": 94.12,\n    \"roll_median_oos_ret\": 0.3495,\n    \"full_ret\": 1.5469,\n    \"full_profit\": 494.9935,\n    \"full_trades\": 125,\n    \"full_dd\": 0.3779\n  },\n  \"original_split\": {\n    \"is_ret\": 0.0028,\n    \"oos_ret\": 1.5198,\n    \"oos_profit\": 486.3497,\n    \"both_windows\": true\n  },\n  \"passed\": true\n}\n", "config/strategies/H6-01714.json": "{\n  \"id\": \"H6-01714\",\n  \"batch\": \"6\",\n  \"family\": \"washout_gate\",\n  \"entry\": \"Washout-gate: first hour of a 8-bar closing low above its 288h SMA only if the token dumped 16%+ in an hour within the last 24h\",\n  \"exit\": \"stop -30%, trail 20% after +60%, exit after 384h\",\n  \"sizing\": \"9.5% of balance per trade, up to 10 open\",\n  \"balance\": 320.0,\n  \"params\": {\n    \"entry\": \"dn8_288\",\n    \"gate\": \"dump_16_24\",\n    \"desc\": \"Washout-gate: first hour of a 8-bar closing low above its 288h SMA only if the token dumped 16%+ in an hour within the last 24h\"\n  },\n  \"exit_params\": [\n    1000000000.0,\n    0.3,\n    0.6,\n    0.2,\n    384.0,\n    1000000000.0,\n    1.0\n  ],\n  \"walk_forward\": {\n    \"n_folds\": 26,\n    \"roll_n\": 17,\n    \"roll_oos_profitable_pct\": 94.12,\n    \"roll_median_oos_ret\": 0.2425,\n    \"full_ret\": 0.9422,\n    \"full_profit\": 301.5138,\n    \"full_trades\": 147,\n    \"full_dd\": 0.3679\n  },\n  \"original_split\": {\n    \"is_ret\": 0.36,\n    \"oos_ret\": 1.1789,\n    \"oos_profit\": 377.2452,\n    \"both_windows\": true\n  },\n  \"passed\": true\n}\n", "config/strategies/H6-01718.json": "{\n  \"id\": \"H6-01718\",\n  \"batch\": \"6\",\n  \"family\": \"washout_gate\",\n  \"entry\": \"Washout-gate: first hour of a 8-bar closing low above its 288h SMA only if the token dumped 16%+ in an hour within the last 24h\",\n  \"exit\": \"stop -30%, trail 20% after +60%, exit after 384h\",\n  \"sizing\": \"15.5% of balance per trade, up to 6 open\",\n  \"balance\": 175.0,\n  \"params\": {\n    \"entry\": \"dn8_288\",\n    \"gate\": \"dump_16_24\",\n    \"desc\": \"Washout-gate: first hour of a 8-bar closing low above its 288h SMA only if the token dumped 16%+ in an hour within the last 24h\"\n  },\n  \"exit_params\": [\n    1000000000.0,\n    0.3,\n    0.6,\n    0.2,\n    384.0,\n    1000000000.0,\n    1.0\n  ],\n  \"walk_forward\": {\n    \"n_folds\": 26,\n    \"roll_n\": 17,\n    \"roll_oos_profitable_pct\": 94.12,\n    \"roll_median_oos_ret\": 0.3931,\n    \"full_ret\": 3.2853,\n    \"full_profit\": 574.9341,\n    \"full_trades\": 137,\n    \"full_dd\": 0.5266\n  },\n  \"original_split\": {\n    \"is_ret\": 0.5219,\n    \"oos_ret\": 1.8246,\n    \"oos_profit\": 319.3137,\n    \"both_windows\": true\n  },\n  \"passed\": true\n}\n", "config/strategies/H6-01722.json": "{\n  \"id\": \"H6-01722\",\n  \"batch\": \"6\",\n  \"family\": \"washout_gate\",\n  \"entry\": \"Washout-gate: first hour of a 8-bar closing low above its 288h SMA only if the token dumped 16%+ in an hour within the last 24h\",\n  \"exit\": \"stop -30%, trail 20% after +60%, exit after 384h\",\n  \"sizing\": \"28% of balance per trade, up to 3 open\",\n  \"balance\": 85.0,\n  \"params\": {\n    \"entry\": \"dn8_288\",\n    \"gate\": \"dump_16_24\",\n    \"desc\": \"Washout-gate: first hour of a 8-bar closing low above its 288h SMA only if the token dumped 16%+ in an hour within the last 24h\"\n  },\n  \"exit_params\": [\n    1000000000.0,\n    0.3,\n    0.6,\n    0.2,\n    384.0,\n    1000000000.0,\n    1.0\n  ],\n  \"walk_forward\": {\n    \"n_folds\": 26,\n    \"roll_n\": 17,\n    \"roll_oos_profitable_pct\": 82.35,\n    \"roll_median_oos_ret\": 0.5558,\n    \"full_ret\": 6.8004,\n    \"full_profit\": 578.0356,\n    \"full_trades\": 133,\n    \"full_dd\": 0.7127\n  },\n  \"original_split\": {\n    \"is_ret\": 0.3957,\n    \"oos_ret\": 4.5885,\n    \"oos_profit\": 390.0242,\n    \"both_windows\": true\n  },\n  \"passed\": true\n}\n", "config/strategies/H7-00668.json": "{\n  \"id\": \"H7-00668\",\n  \"batch\": \"7\",\n  \"family\": \"washout_gate\",\n  \"entry\": \"Washout-gate: first hour of a 8-bar closing low above its 120h SMA only if the token dumped 15%+ in an hour within the last 16h\",\n  \"exit\": \"stop -33%, trail 22% after +65%, exit after 408h\",\n  \"sizing\": \"29% of balance per trade, up to 3 open\",\n  \"balance\": 240.0,\n  \"params\": {\n    \"entry\": \"dn8_120\",\n    \"gate\": \"dump_15_16\",\n    \"desc\": \"Washout-gate: first hour of a 8-bar closing low above its 120h SMA only if the token dumped 15%+ in an hour within the last 16h\"\n  },\n  \"exit_params\": [\n    1000000000.0,\n    0.33,\n    0.65,\n    0.22,\n    408.0,\n    1000000000.0,\n    1.0\n  ],\n  \"walk_forward\": {\n    \"n_folds\": 25,\n    \"roll_n\": 15,\n    \"roll_oos_profitable_pct\": 93.33,\n    \"roll_median_oos_ret\": 0.4953,\n    \"full_ret\": 3.5598,\n    \"full_profit\": 854.3523,\n    \"full_trades\": 72,\n    \"full_dd\": 0.4835\n  },\n  \"original_split\": {\n    \"is_ret\": 0.103,\n    \"oos_ret\": 3.8735,\n    \"oos_profit\": 929.6285,\n    \"both_windows\": true\n  },\n  \"passed\": true\n}\n", "config/strategies/H7-02417.json": "{\n  \"id\": \"H7-02417\",\n  \"batch\": \"7\",\n  \"family\": \"washout_gate\",\n  \"entry\": \"Washout-gate: first hour of a 8-bar closing low above its 132h SMA only if the token dumped 17%+ in an hour within the last 14h\",\n  \"exit\": \"stop -33%, trail 22% after +65%, exit after 408h\",\n  \"sizing\": \"29% of balance per trade, up to 3 open\",\n  \"balance\": 190.0,\n  \"params\": {\n    \"entry\": \"dn8_132\",\n    \"gate\": \"dump_17_14\",\n    \"desc\": \"Washout-gate: first hour of a 8-bar closing low above its 132h SMA only if the token dumped 17%+ in an hour within the last 14h\"\n  },\n  \"exit_params\": [\n    1000000000.0,\n    0.33,\n    0.65,\n    0.22,\n    408.0,\n    1000000000.0,\n    1.0\n  ],\n  \"walk_forward\": {\n    \"n_folds\": 25,\n    \"roll_n\": 15,\n    \"roll_oos_profitable_pct\": 93.33,\n    \"roll_median_oos_ret\": 0.8594,\n    \"full_ret\": 7.3525,\n    \"full_profit\": 1396.9673,\n    \"full_trades\": 70,\n    \"full_dd\": 0.5357\n  },\n  \"original_split\": {\n    \"is_ret\": 0.7019,\n    \"oos_ret\": 4.9885,\n    \"oos_profit\": 947.8119,\n    \"both_windows\": true\n  },\n  \"passed\": true\n}\n", "config/strategies/H7-02423.json": "{\n  \"id\": \"H7-02423\",\n  \"batch\": \"7\",\n  \"family\": \"washout_gate\",\n  \"entry\": \"Washout-gate: first hour of a 8-bar closing low above its 132h SMA only if the token dumped 17%+ in an hour within the last 14h\",\n  \"exit\": \"stop -33%, trail 22% after +65%, exit after 408h\",\n  \"sizing\": \"33% of balance per trade, up to 3 open\",\n  \"balance\": 240.0,\n  \"params\": {\n    \"entry\": \"dn8_132\",\n    \"gate\": \"dump_17_14\",\n    \"desc\": \"Washout-gate: first hour of a 8-bar closing low above its 132h SMA only if the token dumped 17%+ in an hour within the last 14h\"\n  },\n  \"exit_params\": [\n    1000000000.0,\n    0.33,\n    0.65,\n    0.22,\n    408.0,\n    1000000000.0,\n    1.0\n  ],\n  \"walk_forward\": {\n    \"n_folds\": 25,\n    \"roll_n\": 15,\n    \"roll_oos_profitable_pct\": 93.33,\n    \"roll_median_oos_ret\": 0.5179,\n    \"full_ret\": 5.0269,\n    \"full_profit\": 1206.4578,\n    \"full_trades\": 67,\n    \"full_dd\": 0.6256\n  },\n  \"original_split\": {\n    \"is_ret\": 0.0622,\n    \"oos_ret\": 4.7134,\n    \"oos_profit\": 1131.2269,\n    \"both_windows\": true\n  },\n  \"passed\": true\n}\n", "config/strategies/H7-06668.json": "{\n  \"id\": \"H7-06668\",\n  \"batch\": \"7\",\n  \"family\": \"washout_gate\",\n  \"entry\": \"Washout-gate: first hour of a 8-bar closing low above its 288h SMA only if the token dumped 18%+ in an hour within the last 28h\",\n  \"exit\": \"stop -33%, trail 22% after +65%, exit after 408h\",\n  \"sizing\": \"29% of balance per trade, up to 3 open\",\n  \"balance\": 240.0,\n  \"params\": {\n    \"entry\": \"dn8_288\",\n    \"gate\": \"dump_18_28\",\n    \"desc\": \"Washout-gate: first hour of a 8-bar closing low above its 288h SMA only if the token dumped 18%+ in an hour within the last 28h\"\n  },\n  \"exit_params\": [\n    1000000000.0,\n    0.33,\n    0.65,\n    0.22,\n    408.0,\n    1000000000.0,\n    1.0\n  ],\n  \"walk_forward\": {\n    \"n_folds\": 25,\n    \"roll_n\": 15,\n    \"roll_oos_profitable_pct\": 93.33,\n    \"roll_median_oos_ret\": 0.204,\n    \"full_ret\": 4.0625,\n    \"full_profit\": 975.0035,\n    \"full_trades\": 65,\n    \"full_dd\": 0.5624\n  },\n  \"original_split\": {\n    \"is_ret\": 1.1428,\n    \"oos_ret\": 3.9341,\n    \"oos_profit\": 944.1725,\n    \"both_windows\": true\n  },\n  \"passed\": true\n}\n", "config/costs.json": "{\n  \"model\": \"small-account Solana meme-coin cost model used in the lab backtests\",\n  \"per_side_pct\": {\n    \"established_pools\": 0.0075,\n    \"new_launch_pools\": 0.0175,\n    \"pumpfun_bonding_curve\": 0.03\n  },\n  \"price_impact\": \"0.5 * size / bar_usd_volume\",\n  \"fill_cap_frac_of_bar_volume\": 0.05,\n  \"executor_agent_fill_cap\": 0.01,\n  \"swap_fee_sol\": 0.000105,\n  \"token_account_rent_sol\": 0.00203928,\n  \"rent_unreclaimed_frac\": 0.25,\n  \"approx_fixed_round_trip_usd_at_sol_89\": 0.064,\n  \"note\": \"Fees dominate accounts below about $30. H6-01098 needs about $1.88 per buy to break even.\"\n}\n", "config/start_balance_H6-01098.json": "{\n  \"id\": \"H6-01098\",\n  \"family\": \"washout_gate\",\n  \"native_start\": 175,\n  \"span\": \"Full hourly history, 2026-05-18 through 2026-11-13 15:00 CT (America/Chicago). Same engine and cost model as the Page.\",\n  \"note\": \"Ending equity is the full-span result. The +95% over 30 days is reported only for the $200 start, where it was measured. Do not infer 30-day returns for the other sizes. Below about $30, fixed fees (~$0.064 per round trip) dominate.\",\n  \"rows\": [\n    {\n      \"start\": 5,\n      \"end\": 0.15\n    },\n    {\n      \"start\": 10,\n      \"end\": 0.12\n    },\n    {\n      \"start\": 20,\n      \"end\": 7.61\n    },\n    {\n      \"start\": 30,\n      \"end\": 101\n    },\n    {\n      \"start\": 50,\n      \"end\": 406\n    },\n    {\n      \"start\": 100,\n      \"end\": 545\n    },\n    {\n      \"start\": 125,\n      \"end\": 1070\n    },\n    {\n      \"start\": 175,\n      \"end\": 1149,\n      \"full_return_pct\": 556.7,\n      \"trades\": 96,\n      \"max_dd_pct\": 54.5\n    },\n    {\n      \"start\": 200,\n      \"end\": 1396,\n      \"ret_30d_pct\": 95\n    },\n    {\n      \"start\": 280,\n      \"end\": 1511\n    },\n    {\n      \"start\": 500,\n      \"end\": 1614\n    },\n    {\n      \"start\": 1000,\n      \"end\": 1491\n    }\n  ],\n  \"best_ending_equity\": {\n    \"start\": 500,\n    \"end\": 1614\n  },\n  \"best_native_size\": {\n    \"start\": 175,\n    \"end\": 1149,\n    \"return_pct\": 556.7\n  },\n  \"lowest_start_that_stays_clearly_profitable\": {\n    \"start\": 30,\n    \"end\": 101\n  }\n}\n", "upstream/solstrats-dashboard/SOURCE.txt": "Public repo (copied read-only; this bundle does not write back to it):\n  https://github.com/ooio6001-del/solstrats-dashboard\n\nBranches (via https://api.github.com/repos/ooio6001-del/solstrats-dashboard/branches):\n  - data  (default)  commit 521eee3408f05f9f9f4a02439cd918db91ded4f0  2026-11-13 17:34:12 CT\n      contains only data.json (508,815 bytes reported by the API; local copy 508,816)\n  - main             commit 27d2110eabc1a2552d1df880769c648d95ce70a7\n      contains .nojekyll, README.md, data.json, index.html, solstrats-dashboard.html\n\ndata.json here is the default-branch (`data`) snapshot downloaded\n2026-11-13 from https://raw.githubusercontent.com/ooio6001-del/solstrats-dashboard/data/data.json\nsha256=342e6e768ab1542b592d31f38c53afe18ae3e8b8a9317db46bef99ab62e23927\nexported 2026-11-13 17:36:01 CT\n\ndata.main.json is the `main` branch copy (sha256=77d122932488a98a9d91fd1aa7f9b9aa45107512e55cd7862a4766b7ede67e12),\nexported a few minutes earlier (unix 1794611497).\n\nLive site (GitHub Pages, static files, no package.json / start script / server):\n  https://ooio6001-del.github.io/solstrats-dashboard/\n\nNothing in this upstream copy is runnable as a Node/Python app. index.html fetches\ndata.json in the browser (Chart.js from jsDelivr).\n", "upstream/solstrats-dashboard/README.md": "# SOLSTRATS live dashboard\n\nLive paper-trading results for Solana memecoin strategies (the $100 / $3-$8 hunt plus the 1.5M-combo grid).\n\n**Paper trading only.** No wallet, no real trades. Early results can be luck.\n\nData refreshes automatically (every ~2 minutes from the `data` branch).\n"};
+const COMMIT = {branch:"main", message:"Initial import: SOLSTRATS lab, hunt results, and GitHub Edition dashboard (paper only)", time:"2026-11-13 17:42 CT"};
+
+const $ = (s, el=document) => el.querySelector(s);
+const $$ = (s, el=document) => [...el.querySelectorAll(s)];
+const fmt = (n,d=2) => n==null||isNaN(n) ? '—' : Number(n).toLocaleString(undefined,{maximumFractionDigits:d});
+const usd = (n,d=2) => n==null||isNaN(n) ? '—' : (n<0?'-':'')+'$'+fmt(Math.abs(n),d);
+const usdDelta = (n) => n==null||isNaN(n) ? '—' : `<span class="${n>=0?'pos':'neg'}">${n>=0?'+':'-'}$${fmt(Math.abs(n),2)}</span>`;
+const pct = (n,d=1) => n==null||isNaN(n) ? '—' : `<span class="${n>=0?'pos':'neg'}">${n>=0?'+':''}${fmt(n,d)}%</span>`;
+const mon = (n,d=2) => `<span class="mono">${fmt(n,d)}</span>`;
+
+const PCOST = [0.0075, 0.0175, 0.03];
+const FIXSOL = 0.000105, RENTSOL = 0.00203928, UNREC = 0.25, IMPK = 0.5, FCAP = 0.05;
+const T0MS = Date.UTC(2026, 10, 11, 22, 0, 0);
+function hourLabel(i){
+  return new Date(T0MS + i * 3600000).toLocaleString('en-US',{timeZone:'America/Chicago',month:'short',day:'numeric',hour:'numeric'}) + ' CT';
+}
+function simWin(s, lo, hi){
+  const gi = s[8];
+  const cand = gi >= 0 ? WIN.g[gi].split(';').map(x => x.split(',').map(Number)) : [];
+  const bal = s[4], frac = s[5], mp = s[6], one = s[7];
+  const L = [];
+  let cur = -1, nxt = 0, done = false;
+  for (const k of cand) {
+    const j = k[0], ti = k[1], to = k[2], pin = k[4], ve = k[5], eo = k[6];
+    if (j !== cur) { cur = j; nxt = lo; done = false; }
+    if (done || ti < nxt) continue;
+    nxt = to + 2;
+    if (one === 1) done = true;
+    if (ti >= hi) continue;
+    const open = to >= hi || (eo === 1 && to === hi - 1);
+    let g = k[3], x = to;
+    if (open) { const m = WIN.marks[j][hi - 1]; g = m > 0 ? m / pin : 1; x = hi - 1; }
+    L.push({ t: ti, j, x, g, open, ve });
+  }
+  L.sort((a,b) => (a.t + a.j * 1e-7) - (b.t + b.j * 1e-7));
+  let cash = bal, peak = bal, mdd = 0, ntr = 0, wins = 0, nun = 0, unr = 0;
+  const op = [];
+  const close = (tn) => {
+    for (;;) {
+      let mi = -1, me = Infinity;
+      op.forEach((o,i) => { if (o.x < tn && o.x < me) { me = o.x; mi = i; } });
+      if (mi < 0) break;
+      const o = op.splice(mi, 1)[0];
+      cash += o.val + o.lock * (1 - UNREC);
+      const pnl = o.val - o.cost - o.lock * UNREC;
+      if (o.open) { nun++; unr += pnl; } else { ntr++; if (pnl > 0) wins++; }
+      let eq = cash;
+      op.forEach(z => { eq += z.cost + z.lock; });
+      if (eq > peak) peak = eq;
+      const dd = peak > 0 ? 1 - eq / peak : 0;
+      if (dd > mdd) mdd = dd;
+    }
+  };
+  for (const tr of L) {
+    close(tr.t);
+    if (op.length >= mp) continue;
+    let eq = cash;
+    op.forEach(z => { eq += z.cost + z.lock; });
+    let size = frac * eq;
+    const sp = WIN.sol[tr.t], fix = FIXSOL * sp, lock = RENTSOL * sp;
+    if (size + lock > cash) size = cash - lock;
+    if (size <= fix * 2) continue;
+    if (size > FCAP * tr.ve) continue;
+    const pc = PCOST[WIN.venue[tr.j]] + IMPK * size / (tr.ve + 1);
+    const val = (size - fix) * (1 - pc) * tr.g * (1 - pc) - fix;
+    cash -= size + lock;
+    op.push({ x: tr.x, val, cost: size, lock, open: tr.open });
+  }
+  close(Infinity);
+  return [cash, ntr, ntr ? wins / ntr : 0, mdd, nun, unr];
+}
+
+function table(cols, rows, {sort=true}={}){
+  const wrap = document.createElement('div');
+  wrap.className = 'scroll';
+  const t = document.createElement('table');
+  t.className = 'data';
+  let si=-1, sd=-1;
+  const draw = () => {
+    let rr = rows.slice();
+    if (si>=0){
+      rr.sort((a,b)=>{
+        const x=a[si], y=b[si];
+        const nx=typeof x==='number'?x:parseFloat(x), ny=typeof y==='number'?y:parseFloat(y);
+        if (!isNaN(nx)&&!isNaN(ny)) return sd*(nx-ny);
+        return sd*String(x??'').localeCompare(String(y??''));
+      });
+    }
+    t.innerHTML = '<thead><tr>'+cols.map((c,i)=>`<th class="${c.l?'l':''}" data-i="${i}">${c.h}${si===i?(sd>0?' ▲':' ▼'):''}</th>`).join('')+'</tr></thead><tbody>'+
+      rr.map(r=>'<tr>'+cols.map((c,i)=>`<td class="${c.l?'l':''}">${c.f?c.f(r,i):esc(r[i])}</td>`).join('')+'</tr>').join('')+'</tbody>';
+    if (sort) t.querySelectorAll('th').forEach(th=>th.onclick=()=>{const i=+th.dataset.i; sd = si===i?-sd:-1; si=i; draw();});
+  };
+  draw();
+  wrap.appendChild(t);
+  return wrap;
+}
+function esc(s){return String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+
+/* tabs */
+function setTab(id){
+  $$('.tab').forEach(b=>b.classList.toggle('on', b.dataset.tab===id));
+  $$('.panel').forEach(p=>p.classList.toggle('hidden', p.id!=='tab-'+id));
+  history.replaceState(null,'','#'+id);
+  window.scrollTo(0,0);
+}
+$$('.tab').forEach(b=>b.onclick=()=>setTab(b.dataset.tab));
+
+/* ---------- Overview / Leaderboard window ---------- */
+const WSTATE = {mode:'24h', sort:'ret', tag:'all', cs:'24', ce:'47'};
+
+function windowRows(){
+  const custom = WSTATE.mode==='custom';
+  const key = WSTATE.mode==='ytd' ? '12m' : WSTATE.mode;
+  const pi = WPRE.indexOf(key);
+  let lo=0, hi=48, hours=0, label='';
+  if (custom){
+    const a=+WSTATE.cs, b=+WSTATE.ce;
+    lo=Math.min(a,b); hi=Math.max(a,b)+1; hours=hi-lo;
+    label = `${hourLabel(lo)} → ${hourLabel(hi-1)}`;
+  } else {
+    const bd = WIN.b[key]; hours=bd[1];
+    label = `${bd[2]} → ${bd[3]}` + (bd[4]===1 ? (WSTATE.mode==='ytd' ? ' (YTD capped to the hourly data, which starts May 18)' : ' (12m capped to the 179 days of hourly data)') : '');
+  }
+  const kfn = (r) => WSTATE.sort==='profit' ? r.m[0]-r.s[4] : WSTATE.sort==='win' ? (r.m[1]>0?r.m[2]+r.m[1]*1e-6:-1) : WSTATE.sort==='dd' ? (r.m[1]+r.m[4]>0?-r.m[3]:-9) : r.m[0]/r.s[4]-1;
+  const rows = WIN.s.filter(s => (WSTATE.tag==='all'||s[1]===WSTATE.tag) && (!custom||s[8]!==-1)).map(s => ({s, m: custom?simWin(s,lo,hi):s[9][pi]}));
+  rows.sort((a,b)=>kfn(b)-kfn(a));
+  const strip = WIN.s.filter(s => !custom||s[8]!==-1).map(s => ({s, m: custom?simWin(s,lo,hi):s[9][pi]}));
+  strip.sort((a,b)=>((b.s[1]==='robust'?1:0)-(a.s[1]==='robust'?1:0)) || (kfn(b)-kfn(a)));
+  const active = rows.filter(r=>r.m[1]+r.m[4]>0);
+  const prof = active.filter(r=>r.m[0]>r.s[4]);
+  const unrl = rows.reduce((t,r)=>t+r.m[5],0);
+  return {custom,hours,label,rows,strip,active:active.length,prof:prof.length,unrl};
+}
+
+function renderStrip(el){
+  const w = windowRows();
+  el.innerHTML = '';
+  const cap = document.createElement('div');
+  cap.className='muted'; cap.style.margin='0 0 8px'; cap.style.fontFamily='var(--mono)'; cap.style.fontSize='12px';
+  cap.textContent = `${WSTATE.mode==='custom'?'CUSTOM':WSTATE.mode.toUpperCase()} · ${w.label} · ranked by ${WSTATE.sort==='profit'?'profit $':WSTATE.sort==='win'?'win rate':WSTATE.sort==='dd'?'lowest drawdown':'return %'}`;
+  el.appendChild(cap);
+  const strip = document.createElement('div'); strip.className='strip';
+  w.strip.forEach((r,i)=>{
+    const p=r.m[0]-r.s[4], rt=(r.m[0]/r.s[4]-1)*100, rob=r.s[1]==='robust', up=p>=0;
+    const d=document.createElement('div');
+    d.className='tile'+(i===0?' first':'');
+    d.innerHTML = `<span class="label ${rob?'green':'gray'}">${rob?'ROBUST':r.s[1]==='top100'?'TOP SHARPE':'TOP $'}</span>
+      <div class="rk">#${i+1}</div>
+      <div class="id">${esc(r.s[0])}</div>
+      <div class="muted" style="font-size:12px">${esc(r.s[2])} · $${r.s[4]} start</div>
+      <div class="${up?'pos':'neg'}" style="font-family:var(--mono);font-size:18px;font-weight:600;margin-top:8px">${up?'+':'-'}$${fmt(Math.abs(p),2)}</div>
+      <div class="muted" style="display:flex;justify-content:space-between;margin-top:4px;font-size:12px">
+        <span class="${up?'pos':'neg'}">${rt>=0?'+':''}${rt.toFixed(1)}%</span>
+        <span>${r.m[1]?('win '+Math.round(r.m[2]*100)+'%'):'win —'}</span>
+        <span>${r.m[1]+r.m[4]} tr</span>
+      </div>`;
+    strip.appendChild(d);
+  });
+  el.appendChild(strip);
+  return w;
+}
+
+function renderWindowBoard(){
+  const host = $('#window-board');
+  if (!host) return;
+  const w = windowRows();
+  const names = {robust:'WF robust', top100:'Top Sharpe', top100_profit:'Top profit'};
+  $('#win-metrics').innerHTML = [
+    {k:'#1 in window', v: w.rows.length? ((w.rows[0].m[0]/w.rows[0].s[4]-1)*100) : 0, d:w.rows.length?`${w.rows[0].s[0]} · ${w.rows[0].s[2]}`:'', pct:true},
+    {k:'Window', v: w.hours+'h', d:w.label, raw:true},
+    {k:'With a position', v: `${w.active}/${w.rows.length}`, raw:true},
+    {k:'Of those, profitable', v: w.active? Math.round(100*w.prof/w.active)+'%' : '0%', raw:true},
+    {k:'Unrealized P&L, all open', v:w.unrl, usd:true},
+  ].map(m=>`<div class="metric"><div class="k">${m.k}</div><div class="v">${m.raw?esc(m.v):m.pct?pct(m.v):m.usd?usdDelta(m.v):esc(m.v)}</div><div class="muted" style="font-size:12px">${esc(m.d||'')}</div></div>`).join('');
+  host.innerHTML='';
+  const rows = w.rows.map((r,i)=>[
+    i+1, r.s[0], names[r.s[1]]||r.s[1], r.s[2], r.s[3], r.s[4], r.m[0], r.m[0]-r.s[4], (r.m[0]/r.s[4]-1)*100, r.m[1], r.m[1]?Math.round(r.m[2]*100):null, r.m[3]*100, r.m[4], r.m[4]?r.m[5]:null
+  ]);
+  host.appendChild(table([
+    {h:'#'},{h:'ID',l:1},{h:'Board',l:1},{h:'Family',l:1},{h:'Rule',l:1},
+    {h:'Start',f:r=>usd(r[5],0)},{h:'End',f:r=>usd(r[6])},{h:'Profit',f:r=>usdDelta(r[7])},{h:'Return',f:r=>pct(r[8])},
+    {h:'Closed'},{h:'Win',f:r=>r[10]==null?'':(r[10]+'%')},{h:'Max DD',f:r=>fmt(r[11],1)+'%'},{h:'Open'},{h:'Unrealized',f:r=>r[13]==null?'':usdDelta(r[13])}
+  ], rows));
+}
+
+function bindWindowControls(prefix){
+  $$(`${prefix} .wmode`).forEach(b=>b.onclick=()=>{
+    $$(`${prefix} .wmode`).forEach(x=>x.classList.toggle('on',x===b));
+    WSTATE.mode=b.dataset.v;
+    const custom=WSTATE.mode==='custom';
+    $$(`${prefix} .custom-only`).forEach(el=>el.classList.toggle('hidden', !custom));
+    renderAllWindows();
+  });
+}
+function renderAllWindows(){
+  $$('[data-strip]').forEach(renderStrip);
+  renderWindowBoard();
+}
+
+/* robust / top boards */
+function renderRobust(){
+  const key = $('#rsort').value;
+  const rows = ROBUST.slice().sort((a,b)=>{
+    if (key==='wf') return (b[6]-a[6])|| (b[7]-a[7]);
+    if (key==='median') return b[7]-a[7];
+    if (key==='full') return b[8]-a[8];
+    return a[9]-b[9];
+  }).map((x,i)=>[i+1,x[0],x[1],`${x[2]} · ${x[3]} · ${x[4]}`,x[5],x[6],x[7],x[8],x[9],x[10],x[12],x[11]]);
+  const host=$('#robust-table'); host.innerHTML='';
+  host.appendChild(table([
+    {h:'#'},{h:'ID',l:1},{h:'Family',l:1},{h:'Rules (entry · exit · size)',l:1},
+    {h:'Start',f:r=>usd(r[4],0)},{h:'Folds +',f:r=>fmt(r[5],1)+'%'},{h:'Median OOS',f:r=>pct(r[6])},
+    {h:'Full',f:r=>pct(r[7])},{h:'Max DD',f:r=>fmt(r[8],1)+'%'},{h:'Trades'},
+    {h:'IS',f:r=>pct(r[10])},{h:'OOS',f:r=>pct(r[11])}
+  ], rows));
+}
+function renderTop(){
+  const board = $('#board').value;
+  const src = board==='sharpe'?TOP_SHARPE:TOP_PROFIT;
+  const fam = $('#fam').value;
+  const tsort = $('#tsort').value;
+  const fams = ['all',...new Set(src.map(x=>x[1]))];
+  const sel=$('#fam'); const cur=sel.value;
+  sel.innerHTML=fams.map(f=>`<option ${f===cur?'selected':''}>${f}</option>`).join('');
+  const rows=src.filter(x=>fam==='all'||x[1]===fam).sort((a,b)=>{
+    const k={sharpe:x=>x[9],profit:x=>x[4],ret:x=>x[5],win:x=>x[6],dd:x=>-x[8]}[tsort];
+    return k(b)-k(a);
+  }).map((x,i)=>[i+1,x[0],x[1],x[2],x[3],x[3]+x[4],x[4],x[5],x[6],x[7],x[8],x[9],x[10],x[11]]);
+  const host=$('#top-table'); host.innerHTML='';
+  host.appendChild(table([
+    {h:'#'},{h:'ID',l:1},{h:'Family',l:1},{h:'Plain-English rules',l:1},
+    {h:'Start',f:r=>usd(r[4],0)},{h:'End',f:r=>usd(r[5])},{h:'Profit',f:r=>usdDelta(r[6])},{h:'OOS %',f:r=>pct(r[7])},
+    {h:'Win',f:r=>r[8]+'%'},{h:'Trades'},{h:'DD',f:r=>r[10]+'%'},{h:'Sharpe',f:r=>fmt(r[11],2)},
+    {h:'IS %',f:r=>pct(r[12])},{h:'Label',l:1,f:r=> r[13]==='wf'?'<span class="label green">walk-forward ✓</span>': r[2]==='moonshot'?'<span class="label orange">IS+OOS, high-variance</span>':'<span class="label green">IS+OOS ✓</span>'}
+  ], rows));
+}
+
+/* backtests */
+function renderMoon(){
+  const host=$('#moon-bars');
+  const max=Math.max(...MOON.map(m=>Math.abs(m.best)),1);
+  host.innerHTML = '<div class="bars">'+MOON.map(m=>{
+    const w=Math.max(2, Math.abs(m.best)/max*100);
+    return `<div class="bar"><div>TP +${m.tp}%</div><div class="track"><div class="fill ${m.best<0?'neg':''}" style="width:${w}%"></div></div><div class="${m.best>=0?'pos':'neg'}">${m.best>=0?'+':''}${m.best.toFixed(1)}%</div></div>`;
+  }).join('')+'</div>';
+  const t=$('#moon-table'); t.innerHTML='';
+  t.appendChild(table([
+    {h:'Take-profit',f:r=>'+'+r[0]+'%'},{h:'Hit rate %',f:r=>fmt(r[1],1)},{h:'Median OOS %',f:r=>pct(r[2])},{h:'Best config OOS %',f:r=>pct(r[3])}
+  ], MOON.map(m=>[m.tp,m.hit,m.med,m.best])));
+}
+function renderStress(){
+  const host=$('#stress-table'); host.innerHTML='';
+  host.appendChild(table([
+    {h:'ID',l:1},{h:'Start',f:r=>usd(r[1],0)},{h:'Trades'},{h:'Full span',f:r=>pct(r[3])},
+    {h:'2× costs',f:r=>pct(r[4])},{h:'3× costs',f:r=>pct(r[5])},{h:'1 bar late',f:r=>pct(r[6])},
+    {h:'Minus best token',f:r=>pct(r[7])},{h:'80% subsample p5',f:r=>pct(r[8])},
+    {h:'Null p',f:r=>r[9]<0?'—':fmt(r[9],4)},{h:'Survives',l:1,f:r=>r[10]?'<span class="label green">yes</span>':'<span class="label red">no</span>'}
+  ], STRESS));
+  const h2=$('#monthly-table'); h2.innerHTML='';
+  h2.appendChild(table(
+    [{h:'ID',l:1},...MONTHLY.labels.map(l=>({h:l, /*placeholder*/})),{h:'Full span'}].map((c,i)=> i===0?c:{h:c.h||MONTHLY.labels[i-1], f:(r)=>pct(r[i])}),
+    MONTHLY.rows
+  ));
+}
+function renderMicro(){
+  const host=$('#micro-table'); host.innerHTML='';
+  host.appendChild(table([
+    {h:'ID',l:1},{h:'Family',l:1},{h:'Trades'},{h:'Avg net/trade',f:r=>pct(r[3])},
+    {h:'Break-even buy',f:r=> r[4]==null?'<span class="label red">never</span>':`<span class="label ${r[4]<=1?'green':'orange'}">$${fmt(r[4],2)}</span>`},
+    {h:'P&L @$0.01',f:r=>usdDelta(r[5])},{h:'@$0.10',f:r=>usdDelta(r[6])},{h:'@$0.50',f:r=>usdDelta(r[7])},{h:'@$1',f:r=>usdDelta(r[8])}
+  ], MICRO));
+}
+function renderBtl(){
+  const host=$('#btl-table'); host.innerHTML='';
+  host.appendChild(table([
+    {h:'Strategy',l:1},{h:'Family',l:1},{h:'Live equity (mid)',f:r=>usd(r[2])},{h:'Live % (mid)',f:r=>pct(r[2]-100)},
+    {h:'Live % if sold now',f:r=>pct(r[3]-100)},{h:'Closed'},{h:'Open'},
+    {h:'Backtest last 24h',f:r=>pct(r[6])},{h:'Backtest full span',f:r=>pct(r[7])},{h:'BT trades'}
+  ], BTL));
+}
+
+/* start balance */
+function renderStart(){
+  const host=$('#start-bars');
+  const max=Math.max(...START_BAL.map(r=>r[1]));
+  host.innerHTML='<div class="bars">'+START_BAL.map(r=>{
+    const end=r[1], start=r[0], up=end>=start;
+    const w=Math.max(2, Math.abs(end)/max*100);
+    const note=r[2]!=null?` · 30d ${r[2]>=0?'+':''}${r[2]}%`:'';
+    return `<div class="bar"><div>$${start}</div><div class="track"><div class="fill ${up?'':'neg'}" style="width:${w}%"></div></div><div class="${up?'pos':'neg'}">${usd(end, end<10?2:0)}${note}</div></div>`;
+  }).join('')+'</div>';
+  const t=$('#start-table'); t.innerHTML='';
+  t.appendChild(table([
+    {h:'Start',f:r=>usd(r[0],0)},{h:'End',f:r=>usd(r[1], r[1]<10?2:0)},
+    {h:'Return',f:r=>pct((r[1]/r[0]-1)*100)},{h:'30-day return',f:r=>r[2]==null?'— (not measured)':pct(r[2])}
+  ], START_BAL));
+}
+
+/* live */
+function renderLive(){
+  const L=LIVE, hs=L.hunt_scalars, ls=L.leaderboard_scalars, st=L.status;
+  $('#live-asof').textContent = `Snapshot ${L.exported_ct} from the public data branch (read-only). Paper trading only.`;
+  $('#live-metrics').innerHTML = [
+    ['Hunt #1 equity', usd(L.top10_ranked[0].equity), '#'+L.top10_ranked[0].id+' · +'+fmt(L.top10_ranked[0].net_return_pct,1)+'% from $100'],
+    ['Grid #1 equity', usd(L.leaderboard_top20[0].equity), L.leaderboard_top20[0].strategy.slice(0,42)+'… · start $'+L.leaderboard_top20[0].start_balance],
+    ['Hunt generation', hs.generation, fmt(hs.variants_tried_total,0)+' variants tried'],
+    ['Grid combos', fmt(ls.combos,0), 'shape '+ls.grid],
+    ['Runtime', fmt(st.runtime_min,1)+' min', st.restarts+' restarts'],
+    ['Data health', (L.data_health.status||'—').toUpperCase(), fmt(L.data_health.total_requests,0)+' req · '+L.data_health.total_429+' × 429 · err '+L.data_health.error_rate_pct+'%'],
+  ].map(([k,v,d])=>`<div class="metric"><div class="k">${k}</div><div class="v">${v}</div><div class="muted" style="font-size:12px">${esc(d)}</div></div>`).join('');
+
+  const host=$('#hunt-top'); host.innerHTML='';
+  host.appendChild(table([
+    {h:'ID',f:r=>'#'+r[0]},{h:'Gen'},{h:'Equity',f:r=>usd(r[2])},{h:'Return',f:r=>pct(r[3])},
+    {h:'Trades'},{h:'Win %',f:r=>fmt(r[5],1)+'%'},{h:'PF',f:r=>r[6]==null?'—':fmt(r[6],2)},
+    {h:'$/trade',f:r=>usdDelta(r[7])},{h:'Max DD',f:r=>fmt(r[8],1)+'%'},{h:'Age (min)',f:r=>fmt(r[9],0)},
+    {h:'Rules',l:1,f:r=>esc(r[10])}
+  ], L.top10_ranked.map(v=>[v.id,v.gen,v.equity,v.net_return_pct,v.trades,v.win_rate,v.profit_factor,v.avg_pnl_per_trade,v.max_drawdown_pct,v.age_min,v.rule])));
+
+  const g=$('#grid-top'); g.innerHTML='';
+  g.appendChild(table([
+    {h:'#',f:r=>r[0]},{h:'Strategy',l:1},{h:'Family',l:1},{h:'Start',f:r=>usd(r[3],0)},
+    {h:'Equity',f:r=>usd(r[4])},{h:'Return',f:r=>pct(r[5])},{h:'Trades'},{h:'Win %',f:r=>fmt(r[7],1)+'%'},
+    {h:'Max DD',f:r=>fmt(r[8],1)+'%'},{h:'Fees',f:r=>usd(r[9])},{h:'Open',l:1,f:r=>esc((r[10]||[]).join(', '))}
+  ], L.leaderboard_top20.map(v=>[v.rank,v.strategy,v.family,v.start_balance,v.equity,v.return_pct,v.trades,v.win_rate,v.max_drawdown_pct,v.fees_paid_usd,v.open_positions])));
+
+  const f=$('#live-fams'); f.innerHTML='';
+  f.appendChild(table([
+    {h:'Family',l:1},{h:'Median return',f:r=>pct(r[1])},{h:'% profitable',f:r=>fmt(r[2],1)+'%'},
+    {h:'Variants traded',f:r=>fmt(r[3],0)},{h:'Busted',f:r=>fmt(r[4],0)}
+  ], (L.leaderboard_families||[]).map(v=>[v.family,v.median_return_pct,v.pct_profitable,v.traded_variants,v.busted])));
+
+  const src=$('#health-sources'); src.innerHTML='';
+  const rows=Object.entries(L.data_health.sources||{}).map(([k,v])=>[k,v.documented_limit_per_min,v.our_cap_per_min,v.requests,v.ok,v.http_429,v.timeouts,v.net_errors,v.circuit,v.circuit_trips]);
+  src.appendChild(table([
+    {h:'Source',l:1},{h:'Doc limit/min'},{h:'Our cap/min'},{h:'Requests'},{h:'OK'},{h:'429s'},{h:'Timeouts'},{h:'Net errors'},{h:'Circuit',l:1},{h:'Trips'}
+  ], rows));
+}
+
+/* repository */
+function renderRepo(){
+  const treeEl=$('#filetree');
+  const files=TREE.slice().sort((a,b)=>a.path.localeCompare(b.path));
+  // update dashboard_github.html size if 0
+  treeEl.innerHTML = files.map(f=>`<div class="item" data-path="${esc(f.path)}"><span class="muted">🗎</span><span>${esc(f.path)}</span><span class="muted" style="margin-left:auto">${f.size?fmt(f.size/1024,1)+' KB':''}</span></div>`).join('');
+  treeEl.onclick = e => {
+    const it=e.target.closest('.item'); if(!it) return;
+    $$('.filetree .item').forEach(x=>x.classList.toggle('on',x===it));
+    showBlob(it.dataset.path);
+  };
+  showBlob('README.md');
+}
+function simpleMD(src){
+  let t=esc(src);
+  t=t.replace(/^### (.*)$/gm,'<h3>$1</h3>').replace(/^## (.*)$/gm,'<h2>$1</h2>').replace(/^# (.*)$/gm,'<h1>$1</h1>');
+  t=t.replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>');
+  t=t.replace(/`([^`]+)`/g,'<code>$1</code>');
+  t=t.replace(/\[(.*?)\]\((.*?)\)/g,'<a href="$2" target="_blank" rel="noopener">$1</a>');
+  // tables
+  t=t.replace(/(^(\|.*\|\n)+)/gm, block=>{
+    const lines=block.trim().split('\n').filter(Boolean);
+    if (lines.length<2) return block;
+    const rows=lines.filter(l=>!/^\|[-:| ]+\|$/.test(l)).map(l=>l.replace(/^\||\|$/g,'').split('|').map(c=>c.trim()));
+    return '<table>'+rows.map((r,i)=>(i===0?'<thead>':'')+'<tr>'+r.map(c=>(i===0?'<th>':'<td>')+c+(i===0?'</th>':'</td>')).join('')+'</tr>'+(i===0?'</thead><tbody>':'')).join('')+'</tbody></table>';
+  });
+  t=t.replace(/\n\n/g,'</p><p>');
+  return '<div class="readme"><p>'+t+'</p></div>';
+}
+function showBlob(path){
+  $('#blob-name').textContent=path;
+  const body=$('#blob-body');
+  if (path==='README.md' && BLOBS[path]){ body.innerHTML=simpleMD(BLOBS[path]); return; }
+  if (BLOBS[path]){ body.innerHTML='<pre>'+esc(BLOBS[path])+'</pre>'; return; }
+  const f=TREE.find(x=>x.path===path);
+  body.innerHTML=`<pre class="muted">${esc(path)}\n${f?fmt(f.size,0)+' bytes':''}\n\nThis file is in the bundle. Open it from the repo checkout to read the full contents here.\n(Small text files and strategy JSON are inlined in this page.)</pre>`;
+}
+
+/* compare */
+function renderCompare(){
+  // already static in HTML mostly
+}
+
+/* init */
+function fillHourSelects(){
+  const opts=Array.from({length:48},(_,i)=>`<option value="${i}">${hourLabel(i)}</option>`).join('');
+  $$('#cs, #cs2').forEach(s=>{s.innerHTML=opts; s.value=WSTATE.cs; s.onchange=()=>{WSTATE.cs=s.value; $$('#cs, #cs2').forEach(x=>x.value=s.value); renderAllWindows();};});
+  $$('#ce, #ce2').forEach(s=>{s.innerHTML=opts; s.value=WSTATE.ce; s.onchange=()=>{WSTATE.ce=s.value; $$('#ce, #ce2').forEach(x=>x.value=s.value); renderAllWindows();};});
+  $$('#wsort, #wsort2').forEach(s=>s.onchange=()=>{WSTATE.sort=s.value; $$('#wsort, #wsort2').forEach(x=>x.value=s.value); renderAllWindows();});
+  $$('#wtag, #wtag2').forEach(s=>s.onchange=()=>{WSTATE.tag=s.value; $$('#wtag, #wtag2').forEach(x=>x.value=s.value); renderAllWindows();});
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  fillHourSelects();
+  bindWindowControls('#overview-win');
+  bindWindowControls('#leaderboard-win');
+  $('#rsort').onchange=renderRobust;
+  $('#board').onchange=()=>{renderTop();};
+  $('#tsort').onchange=renderTop;
+  $('#fam').onchange=renderTop;
+  renderAllWindows();
+  renderRobust();
+  renderTop();
+  renderMoon();
+  renderStress();
+  renderMicro();
+  renderBtl();
+  renderStart();
+  renderLive();
+  renderRepo();
+  const tab=(location.hash||'#overview').slice(1);
+  setTab(['overview','leaderboard','strategies','backtests','live','repository','compare'].includes(tab)?tab:'overview');
+});
+
+</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+{
+ "batch7_all": {
+  "n": 10000,
+  "profitable": 0.7447,
+  "median_full_ret": 0.6003
+ },
+ "centres": [
+  {
+   "id": "H6-01098",
+   "centre": "dn8_120 dump_16_16",
+   "neighbours": 3500,
+   "distinct_entries": 28,
+   "profitable": 0.7206,
+   "median_full_ret": 0.7005,
+   "p10_full_ret": -0.705,
+   "oos_profitable": 0.856
+  },
+  {
+   "id": "H7-02417",
+   "centre": "dn8_132 dump_17_14",
+   "neighbours": 2750,
+   "distinct_entries": 22,
+   "profitable": 0.7309,
+   "median_full_ret": 0.8462,
+   "p10_full_ret": -0.7023,
+   "oos_profitable": 0.8687
+  },
+  {
+   "id": "H6-01718",
+   "centre": "dn8_288 dump_16_24",
+   "neighbours": 2875,
+   "distinct_entries": 23,
+   "profitable": 0.7329,
+   "median_full_ret": 0.5458,
+   "p10_full_ret": -0.4911,
+   "oos_profitable": 0.7878
+  },
+  {
+   "id": "H6-00468",
+   "centre": "dn10_288 dump_16_36",
+   "neighbours": 2250,
+   "distinct_entries": 18,
+   "profitable": 0.7893,
+   "median_full_ret": 0.6124,
+   "p10_full_ret": -0.2368,
+   "oos_profitable": 0.6769
+  }
+ ]
+}

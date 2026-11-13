@@ -1,0 +1,186 @@
+{
+  "batch": 1,
+  "variants": 10000,
+  "elapsed_s": 21.7,
+  "data_hours": 4297,
+  "data_tokens": 118,
+  "split_bar": 2578,
+  "oos_with_trades": 9970,
+  "oos_profitable": 704,
+  "oos_and_is_profitable": 97,
+  "signal_counts": {
+    "vwap_reclaim": 42205,
+    "rel_strength": 76327,
+    "pullback_ma": 30399,
+    "failed_breakdown": 23788,
+    "theme_laggard": 1889,
+    "post_run_pullback": 14184,
+    "climax_reversal": 516,
+    "sol_risk_on": 12388,
+    "dryup_expansion": 4646,
+    "session_orb": 25600
+  },
+  "family_stats": {
+    "vwap_reclaim": {
+      "n": 1000,
+      "with_trades": 1000,
+      "pos_oos": 34,
+      "best_oos_profit": 538.9861,
+      "best_id": "H1-00094"
+    },
+    "rel_strength": {
+      "n": 1000,
+      "with_trades": 1000,
+      "pos_oos": 33,
+      "best_oos_profit": 1268.8707,
+      "best_id": "H1-01069"
+    },
+    "pullback_ma": {
+      "n": 1000,
+      "with_trades": 1000,
+      "pos_oos": 5,
+      "best_oos_profit": 97.4767,
+      "best_id": "H1-02590"
+    },
+    "failed_breakdown": {
+      "n": 1000,
+      "with_trades": 1000,
+      "pos_oos": 17,
+      "best_oos_profit": 1256.0996,
+      "best_id": "H1-03094"
+    },
+    "theme_laggard": {
+      "n": 1000,
+      "with_trades": 1000,
+      "pos_oos": 1,
+      "best_oos_profit": 0.1564,
+      "best_id": "H1-04817"
+    },
+    "post_run_pullback": {
+      "n": 1000,
+      "with_trades": 1000,
+      "pos_oos": 15,
+      "best_oos_profit": 26.6223,
+      "best_id": "H1-05304"
+    },
+    "climax_reversal": {
+      "n": 1000,
+      "with_trades": 970,
+      "pos_oos": 483,
+      "best_oos_profit": 317.9884,
+      "best_id": "H1-06870"
+    },
+    "sol_risk_on": {
+      "n": 1000,
+      "with_trades": 1000,
+      "pos_oos": 99,
+      "best_oos_profit": 816.5306,
+      "best_id": "H1-07445"
+    },
+    "dryup_expansion": {
+      "n": 1000,
+      "with_trades": 1000,
+      "pos_oos": 11,
+      "best_oos_profit": 49.898,
+      "best_id": "H1-08095"
+    },
+    "session_orb": {
+      "n": 1000,
+      "with_trades": 1000,
+      "pos_oos": 6,
+      "best_oos_profit": 32.886,
+      "best_id": "H1-09117"
+    }
+  },
+  "top5": [
+    {
+      "id": "H1-01069",
+      "family": "rel_strength",
+      "entry": "Buy when the token outperforms SOL by 5% over 24h",
+      "exit": "take profit +100%, stop -35%, exit after 240h",
+      "sizing": "100% of balance per trade, up to 1 open",
+      "balance": 250.0,
+      "oos_profit": 1268.8707,
+      "oos_end": 1518.8707,
+      "oos_ret": 5.0755,
+      "oos_win": 0.5,
+      "oos_trades": 22,
+      "oos_dd": 0.8716,
+      "is_ret": -0.9942,
+      "is_trades": 18
+    },
+    {
+      "id": "H1-03094",
+      "family": "failed_breakdown",
+      "entry": "Buy a same-bar spring: the hour breaks the prior 12h low but closes back above it",
+      "exit": "stop -35%, trail 25% after +50%, exit after 720h",
+      "sizing": "100% of balance per trade, up to 1 open",
+      "balance": 250.0,
+      "oos_profit": 1256.0996,
+      "oos_end": 1506.0996,
+      "oos_ret": 5.0244,
+      "oos_win": 0.6667,
+      "oos_trades": 9,
+      "oos_dd": 0.6124,
+      "is_ret": -0.1722,
+      "is_trades": 4
+    },
+    {
+      "id": "H1-01070",
+      "family": "rel_strength",
+      "entry": "Buy when the token outperforms SOL by 5% over 24h",
+      "exit": "take profit +100%, stop -35%, exit after 240h",
+      "sizing": "100% of balance per trade, up to 1 open",
+      "balance": 280.0,
+      "oos_profit": 1179.8993,
+      "oos_end": 1459.8993,
+      "oos_ret": 4.2139,
+      "oos_win": 0.5,
+      "oos_trades": 20,
+      "oos_dd": 0.792,
+      "is_ret": -0.9943,
+      "is_trades": 18
+    },
+    {
+      "id": "H1-07445",
+      "family": "sol_risk_on",
+      "entry": "Buy a green hour when SOL has dropped 3%+ over 24h and the token has held up better than SOL",
+      "exit": "take profit +100%, stop -35%, exit after 240h",
+      "sizing": "100% of balance per trade, up to 1 open",
+      "balance": 280.0,
+      "oos_profit": 816.5306,
+      "oos_end": 1096.5306,
+      "oos_ret": 2.9162,
+      "oos_win": 0.5714,
+      "oos_trades": 7,
+      "oos_dd": 0.1343,
+      "is_ret": -0.5443,
+      "is_trades": 7
+    },
+    {
+      "id": "H1-00094",
+      "family": "vwap_reclaim",
+      "entry": "Buy when price reclaims its 12h VWAP after trading below it",
+      "exit": "stop -35%, trail 25% after +50%, exit after 720h",
+      "sizing": "100% of balance per trade, up to 1 open",
+      "balance": 250.0,
+      "oos_profit": 538.9861,
+      "oos_end": 788.9861,
+      "oos_ret": 2.1559,
+      "oos_win": 0.7143,
+      "oos_trades": 14,
+      "oos_dd": 0.3801,
+      "is_ret": 0.0906,
+      "is_trades": 7
+    }
+  ],
+  "main_best": {
+    "id": "G26453-S3",
+    "family": "flash_wick",
+    "oos_profit": 225.3079,
+    "oos_ret": 1.0014,
+    "oos_trades": 14,
+    "balance": 225.0
+  },
+  "beat_main_best_profit": true
+}

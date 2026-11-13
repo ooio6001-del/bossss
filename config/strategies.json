@@ -1,0 +1,4759 @@
+{
+  "count": 117,
+  "source": "hunt/robust_leaderboard.csv",
+  "headline": "H6-01098",
+  "strategies": [
+    {
+      "id": "H6-01098",
+      "batch": "6",
+      "family": "washout_gate",
+      "entry": "Washout-gate: first hour of a 8-bar closing low above its 120h SMA only if the token dumped 16%+ in an hour within the last 16h",
+      "exit": "stop -30%, trail 20% after +60%, exit after 384h",
+      "sizing": "28% of balance per trade, up to 3 open",
+      "balance": 175.0,
+      "params": {
+        "entry": "dn8_120",
+        "gate": "dump_16_16",
+        "desc": "Washout-gate: first hour of a 8-bar closing low above its 120h SMA only if the token dumped 16%+ in an hour within the last 16h"
+      },
+      "exit_params": [
+        1000000000.0,
+        0.3,
+        0.6,
+        0.2,
+        384.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 94.12,
+        "roll_median_oos_ret": 0.6772,
+        "full_ret": 5.5671,
+        "full_profit": 974.2419,
+        "full_trades": 96,
+        "full_dd": 0.5449
+      },
+      "original_split": {
+        "is_ret": 0.3725,
+        "oos_ret": 4.0005,
+        "oos_profit": 700.0899,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H6-01094",
+      "batch": "6",
+      "family": "washout_gate",
+      "entry": "Washout-gate: first hour of a 8-bar closing low above its 120h SMA only if the token dumped 16%+ in an hour within the last 16h",
+      "exit": "stop -30%, trail 20% after +60%, exit after 384h",
+      "sizing": "15.5% of balance per trade, up to 6 open",
+      "balance": 320.0,
+      "params": {
+        "entry": "dn8_120",
+        "gate": "dump_16_16",
+        "desc": "Washout-gate: first hour of a 8-bar closing low above its 120h SMA only if the token dumped 16%+ in an hour within the last 16h"
+      },
+      "exit_params": [
+        1000000000.0,
+        0.3,
+        0.6,
+        0.2,
+        384.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 94.12,
+        "roll_median_oos_ret": 0.451,
+        "full_ret": 3.0953,
+        "full_profit": 990.487,
+        "full_trades": 97,
+        "full_dd": 0.3277
+      },
+      "original_split": {
+        "is_ret": 0.2641,
+        "oos_ret": 2.1321,
+        "oos_profit": 682.2611,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H6-01718",
+      "batch": "6",
+      "family": "washout_gate",
+      "entry": "Washout-gate: first hour of a 8-bar closing low above its 288h SMA only if the token dumped 16%+ in an hour within the last 24h",
+      "exit": "stop -30%, trail 20% after +60%, exit after 384h",
+      "sizing": "15.5% of balance per trade, up to 6 open",
+      "balance": 175.0,
+      "params": {
+        "entry": "dn8_288",
+        "gate": "dump_16_24",
+        "desc": "Washout-gate: first hour of a 8-bar closing low above its 288h SMA only if the token dumped 16%+ in an hour within the last 24h"
+      },
+      "exit_params": [
+        1000000000.0,
+        0.3,
+        0.6,
+        0.2,
+        384.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 94.12,
+        "roll_median_oos_ret": 0.3931,
+        "full_ret": 3.2853,
+        "full_profit": 574.9341,
+        "full_trades": 137,
+        "full_dd": 0.5266
+      },
+      "original_split": {
+        "is_ret": 0.5219,
+        "oos_ret": 1.8246,
+        "oos_profit": 319.3137,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H6-01689",
+      "batch": "6",
+      "family": "washout_gate",
+      "entry": "Washout-gate: first hour of a 8-bar closing low above its 288h SMA only if the token dumped 16%+ in an hour within the last 24h",
+      "exit": "take profit +140%, stop -26%, exit after 288h",
+      "sizing": "9.5% of balance per trade, up to 10 open",
+      "balance": 320.0,
+      "params": {
+        "entry": "dn8_288",
+        "gate": "dump_16_24",
+        "desc": "Washout-gate: first hour of a 8-bar closing low above its 288h SMA only if the token dumped 16%+ in an hour within the last 24h"
+      },
+      "exit_params": [
+        1.4,
+        0.26,
+        1000000000.0,
+        0.0,
+        288.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 94.12,
+        "roll_median_oos_ret": 0.3495,
+        "full_ret": 1.5469,
+        "full_profit": 494.9935,
+        "full_trades": 125,
+        "full_dd": 0.3779
+      },
+      "original_split": {
+        "is_ret": 0.0028,
+        "oos_ret": 1.5198,
+        "oos_profit": 486.3497,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H6-01064",
+      "batch": "6",
+      "family": "washout_gate",
+      "entry": "Washout-gate: first hour of a 8-bar closing low above its 120h SMA only if the token dumped 16%+ in an hour within the last 16h",
+      "exit": "take profit +140%, stop -26%, exit after 288h",
+      "sizing": "9.5% of balance per trade, up to 10 open",
+      "balance": 320.0,
+      "params": {
+        "entry": "dn8_120",
+        "gate": "dump_16_16",
+        "desc": "Washout-gate: first hour of a 8-bar closing low above its 120h SMA only if the token dumped 16%+ in an hour within the last 16h"
+      },
+      "exit_params": [
+        1.4,
+        0.26,
+        1000000000.0,
+        0.0,
+        288.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 94.12,
+        "roll_median_oos_ret": 0.3322,
+        "full_ret": 1.2848,
+        "full_profit": 411.1339,
+        "full_trades": 99,
+        "full_dd": 0.3716
+      },
+      "original_split": {
+        "is_ret": 0.0187,
+        "oos_ret": 1.2344,
+        "oos_profit": 395.0066,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H6-01714",
+      "batch": "6",
+      "family": "washout_gate",
+      "entry": "Washout-gate: first hour of a 8-bar closing low above its 288h SMA only if the token dumped 16%+ in an hour within the last 24h",
+      "exit": "stop -30%, trail 20% after +60%, exit after 384h",
+      "sizing": "9.5% of balance per trade, up to 10 open",
+      "balance": 320.0,
+      "params": {
+        "entry": "dn8_288",
+        "gate": "dump_16_24",
+        "desc": "Washout-gate: first hour of a 8-bar closing low above its 288h SMA only if the token dumped 16%+ in an hour within the last 24h"
+      },
+      "exit_params": [
+        1000000000.0,
+        0.3,
+        0.6,
+        0.2,
+        384.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 94.12,
+        "roll_median_oos_ret": 0.2425,
+        "full_ret": 0.9422,
+        "full_profit": 301.5138,
+        "full_trades": 147,
+        "full_dd": 0.3679
+      },
+      "original_split": {
+        "is_ret": 0.36,
+        "oos_ret": 1.1789,
+        "oos_profit": 377.2452,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H7-02417",
+      "batch": "7",
+      "family": "washout_gate",
+      "entry": "Washout-gate: first hour of a 8-bar closing low above its 132h SMA only if the token dumped 17%+ in an hour within the last 14h",
+      "exit": "stop -33%, trail 22% after +65%, exit after 408h",
+      "sizing": "29% of balance per trade, up to 3 open",
+      "balance": 190.0,
+      "params": {
+        "entry": "dn8_132",
+        "gate": "dump_17_14",
+        "desc": "Washout-gate: first hour of a 8-bar closing low above its 132h SMA only if the token dumped 17%+ in an hour within the last 14h"
+      },
+      "exit_params": [
+        1000000000.0,
+        0.33,
+        0.65,
+        0.22,
+        408.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 25,
+        "roll_n": 15,
+        "roll_oos_profitable_pct": 93.33,
+        "roll_median_oos_ret": 0.8594,
+        "full_ret": 7.3525,
+        "full_profit": 1396.9673,
+        "full_trades": 70,
+        "full_dd": 0.5357
+      },
+      "original_split": {
+        "is_ret": 0.7019,
+        "oos_ret": 4.9885,
+        "oos_profit": 947.8119,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H7-02423",
+      "batch": "7",
+      "family": "washout_gate",
+      "entry": "Washout-gate: first hour of a 8-bar closing low above its 132h SMA only if the token dumped 17%+ in an hour within the last 14h",
+      "exit": "stop -33%, trail 22% after +65%, exit after 408h",
+      "sizing": "33% of balance per trade, up to 3 open",
+      "balance": 240.0,
+      "params": {
+        "entry": "dn8_132",
+        "gate": "dump_17_14",
+        "desc": "Washout-gate: first hour of a 8-bar closing low above its 132h SMA only if the token dumped 17%+ in an hour within the last 14h"
+      },
+      "exit_params": [
+        1000000000.0,
+        0.33,
+        0.65,
+        0.22,
+        408.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 25,
+        "roll_n": 15,
+        "roll_oos_profitable_pct": 93.33,
+        "roll_median_oos_ret": 0.5179,
+        "full_ret": 5.0269,
+        "full_profit": 1206.4578,
+        "full_trades": 67,
+        "full_dd": 0.6256
+      },
+      "original_split": {
+        "is_ret": 0.0622,
+        "oos_ret": 4.7134,
+        "oos_profit": 1131.2269,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H7-00668",
+      "batch": "7",
+      "family": "washout_gate",
+      "entry": "Washout-gate: first hour of a 8-bar closing low above its 120h SMA only if the token dumped 15%+ in an hour within the last 16h",
+      "exit": "stop -33%, trail 22% after +65%, exit after 408h",
+      "sizing": "29% of balance per trade, up to 3 open",
+      "balance": 240.0,
+      "params": {
+        "entry": "dn8_120",
+        "gate": "dump_15_16",
+        "desc": "Washout-gate: first hour of a 8-bar closing low above its 120h SMA only if the token dumped 15%+ in an hour within the last 16h"
+      },
+      "exit_params": [
+        1000000000.0,
+        0.33,
+        0.65,
+        0.22,
+        408.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 25,
+        "roll_n": 15,
+        "roll_oos_profitable_pct": 93.33,
+        "roll_median_oos_ret": 0.4953,
+        "full_ret": 3.5598,
+        "full_profit": 854.3523,
+        "full_trades": 72,
+        "full_dd": 0.4835
+      },
+      "original_split": {
+        "is_ret": 0.103,
+        "oos_ret": 3.8735,
+        "oos_profit": 929.6285,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H7-06668",
+      "batch": "7",
+      "family": "washout_gate",
+      "entry": "Washout-gate: first hour of a 8-bar closing low above its 288h SMA only if the token dumped 18%+ in an hour within the last 28h",
+      "exit": "stop -33%, trail 22% after +65%, exit after 408h",
+      "sizing": "29% of balance per trade, up to 3 open",
+      "balance": 240.0,
+      "params": {
+        "entry": "dn8_288",
+        "gate": "dump_18_28",
+        "desc": "Washout-gate: first hour of a 8-bar closing low above its 288h SMA only if the token dumped 18%+ in an hour within the last 28h"
+      },
+      "exit_params": [
+        1000000000.0,
+        0.33,
+        0.65,
+        0.22,
+        408.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 25,
+        "roll_n": 15,
+        "roll_oos_profitable_pct": 93.33,
+        "roll_median_oos_ret": 0.204,
+        "full_ret": 4.0625,
+        "full_profit": 975.0035,
+        "full_trades": 65,
+        "full_dd": 0.5624
+      },
+      "original_split": {
+        "is_ret": 1.1428,
+        "oos_ret": 3.9341,
+        "oos_profit": 944.1725,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H6-01097",
+      "batch": "6",
+      "family": "washout_gate",
+      "entry": "Washout-gate: first hour of a 8-bar closing low above its 120h SMA only if the token dumped 16%+ in an hour within the last 16h",
+      "exit": "stop -30%, trail 20% after +60%, exit after 384h",
+      "sizing": "28% of balance per trade, up to 3 open",
+      "balance": 85.0,
+      "params": {
+        "entry": "dn8_120",
+        "gate": "dump_16_16",
+        "desc": "Washout-gate: first hour of a 8-bar closing low above its 120h SMA only if the token dumped 16%+ in an hour within the last 16h"
+      },
+      "exit_params": [
+        1000000000.0,
+        0.3,
+        0.6,
+        0.2,
+        384.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 88.24,
+        "roll_median_oos_ret": 1.187,
+        "full_ret": 5.2758,
+        "full_profit": 448.4449,
+        "full_trades": 115,
+        "full_dd": 0.574
+      },
+      "original_split": {
+        "is_ret": 0.5555,
+        "oos_ret": 3.869,
+        "oos_profit": 328.8619,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H3-09335",
+      "batch": "3",
+      "family": "green_stack",
+      "entry": "Buy the close of the 3th consecutive green hour, each hour up 2%+",
+      "exit": "stop -40%, trail 28% after +60%, exit after 600h",
+      "sizing": "7% of balance per trade, up to 14 open",
+      "balance": 280.0,
+      "params": [
+        3.0,
+        0.0,
+        0.02,
+        0.0
+      ],
+      "exit_params": [
+        1000000000.0,
+        0.4,
+        0.6,
+        0.28,
+        600.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 88.24,
+        "roll_median_oos_ret": 0.2655,
+        "full_ret": 0.1691,
+        "full_profit": 47.3341,
+        "full_trades": 191,
+        "full_dd": 0.4846
+      },
+      "original_split": {
+        "is_ret": 0.0269,
+        "oos_ret": 0.4206,
+        "oos_profit": 117.7815,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H6-00468",
+      "batch": "6",
+      "family": "washout_gate",
+      "entry": "Washout-gate: first hour of a 10-bar closing low above its 288h SMA only if the token dumped 16%+ in an hour within the last 36h",
+      "exit": "stop -30%, trail 20% after +60%, exit after 384h",
+      "sizing": "15.5% of balance per trade, up to 6 open",
+      "balance": 175.0,
+      "params": {
+        "entry": "dn10_288",
+        "gate": "dump_16_36",
+        "desc": "Washout-gate: first hour of a 10-bar closing low above its 288h SMA only if the token dumped 16%+ in an hour within the last 36h"
+      },
+      "exit_params": [
+        1000000000.0,
+        0.3,
+        0.6,
+        0.2,
+        384.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 88.24,
+        "roll_median_oos_ret": 0.2591,
+        "full_ret": 4.4248,
+        "full_profit": 774.3321,
+        "full_trades": 113,
+        "full_dd": 0.4553
+      },
+      "original_split": {
+        "is_ret": 2.2105,
+        "oos_ret": 1.8373,
+        "oos_profit": 321.5258,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H6-00464",
+      "batch": "6",
+      "family": "washout_gate",
+      "entry": "Washout-gate: first hour of a 10-bar closing low above its 288h SMA only if the token dumped 16%+ in an hour within the last 36h",
+      "exit": "stop -30%, trail 20% after +60%, exit after 384h",
+      "sizing": "9.5% of balance per trade, up to 10 open",
+      "balance": 320.0,
+      "params": {
+        "entry": "dn10_288",
+        "gate": "dump_16_36",
+        "desc": "Washout-gate: first hour of a 10-bar closing low above its 288h SMA only if the token dumped 16%+ in an hour within the last 36h"
+      },
+      "exit_params": [
+        1000000000.0,
+        0.3,
+        0.6,
+        0.2,
+        384.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 88.24,
+        "roll_median_oos_ret": 0.1603,
+        "full_ret": 1.4248,
+        "full_profit": 455.9333,
+        "full_trades": 130,
+        "full_dd": 0.3553
+      },
+      "original_split": {
+        "is_ret": 0.6305,
+        "oos_ret": 1.0757,
+        "oos_profit": 344.2225,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H6-00439",
+      "batch": "6",
+      "family": "washout_gate",
+      "entry": "Washout-gate: first hour of a 10-bar closing low above its 288h SMA only if the token dumped 16%+ in an hour within the last 36h",
+      "exit": "take profit +140%, stop -26%, exit after 288h",
+      "sizing": "9.5% of balance per trade, up to 10 open",
+      "balance": 320.0,
+      "params": {
+        "entry": "dn10_288",
+        "gate": "dump_16_36",
+        "desc": "Washout-gate: first hour of a 10-bar closing low above its 288h SMA only if the token dumped 16%+ in an hour within the last 36h"
+      },
+      "exit_params": [
+        1.4,
+        0.26,
+        1000000000.0,
+        0.0,
+        288.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 88.24,
+        "roll_median_oos_ret": 0.1061,
+        "full_ret": 1.3182,
+        "full_profit": 421.8395,
+        "full_trades": 120,
+        "full_dd": 0.2243
+      },
+      "original_split": {
+        "is_ret": 0.089,
+        "oos_ret": 0.9602,
+        "oos_profit": 307.2656,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H7-02422",
+      "batch": "7",
+      "family": "washout_gate",
+      "entry": "Washout-gate: first hour of a 8-bar closing low above its 132h SMA only if the token dumped 17%+ in an hour within the last 14h",
+      "exit": "stop -33%, trail 22% after +65%, exit after 408h",
+      "sizing": "33% of balance per trade, up to 3 open",
+      "balance": 190.0,
+      "params": {
+        "entry": "dn8_132",
+        "gate": "dump_17_14",
+        "desc": "Washout-gate: first hour of a 8-bar closing low above its 132h SMA only if the token dumped 17%+ in an hour within the last 14h"
+      },
+      "exit_params": [
+        1000000000.0,
+        0.33,
+        0.65,
+        0.22,
+        408.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 25,
+        "roll_n": 15,
+        "roll_oos_profitable_pct": 86.67,
+        "roll_median_oos_ret": 0.6736,
+        "full_ret": 6.6704,
+        "full_profit": 1267.3726,
+        "full_trades": 69,
+        "full_dd": 0.5879
+      },
+      "original_split": {
+        "is_ret": 0.3532,
+        "oos_ret": 4.8955,
+        "oos_profit": 930.139,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H7-00293",
+      "batch": "7",
+      "family": "washout_gate",
+      "entry": "Washout-gate: first hour of a 8-bar closing low above its 108h SMA only if the token dumped 16%+ in an hour within the last 16h",
+      "exit": "stop -33%, trail 22% after +65%, exit after 408h",
+      "sizing": "29% of balance per trade, up to 3 open",
+      "balance": 240.0,
+      "params": {
+        "entry": "dn8_108",
+        "gate": "dump_16_16",
+        "desc": "Washout-gate: first hour of a 8-bar closing low above its 108h SMA only if the token dumped 16%+ in an hour within the last 16h"
+      },
+      "exit_params": [
+        1000000000.0,
+        0.33,
+        0.65,
+        0.22,
+        408.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 25,
+        "roll_n": 15,
+        "roll_oos_profitable_pct": 86.67,
+        "roll_median_oos_ret": 0.4593,
+        "full_ret": 4.2498,
+        "full_profit": 1019.9599,
+        "full_trades": 66,
+        "full_dd": 0.5191
+      },
+      "original_split": {
+        "is_ret": 0.5108,
+        "oos_ret": 3.8735,
+        "oos_profit": 929.6285,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H7-02414",
+      "batch": "7",
+      "family": "washout_gate",
+      "entry": "Washout-gate: first hour of a 8-bar closing low above its 132h SMA only if the token dumped 17%+ in an hour within the last 14h",
+      "exit": "stop -33%, trail 22% after +65%, exit after 408h",
+      "sizing": "24% of balance per trade, up to 4 open",
+      "balance": 350.0,
+      "params": {
+        "entry": "dn8_132",
+        "gate": "dump_17_14",
+        "desc": "Washout-gate: first hour of a 8-bar closing low above its 132h SMA only if the token dumped 17%+ in an hour within the last 14h"
+      },
+      "exit_params": [
+        1000000000.0,
+        0.33,
+        0.65,
+        0.22,
+        408.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 25,
+        "roll_n": 15,
+        "roll_oos_profitable_pct": 86.67,
+        "roll_median_oos_ret": 0.4179,
+        "full_ret": 3.9828,
+        "full_profit": 1393.9966,
+        "full_trades": 67,
+        "full_dd": 0.4962
+      },
+      "original_split": {
+        "is_ret": 0.2359,
+        "oos_ret": 2.7772,
+        "oos_profit": 972.0347,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H7-01294",
+      "batch": "7",
+      "family": "washout_gate",
+      "entry": "Washout-gate: first hour of a 8-bar closing low above its 120h SMA only if the token dumped 15%+ in an hour within the last 14h",
+      "exit": "stop -33%, trail 22% after +65%, exit after 408h",
+      "sizing": "29% of balance per trade, up to 3 open",
+      "balance": 350.0,
+      "params": {
+        "entry": "dn8_120",
+        "gate": "dump_15_14",
+        "desc": "Washout-gate: first hour of a 8-bar closing low above its 120h SMA only if the token dumped 15%+ in an hour within the last 14h"
+      },
+      "exit_params": [
+        1000000000.0,
+        0.33,
+        0.65,
+        0.22,
+        408.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 25,
+        "roll_n": 15,
+        "roll_oos_profitable_pct": 86.67,
+        "roll_median_oos_ret": 0.4074,
+        "full_ret": 3.0351,
+        "full_profit": 1062.2818,
+        "full_trades": 63,
+        "full_dd": 0.4665
+      },
+      "original_split": {
+        "is_ret": 0.0394,
+        "oos_ret": 2.8961,
+        "oos_profit": 1013.6466,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H7-00919",
+      "batch": "7",
+      "family": "washout_gate",
+      "entry": "Washout-gate: first hour of a 8-bar closing low above its 120h SMA only if the token dumped 16%+ in an hour within the last 14h",
+      "exit": "stop -33%, trail 22% after +65%, exit after 408h",
+      "sizing": "29% of balance per trade, up to 3 open",
+      "balance": 350.0,
+      "params": {
+        "entry": "dn8_120",
+        "gate": "dump_16_14",
+        "desc": "Washout-gate: first hour of a 8-bar closing low above its 120h SMA only if the token dumped 16%+ in an hour within the last 14h"
+      },
+      "exit_params": [
+        1000000000.0,
+        0.33,
+        0.65,
+        0.22,
+        408.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 25,
+        "roll_n": 15,
+        "roll_oos_profitable_pct": 86.67,
+        "roll_median_oos_ret": 0.4074,
+        "full_ret": 2.3643,
+        "full_profit": 827.4991,
+        "full_trades": 53,
+        "full_dd": 0.5043
+      },
+      "original_split": {
+        "is_ret": 0.5224,
+        "oos_ret": 2.8961,
+        "oos_profit": 1013.6466,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H7-02544",
+      "batch": "7",
+      "family": "washout_gate",
+      "entry": "Washout-gate: first hour of a 8-bar closing low above its 144h SMA only if the token dumped 15%+ in an hour within the last 16h",
+      "exit": "stop -33%, trail 22% after +65%, exit after 408h",
+      "sizing": "29% of balance per trade, up to 3 open",
+      "balance": 350.0,
+      "params": {
+        "entry": "dn8_144",
+        "gate": "dump_15_16",
+        "desc": "Washout-gate: first hour of a 8-bar closing low above its 144h SMA only if the token dumped 15%+ in an hour within the last 16h"
+      },
+      "exit_params": [
+        1000000000.0,
+        0.33,
+        0.65,
+        0.22,
+        408.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 25,
+        "roll_n": 15,
+        "roll_oos_profitable_pct": 86.67,
+        "roll_median_oos_ret": 0.3494,
+        "full_ret": 4.1765,
+        "full_profit": 1461.7587,
+        "full_trades": 65,
+        "full_dd": 0.4674
+      },
+      "original_split": {
+        "is_ret": 0.1219,
+        "oos_ret": 3.1765,
+        "oos_profit": 1111.7664,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H7-00544",
+      "batch": "7",
+      "family": "washout_gate",
+      "entry": "Washout-gate: first hour of a 8-bar closing low above its 144h SMA only if the token dumped 16%+ in an hour within the last 16h",
+      "exit": "stop -33%, trail 22% after +65%, exit after 408h",
+      "sizing": "29% of balance per trade, up to 3 open",
+      "balance": 350.0,
+      "params": {
+        "entry": "dn8_144",
+        "gate": "dump_16_16",
+        "desc": "Washout-gate: first hour of a 8-bar closing low above its 144h SMA only if the token dumped 16%+ in an hour within the last 16h"
+      },
+      "exit_params": [
+        1000000000.0,
+        0.33,
+        0.65,
+        0.22,
+        408.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 25,
+        "roll_n": 15,
+        "roll_oos_profitable_pct": 86.67,
+        "roll_median_oos_ret": 0.3494,
+        "full_ret": 2.7139,
+        "full_profit": 949.8716,
+        "full_trades": 53,
+        "full_dd": 0.5043
+      },
+      "original_split": {
+        "is_ret": 0.5204,
+        "oos_ret": 3.1765,
+        "oos_profit": 1111.7664,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H7-00419",
+      "batch": "7",
+      "family": "washout_gate",
+      "entry": "Washout-gate: first hour of a 8-bar closing low above its 132h SMA only if the token dumped 16%+ in an hour within the last 16h",
+      "exit": "stop -33%, trail 22% after +65%, exit after 408h",
+      "sizing": "29% of balance per trade, up to 3 open",
+      "balance": 350.0,
+      "params": {
+        "entry": "dn8_132",
+        "gate": "dump_16_16",
+        "desc": "Washout-gate: first hour of a 8-bar closing low above its 132h SMA only if the token dumped 16%+ in an hour within the last 16h"
+      },
+      "exit_params": [
+        1000000000.0,
+        0.33,
+        0.65,
+        0.22,
+        408.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 25,
+        "roll_n": 15,
+        "roll_oos_profitable_pct": 86.67,
+        "roll_median_oos_ret": 0.3494,
+        "full_ret": 1.4719,
+        "full_profit": 515.1769,
+        "full_trades": 67,
+        "full_dd": 0.5369
+      },
+      "original_split": {
+        "is_ret": 0.3128,
+        "oos_ret": 2.7446,
+        "oos_profit": 960.5985,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H6-01722",
+      "batch": "6",
+      "family": "washout_gate",
+      "entry": "Washout-gate: first hour of a 8-bar closing low above its 288h SMA only if the token dumped 16%+ in an hour within the last 24h",
+      "exit": "stop -30%, trail 20% after +60%, exit after 384h",
+      "sizing": "28% of balance per trade, up to 3 open",
+      "balance": 85.0,
+      "params": {
+        "entry": "dn8_288",
+        "gate": "dump_16_24",
+        "desc": "Washout-gate: first hour of a 8-bar closing low above its 288h SMA only if the token dumped 16%+ in an hour within the last 24h"
+      },
+      "exit_params": [
+        1000000000.0,
+        0.3,
+        0.6,
+        0.2,
+        384.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 82.35,
+        "roll_median_oos_ret": 0.5558,
+        "full_ret": 6.8004,
+        "full_profit": 578.0356,
+        "full_trades": 133,
+        "full_dd": 0.7127
+      },
+      "original_split": {
+        "is_ret": 0.3957,
+        "oos_ret": 4.5885,
+        "oos_profit": 390.0242,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H6-01723",
+      "batch": "6",
+      "family": "washout_gate",
+      "entry": "Washout-gate: first hour of a 8-bar closing low above its 288h SMA only if the token dumped 16%+ in an hour within the last 24h",
+      "exit": "stop -30%, trail 20% after +60%, exit after 384h",
+      "sizing": "28% of balance per trade, up to 3 open",
+      "balance": 175.0,
+      "params": {
+        "entry": "dn8_288",
+        "gate": "dump_16_24",
+        "desc": "Washout-gate: first hour of a 8-bar closing low above its 288h SMA only if the token dumped 16%+ in an hour within the last 24h"
+      },
+      "exit_params": [
+        1000000000.0,
+        0.3,
+        0.6,
+        0.2,
+        384.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 82.35,
+        "roll_median_oos_ret": 0.4921,
+        "full_ret": 2.1717,
+        "full_profit": 380.0531,
+        "full_trades": 128,
+        "full_dd": 0.7268
+      },
+      "original_split": {
+        "is_ret": 0.2008,
+        "oos_ret": 2.6774,
+        "oos_profit": 468.5485,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H6-00223",
+      "batch": "6",
+      "family": "washout_gate",
+      "entry": "Washout-gate: first hour of a 8-bar closing low above its 192h SMA only if the token dumped 11%+ in an hour within the last 18h",
+      "exit": "stop -30%, trail 20% after +60%, exit after 384h",
+      "sizing": "28% of balance per trade, up to 3 open",
+      "balance": 175.0,
+      "params": {
+        "entry": "dn8_192",
+        "gate": "dump_11_18",
+        "desc": "Washout-gate: first hour of a 8-bar closing low above its 192h SMA only if the token dumped 11%+ in an hour within the last 18h"
+      },
+      "exit_params": [
+        1000000000.0,
+        0.3,
+        0.6,
+        0.2,
+        384.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 82.35,
+        "roll_median_oos_ret": 0.3662,
+        "full_ret": 1.8281,
+        "full_profit": 319.9197,
+        "full_trades": 122,
+        "full_dd": 0.6498
+      },
+      "original_split": {
+        "is_ret": 0.9034,
+        "oos_ret": 1.8986,
+        "oos_profit": 332.2556,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H5-09969",
+      "batch": "5",
+      "family": "double_n",
+      "entry": "Buy the first hour of a 16-bar closing low while price is above its 240h SMA (Double-N, hourly)",
+      "exit": "stop -32%, trail 24% after +55%, exit after 432h",
+      "sizing": "17% of balance per trade, up to 5 open",
+      "balance": 300.0,
+      "params": [
+        16.0,
+        240.0
+      ],
+      "exit_params": [
+        1000000000.0,
+        0.32,
+        0.55,
+        0.24,
+        432.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 82.35,
+        "roll_median_oos_ret": 0.1861,
+        "full_ret": 0.3302,
+        "full_profit": 99.0746,
+        "full_trades": 76,
+        "full_dd": 0.2903
+      },
+      "original_split": {
+        "is_ret": 0.2123,
+        "oos_ret": 1.1767,
+        "oos_profit": 353.0193,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H6-00189",
+      "batch": "6",
+      "family": "washout_gate",
+      "entry": "Washout-gate: first hour of a 8-bar closing low above its 192h SMA only if the token dumped 11%+ in an hour within the last 18h",
+      "exit": "take profit +140%, stop -26%, exit after 288h",
+      "sizing": "9.5% of balance per trade, up to 10 open",
+      "balance": 320.0,
+      "params": {
+        "entry": "dn8_192",
+        "gate": "dump_11_18",
+        "desc": "Washout-gate: first hour of a 8-bar closing low above its 192h SMA only if the token dumped 11%+ in an hour within the last 18h"
+      },
+      "exit_params": [
+        1.4,
+        0.26,
+        1000000000.0,
+        0.0,
+        288.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 82.35,
+        "roll_median_oos_ret": 0.1652,
+        "full_ret": 1.4917,
+        "full_profit": 477.3403,
+        "full_trades": 142,
+        "full_dd": 0.3197
+      },
+      "original_split": {
+        "is_ret": 0.19,
+        "oos_ret": 1.1381,
+        "oos_profit": 364.1924,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H2-02108",
+      "batch": "2",
+      "family": "climax_reversal",
+      "entry": "Buy the first green hour after a climax dump of 10%+ on 1.5x average volume (confirmation bar, not the dump bar)",
+      "exit": "stop -22%, trail 20% after +40%, exit after 360h",
+      "sizing": "6% of balance per trade, up to 15 open",
+      "balance": 100.0,
+      "params": [
+        0.1,
+        1.5,
+        1.0,
+        0.0
+      ],
+      "exit_params": [
+        1000000000.0,
+        0.22,
+        0.4,
+        0.2,
+        360.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 82.35,
+        "roll_median_oos_ret": 0.1272,
+        "full_ret": 1.5918,
+        "full_profit": 159.1798,
+        "full_trades": 159,
+        "full_dd": 0.159
+      },
+      "original_split": {
+        "is_ret": 0.8922,
+        "oos_ret": 1.2833,
+        "oos_profit": 128.3257,
+        "both_windows": false
+      },
+      "passed": true
+    },
+    {
+      "id": "H7-00792",
+      "batch": "7",
+      "family": "washout_gate",
+      "entry": "Washout-gate: first hour of a 8-bar closing low above its 120h SMA only if the token dumped 17%+ in an hour within the last 16h",
+      "exit": "stop -33%, trail 22% after +65%, exit after 408h",
+      "sizing": "29% of balance per trade, up to 3 open",
+      "balance": 190.0,
+      "params": {
+        "entry": "dn8_120",
+        "gate": "dump_17_16",
+        "desc": "Washout-gate: first hour of a 8-bar closing low above its 120h SMA only if the token dumped 17%+ in an hour within the last 16h"
+      },
+      "exit_params": [
+        1000000000.0,
+        0.33,
+        0.65,
+        0.22,
+        408.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 25,
+        "roll_n": 15,
+        "roll_oos_profitable_pct": 80.0,
+        "roll_median_oos_ret": 0.8594,
+        "full_ret": 5.377,
+        "full_profit": 1021.6366,
+        "full_trades": 70,
+        "full_dd": 0.4836
+      },
+      "original_split": {
+        "is_ret": 0.5221,
+        "oos_ret": 4.9105,
+        "oos_profit": 932.9884,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H7-02418",
+      "batch": "7",
+      "family": "washout_gate",
+      "entry": "Washout-gate: first hour of a 8-bar closing low above its 132h SMA only if the token dumped 17%+ in an hour within the last 14h",
+      "exit": "stop -33%, trail 22% after +65%, exit after 408h",
+      "sizing": "29% of balance per trade, up to 3 open",
+      "balance": 240.0,
+      "params": {
+        "entry": "dn8_132",
+        "gate": "dump_17_14",
+        "desc": "Washout-gate: first hour of a 8-bar closing low above its 132h SMA only if the token dumped 17%+ in an hour within the last 14h"
+      },
+      "exit_params": [
+        1000000000.0,
+        0.33,
+        0.65,
+        0.22,
+        408.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 25,
+        "roll_n": 15,
+        "roll_oos_profitable_pct": 80.0,
+        "roll_median_oos_ret": 0.512,
+        "full_ret": 4.2989,
+        "full_profit": 1031.7422,
+        "full_trades": 68,
+        "full_dd": 0.5656
+      },
+      "original_split": {
+        "is_ret": 0.1761,
+        "oos_ret": 4.0771,
+        "oos_profit": 978.4948,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H7-02419",
+      "batch": "7",
+      "family": "washout_gate",
+      "entry": "Washout-gate: first hour of a 8-bar closing low above its 132h SMA only if the token dumped 17%+ in an hour within the last 14h",
+      "exit": "stop -33%, trail 22% after +65%, exit after 408h",
+      "sizing": "29% of balance per trade, up to 3 open",
+      "balance": 350.0,
+      "params": {
+        "entry": "dn8_132",
+        "gate": "dump_17_14",
+        "desc": "Washout-gate: first hour of a 8-bar closing low above its 132h SMA only if the token dumped 17%+ in an hour within the last 14h"
+      },
+      "exit_params": [
+        1000000000.0,
+        0.33,
+        0.65,
+        0.22,
+        408.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 25,
+        "roll_n": 15,
+        "roll_oos_profitable_pct": 80.0,
+        "roll_median_oos_ret": 0.3435,
+        "full_ret": 2.7286,
+        "full_profit": 955.0256,
+        "full_trades": 51,
+        "full_dd": 0.4452
+      },
+      "original_split": {
+        "is_ret": 0.7122,
+        "oos_ret": 3.8636,
+        "oos_profit": 1352.2435,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H7-02623",
+      "batch": "7",
+      "family": "washout_gate",
+      "entry": "Washout-gate: first hour of a 8-bar closing low above its 144h SMA only if the token dumped 15%+ in an hour within the last 16h",
+      "exit": "stop -31%, trail 25% after +70%, exit after 456h",
+      "sizing": "33% of balance per trade, up to 3 open",
+      "balance": 240.0,
+      "params": {
+        "entry": "dn8_144",
+        "gate": "dump_15_16",
+        "desc": "Washout-gate: first hour of a 8-bar closing low above its 144h SMA only if the token dumped 15%+ in an hour within the last 16h"
+      },
+      "exit_params": [
+        1000000000.0,
+        0.31,
+        0.7,
+        0.25,
+        456.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 25,
+        "roll_n": 15,
+        "roll_oos_profitable_pct": 80.0,
+        "roll_median_oos_ret": 0.2367,
+        "full_ret": 4.3333,
+        "full_profit": 1040.0017,
+        "full_trades": 76,
+        "full_dd": 0.6444
+      },
+      "original_split": {
+        "is_ret": 0.0442,
+        "oos_ret": 4.1383,
+        "oos_profit": 993.1876,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H6-01347",
+      "batch": "6",
+      "family": "washout_gate",
+      "entry": "Washout-gate: first hour of a 14-bar closing low above its 288h SMA only if the token dumped 9%+ in an hour within the last 36h",
+      "exit": "stop -30%, trail 20% after +60%, exit after 384h",
+      "sizing": "28% of balance per trade, up to 3 open",
+      "balance": 85.0,
+      "params": {
+        "entry": "dn14_288",
+        "gate": "dump_9_36",
+        "desc": "Washout-gate: first hour of a 14-bar closing low above its 288h SMA only if the token dumped 9%+ in an hour within the last 36h"
+      },
+      "exit_params": [
+        1000000000.0,
+        0.3,
+        0.6,
+        0.2,
+        384.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 76.47,
+        "roll_median_oos_ret": 0.443,
+        "full_ret": 6.3348,
+        "full_profit": 538.4612,
+        "full_trades": 115,
+        "full_dd": 0.6898
+      },
+      "original_split": {
+        "is_ret": 0.1853,
+        "oos_ret": 4.5737,
+        "oos_profit": 388.7644,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H2-02117",
+      "batch": "2",
+      "family": "climax_reversal",
+      "entry": "Buy the first green hour after a climax dump of 10%+ on 1.5x average volume (confirmation bar, not the dump bar)",
+      "exit": "stop -22%, trail 20% after +40%, exit after 360h",
+      "sizing": "15% of balance per trade, up to 6 open",
+      "balance": 25.0,
+      "params": [
+        0.1,
+        1.5,
+        1.0,
+        0.0
+      ],
+      "exit_params": [
+        1000000000.0,
+        0.22,
+        0.4,
+        0.2,
+        360.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 76.47,
+        "roll_median_oos_ret": 0.4247,
+        "full_ret": 4.4987,
+        "full_profit": 112.4678,
+        "full_trades": 143,
+        "full_dd": 0.3529
+      },
+      "original_split": {
+        "is_ret": 2.8998,
+        "oos_ret": 4.179,
+        "oos_profit": 104.4752,
+        "both_windows": false
+      },
+      "passed": true
+    },
+    {
+      "id": "H5-04974",
+      "batch": "5",
+      "family": "washout_gate",
+      "entry": "Washout-gate: SuperTrend 8h\u00d73.5 flip to long only if the token dumped 14%+ in an hour within the last 20h",
+      "exit": "stop -32%, trail 24% after +55%, exit after 432h",
+      "sizing": "21% of balance per trade, up to 4 open",
+      "balance": 300.0,
+      "params": {
+        "entry": "st8_3.5",
+        "gate": "dump_14_20",
+        "desc": "Washout-gate: SuperTrend 8h\u00d73.5 flip to long only if the token dumped 14%+ in an hour within the last 20h"
+      },
+      "exit_params": [
+        1000000000.0,
+        0.32,
+        0.55,
+        0.24,
+        432.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 76.47,
+        "roll_median_oos_ret": 0.3492,
+        "full_ret": 1.0683,
+        "full_profit": 320.4926,
+        "full_trades": 52,
+        "full_dd": 0.3484
+      },
+      "original_split": {
+        "is_ret": 0.2406,
+        "oos_ret": 0.6967,
+        "oos_profit": 209.024,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H6-00473",
+      "batch": "6",
+      "family": "washout_gate",
+      "entry": "Washout-gate: first hour of a 10-bar closing low above its 288h SMA only if the token dumped 16%+ in an hour within the last 36h",
+      "exit": "stop -30%, trail 20% after +60%, exit after 384h",
+      "sizing": "28% of balance per trade, up to 3 open",
+      "balance": 175.0,
+      "params": {
+        "entry": "dn10_288",
+        "gate": "dump_16_36",
+        "desc": "Washout-gate: first hour of a 10-bar closing low above its 288h SMA only if the token dumped 16%+ in an hour within the last 36h"
+      },
+      "exit_params": [
+        1000000000.0,
+        0.3,
+        0.6,
+        0.2,
+        384.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 76.47,
+        "roll_median_oos_ret": 0.3024,
+        "full_ret": 3.597,
+        "full_profit": 629.4833,
+        "full_trades": 107,
+        "full_dd": 0.6847
+      },
+      "original_split": {
+        "is_ret": 0.6783,
+        "oos_ret": 3.5915,
+        "oos_profit": 628.5149,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H6-01099",
+      "batch": "6",
+      "family": "washout_gate",
+      "entry": "Washout-gate: first hour of a 8-bar closing low above its 120h SMA only if the token dumped 16%+ in an hour within the last 16h",
+      "exit": "stop -30%, trail 20% after +60%, exit after 384h",
+      "sizing": "28% of balance per trade, up to 3 open",
+      "balance": 320.0,
+      "params": {
+        "entry": "dn8_120",
+        "gate": "dump_16_16",
+        "desc": "Washout-gate: first hour of a 8-bar closing low above its 120h SMA only if the token dumped 16%+ in an hour within the last 16h"
+      },
+      "exit_params": [
+        1000000000.0,
+        0.3,
+        0.6,
+        0.2,
+        384.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 76.47,
+        "roll_median_oos_ret": 0.2298,
+        "full_ret": 3.5985,
+        "full_profit": 1151.5042,
+        "full_trades": 89,
+        "full_dd": 0.559
+      },
+      "original_split": {
+        "is_ret": 0.0013,
+        "oos_ret": 3.5935,
+        "oos_profit": 1149.9216,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H4-00204",
+      "batch": "4",
+      "family": "confluence",
+      "entry": "Confluence: 12h VWAP reclaim only if the token dumped 12%+ in an hour within the last 24h",
+      "exit": "stop -28%, trail 22% after +45%, exit after 504h",
+      "sizing": "2% of balance per trade, up to 40 open",
+      "balance": 250.0,
+      "params": {
+        "entry": "vwap12",
+        "gate": "dump_12_24",
+        "hod": 0,
+        "desc": "Confluence: 12h VWAP reclaim only if the token dumped 12%+ in an hour within the last 24h"
+      },
+      "exit_params": [
+        1000000000.0,
+        0.28,
+        0.45,
+        0.22,
+        504.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 76.47,
+        "roll_median_oos_ret": 0.0476,
+        "full_ret": 0.3735,
+        "full_profit": 93.3873,
+        "full_trades": 367,
+        "full_dd": 0.1361
+      },
+      "original_split": {
+        "is_ret": 0.0394,
+        "oos_ret": 0.3505,
+        "oos_profit": 87.6164,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H7-00299",
+      "batch": "7",
+      "family": "washout_gate",
+      "entry": "Washout-gate: first hour of a 8-bar closing low above its 108h SMA only if the token dumped 16%+ in an hour within the last 16h",
+      "exit": "stop -33%, trail 22% after +65%, exit after 408h",
+      "sizing": "33% of balance per trade, up to 3 open",
+      "balance": 350.0,
+      "params": {
+        "entry": "dn8_108",
+        "gate": "dump_16_16",
+        "desc": "Washout-gate: first hour of a 8-bar closing low above its 108h SMA only if the token dumped 16%+ in an hour within the last 16h"
+      },
+      "exit_params": [
+        1000000000.0,
+        0.33,
+        0.65,
+        0.22,
+        408.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 25,
+        "roll_n": 15,
+        "roll_oos_profitable_pct": 73.33,
+        "roll_median_oos_ret": 0.4331,
+        "full_ret": 3.4277,
+        "full_profit": 1199.6999,
+        "full_trades": 60,
+        "full_dd": 0.6095
+      },
+      "original_split": {
+        "is_ret": 0.044,
+        "oos_ret": 3.2632,
+        "oos_profit": 1142.1044,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H7-00924",
+      "batch": "7",
+      "family": "washout_gate",
+      "entry": "Washout-gate: first hour of a 8-bar closing low above its 120h SMA only if the token dumped 16%+ in an hour within the last 14h",
+      "exit": "stop -33%, trail 22% after +65%, exit after 408h",
+      "sizing": "33% of balance per trade, up to 3 open",
+      "balance": 350.0,
+      "params": {
+        "entry": "dn8_120",
+        "gate": "dump_16_14",
+        "desc": "Washout-gate: first hour of a 8-bar closing low above its 120h SMA only if the token dumped 16%+ in an hour within the last 14h"
+      },
+      "exit_params": [
+        1000000000.0,
+        0.33,
+        0.65,
+        0.22,
+        408.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 25,
+        "roll_n": 15,
+        "roll_oos_profitable_pct": 73.33,
+        "roll_median_oos_ret": 0.4331,
+        "full_ret": 2.1246,
+        "full_profit": 743.6156,
+        "full_trades": 52,
+        "full_dd": 0.5601
+      },
+      "original_split": {
+        "is_ret": 0.4428,
+        "oos_ret": 3.2632,
+        "oos_profit": 1142.1044,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H1-06495",
+      "batch": "1",
+      "family": "climax_reversal",
+      "entry": "Buy the first green hour after a climax dump of 15%+ on 4x average volume (confirmation bar, not the dump bar)",
+      "exit": "stop -15%, trail 15% after +25%, exit after 240h",
+      "sizing": "100% of balance per trade, up to 1 open",
+      "balance": 280.0,
+      "params": [
+        0.15,
+        4.0,
+        0.0,
+        0.0
+      ],
+      "exit_params": [
+        1000000000.0,
+        0.15,
+        0.25,
+        0.15,
+        240.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 70.59,
+        "roll_median_oos_ret": 0.2573,
+        "full_ret": 1.2488,
+        "full_profit": 349.6695,
+        "full_trades": 16,
+        "full_dd": 0.4243
+      },
+      "original_split": {
+        "is_ret": 0.2811,
+        "oos_ret": 0.7495,
+        "oos_profit": 209.8556,
+        "both_windows": false
+      },
+      "passed": true
+    },
+    {
+      "id": "H5-04973",
+      "batch": "5",
+      "family": "washout_gate",
+      "entry": "Washout-gate: SuperTrend 8h\u00d73.5 flip to long only if the token dumped 14%+ in an hour within the last 20h",
+      "exit": "stop -32%, trail 24% after +55%, exit after 432h",
+      "sizing": "21% of balance per trade, up to 4 open",
+      "balance": 200.0,
+      "params": {
+        "entry": "st8_3.5",
+        "gate": "dump_14_20",
+        "desc": "Washout-gate: SuperTrend 8h\u00d73.5 flip to long only if the token dumped 14%+ in an hour within the last 20h"
+      },
+      "exit_params": [
+        1000000000.0,
+        0.32,
+        0.55,
+        0.24,
+        432.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 70.59,
+        "roll_median_oos_ret": 0.2251,
+        "full_ret": 2.7652,
+        "full_profit": 553.0456,
+        "full_trades": 56,
+        "full_dd": 0.3977
+      },
+      "original_split": {
+        "is_ret": 0.3522,
+        "oos_ret": 1.2681,
+        "oos_profit": 253.6192,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H3-05693",
+      "batch": "3",
+      "family": "ensemble",
+      "entry": "Confluence: 12h VWAP reclaim only if a 10%+/1.5x climax dump occurred in the last 12h",
+      "exit": "take profit +150%, stop -28%, exit after 192h",
+      "sizing": "18% of balance per trade, up to 5 open",
+      "balance": 100.0,
+      "params": {
+        "mode": "after_climax",
+        "comps": [
+          "A",
+          12
+        ],
+        "desc": "Confluence: 12h VWAP reclaim only if a 10%+/1.5x climax dump occurred in the last 12h"
+      },
+      "exit_params": [
+        1.5,
+        0.28,
+        1000000000.0,
+        0.0,
+        192.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 70.59,
+        "roll_median_oos_ret": 0.1848,
+        "full_ret": 0.5513,
+        "full_profit": 55.1324,
+        "full_trades": 100,
+        "full_dd": 0.4665
+      },
+      "original_split": {
+        "is_ret": 1.3177,
+        "oos_ret": 0.9658,
+        "oos_profit": 96.5757,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H5-04969",
+      "batch": "5",
+      "family": "washout_gate",
+      "entry": "Washout-gate: SuperTrend 8h\u00d73.5 flip to long only if the token dumped 14%+ in an hour within the last 20h",
+      "exit": "stop -32%, trail 24% after +55%, exit after 432h",
+      "sizing": "17% of balance per trade, up to 5 open",
+      "balance": 300.0,
+      "params": {
+        "entry": "st8_3.5",
+        "gate": "dump_14_20",
+        "desc": "Washout-gate: SuperTrend 8h\u00d73.5 flip to long only if the token dumped 14%+ in an hour within the last 20h"
+      },
+      "exit_params": [
+        1000000000.0,
+        0.32,
+        0.55,
+        0.24,
+        432.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 70.59,
+        "roll_median_oos_ret": 0.1579,
+        "full_ret": 1.7648,
+        "full_profit": 529.446,
+        "full_trades": 55,
+        "full_dd": 0.3353
+      },
+      "original_split": {
+        "is_ret": 0.1455,
+        "oos_ret": 1.3354,
+        "oos_profit": 400.6165,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H2-02243",
+      "batch": "2",
+      "family": "climax_reversal",
+      "entry": "Buy the first green hour after a climax dump of 10%+ on 3x average volume (confirmation bar, not the dump bar)",
+      "exit": "stop -22%, trail 20% after +40%, exit after 360h",
+      "sizing": "15% of balance per trade, up to 6 open",
+      "balance": 100.0,
+      "params": [
+        0.1,
+        3.0,
+        1.0,
+        0.0
+      ],
+      "exit_params": [
+        1000000000.0,
+        0.22,
+        0.4,
+        0.2,
+        360.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 70.59,
+        "roll_median_oos_ret": 0.1486,
+        "full_ret": 1.7688,
+        "full_profit": 176.8826,
+        "full_trades": 71,
+        "full_dd": 0.2748
+      },
+      "original_split": {
+        "is_ret": 0.8549,
+        "oos_ret": 1.1085,
+        "oos_profit": 110.8543,
+        "both_windows": false
+      },
+      "passed": true
+    },
+    {
+      "id": "H2-02968",
+      "batch": "2",
+      "family": "climax_reversal",
+      "entry": "Buy the first green hour after a climax dump of 18%+ on 3x average volume (confirmation bar, not the dump bar)",
+      "exit": "take profit +200%, stop -40%, trail 30% after +100%, exit after 480h",
+      "sizing": "15% of balance per trade, up to 6 open",
+      "balance": 100.0,
+      "params": [
+        0.18,
+        3.0,
+        1.0,
+        0.0
+      ],
+      "exit_params": [
+        2.0,
+        0.4,
+        1.0,
+        0.3,
+        480.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 70.59,
+        "roll_median_oos_ret": 0.1485,
+        "full_ret": 1.2097,
+        "full_profit": 120.9723,
+        "full_trades": 36,
+        "full_dd": 0.3782
+      },
+      "original_split": {
+        "is_ret": 0.1073,
+        "oos_ret": 1.2979,
+        "oos_profit": 129.7863,
+        "both_windows": false
+      },
+      "passed": true
+    },
+    {
+      "id": "H5-05099",
+      "batch": "5",
+      "family": "washout_gate",
+      "entry": "Washout-gate: SuperTrend 8h\u00d73.5 flip to long only if the token dumped 18%+ in an hour within the last 10h",
+      "exit": "stop -32%, trail 24% after +55%, exit after 432h",
+      "sizing": "21% of balance per trade, up to 4 open",
+      "balance": 300.0,
+      "params": {
+        "entry": "st8_3.5",
+        "gate": "dump_18_10",
+        "desc": "Washout-gate: SuperTrend 8h\u00d73.5 flip to long only if the token dumped 18%+ in an hour within the last 10h"
+      },
+      "exit_params": [
+        1000000000.0,
+        0.32,
+        0.55,
+        0.24,
+        432.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 70.59,
+        "roll_median_oos_ret": 0.1361,
+        "full_ret": 1.7482,
+        "full_profit": 524.4721,
+        "full_trades": 20,
+        "full_dd": 0.3206
+      },
+      "original_split": {
+        "is_ret": 0.2167,
+        "oos_ret": 1.2706,
+        "oos_profit": 381.1831,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H3-05569",
+      "batch": "3",
+      "family": "ensemble",
+      "entry": "Confluence: 12h VWAP reclaim only if a 10%+/1.5x climax dump occurred in the last 6h",
+      "exit": "take profit +150%, stop -28%, exit after 192h",
+      "sizing": "18% of balance per trade, up to 5 open",
+      "balance": 250.0,
+      "params": {
+        "mode": "after_climax",
+        "comps": [
+          "A",
+          6
+        ],
+        "desc": "Confluence: 12h VWAP reclaim only if a 10%+/1.5x climax dump occurred in the last 6h"
+      },
+      "exit_params": [
+        1.5,
+        0.28,
+        1000000000.0,
+        0.0,
+        192.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 70.59,
+        "roll_median_oos_ret": 0.0944,
+        "full_ret": 0.4396,
+        "full_profit": 109.8964,
+        "full_trades": 56,
+        "full_dd": 0.371
+      },
+      "original_split": {
+        "is_ret": 0.9633,
+        "oos_ret": 0.3373,
+        "oos_profit": 84.3189,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H3-05685",
+      "batch": "3",
+      "family": "ensemble",
+      "entry": "Confluence: 12h VWAP reclaim only if a 10%+/1.5x climax dump occurred in the last 12h",
+      "exit": "take profit +150%, stop -28%, exit after 192h",
+      "sizing": "7% of balance per trade, up to 14 open",
+      "balance": 280.0,
+      "params": {
+        "mode": "after_climax",
+        "comps": [
+          "A",
+          12
+        ],
+        "desc": "Confluence: 12h VWAP reclaim only if a 10%+/1.5x climax dump occurred in the last 12h"
+      },
+      "exit_params": [
+        1.5,
+        0.28,
+        1000000000.0,
+        0.0,
+        192.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 70.59,
+        "roll_median_oos_ret": 0.083,
+        "full_ret": 0.3613,
+        "full_profit": 101.1543,
+        "full_trades": 100,
+        "full_dd": 0.2202
+      },
+      "original_split": {
+        "is_ret": 0.5966,
+        "oos_ret": 0.3908,
+        "oos_profit": 109.4305,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H6-00722",
+      "batch": "6",
+      "family": "washout_gate",
+      "entry": "Washout-gate: first hour of a 14-bar closing low above its 200h SMA only if the token dumped 9%+ in an hour within the last 18h",
+      "exit": "stop -30%, trail 20% after +60%, exit after 384h",
+      "sizing": "28% of balance per trade, up to 3 open",
+      "balance": 85.0,
+      "params": {
+        "entry": "dn14_200",
+        "gate": "dump_9_18",
+        "desc": "Washout-gate: first hour of a 14-bar closing low above its 200h SMA only if the token dumped 9%+ in an hour within the last 18h"
+      },
+      "exit_params": [
+        1000000000.0,
+        0.3,
+        0.6,
+        0.2,
+        384.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 70.59,
+        "roll_median_oos_ret": 0.0677,
+        "full_ret": 3.8441,
+        "full_profit": 326.7493,
+        "full_trades": 101,
+        "full_dd": 0.6175
+      },
+      "original_split": {
+        "is_ret": 0.1193,
+        "oos_ret": 5.7063,
+        "oos_profit": 485.0341,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H2-02959",
+      "batch": "2",
+      "family": "climax_reversal",
+      "entry": "Buy the first green hour after a climax dump of 18%+ on 3x average volume (confirmation bar, not the dump bar)",
+      "exit": "take profit +200%, stop -40%, trail 30% after +100%, exit after 480h",
+      "sizing": "6% of balance per trade, up to 15 open",
+      "balance": 250.0,
+      "params": [
+        0.18,
+        3.0,
+        1.0,
+        0.0
+      ],
+      "exit_params": [
+        2.0,
+        0.4,
+        1.0,
+        0.3,
+        480.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 70.59,
+        "roll_median_oos_ret": 0.0594,
+        "full_ret": 0.4315,
+        "full_profit": 107.8668,
+        "full_trades": 36,
+        "full_dd": 0.1705
+      },
+      "original_split": {
+        "is_ret": 0.0503,
+        "oos_ret": 0.4415,
+        "oos_profit": 110.3702,
+        "both_windows": false
+      },
+      "passed": true
+    },
+    {
+      "id": "H2-02960",
+      "batch": "2",
+      "family": "climax_reversal",
+      "entry": "Buy the first green hour after a climax dump of 18%+ on 3x average volume (confirmation bar, not the dump bar)",
+      "exit": "take profit +200%, stop -40%, trail 30% after +100%, exit after 480h",
+      "sizing": "6% of balance per trade, up to 15 open",
+      "balance": 280.0,
+      "params": [
+        0.18,
+        3.0,
+        1.0,
+        0.0
+      ],
+      "exit_params": [
+        2.0,
+        0.4,
+        1.0,
+        0.3,
+        480.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 70.59,
+        "roll_median_oos_ret": 0.0587,
+        "full_ret": 0.4269,
+        "full_profit": 119.5297,
+        "full_trades": 36,
+        "full_dd": 0.1708
+      },
+      "original_split": {
+        "is_ret": 0.0483,
+        "oos_ret": 0.4393,
+        "oos_profit": 123.0112,
+        "both_windows": false
+      },
+      "passed": true
+    },
+    {
+      "id": "H2-02235",
+      "batch": "2",
+      "family": "climax_reversal",
+      "entry": "Buy the first green hour after a climax dump of 10%+ on 3x average volume (confirmation bar, not the dump bar)",
+      "exit": "stop -22%, trail 20% after +40%, exit after 360h",
+      "sizing": "6% of balance per trade, up to 15 open",
+      "balance": 280.0,
+      "params": [
+        0.1,
+        3.0,
+        1.0,
+        0.0
+      ],
+      "exit_params": [
+        1000000000.0,
+        0.22,
+        0.4,
+        0.2,
+        360.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 70.59,
+        "roll_median_oos_ret": 0.047,
+        "full_ret": 0.6913,
+        "full_profit": 193.576,
+        "full_trades": 83,
+        "full_dd": 0.1188
+      },
+      "original_split": {
+        "is_ret": 0.3459,
+        "oos_ret": 0.362,
+        "oos_profit": 101.3577,
+        "both_windows": false
+      },
+      "passed": true
+    },
+    {
+      "id": "H2-02610",
+      "batch": "2",
+      "family": "climax_reversal",
+      "entry": "Buy the first green hour after a climax dump of 12%+ on 3x average volume (confirmation bar, not the dump bar)",
+      "exit": "stop -22%, trail 20% after +40%, exit after 360h",
+      "sizing": "6% of balance per trade, up to 15 open",
+      "balance": 280.0,
+      "params": [
+        0.12,
+        3.0,
+        1.0,
+        0.0
+      ],
+      "exit_params": [
+        1000000000.0,
+        0.22,
+        0.4,
+        0.2,
+        360.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 70.59,
+        "roll_median_oos_ret": 0.0282,
+        "full_ret": 0.9345,
+        "full_profit": 261.673,
+        "full_trades": 64,
+        "full_dd": 0.124
+      },
+      "original_split": {
+        "is_ret": 0.5163,
+        "oos_ret": 0.3837,
+        "oos_profit": 107.4308,
+        "both_windows": false
+      },
+      "passed": true
+    },
+    {
+      "id": "H2-02609",
+      "batch": "2",
+      "family": "climax_reversal",
+      "entry": "Buy the first green hour after a climax dump of 12%+ on 3x average volume (confirmation bar, not the dump bar)",
+      "exit": "stop -22%, trail 20% after +40%, exit after 360h",
+      "sizing": "6% of balance per trade, up to 15 open",
+      "balance": 250.0,
+      "params": [
+        0.12,
+        3.0,
+        1.0,
+        0.0
+      ],
+      "exit_params": [
+        1000000000.0,
+        0.22,
+        0.4,
+        0.2,
+        360.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 70.59,
+        "roll_median_oos_ret": 0.026,
+        "full_ret": 0.9789,
+        "full_profit": 244.7177,
+        "full_trades": 67,
+        "full_dd": 0.1372
+      },
+      "original_split": {
+        "is_ret": 0.5279,
+        "oos_ret": 0.3867,
+        "oos_profit": 96.6631,
+        "both_windows": false
+      },
+      "passed": true
+    },
+    {
+      "id": "H7-00793",
+      "batch": "7",
+      "family": "washout_gate",
+      "entry": "Washout-gate: first hour of a 8-bar closing low above its 120h SMA only if the token dumped 17%+ in an hour within the last 16h",
+      "exit": "stop -33%, trail 22% after +65%, exit after 408h",
+      "sizing": "29% of balance per trade, up to 3 open",
+      "balance": 240.0,
+      "params": {
+        "entry": "dn8_120",
+        "gate": "dump_17_16",
+        "desc": "Washout-gate: first hour of a 8-bar closing low above its 120h SMA only if the token dumped 17%+ in an hour within the last 16h"
+      },
+      "exit_params": [
+        1000000000.0,
+        0.33,
+        0.65,
+        0.22,
+        408.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 25,
+        "roll_n": 15,
+        "roll_oos_profitable_pct": 66.67,
+        "roll_median_oos_ret": 0.3583,
+        "full_ret": 4.0943,
+        "full_profit": 982.6372,
+        "full_trades": 68,
+        "full_dd": 0.5936
+      },
+      "original_split": {
+        "is_ret": 0.2174,
+        "oos_ret": 3.9248,
+        "oos_profit": 941.9504,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H7-00794",
+      "batch": "7",
+      "family": "washout_gate",
+      "entry": "Washout-gate: first hour of a 8-bar closing low above its 120h SMA only if the token dumped 17%+ in an hour within the last 16h",
+      "exit": "stop -33%, trail 22% after +65%, exit after 408h",
+      "sizing": "29% of balance per trade, up to 3 open",
+      "balance": 350.0,
+      "params": {
+        "entry": "dn8_120",
+        "gate": "dump_17_16",
+        "desc": "Washout-gate: first hour of a 8-bar closing low above its 120h SMA only if the token dumped 17%+ in an hour within the last 16h"
+      },
+      "exit_params": [
+        1000000000.0,
+        0.33,
+        0.65,
+        0.22,
+        408.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 25,
+        "roll_n": 15,
+        "roll_oos_profitable_pct": 66.67,
+        "roll_median_oos_ret": 0.2532,
+        "full_ret": 2.6448,
+        "full_profit": 925.6642,
+        "full_trades": 50,
+        "full_dd": 0.5069
+      },
+      "original_split": {
+        "is_ret": 0.6893,
+        "oos_ret": 3.5667,
+        "oos_profit": 1248.3583,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H3-02625",
+      "batch": "3",
+      "family": "climax_reversal",
+      "entry": "Buy the first green hour after a climax dump of 22%+ on 2.5x average volume (confirmation bar, not the dump bar)",
+      "exit": "take profit +40%, stop -16%, trail 12% after +15%, exit on a -45% hourly crash, exit after 72h",
+      "sizing": "100% of balance per trade, up to 1 open",
+      "balance": 280.0,
+      "params": [
+        0.22,
+        2.5,
+        0.0,
+        0.0
+      ],
+      "exit_params": [
+        0.4,
+        0.16,
+        0.15,
+        0.12,
+        72.0,
+        1000000000.0,
+        0.45
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 64.71,
+        "roll_median_oos_ret": 0.3014,
+        "full_ret": 0.6752,
+        "full_profit": 189.0542,
+        "full_trades": 13,
+        "full_dd": 0.4092
+      },
+      "original_split": {
+        "is_ret": 0.0803,
+        "oos_ret": 1.0525,
+        "oos_profit": 294.7069,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H2-02483",
+      "batch": "2",
+      "family": "climax_reversal",
+      "entry": "Buy the first green hour after a climax dump of 12%+ on 1.5x average volume (confirmation bar, not the dump bar)",
+      "exit": "stop -22%, trail 20% after +40%, exit after 360h",
+      "sizing": "6% of balance per trade, up to 15 open",
+      "balance": 100.0,
+      "params": [
+        0.12,
+        1.5,
+        1.0,
+        0.0
+      ],
+      "exit_params": [
+        1000000000.0,
+        0.22,
+        0.4,
+        0.2,
+        360.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 64.71,
+        "roll_median_oos_ret": 0.1144,
+        "full_ret": 0.9802,
+        "full_profit": 98.024,
+        "full_trades": 133,
+        "full_dd": 0.1644
+      },
+      "original_split": {
+        "is_ret": 0.378,
+        "oos_ret": 1.3338,
+        "oos_profit": 133.3848,
+        "both_windows": false
+      },
+      "passed": true
+    },
+    {
+      "id": "H3-05689",
+      "batch": "3",
+      "family": "ensemble",
+      "entry": "Confluence: 12h VWAP reclaim only if a 10%+/1.5x climax dump occurred in the last 12h",
+      "exit": "take profit +150%, stop -28%, exit after 192h",
+      "sizing": "12% of balance per trade, up to 8 open",
+      "balance": 250.0,
+      "params": {
+        "mode": "after_climax",
+        "comps": [
+          "A",
+          12
+        ],
+        "desc": "Confluence: 12h VWAP reclaim only if a 10%+/1.5x climax dump occurred in the last 12h"
+      },
+      "exit_params": [
+        1.5,
+        0.28,
+        1000000000.0,
+        0.0,
+        192.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 64.71,
+        "roll_median_oos_ret": 0.11,
+        "full_ret": 0.3165,
+        "full_profit": 79.1274,
+        "full_trades": 95,
+        "full_dd": 0.3341
+      },
+      "original_split": {
+        "is_ret": 1.0234,
+        "oos_ret": 0.4496,
+        "oos_profit": 112.4062,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H2-02368",
+      "batch": "2",
+      "family": "climax_reversal",
+      "entry": "Buy the first green hour after a climax dump of 10%+ on 5x average volume (confirmation bar, not the dump bar)",
+      "exit": "stop -22%, trail 20% after +40%, exit after 360h",
+      "sizing": "15% of balance per trade, up to 6 open",
+      "balance": 100.0,
+      "params": [
+        0.1,
+        5.0,
+        1.0,
+        0.0
+      ],
+      "exit_params": [
+        1000000000.0,
+        0.22,
+        0.4,
+        0.2,
+        360.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 64.71,
+        "roll_median_oos_ret": 0.0962,
+        "full_ret": 1.4527,
+        "full_profit": 145.2739,
+        "full_trades": 48,
+        "full_dd": 0.1729
+      },
+      "original_split": {
+        "is_ret": 1.3696,
+        "oos_ret": 1.0512,
+        "oos_profit": 105.1225,
+        "both_windows": false
+      },
+      "passed": true
+    },
+    {
+      "id": "H2-02485",
+      "batch": "2",
+      "family": "climax_reversal",
+      "entry": "Buy the first green hour after a climax dump of 12%+ on 1.5x average volume (confirmation bar, not the dump bar)",
+      "exit": "stop -22%, trail 20% after +40%, exit after 360h",
+      "sizing": "6% of balance per trade, up to 15 open",
+      "balance": 280.0,
+      "params": [
+        0.12,
+        1.5,
+        1.0,
+        0.0
+      ],
+      "exit_params": [
+        1000000000.0,
+        0.22,
+        0.4,
+        0.2,
+        360.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 64.71,
+        "roll_median_oos_ret": 0.0431,
+        "full_ret": 0.5489,
+        "full_profit": 153.699,
+        "full_trades": 111,
+        "full_dd": 0.1821
+      },
+      "original_split": {
+        "is_ret": 0.4182,
+        "oos_ret": 0.37,
+        "oos_profit": 103.6074,
+        "both_windows": false
+      },
+      "passed": true
+    },
+    {
+      "id": "H2-02618",
+      "batch": "2",
+      "family": "climax_reversal",
+      "entry": "Buy the first green hour after a climax dump of 12%+ on 3x average volume (confirmation bar, not the dump bar)",
+      "exit": "stop -22%, trail 20% after +40%, exit after 360h",
+      "sizing": "15% of balance per trade, up to 6 open",
+      "balance": 100.0,
+      "params": [
+        0.12,
+        3.0,
+        1.0,
+        0.0
+      ],
+      "exit_params": [
+        1000000000.0,
+        0.22,
+        0.4,
+        0.2,
+        360.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 64.71,
+        "roll_median_oos_ret": 0.0414,
+        "full_ret": 1.9017,
+        "full_profit": 190.1689,
+        "full_trades": 64,
+        "full_dd": 0.3206
+      },
+      "original_split": {
+        "is_ret": 0.6597,
+        "oos_ret": 1.1328,
+        "oos_profit": 113.2835,
+        "both_windows": false
+      },
+      "passed": true
+    },
+    {
+      "id": "H3-04834",
+      "batch": "3",
+      "family": "ensemble",
+      "entry": "Ensemble (shared account): 18% / 3x climax confirmation OR 40h/2\u03c3 Bollinger retest after a 96h squeeze",
+      "exit": "stop -40%, trail 28% after +60%, exit after 600h",
+      "sizing": "7% of balance per trade, up to 14 open",
+      "balance": 250.0,
+      "params": {
+        "mode": "or",
+        "comps": [
+          "E",
+          "D"
+        ],
+        "desc": "Ensemble (shared account): 18% / 3x climax confirmation OR 40h/2\u03c3 Bollinger retest after a 96h squeeze"
+      },
+      "exit_params": [
+        1000000000.0,
+        0.4,
+        0.6,
+        0.28,
+        600.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 64.71,
+        "roll_median_oos_ret": 0.0388,
+        "full_ret": 0.4259,
+        "full_profit": 106.4853,
+        "full_trades": 76,
+        "full_dd": 0.2098
+      },
+      "original_split": {
+        "is_ret": 0.0398,
+        "oos_ret": 0.5231,
+        "oos_profit": 130.7861,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H3-04835",
+      "batch": "3",
+      "family": "ensemble",
+      "entry": "Ensemble (shared account): 18% / 3x climax confirmation OR 40h/2\u03c3 Bollinger retest after a 96h squeeze",
+      "exit": "stop -40%, trail 28% after +60%, exit after 600h",
+      "sizing": "7% of balance per trade, up to 14 open",
+      "balance": 280.0,
+      "params": {
+        "mode": "or",
+        "comps": [
+          "E",
+          "D"
+        ],
+        "desc": "Ensemble (shared account): 18% / 3x climax confirmation OR 40h/2\u03c3 Bollinger retest after a 96h squeeze"
+      },
+      "exit_params": [
+        1000000000.0,
+        0.4,
+        0.6,
+        0.28,
+        600.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 64.71,
+        "roll_median_oos_ret": 0.038,
+        "full_ret": 0.4175,
+        "full_profit": 116.8872,
+        "full_trades": 76,
+        "full_dd": 0.2101
+      },
+      "original_split": {
+        "is_ret": 0.0363,
+        "oos_ret": 0.4586,
+        "oos_profit": 128.4005,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H4-00455",
+      "batch": "4",
+      "family": "confluence",
+      "entry": "Confluence: 12h VWAP reclaim only if the token dumped 20%+ in an hour within the last 36h",
+      "exit": "stop -28%, trail 22% after +45%, exit after 504h",
+      "sizing": "2% of balance per trade, up to 40 open",
+      "balance": 280.0,
+      "params": {
+        "entry": "vwap12",
+        "gate": "dump_20_36",
+        "hod": 0,
+        "desc": "Confluence: 12h VWAP reclaim only if the token dumped 20%+ in an hour within the last 36h"
+      },
+      "exit_params": [
+        1000000000.0,
+        0.28,
+        0.45,
+        0.22,
+        504.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 64.71,
+        "roll_median_oos_ret": 0.0217,
+        "full_ret": 0.2253,
+        "full_profit": 63.0703,
+        "full_trades": 241,
+        "full_dd": 0.1168
+      },
+      "original_split": {
+        "is_ret": 0.0406,
+        "oos_ret": 0.1914,
+        "oos_profit": 53.6002,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H2-02492",
+      "batch": "2",
+      "family": "climax_reversal",
+      "entry": "Buy the first green hour after a climax dump of 12%+ on 1.5x average volume (confirmation bar, not the dump bar)",
+      "exit": "stop -22%, trail 20% after +40%, exit after 360h",
+      "sizing": "15% of balance per trade, up to 6 open",
+      "balance": 25.0,
+      "params": [
+        0.12,
+        1.5,
+        1.0,
+        0.0
+      ],
+      "exit_params": [
+        1000000000.0,
+        0.22,
+        0.4,
+        0.2,
+        360.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 58.82,
+        "roll_median_oos_ret": 0.2878,
+        "full_ret": 5.0879,
+        "full_profit": 127.1974,
+        "full_trades": 128,
+        "full_dd": 0.3563
+      },
+      "original_split": {
+        "is_ret": 0.7634,
+        "oos_ret": 4.4956,
+        "oos_profit": 112.3891,
+        "both_windows": false
+      },
+      "passed": true
+    },
+    {
+      "id": "H5-05074",
+      "batch": "5",
+      "family": "washout_gate",
+      "entry": "Washout-gate: SuperTrend 8h\u00d73.5 flip to long only if the token dumped 18%+ in an hour within the last 10h",
+      "exit": "take profit +80%, stop -27%, exit after 252h",
+      "sizing": "21% of balance per trade, up to 4 open",
+      "balance": 300.0,
+      "params": {
+        "entry": "st8_3.5",
+        "gate": "dump_18_10",
+        "desc": "Washout-gate: SuperTrend 8h\u00d73.5 flip to long only if the token dumped 18%+ in an hour within the last 10h"
+      },
+      "exit_params": [
+        0.8,
+        0.27,
+        1000000000.0,
+        0.0,
+        252.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 58.82,
+        "roll_median_oos_ret": 0.1544,
+        "full_ret": 1.1286,
+        "full_profit": 338.5692,
+        "full_trades": 20,
+        "full_dd": 0.2827
+      },
+      "original_split": {
+        "is_ret": 0.0985,
+        "oos_ret": 0.9412,
+        "oos_profit": 282.3455,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H5-05094",
+      "batch": "5",
+      "family": "washout_gate",
+      "entry": "Washout-gate: SuperTrend 8h\u00d73.5 flip to long only if the token dumped 18%+ in an hour within the last 10h",
+      "exit": "stop -32%, trail 24% after +55%, exit after 432h",
+      "sizing": "17% of balance per trade, up to 5 open",
+      "balance": 300.0,
+      "params": {
+        "entry": "st8_3.5",
+        "gate": "dump_18_10",
+        "desc": "Washout-gate: SuperTrend 8h\u00d73.5 flip to long only if the token dumped 18%+ in an hour within the last 10h"
+      },
+      "exit_params": [
+        1000000000.0,
+        0.32,
+        0.55,
+        0.24,
+        432.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 58.82,
+        "roll_median_oos_ret": 0.0424,
+        "full_ret": 1.361,
+        "full_profit": 408.2855,
+        "full_trades": 20,
+        "full_dd": 0.2657
+      },
+      "original_split": {
+        "is_ret": 0.1911,
+        "oos_ret": 0.9875,
+        "oos_profit": 296.2361,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H6-01972",
+      "batch": "6",
+      "family": "washout_gate",
+      "entry": "Washout-gate: first hour of a 20-bar closing low above its 200h SMA only if the token dumped 9%+ in an hour within the last 16h",
+      "exit": "stop -30%, trail 20% after +60%, exit after 384h",
+      "sizing": "28% of balance per trade, up to 3 open",
+      "balance": 85.0,
+      "params": {
+        "entry": "dn20_200",
+        "gate": "dump_9_16",
+        "desc": "Washout-gate: first hour of a 20-bar closing low above its 200h SMA only if the token dumped 9%+ in an hour within the last 16h"
+      },
+      "exit_params": [
+        1000000000.0,
+        0.3,
+        0.6,
+        0.2,
+        384.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 58.82,
+        "roll_median_oos_ret": 0.013,
+        "full_ret": 1.8132,
+        "full_profit": 154.1253,
+        "full_trades": 81,
+        "full_dd": 0.5962
+      },
+      "original_split": {
+        "is_ret": 0.622,
+        "oos_ret": 4.6087,
+        "oos_profit": 391.7397,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H1-06744",
+      "batch": "1",
+      "family": "climax_reversal",
+      "entry": "Buy the first green hour after a climax dump of 25%+ on 4x average volume (confirmation bar, not the dump bar)",
+      "exit": "stop -15%, trail 15% after +25%, exit after 240h",
+      "sizing": "100% of balance per trade, up to 1 open",
+      "balance": 250.0,
+      "params": [
+        0.25,
+        4.0,
+        0.0,
+        0.0
+      ],
+      "exit_params": [
+        1000000000.0,
+        0.15,
+        0.25,
+        0.15,
+        240.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 52.94,
+        "roll_median_oos_ret": 0.0816,
+        "full_ret": 1.0367,
+        "full_profit": 259.172,
+        "full_trades": 9,
+        "full_dd": 0.4682
+      },
+      "original_split": {
+        "is_ret": 0.2846,
+        "oos_ret": 0.5893,
+        "oos_profit": 147.3141,
+        "both_windows": false
+      },
+      "passed": true
+    },
+    {
+      "id": "H1-06745",
+      "batch": "1",
+      "family": "climax_reversal",
+      "entry": "Buy the first green hour after a climax dump of 25%+ on 4x average volume (confirmation bar, not the dump bar)",
+      "exit": "stop -15%, trail 15% after +25%, exit after 240h",
+      "sizing": "100% of balance per trade, up to 1 open",
+      "balance": 280.0,
+      "params": [
+        0.25,
+        4.0,
+        0.0,
+        0.0
+      ],
+      "exit_params": [
+        1000000000.0,
+        0.15,
+        0.25,
+        0.15,
+        240.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 52.94,
+        "roll_median_oos_ret": 0.0816,
+        "full_ret": 1.0013,
+        "full_profit": 280.3667,
+        "full_trades": 9,
+        "full_dd": 0.473
+      },
+      "original_split": {
+        "is_ret": 0.2811,
+        "oos_ret": 0.586,
+        "oos_profit": 164.0894,
+        "both_windows": false
+      },
+      "passed": true
+    },
+    {
+      "id": "H3-02338",
+      "batch": "3",
+      "family": "climax_reversal",
+      "entry": "Buy the first green hour after a climax dump of 16%+ on 2.5x average volume (confirmation bar, not the dump bar)",
+      "exit": "stop -40%, trail 28% after +60%, exit after 600h",
+      "sizing": "12% of balance per trade, up to 8 open",
+      "balance": 100.0,
+      "params": [
+        0.16,
+        2.5,
+        0.0,
+        0.0
+      ],
+      "exit_params": [
+        1000000000.0,
+        0.4,
+        0.6,
+        0.28,
+        600.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 52.94,
+        "roll_median_oos_ret": 0.0743,
+        "full_ret": 1.0781,
+        "full_profit": 107.8144,
+        "full_trades": 53,
+        "full_dd": 0.3735
+      },
+      "original_split": {
+        "is_ret": 0.0337,
+        "oos_ret": 1.1237,
+        "oos_profit": 112.3672,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H5-02339",
+      "batch": "5",
+      "family": "washout_gate",
+      "entry": "Washout-gate: 16h Keltner (EMA+2.8\u00d7ATR) break only if the token dumped 10%+ in an hour within the last 48h",
+      "exit": "stop -32%, trail 24% after +55%, exit after 432h",
+      "sizing": "13% of balance per trade, up to 8 open",
+      "balance": 300.0,
+      "params": {
+        "entry": "kel16_2.8",
+        "gate": "dump_10_48",
+        "desc": "Washout-gate: 16h Keltner (EMA+2.8\u00d7ATR) break only if the token dumped 10%+ in an hour within the last 48h"
+      },
+      "exit_params": [
+        1000000000.0,
+        0.32,
+        0.55,
+        0.24,
+        432.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 52.94,
+        "roll_median_oos_ret": 0.0641,
+        "full_ret": 1.1402,
+        "full_profit": 342.0696,
+        "full_trades": 90,
+        "full_dd": 0.5768
+      },
+      "original_split": {
+        "is_ret": 0.2428,
+        "oos_ret": 0.9707,
+        "oos_profit": 291.2222,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H5-01972",
+      "batch": "5",
+      "family": "washout_gate",
+      "entry": "Washout-gate: 10h Keltner (EMA+2.8\u00d7ATR) break only if the token dumped 18%+ in an hour within the last 48h",
+      "exit": "stop -32%, trail 24% after +55%, exit after 432h",
+      "sizing": "21% of balance per trade, up to 4 open",
+      "balance": 160.0,
+      "params": {
+        "entry": "kel10_2.8",
+        "gate": "dump_18_48",
+        "desc": "Washout-gate: 10h Keltner (EMA+2.8\u00d7ATR) break only if the token dumped 18%+ in an hour within the last 48h"
+      },
+      "exit_params": [
+        1000000000.0,
+        0.32,
+        0.55,
+        0.24,
+        432.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 52.94,
+        "roll_median_oos_ret": 0.0616,
+        "full_ret": 1.1812,
+        "full_profit": 188.9858,
+        "full_trades": 42,
+        "full_dd": 0.6255
+      },
+      "original_split": {
+        "is_ret": 0.2258,
+        "oos_ret": 3.0579,
+        "oos_profit": 489.27,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H3-02333",
+      "batch": "3",
+      "family": "climax_reversal",
+      "entry": "Buy the first green hour after a climax dump of 16%+ on 2.5x average volume (confirmation bar, not the dump bar)",
+      "exit": "stop -40%, trail 28% after +60%, exit after 600h",
+      "sizing": "7% of balance per trade, up to 14 open",
+      "balance": 100.0,
+      "params": [
+        0.16,
+        2.5,
+        0.0,
+        0.0
+      ],
+      "exit_params": [
+        1000000000.0,
+        0.4,
+        0.6,
+        0.28,
+        600.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 52.94,
+        "roll_median_oos_ret": 0.0545,
+        "full_ret": 0.9717,
+        "full_profit": 97.1681,
+        "full_trades": 57,
+        "full_dd": 0.2333
+      },
+      "original_split": {
+        "is_ret": 0.0432,
+        "oos_ret": 0.982,
+        "oos_profit": 98.1999,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H5-01967",
+      "batch": "5",
+      "family": "washout_gate",
+      "entry": "Washout-gate: 10h Keltner (EMA+2.8\u00d7ATR) break only if the token dumped 18%+ in an hour within the last 48h",
+      "exit": "stop -32%, trail 24% after +55%, exit after 432h",
+      "sizing": "17% of balance per trade, up to 5 open",
+      "balance": 160.0,
+      "params": {
+        "entry": "kel10_2.8",
+        "gate": "dump_18_48",
+        "desc": "Washout-gate: 10h Keltner (EMA+2.8\u00d7ATR) break only if the token dumped 18%+ in an hour within the last 48h"
+      },
+      "exit_params": [
+        1000000000.0,
+        0.32,
+        0.55,
+        0.24,
+        432.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 52.94,
+        "roll_median_oos_ret": 0.0543,
+        "full_ret": 2.8751,
+        "full_profit": 460.0171,
+        "full_trades": 48,
+        "full_dd": 0.5731
+      },
+      "original_split": {
+        "is_ret": 0.2025,
+        "oos_ret": 2.1834,
+        "oos_profit": 349.3486,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H5-01968",
+      "batch": "5",
+      "family": "washout_gate",
+      "entry": "Washout-gate: 10h Keltner (EMA+2.8\u00d7ATR) break only if the token dumped 18%+ in an hour within the last 48h",
+      "exit": "stop -32%, trail 24% after +55%, exit after 432h",
+      "sizing": "17% of balance per trade, up to 5 open",
+      "balance": 200.0,
+      "params": {
+        "entry": "kel10_2.8",
+        "gate": "dump_18_48",
+        "desc": "Washout-gate: 10h Keltner (EMA+2.8\u00d7ATR) break only if the token dumped 18%+ in an hour within the last 48h"
+      },
+      "exit_params": [
+        1000000000.0,
+        0.32,
+        0.55,
+        0.24,
+        432.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 52.94,
+        "roll_median_oos_ret": 0.0508,
+        "full_ret": 1.0799,
+        "full_profit": 215.9809,
+        "full_trades": 42,
+        "full_dd": 0.5444
+      },
+      "original_split": {
+        "is_ret": 0.2234,
+        "oos_ret": 2.2132,
+        "oos_profit": 442.6332,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H5-05098",
+      "batch": "5",
+      "family": "washout_gate",
+      "entry": "Washout-gate: SuperTrend 8h\u00d73.5 flip to long only if the token dumped 18%+ in an hour within the last 10h",
+      "exit": "stop -32%, trail 24% after +55%, exit after 432h",
+      "sizing": "21% of balance per trade, up to 4 open",
+      "balance": 200.0,
+      "params": {
+        "entry": "st8_3.5",
+        "gate": "dump_18_10",
+        "desc": "Washout-gate: SuperTrend 8h\u00d73.5 flip to long only if the token dumped 18%+ in an hour within the last 10h"
+      },
+      "exit_params": [
+        1000000000.0,
+        0.32,
+        0.55,
+        0.24,
+        432.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 52.94,
+        "roll_median_oos_ret": 0.0499,
+        "full_ret": 1.803,
+        "full_profit": 360.5906,
+        "full_trades": 20,
+        "full_dd": 0.3183
+      },
+      "original_split": {
+        "is_ret": 0.2292,
+        "oos_ret": 1.2884,
+        "oos_profit": 257.6702,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H5-01962",
+      "batch": "5",
+      "family": "washout_gate",
+      "entry": "Washout-gate: 10h Keltner (EMA+2.8\u00d7ATR) break only if the token dumped 18%+ in an hour within the last 48h",
+      "exit": "stop -32%, trail 24% after +55%, exit after 432h",
+      "sizing": "13% of balance per trade, up to 8 open",
+      "balance": 160.0,
+      "params": {
+        "entry": "kel10_2.8",
+        "gate": "dump_18_48",
+        "desc": "Washout-gate: 10h Keltner (EMA+2.8\u00d7ATR) break only if the token dumped 18%+ in an hour within the last 48h"
+      },
+      "exit_params": [
+        1000000000.0,
+        0.32,
+        0.55,
+        0.24,
+        432.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 52.94,
+        "roll_median_oos_ret": 0.0447,
+        "full_ret": 2.2083,
+        "full_profit": 353.335,
+        "full_trades": 49,
+        "full_dd": 0.4673
+      },
+      "original_split": {
+        "is_ret": 0.2046,
+        "oos_ret": 1.4286,
+        "oos_profit": 228.5795,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H5-01963",
+      "batch": "5",
+      "family": "washout_gate",
+      "entry": "Washout-gate: 10h Keltner (EMA+2.8\u00d7ATR) break only if the token dumped 18%+ in an hour within the last 48h",
+      "exit": "stop -32%, trail 24% after +55%, exit after 432h",
+      "sizing": "13% of balance per trade, up to 8 open",
+      "balance": 200.0,
+      "params": {
+        "entry": "kel10_2.8",
+        "gate": "dump_18_48",
+        "desc": "Washout-gate: 10h Keltner (EMA+2.8\u00d7ATR) break only if the token dumped 18%+ in an hour within the last 48h"
+      },
+      "exit_params": [
+        1000000000.0,
+        0.32,
+        0.55,
+        0.24,
+        432.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 52.94,
+        "roll_median_oos_ret": 0.0429,
+        "full_ret": 2.2032,
+        "full_profit": 440.6471,
+        "full_trades": 48,
+        "full_dd": 0.4718
+      },
+      "original_split": {
+        "is_ret": 0.1931,
+        "oos_ret": 1.6589,
+        "oos_profit": 331.7863,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H5-02347",
+      "batch": "5",
+      "family": "washout_gate",
+      "entry": "Washout-gate: 16h Keltner (EMA+2.8\u00d7ATR) break only if the token dumped 10%+ in an hour within the last 48h",
+      "exit": "stop -32%, trail 24% after +55%, exit after 432h",
+      "sizing": "21% of balance per trade, up to 4 open",
+      "balance": 160.0,
+      "params": {
+        "entry": "kel16_2.8",
+        "gate": "dump_10_48",
+        "desc": "Washout-gate: 16h Keltner (EMA+2.8\u00d7ATR) break only if the token dumped 10%+ in an hour within the last 48h"
+      },
+      "exit_params": [
+        1000000000.0,
+        0.32,
+        0.55,
+        0.24,
+        432.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 52.94,
+        "roll_median_oos_ret": 0.0287,
+        "full_ret": 1.6795,
+        "full_profit": 268.7191,
+        "full_trades": 90,
+        "full_dd": 0.739
+      },
+      "original_split": {
+        "is_ret": 0.2173,
+        "oos_ret": 1.5414,
+        "oos_profit": 246.631,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H3-02330",
+      "batch": "3",
+      "family": "climax_reversal",
+      "entry": "Buy the first green hour after a climax dump of 16%+ on 2.5x average volume (confirmation bar, not the dump bar)",
+      "exit": "stop -40%, trail 28% after +60%, exit after 600h",
+      "sizing": "3% of balance per trade, up to 30 open",
+      "balance": 280.0,
+      "params": [
+        0.16,
+        2.5,
+        0.0,
+        0.0
+      ],
+      "exit_params": [
+        1000000000.0,
+        0.4,
+        0.6,
+        0.28,
+        600.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 52.94,
+        "roll_median_oos_ret": 0.0265,
+        "full_ret": 0.3742,
+        "full_profit": 104.775,
+        "full_trades": 58,
+        "full_dd": 0.1054
+      },
+      "original_split": {
+        "is_ret": 0.0248,
+        "oos_ret": 0.3694,
+        "oos_profit": 103.4294,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H5-01959",
+      "batch": "5",
+      "family": "washout_gate",
+      "entry": "Washout-gate: 10h Keltner (EMA+2.8\u00d7ATR) break only if the token dumped 18%+ in an hour within the last 48h",
+      "exit": "stop -32%, trail 24% after +55%, exit after 432h",
+      "sizing": "7.5% of balance per trade, up to 13 open",
+      "balance": 300.0,
+      "params": {
+        "entry": "kel10_2.8",
+        "gate": "dump_18_48",
+        "desc": "Washout-gate: 10h Keltner (EMA+2.8\u00d7ATR) break only if the token dumped 18%+ in an hour within the last 48h"
+      },
+      "exit_params": [
+        1000000000.0,
+        0.32,
+        0.55,
+        0.24,
+        432.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 52.94,
+        "roll_median_oos_ret": 0.0262,
+        "full_ret": 1.1391,
+        "full_profit": 341.7319,
+        "full_trades": 50,
+        "full_dd": 0.2997
+      },
+      "original_split": {
+        "is_ret": 0.1453,
+        "oos_ret": 1.0152,
+        "oos_profit": 304.5463,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H4-02093",
+      "batch": "4",
+      "family": "confluence",
+      "entry": "Confluence: 14h Keltner (EMA+2\u00d7ATR) break only if a 16%+/2.5x climax dump occurred in the last 24h",
+      "exit": "stop -28%, trail 22% after +45%, exit after 504h",
+      "sizing": "14% of balance per trade, up to 7 open",
+      "balance": 100.0,
+      "params": {
+        "entry": "kel14_2",
+        "gate": "climax_16_24",
+        "hod": 0,
+        "desc": "Confluence: 14h Keltner (EMA+2\u00d7ATR) break only if a 16%+/2.5x climax dump occurred in the last 24h"
+      },
+      "exit_params": [
+        1000000000.0,
+        0.28,
+        0.45,
+        0.22,
+        504.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 52.94,
+        "roll_median_oos_ret": 0.0191,
+        "full_ret": 0.5329,
+        "full_profit": 53.2883,
+        "full_trades": 15,
+        "full_dd": 0.0872
+      },
+      "original_split": {
+        "is_ret": 0.0156,
+        "oos_ret": 0.5108,
+        "oos_profit": 51.0825,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H6-00474",
+      "batch": "6",
+      "family": "washout_gate",
+      "entry": "Washout-gate: first hour of a 10-bar closing low above its 288h SMA only if the token dumped 16%+ in an hour within the last 36h",
+      "exit": "stop -30%, trail 20% after +60%, exit after 384h",
+      "sizing": "28% of balance per trade, up to 3 open",
+      "balance": 320.0,
+      "params": {
+        "entry": "dn10_288",
+        "gate": "dump_16_36",
+        "desc": "Washout-gate: first hour of a 10-bar closing low above its 288h SMA only if the token dumped 16%+ in an hour within the last 36h"
+      },
+      "exit_params": [
+        1000000000.0,
+        0.3,
+        0.6,
+        0.2,
+        384.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 52.94,
+        "roll_median_oos_ret": 0.009,
+        "full_ret": 1.417,
+        "full_profit": 453.4374,
+        "full_trades": 96,
+        "full_dd": 0.7888
+      },
+      "original_split": {
+        "is_ret": 0.4362,
+        "oos_ret": 1.0802,
+        "oos_profit": 345.6747,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H3-02334",
+      "batch": "3",
+      "family": "climax_reversal",
+      "entry": "Buy the first green hour after a climax dump of 16%+ on 2.5x average volume (confirmation bar, not the dump bar)",
+      "exit": "stop -40%, trail 28% after +60%, exit after 600h",
+      "sizing": "7% of balance per trade, up to 14 open",
+      "balance": 250.0,
+      "params": [
+        0.16,
+        2.5,
+        0.0,
+        0.0
+      ],
+      "exit_params": [
+        1000000000.0,
+        0.4,
+        0.6,
+        0.28,
+        600.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 52.94,
+        "roll_median_oos_ret": 0.0024,
+        "full_ret": 0.5709,
+        "full_profit": 142.7251,
+        "full_trades": 52,
+        "full_dd": 0.2344
+      },
+      "original_split": {
+        "is_ret": 0.0315,
+        "oos_ret": 0.596,
+        "oos_profit": 148.9942,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H2-02993",
+      "batch": "2",
+      "family": "climax_reversal",
+      "entry": "Buy the first green hour after a climax dump of 18%+ on 3x average volume (confirmation bar, not the dump bar)",
+      "exit": "stop -22%, trail 20% after +40%, exit after 360h",
+      "sizing": "15% of balance per trade, up to 6 open",
+      "balance": 100.0,
+      "params": [
+        0.18,
+        3.0,
+        1.0,
+        0.0
+      ],
+      "exit_params": [
+        1000000000.0,
+        0.22,
+        0.4,
+        0.2,
+        360.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 52.94,
+        "roll_median_oos_ret": 0.0014,
+        "full_ret": 1.1786,
+        "full_profit": 117.8618,
+        "full_trades": 40,
+        "full_dd": 0.3338
+      },
+      "original_split": {
+        "is_ret": 0.0772,
+        "oos_ret": 1.2954,
+        "oos_profit": 129.5386,
+        "both_windows": false
+      },
+      "passed": true
+    },
+    {
+      "id": "H2-02984",
+      "batch": "2",
+      "family": "climax_reversal",
+      "entry": "Buy the first green hour after a climax dump of 18%+ on 3x average volume (confirmation bar, not the dump bar)",
+      "exit": "stop -22%, trail 20% after +40%, exit after 360h",
+      "sizing": "6% of balance per trade, up to 15 open",
+      "balance": 250.0,
+      "params": [
+        0.18,
+        3.0,
+        1.0,
+        0.0
+      ],
+      "exit_params": [
+        1000000000.0,
+        0.22,
+        0.4,
+        0.2,
+        360.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 52.94,
+        "roll_median_oos_ret": 0.0014,
+        "full_ret": 0.4507,
+        "full_profit": 112.6638,
+        "full_trades": 40,
+        "full_dd": 0.1471
+      },
+      "original_split": {
+        "is_ret": 0.0513,
+        "oos_ret": 0.4521,
+        "oos_profit": 113.026,
+        "both_windows": false
+      },
+      "passed": true
+    },
+    {
+      "id": "H3-02335",
+      "batch": "3",
+      "family": "climax_reversal",
+      "entry": "Buy the first green hour after a climax dump of 16%+ on 2.5x average volume (confirmation bar, not the dump bar)",
+      "exit": "stop -40%, trail 28% after +60%, exit after 600h",
+      "sizing": "7% of balance per trade, up to 14 open",
+      "balance": 280.0,
+      "params": [
+        0.16,
+        2.5,
+        0.0,
+        0.0
+      ],
+      "exit_params": [
+        1000000000.0,
+        0.4,
+        0.6,
+        0.28,
+        600.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 52.94,
+        "roll_median_oos_ret": 0.0011,
+        "full_ret": 0.5284,
+        "full_profit": 147.9406,
+        "full_trades": 51,
+        "full_dd": 0.2352
+      },
+      "original_split": {
+        "is_ret": 0.0284,
+        "oos_ret": 0.5822,
+        "oos_profit": 163.0068,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H2-02985",
+      "batch": "2",
+      "family": "climax_reversal",
+      "entry": "Buy the first green hour after a climax dump of 18%+ on 3x average volume (confirmation bar, not the dump bar)",
+      "exit": "stop -22%, trail 20% after +40%, exit after 360h",
+      "sizing": "6% of balance per trade, up to 15 open",
+      "balance": 280.0,
+      "params": [
+        0.18,
+        3.0,
+        1.0,
+        0.0
+      ],
+      "exit_params": [
+        1000000000.0,
+        0.22,
+        0.4,
+        0.2,
+        360.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 52.94,
+        "roll_median_oos_ret": 0.001,
+        "full_ret": 0.4454,
+        "full_profit": 124.7244,
+        "full_trades": 40,
+        "full_dd": 0.1478
+      },
+      "original_split": {
+        "is_ret": 0.0493,
+        "oos_ret": 0.4494,
+        "oos_profit": 125.8206,
+        "both_windows": false
+      },
+      "passed": true
+    },
+    {
+      "id": "H4-02098",
+      "batch": "4",
+      "family": "confluence",
+      "entry": "Confluence: 14h Keltner (EMA+2\u00d7ATR) break only if a 16%+/2.5x climax dump occurred in the last 24h",
+      "exit": "stop -28%, trail 22% after +45%, exit after 504h",
+      "sizing": "16% of balance per trade, up to 6 open",
+      "balance": 100.0,
+      "params": {
+        "entry": "kel14_2",
+        "gate": "climax_16_24",
+        "hod": 0,
+        "desc": "Confluence: 14h Keltner (EMA+2\u00d7ATR) break only if a 16%+/2.5x climax dump occurred in the last 24h"
+      },
+      "exit_params": [
+        1000000000.0,
+        0.28,
+        0.45,
+        0.22,
+        504.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 47.06,
+        "roll_median_oos_ret": 0.0,
+        "full_ret": 0.6102,
+        "full_profit": 61.0153,
+        "full_trades": 15,
+        "full_dd": 0.0994
+      },
+      "original_split": {
+        "is_ret": 0.0158,
+        "oos_ret": 0.5872,
+        "oos_profit": 58.7186,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H2-03374",
+      "batch": "2",
+      "family": "climax_reversal",
+      "entry": "Buy the first green hour after a climax dump of 30%+ on 1.5x average volume (confirmation bar, not the dump bar)",
+      "exit": "stop -22%, trail 20% after +40%, exit after 360h",
+      "sizing": "25% of balance per trade, up to 4 open",
+      "balance": 250.0,
+      "params": [
+        0.3,
+        1.5,
+        1.0,
+        0.0
+      ],
+      "exit_params": [
+        1000000000.0,
+        0.22,
+        0.4,
+        0.2,
+        360.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 47.06,
+        "roll_median_oos_ret": 0.0,
+        "full_ret": 0.5499,
+        "full_profit": 137.4676,
+        "full_trades": 12,
+        "full_dd": 0.152
+      },
+      "original_split": {
+        "is_ret": 0.0638,
+        "oos_ret": 0.698,
+        "oos_profit": 174.5064,
+        "both_windows": false
+      },
+      "passed": true
+    },
+    {
+      "id": "H2-03375",
+      "batch": "2",
+      "family": "climax_reversal",
+      "entry": "Buy the first green hour after a climax dump of 30%+ on 1.5x average volume (confirmation bar, not the dump bar)",
+      "exit": "stop -22%, trail 20% after +40%, exit after 360h",
+      "sizing": "25% of balance per trade, up to 4 open",
+      "balance": 280.0,
+      "params": [
+        0.3,
+        1.5,
+        1.0,
+        0.0
+      ],
+      "exit_params": [
+        1000000000.0,
+        0.22,
+        0.4,
+        0.2,
+        360.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 47.06,
+        "roll_median_oos_ret": 0.0,
+        "full_ret": 0.5476,
+        "full_profit": 153.3292,
+        "full_trades": 12,
+        "full_dd": 0.1522
+      },
+      "original_split": {
+        "is_ret": 0.0631,
+        "oos_ret": 0.6964,
+        "oos_profit": 194.9843,
+        "both_windows": false
+      },
+      "passed": true
+    },
+    {
+      "id": "H4-02119",
+      "batch": "4",
+      "family": "confluence",
+      "entry": "Confluence: 14h Keltner (EMA+2\u00d7ATR) break only if a 16%+/2.5x climax dump occurred in the last 24h",
+      "exit": "take profit +120%, stop -18%, trail 16% after +50%, exit on a -50% hourly crash, exit after 400h",
+      "sizing": "14% of balance per trade, up to 7 open",
+      "balance": 250.0,
+      "params": {
+        "entry": "kel14_2",
+        "gate": "climax_16_24",
+        "hod": 0,
+        "desc": "Confluence: 14h Keltner (EMA+2\u00d7ATR) break only if a 16%+/2.5x climax dump occurred in the last 24h"
+      },
+      "exit_params": [
+        1.2,
+        0.18,
+        0.5,
+        0.16,
+        400.0,
+        1000000000.0,
+        0.5
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 47.06,
+        "roll_median_oos_ret": 0.0,
+        "full_ret": 0.3436,
+        "full_profit": 85.9111,
+        "full_trades": 14,
+        "full_dd": 0.0623
+      },
+      "original_split": {
+        "is_ret": 0.0732,
+        "oos_ret": 0.3377,
+        "oos_profit": 84.4137,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H4-02120",
+      "batch": "4",
+      "family": "confluence",
+      "entry": "Confluence: 14h Keltner (EMA+2\u00d7ATR) break only if a 16%+/2.5x climax dump occurred in the last 24h",
+      "exit": "take profit +120%, stop -18%, trail 16% after +50%, exit on a -50% hourly crash, exit after 400h",
+      "sizing": "14% of balance per trade, up to 7 open",
+      "balance": 280.0,
+      "params": {
+        "entry": "kel14_2",
+        "gate": "climax_16_24",
+        "hod": 0,
+        "desc": "Confluence: 14h Keltner (EMA+2\u00d7ATR) break only if a 16%+/2.5x climax dump occurred in the last 24h"
+      },
+      "exit_params": [
+        1.2,
+        0.18,
+        0.5,
+        0.16,
+        400.0,
+        1000000000.0,
+        0.5
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 47.06,
+        "roll_median_oos_ret": 0.0,
+        "full_ret": 0.3388,
+        "full_profit": 94.8726,
+        "full_trades": 14,
+        "full_dd": 0.0626
+      },
+      "original_split": {
+        "is_ret": 0.072,
+        "oos_ret": 0.3343,
+        "oos_profit": 93.6101,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H4-02084",
+      "batch": "4",
+      "family": "confluence",
+      "entry": "Confluence: 14h Keltner (EMA+2\u00d7ATR) break only if a 16%+/2.5x climax dump occurred in the last 24h",
+      "exit": "stop -28%, trail 22% after +45%, exit after 504h",
+      "sizing": "9% of balance per trade, up to 11 open",
+      "balance": 250.0,
+      "params": {
+        "entry": "kel14_2",
+        "gate": "climax_16_24",
+        "hod": 0,
+        "desc": "Confluence: 14h Keltner (EMA+2\u00d7ATR) break only if a 16%+/2.5x climax dump occurred in the last 24h"
+      },
+      "exit_params": [
+        1000000000.0,
+        0.28,
+        0.45,
+        0.22,
+        504.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 47.06,
+        "roll_median_oos_ret": 0.0,
+        "full_ret": 0.325,
+        "full_profit": 81.2438,
+        "full_trades": 15,
+        "full_dd": 0.056
+      },
+      "original_split": {
+        "is_ret": 0.0119,
+        "oos_ret": 0.3101,
+        "oos_profit": 77.5321,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H4-02114",
+      "batch": "4",
+      "family": "confluence",
+      "entry": "Confluence: 14h Keltner (EMA+2\u00d7ATR) break only if a 16%+/2.5x climax dump occurred in the last 24h",
+      "exit": "take profit +120%, stop -18%, trail 16% after +50%, exit on a -50% hourly crash, exit after 400h",
+      "sizing": "11% of balance per trade, up to 9 open",
+      "balance": 250.0,
+      "params": {
+        "entry": "kel14_2",
+        "gate": "climax_16_24",
+        "hod": 0,
+        "desc": "Confluence: 14h Keltner (EMA+2\u00d7ATR) break only if a 16%+/2.5x climax dump occurred in the last 24h"
+      },
+      "exit_params": [
+        1.2,
+        0.18,
+        0.5,
+        0.16,
+        400.0,
+        1000000000.0,
+        0.5
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 47.06,
+        "roll_median_oos_ret": 0.0,
+        "full_ret": 0.2744,
+        "full_profit": 68.5877,
+        "full_trades": 14,
+        "full_dd": 0.0486
+      },
+      "original_split": {
+        "is_ret": 0.0607,
+        "oos_ret": 0.2669,
+        "oos_profit": 66.7326,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H4-02115",
+      "batch": "4",
+      "family": "confluence",
+      "entry": "Confluence: 14h Keltner (EMA+2\u00d7ATR) break only if a 16%+/2.5x climax dump occurred in the last 24h",
+      "exit": "take profit +120%, stop -18%, trail 16% after +50%, exit on a -50% hourly crash, exit after 400h",
+      "sizing": "11% of balance per trade, up to 9 open",
+      "balance": 280.0,
+      "params": {
+        "entry": "kel14_2",
+        "gate": "climax_16_24",
+        "hod": 0,
+        "desc": "Confluence: 14h Keltner (EMA+2\u00d7ATR) break only if a 16%+/2.5x climax dump occurred in the last 24h"
+      },
+      "exit_params": [
+        1.2,
+        0.18,
+        0.5,
+        0.16,
+        400.0,
+        1000000000.0,
+        0.5
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 47.06,
+        "roll_median_oos_ret": 0.0,
+        "full_ret": 0.2717,
+        "full_profit": 76.0869,
+        "full_trades": 14,
+        "full_dd": 0.0488
+      },
+      "original_split": {
+        "is_ret": 0.0601,
+        "oos_ret": 0.2651,
+        "oos_profit": 74.237,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H4-02099",
+      "batch": "4",
+      "family": "confluence",
+      "entry": "Confluence: 14h Keltner (EMA+2\u00d7ATR) break only if a 16%+/2.5x climax dump occurred in the last 24h",
+      "exit": "stop -28%, trail 22% after +45%, exit after 504h",
+      "sizing": "16% of balance per trade, up to 6 open",
+      "balance": 250.0,
+      "params": {
+        "entry": "kel14_2",
+        "gate": "climax_16_24",
+        "hod": 0,
+        "desc": "Confluence: 14h Keltner (EMA+2\u00d7ATR) break only if a 16%+/2.5x climax dump occurred in the last 24h"
+      },
+      "exit_params": [
+        1000000000.0,
+        0.28,
+        0.45,
+        0.22,
+        504.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 47.06,
+        "roll_median_oos_ret": 0.0,
+        "full_ret": 0.2444,
+        "full_profit": 61.0994,
+        "full_trades": 14,
+        "full_dd": 0.1001
+      },
+      "original_split": {
+        "is_ret": 0.0103,
+        "oos_ret": 0.2334,
+        "oos_profit": 58.3526,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H4-02109",
+      "batch": "4",
+      "family": "confluence",
+      "entry": "Confluence: 14h Keltner (EMA+2\u00d7ATR) break only if a 16%+/2.5x climax dump occurred in the last 24h",
+      "exit": "take profit +120%, stop -18%, trail 16% after +50%, exit on a -50% hourly crash, exit after 400h",
+      "sizing": "9% of balance per trade, up to 11 open",
+      "balance": 250.0,
+      "params": {
+        "entry": "kel14_2",
+        "gate": "climax_16_24",
+        "hod": 0,
+        "desc": "Confluence: 14h Keltner (EMA+2\u00d7ATR) break only if a 16%+/2.5x climax dump occurred in the last 24h"
+      },
+      "exit_params": [
+        1.2,
+        0.18,
+        0.5,
+        0.16,
+        400.0,
+        1000000000.0,
+        0.5
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 47.06,
+        "roll_median_oos_ret": 0.0,
+        "full_ret": 0.226,
+        "full_profit": 56.5053,
+        "full_trades": 14,
+        "full_dd": 0.0397
+      },
+      "original_split": {
+        "is_ret": 0.0513,
+        "oos_ret": 0.1914,
+        "oos_profit": 47.839,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H4-02110",
+      "batch": "4",
+      "family": "confluence",
+      "entry": "Confluence: 14h Keltner (EMA+2\u00d7ATR) break only if a 16%+/2.5x climax dump occurred in the last 24h",
+      "exit": "take profit +120%, stop -18%, trail 16% after +50%, exit on a -50% hourly crash, exit after 400h",
+      "sizing": "9% of balance per trade, up to 11 open",
+      "balance": 280.0,
+      "params": {
+        "entry": "kel14_2",
+        "gate": "climax_16_24",
+        "hod": 0,
+        "desc": "Confluence: 14h Keltner (EMA+2\u00d7ATR) break only if a 16%+/2.5x climax dump occurred in the last 24h"
+      },
+      "exit_params": [
+        1.2,
+        0.18,
+        0.5,
+        0.16,
+        400.0,
+        1000000000.0,
+        0.5
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 47.06,
+        "roll_median_oos_ret": 0.0,
+        "full_ret": 0.2245,
+        "full_profit": 62.863,
+        "full_trades": 14,
+        "full_dd": 0.0397
+      },
+      "original_split": {
+        "is_ret": 0.0509,
+        "oos_ret": 0.2177,
+        "oos_profit": 60.9545,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H4-02094",
+      "batch": "4",
+      "family": "confluence",
+      "entry": "Confluence: 14h Keltner (EMA+2\u00d7ATR) break only if a 16%+/2.5x climax dump occurred in the last 24h",
+      "exit": "stop -28%, trail 22% after +45%, exit after 504h",
+      "sizing": "14% of balance per trade, up to 7 open",
+      "balance": 250.0,
+      "params": {
+        "entry": "kel14_2",
+        "gate": "climax_16_24",
+        "hod": 0,
+        "desc": "Confluence: 14h Keltner (EMA+2\u00d7ATR) break only if a 16%+/2.5x climax dump occurred in the last 24h"
+      },
+      "exit_params": [
+        1000000000.0,
+        0.28,
+        0.45,
+        0.22,
+        504.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 47.06,
+        "roll_median_oos_ret": 0.0,
+        "full_ret": 0.2216,
+        "full_profit": 55.4032,
+        "full_trades": 14,
+        "full_dd": 0.0874
+      },
+      "original_split": {
+        "is_ret": 0.0118,
+        "oos_ret": 0.2087,
+        "oos_profit": 52.1706,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H4-02095",
+      "batch": "4",
+      "family": "confluence",
+      "entry": "Confluence: 14h Keltner (EMA+2\u00d7ATR) break only if a 16%+/2.5x climax dump occurred in the last 24h",
+      "exit": "stop -28%, trail 22% after +45%, exit after 504h",
+      "sizing": "14% of balance per trade, up to 7 open",
+      "balance": 280.0,
+      "params": {
+        "entry": "kel14_2",
+        "gate": "climax_16_24",
+        "hod": 0,
+        "desc": "Confluence: 14h Keltner (EMA+2\u00d7ATR) break only if a 16%+/2.5x climax dump occurred in the last 24h"
+      },
+      "exit_params": [
+        1000000000.0,
+        0.28,
+        0.45,
+        0.22,
+        504.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 47.06,
+        "roll_median_oos_ret": 0.0,
+        "full_ret": 0.2176,
+        "full_profit": 60.9367,
+        "full_trades": 14,
+        "full_dd": 0.0877
+      },
+      "original_split": {
+        "is_ret": 0.0108,
+        "oos_ret": 0.2059,
+        "oos_profit": 57.6625,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H4-02124",
+      "batch": "4",
+      "family": "confluence",
+      "entry": "Confluence: 14h Keltner (EMA+2\u00d7ATR) break only if a 16%+/2.5x climax dump occurred in the last 24h",
+      "exit": "take profit +120%, stop -18%, trail 16% after +50%, exit on a -50% hourly crash, exit after 400h",
+      "sizing": "16% of balance per trade, up to 6 open",
+      "balance": 250.0,
+      "params": {
+        "entry": "kel14_2",
+        "gate": "climax_16_24",
+        "hod": 0,
+        "desc": "Confluence: 14h Keltner (EMA+2\u00d7ATR) break only if a 16%+/2.5x climax dump occurred in the last 24h"
+      },
+      "exit_params": [
+        1.2,
+        0.18,
+        0.5,
+        0.16,
+        400.0,
+        1000000000.0,
+        0.5
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 47.06,
+        "roll_median_oos_ret": 0.0,
+        "full_ret": 0.1949,
+        "full_profit": 48.7167,
+        "full_trades": 13,
+        "full_dd": 0.0715
+      },
+      "original_split": {
+        "is_ret": 0.0804,
+        "oos_ret": 0.1915,
+        "oos_profit": 47.8776,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H4-02090",
+      "batch": "4",
+      "family": "confluence",
+      "entry": "Confluence: 14h Keltner (EMA+2\u00d7ATR) break only if a 16%+/2.5x climax dump occurred in the last 24h",
+      "exit": "stop -28%, trail 22% after +45%, exit after 504h",
+      "sizing": "11% of balance per trade, up to 9 open",
+      "balance": 280.0,
+      "params": {
+        "entry": "kel14_2",
+        "gate": "climax_16_24",
+        "hod": 0,
+        "desc": "Confluence: 14h Keltner (EMA+2\u00d7ATR) break only if a 16%+/2.5x climax dump occurred in the last 24h"
+      },
+      "exit_params": [
+        1000000000.0,
+        0.28,
+        0.45,
+        0.22,
+        504.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 47.06,
+        "roll_median_oos_ret": 0.0,
+        "full_ret": 0.1803,
+        "full_profit": 50.4868,
+        "full_trades": 14,
+        "full_dd": 0.0686
+      },
+      "original_split": {
+        "is_ret": 0.0119,
+        "oos_ret": 0.1672,
+        "oos_profit": 46.8172,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H4-02125",
+      "batch": "4",
+      "family": "confluence",
+      "entry": "Confluence: 14h Keltner (EMA+2\u00d7ATR) break only if a 16%+/2.5x climax dump occurred in the last 24h",
+      "exit": "take profit +120%, stop -18%, trail 16% after +50%, exit on a -50% hourly crash, exit after 400h",
+      "sizing": "16% of balance per trade, up to 6 open",
+      "balance": 280.0,
+      "params": {
+        "entry": "kel14_2",
+        "gate": "climax_16_24",
+        "hod": 0,
+        "desc": "Confluence: 14h Keltner (EMA+2\u00d7ATR) break only if a 16%+/2.5x climax dump occurred in the last 24h"
+      },
+      "exit_params": [
+        1.2,
+        0.18,
+        0.5,
+        0.16,
+        400.0,
+        1000000000.0,
+        0.5
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 47.06,
+        "roll_median_oos_ret": 0.0,
+        "full_ret": 0.1736,
+        "full_profit": 48.6068,
+        "full_trades": 12,
+        "full_dd": 0.0719
+      },
+      "original_split": {
+        "is_ret": 0.0626,
+        "oos_ret": 0.1897,
+        "oos_profit": 53.1155,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H5-01958",
+      "batch": "5",
+      "family": "washout_gate",
+      "entry": "Washout-gate: 10h Keltner (EMA+2.8\u00d7ATR) break only if the token dumped 18%+ in an hour within the last 48h",
+      "exit": "stop -32%, trail 24% after +55%, exit after 432h",
+      "sizing": "7.5% of balance per trade, up to 13 open",
+      "balance": 200.0,
+      "params": {
+        "entry": "kel10_2.8",
+        "gate": "dump_18_48",
+        "desc": "Washout-gate: 10h Keltner (EMA+2.8\u00d7ATR) break only if the token dumped 18%+ in an hour within the last 48h"
+      },
+      "exit_params": [
+        1000000000.0,
+        0.32,
+        0.55,
+        0.24,
+        432.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 47.06,
+        "roll_median_oos_ret": -0.0005,
+        "full_ret": 1.2775,
+        "full_profit": 255.5057,
+        "full_trades": 54,
+        "full_dd": 0.316
+      },
+      "original_split": {
+        "is_ret": 0.12,
+        "oos_ret": 0.9808,
+        "oos_profit": 196.1678,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H5-01966",
+      "batch": "5",
+      "family": "washout_gate",
+      "entry": "Washout-gate: 10h Keltner (EMA+2.8\u00d7ATR) break only if the token dumped 18%+ in an hour within the last 48h",
+      "exit": "stop -32%, trail 24% after +55%, exit after 432h",
+      "sizing": "17% of balance per trade, up to 5 open",
+      "balance": 90.0,
+      "params": {
+        "entry": "kel10_2.8",
+        "gate": "dump_18_48",
+        "desc": "Washout-gate: 10h Keltner (EMA+2.8\u00d7ATR) break only if the token dumped 18%+ in an hour within the last 48h"
+      },
+      "exit_params": [
+        1000000000.0,
+        0.32,
+        0.55,
+        0.24,
+        432.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 47.06,
+        "roll_median_oos_ret": -0.003,
+        "full_ret": 2.5139,
+        "full_profit": 226.247,
+        "full_trades": 51,
+        "full_dd": 0.5628
+      },
+      "original_split": {
+        "is_ret": 0.236,
+        "oos_ret": 2.4862,
+        "oos_profit": 223.7566,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H4-01464",
+      "batch": "4",
+      "family": "confluence",
+      "entry": "Confluence: 14h Keltner (EMA+2\u00d7ATR) squeeze break only if the token dumped 12%+ in an hour within the last 24h",
+      "exit": "stop -28%, trail 22% after +45%, exit after 504h",
+      "sizing": "11% of balance per trade, up to 9 open",
+      "balance": 250.0,
+      "params": {
+        "entry": "kel14_2s",
+        "gate": "dump_12_24",
+        "hod": 0,
+        "desc": "Confluence: 14h Keltner (EMA+2\u00d7ATR) squeeze break only if the token dumped 12%+ in an hour within the last 24h"
+      },
+      "exit_params": [
+        1000000000.0,
+        0.28,
+        0.45,
+        0.22,
+        504.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 47.06,
+        "roll_median_oos_ret": -0.0038,
+        "full_ret": 0.5957,
+        "full_profit": 148.9317,
+        "full_trades": 28,
+        "full_dd": 0.2028
+      },
+      "original_split": {
+        "is_ret": 0.5646,
+        "oos_ret": 0.4379,
+        "oos_profit": 109.481,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H5-01971",
+      "batch": "5",
+      "family": "washout_gate",
+      "entry": "Washout-gate: 10h Keltner (EMA+2.8\u00d7ATR) break only if the token dumped 18%+ in an hour within the last 48h",
+      "exit": "stop -32%, trail 24% after +55%, exit after 432h",
+      "sizing": "21% of balance per trade, up to 4 open",
+      "balance": 90.0,
+      "params": {
+        "entry": "kel10_2.8",
+        "gate": "dump_18_48",
+        "desc": "Washout-gate: 10h Keltner (EMA+2.8\u00d7ATR) break only if the token dumped 18%+ in an hour within the last 48h"
+      },
+      "exit_params": [
+        1000000000.0,
+        0.32,
+        0.55,
+        0.24,
+        432.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 47.06,
+        "roll_median_oos_ret": -0.0067,
+        "full_ret": 3.5671,
+        "full_profit": 321.0434,
+        "full_trades": 49,
+        "full_dd": 0.6491
+      },
+      "original_split": {
+        "is_ret": 0.2253,
+        "oos_ret": 2.1967,
+        "oos_profit": 197.7043,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H5-02334",
+      "batch": "5",
+      "family": "washout_gate",
+      "entry": "Washout-gate: 16h Keltner (EMA+2.8\u00d7ATR) break only if the token dumped 10%+ in an hour within the last 48h",
+      "exit": "stop -32%, trail 24% after +55%, exit after 432h",
+      "sizing": "7.5% of balance per trade, up to 13 open",
+      "balance": 300.0,
+      "params": {
+        "entry": "kel16_2.8",
+        "gate": "dump_10_48",
+        "desc": "Washout-gate: 16h Keltner (EMA+2.8\u00d7ATR) break only if the token dumped 10%+ in an hour within the last 48h"
+      },
+      "exit_params": [
+        1000000000.0,
+        0.32,
+        0.55,
+        0.24,
+        432.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 47.06,
+        "roll_median_oos_ret": -0.0132,
+        "full_ret": 1.7373,
+        "full_profit": 521.1998,
+        "full_trades": 96,
+        "full_dd": 0.3791
+      },
+      "original_split": {
+        "is_ret": 0.8185,
+        "oos_ret": 0.9456,
+        "oos_profit": 283.6698,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "MS-3892780",
+      "batch": "sweep",
+      "family": "moonshot",
+      "entry": "Buy a new launch in its first 24h, market cap under $200k, hourly volume over $1k, hour up 0%+",
+      "exit": "take profit +10000%, trail 50% after +200%, exit after 240h",
+      "sizing": "20% of balance per trade, up to 5 open",
+      "balance": 10.0,
+      "params": [
+        24.0,
+        200000.0,
+        1000.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "exit_params": [
+        100.0,
+        1.0,
+        2.0,
+        0.5,
+        240.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 41.18,
+        "roll_median_oos_ret": -0.0328,
+        "full_ret": 26.5874,
+        "full_profit": 265.8736,
+        "full_trades": 30,
+        "full_dd": 0.5363
+      },
+      "original_split": {
+        "is_ret": 7.8924,
+        "oos_ret": 3.3463,
+        "oos_profit": 33.4632,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "MS-4715308",
+      "batch": "sweep",
+      "family": "moonshot",
+      "entry": "Buy a new launch in its first 72h, market cap under $200k, hourly volume over $1k, hour up 0%+",
+      "exit": "take profit +10000%, trail 50% after +200%, exit after 240h",
+      "sizing": "20% of balance per trade, up to 5 open",
+      "balance": 10.0,
+      "params": [
+        72.0,
+        200000.0,
+        1000.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "exit_params": [
+        100.0,
+        1.0,
+        2.0,
+        0.5,
+        240.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 41.18,
+        "roll_median_oos_ret": -0.0328,
+        "full_ret": 23.6011,
+        "full_profit": 236.0109,
+        "full_trades": 31,
+        "full_dd": 0.587
+      },
+      "original_split": {
+        "is_ret": 6.9191,
+        "oos_ret": 3.3463,
+        "oos_profit": 33.4632,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H4-01459",
+      "batch": "4",
+      "family": "confluence",
+      "entry": "Confluence: 14h Keltner (EMA+2\u00d7ATR) squeeze break only if the token dumped 12%+ in an hour within the last 24h",
+      "exit": "stop -28%, trail 22% after +45%, exit after 504h",
+      "sizing": "9% of balance per trade, up to 11 open",
+      "balance": 250.0,
+      "params": {
+        "entry": "kel14_2s",
+        "gate": "dump_12_24",
+        "hod": 0,
+        "desc": "Confluence: 14h Keltner (EMA+2\u00d7ATR) squeeze break only if the token dumped 12%+ in an hour within the last 24h"
+      },
+      "exit_params": [
+        1000000000.0,
+        0.28,
+        0.45,
+        0.22,
+        504.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 35.29,
+        "roll_median_oos_ret": -0.004,
+        "full_ret": 0.5398,
+        "full_profit": 134.9545,
+        "full_trades": 30,
+        "full_dd": 0.1467
+      },
+      "original_split": {
+        "is_ret": 0.5021,
+        "oos_ret": 0.2894,
+        "oos_profit": 72.3387,
+        "both_windows": true
+      },
+      "passed": true
+    },
+    {
+      "id": "H4-01460",
+      "batch": "4",
+      "family": "confluence",
+      "entry": "Confluence: 14h Keltner (EMA+2\u00d7ATR) squeeze break only if the token dumped 12%+ in an hour within the last 24h",
+      "exit": "stop -28%, trail 22% after +45%, exit after 504h",
+      "sizing": "9% of balance per trade, up to 11 open",
+      "balance": 280.0,
+      "params": {
+        "entry": "kel14_2s",
+        "gate": "dump_12_24",
+        "hod": 0,
+        "desc": "Confluence: 14h Keltner (EMA+2\u00d7ATR) squeeze break only if the token dumped 12%+ in an hour within the last 24h"
+      },
+      "exit_params": [
+        1000000000.0,
+        0.28,
+        0.45,
+        0.22,
+        504.0,
+        1000000000.0,
+        1.0
+      ],
+      "walk_forward": {
+        "n_folds": 26,
+        "roll_n": 17,
+        "roll_oos_profitable_pct": 35.29,
+        "roll_median_oos_ret": -0.0041,
+        "full_ret": 0.5161,
+        "full_profit": 144.5162,
+        "full_trades": 29,
+        "full_dd": 0.1569
+      },
+      "original_split": {
+        "is_ret": 0.4827,
+        "oos_ret": 0.2843,
+        "oos_profit": 79.6058,
+        "both_windows": true
+      },
+      "passed": true
+    }
+  ]
+}

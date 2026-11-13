@@ -1,0 +1,106 @@
+{
+ "mode": "PAPER",
+ "start_ts": 1794612550.726062,
+ "strategies": [
+  {
+   "id": "H7-07282",
+   "rank": 1,
+   "frac": 0.2,
+   "maxpos": 5,
+   "balance": 20.0,
+   "entry": "Washout-gate: first hour of a 10-bar closing low above its 336h SMA only if the token dumped 16%+ in an hour within the last 36h",
+   "exit": "stop -33%, trail 22% after +65%, exit after 408h",
+   "sizing": "20% of equity per trade, up to 5 open",
+   "backtest_at_20": {
+    "end": 1021.0493670462876,
+    "ret": 50.05246835231438,
+    "trades": 137,
+    "win": 0.5036496350364964,
+    "dd": 0.5443861298207624,
+    "r30": -0.5082879824015565,
+    "r30flat": -0.41783720822176496,
+    "hret": 0.23448924421414752,
+    "hflat": 0.11798172675745588,
+    "wf_n": 25,
+    "wf_pct": 72.0,
+    "wf_roll_pct": 73.33
+   },
+   "row": {
+    "id": "H7-07282",
+    "batch": "7",
+    "family": "washout_gate",
+    "params": "{\"entry\": \"dn10_336\", \"gate\": \"dump_16_36\", \"desc\": \"Washout-gate: first hour of a 10-bar closing low above its 336h SMA only if the token dumped 16%+ in an hour within the last 36h\"}",
+    "exit_params": "[1000000000.0, 0.33, 0.65, 0.22, 408.0, 1000000000.0, 1.0]",
+    "entry": "Washout-gate: first hour of a 10-bar closing low above its 336h SMA only if the token dumped 16%+ in an hour within the last 36h",
+    "exit": "stop -33%, trail 22% after +65%, exit after 408h"
+   }
+  },
+  {
+   "id": "H7-04028",
+   "rank": 2,
+   "frac": 0.5,
+   "maxpos": 2,
+   "balance": 20.0,
+   "entry": "Washout-gate: first hour of a 8-bar closing low above its 336h SMA only if the token dumped 16%+ in an hour within the last 24h",
+   "exit": "stop -33%, trail 22% after +65%, exit after 408h",
+   "sizing": "50% of equity per trade, up to 2 open",
+   "backtest_at_20": {
+    "end": 1006.1142462954103,
+    "ret": 49.30571231477052,
+    "trades": 104,
+    "win": 0.49038461538461536,
+    "dd": 0.6583631910293737,
+    "r30": -0.9166714108094779,
+    "r30flat": -0.9139144654909193,
+    "hret": 1.5966514262432066,
+    "hflat": 0.14320511557388338,
+    "wf_n": 25,
+    "wf_pct": 92.0,
+    "wf_roll_pct": 100.0
+   },
+   "row": {
+    "id": "H7-04028",
+    "batch": "7",
+    "family": "washout_gate",
+    "params": "{\"entry\": \"dn8_336\", \"gate\": \"dump_16_24\", \"desc\": \"Washout-gate: first hour of a 8-bar closing low above its 336h SMA only if the token dumped 16%+ in an hour within the last 24h\"}",
+    "exit_params": "[1000000000.0, 0.33, 0.65, 0.22, 408.0, 1000000000.0, 1.0]",
+    "entry": "Washout-gate: first hour of a 8-bar closing low above its 336h SMA only if the token dumped 16%+ in an hour within the last 24h",
+    "exit": "stop -33%, trail 22% after +65%, exit after 408h"
+   }
+  },
+  {
+   "id": "H7-07157",
+   "rank": 3,
+   "frac": 0.34,
+   "maxpos": 3,
+   "balance": 20.0,
+   "entry": "Washout-gate: first hour of a 10-bar closing low above its 312h SMA only if the token dumped 16%+ in an hour within the last 36h",
+   "exit": "stop -33%, trail 22% after +65%, exit after 408h",
+   "sizing": "34% of equity per trade, up to 3 open",
+   "backtest_at_20": {
+    "end": 953.9987338318845,
+    "ret": 46.699936691594225,
+    "trades": 117,
+    "win": 0.48717948717948717,
+    "dd": 0.7315874275034093,
+    "r30": -0.7169733969804143,
+    "r30flat": -0.4257249798985545,
+    "hret": 3.821793021082195,
+    "hflat": 3.137346070486796,
+    "wf_n": 25,
+    "wf_pct": 68.0,
+    "wf_roll_pct": 66.67
+   },
+   "row": {
+    "id": "H7-07157",
+    "batch": "7",
+    "family": "washout_gate",
+    "params": "{\"entry\": \"dn10_312\", \"gate\": \"dump_16_36\", \"desc\": \"Washout-gate: first hour of a 10-bar closing low above its 312h SMA only if the token dumped 16%+ in an hour within the last 36h\"}",
+    "exit_params": "[1000000000.0, 0.33, 0.65, 0.22, 408.0, 1000000000.0, 1.0]",
+    "entry": "Washout-gate: first hour of a 10-bar closing low above its 312h SMA only if the token dumped 16%+ in an hour within the last 36h",
+    "exit": "stop -33%, trail 22% after +65%, exit after 408h"
+   }
+  }
+ ],
+ "started_at_note": "paper start"
+}

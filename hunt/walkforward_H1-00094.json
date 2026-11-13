@@ -1,0 +1,108 @@
+{
+  "strategy": "H1-00094",
+  "rules": "12h VWAP reclaim, no volume filter, -35% stop, 25% trail after +50%, 720h, 100% of $250, 1 position",
+  "data_hours": 4297,
+  "data_tokens": 130,
+  "raw_trades": 706,
+  "full_period": {
+    "end": 841.7025,
+    "ret": 2.3668,
+    "trades": 21,
+    "win": 0.619,
+    "dd": 0.5753
+  },
+  "original_published": {
+    "oos_profit": 538.9861,
+    "oos_ret": 2.1559,
+    "oos_trades": 14,
+    "oos_win": 0.7143,
+    "is_ret": 0.0906,
+    "is_trades": 7,
+    "split_bar": 2578,
+    "universe_tokens": 118
+  },
+  "original_split_on_current_data": {
+    "fold": "anchored_60pct_original_split",
+    "balance": 250.0,
+    "is_lo": 0,
+    "is_hi": 2578,
+    "is_start": "2026-05-18 04:00 PM CDT",
+    "is_end": "2026-09-03 01:00 AM CDT",
+    "is_end_bal": 272.6622,
+    "is_profit": 22.6622,
+    "is_ret": 0.0906,
+    "is_win": 0.4286,
+    "is_trades": 7,
+    "is_dd": 0.5753,
+    "is_sharpe": 0.9998,
+    "is_pf": 1.074,
+    "oos_lo": 2578,
+    "oos_hi": 4297,
+    "oos_start": "2026-09-03 02:00 AM CDT",
+    "oos_end": "2026-11-13 03:00 PM CST",
+    "oos_end_bal": 762.7576,
+    "oos_profit": 512.7576,
+    "oos_ret": 2.051,
+    "oos_win": 0.6,
+    "oos_trades": 10,
+    "oos_dd": 0.3735,
+    "oos_sharpe": 2.7838,
+    "oos_pf": 2.0272,
+    "both_windows": "true"
+  },
+  "universe_changed": true,
+  "aggregates": {
+    "anchored": {
+      "n": 5,
+      "oos_profitable": 2,
+      "both_windows": 2,
+      "oos_ret_mean": 0.24,
+      "oos_ret_median": -0.5939,
+      "oos_ret_min": -0.7754,
+      "oos_ret_max": 2.051,
+      "share_oos_positive": 0.4,
+      "share_both_windows": 0.4
+    },
+    "calendar": {
+      "n": 4,
+      "oos_profitable": 1,
+      "both_windows": 0,
+      "oos_ret_mean": 0.2473,
+      "oos_ret_median": -0.5014,
+      "oos_ret_min": -0.7989,
+      "oos_ret_max": 2.7912,
+      "share_oos_positive": 0.25,
+      "share_both_windows": 0.0
+    },
+    "rolling": {
+      "n": 17,
+      "oos_profitable": 5,
+      "both_windows": 1,
+      "oos_ret_mean": 0.2599,
+      "oos_ret_median": -0.1523,
+      "oos_ret_min": -0.4168,
+      "oos_ret_max": 3.0407,
+      "share_oos_positive": 0.2941,
+      "share_both_windows": 0.0588
+    },
+    "all_folds": {
+      "n": 26,
+      "oos_profitable": 8,
+      "both_windows": 3,
+      "oos_ret_mean": 0.2541,
+      "oos_ret_median": -0.1997,
+      "oos_ret_min": -0.7989,
+      "oos_ret_max": 3.0407,
+      "share_oos_positive": 0.3077,
+      "share_both_windows": 0.1154
+    }
+  },
+  "n_folds": 26,
+  "original_vs_other_folds": {
+    "original_oos_ret": 2.051,
+    "other_median_oos_ret": -0.2256,
+    "original_percentile_among_folds": 0.8846,
+    "original_exceeds_other_median": true,
+    "note": "The original 60/40 OOS return is above the median of the other folds"
+  }
+}

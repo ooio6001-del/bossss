@@ -1,0 +1,22 @@
+Public repo (copied read-only; this bundle does not write back to it):
+  https://github.com/ooio6001-del/solstrats-dashboard
+
+Branches (via https://api.github.com/repos/ooio6001-del/solstrats-dashboard/branches):
+  - data  (default)  commit 521eee3408f05f9f9f4a02439cd918db91ded4f0  2026-11-13 17:34:12 CT
+      contains only data.json (508,815 bytes reported by the API; local copy 508,816)
+  - main             commit 27d2110eabc1a2552d1df880769c648d95ce70a7
+      contains .nojekyll, README.md, data.json, index.html, solstrats-dashboard.html
+
+data.json here is the default-branch (`data`) snapshot downloaded
+2026-11-13 from https://raw.githubusercontent.com/ooio6001-del/solstrats-dashboard/data/data.json
+sha256=342e6e768ab1542b592d31f38c53afe18ae3e8b8a9317db46bef99ab62e23927
+exported 2026-11-13 17:36:01 CT
+
+data.main.json is the `main` branch copy (sha256=77d122932488a98a9d91fd1aa7f9b9aa45107512e55cd7862a4766b7ede67e12),
+exported a few minutes earlier (unix 1794611497).
+
+Live site (GitHub Pages, static files, no package.json / start script / server):
+  https://ooio6001-del.github.io/solstrats-dashboard/
+
+Nothing in this upstream copy is runnable as a Node/Python app. index.html fetches
+data.json in the browser (Chart.js from jsDelivr).
