@@ -1,0 +1,13 @@
+# Pinned, tested versions. Python 3.12+ gets the newest tested stack; 3.10/3.11 get an older pinned stack.
+numpy==2.5.4 ; python_version >= "3.12"
+numba==0.68.1 ; python_version >= "3.12"
+llvmlite==0.50.0 ; python_version >= "3.12"
+numpy==2.2.6 ; python_version < "3.12"
+numba==0.61.2 ; python_version < "3.12"
+llvmlite==0.44.0 ; python_version < "3.12"
+requests==2.34.2
+tzdata==2026.6
+certifi==2026.10.23
+charset-normalizer==3.5.2
+idna==3.20
+urllib3==2.8.0

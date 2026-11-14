@@ -8,6 +8,10 @@ Intended GitHub remote (do not put secrets in it): [https://github.com/ooio6001-
 
 A separate public live-dashboard repo, [ooio6001-del/solstrats-dashboard](https://github.com/ooio6001-del/solstrats-dashboard), was copied **read-only** into `upstream/solstrats-dashboard/`. This bundle does not write to that repository.
 
+## Run the bot on any computer
+
+Download [bot/solstrats_bot.zip](bot/solstrats_bot.zip), or clone this repo and `cd bot`. It needs Python 3.10+. Run `./run.sh` on Mac or Linux, or `run.bat` on Windows. Paper trading only: no wallet, and no keys needed. Details are in [bot/README.md](bot/README.md).
+
 ## Headline strategy: H6-01098
 
 Walk-forward champion from hunter batch 6 (`washout_gate`).

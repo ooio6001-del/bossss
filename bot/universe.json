@@ -1,0 +1,1975 @@
+[
+{
+"file": "22FSz9QP7dS1PvrJKuHr16ymghZP92xPu3Bj7uuzu2bG.json",
+"meta": {
+"sym": "MICHI",
+"pool": "22FSz9QP7dS1PvrJKuHr16ymghZP92xPu3Bj7uuzu2bG",
+"mint": "AywAYdNJnSLSXwKWYxDciPjqGRnwp4iZdQptuuQTpump",
+"dex": "pumpswap",
+"liq": 117202.1912,
+"mcap": 2213687,
+"created": 1773176682000,
+"group": "established",
+"vol24": 5018.202121972,
+"pool_created": "2026-03-10T21:04:42Z"
+}
+},
+{
+"file": "22WrmyTj8x2TRVQen3fxxi2r4Rn6JDHWoMTpsSmn8RUd.json",
+"meta": {
+"sym": "MOODENG",
+"pool": "22WrmyTj8x2TRVQen3fxxi2r4Rn6JDHWoMTpsSmn8RUd",
+"mint": "ED5nyyWEzpPPiWimP8vYm7sD7TD3LAt3Q3gRTWHzPJBY",
+"dex": "raydium",
+"liq": 2035362.9247,
+"mcap": 30248022,
+"created": 1725994387000,
+"group": "established",
+"vol24": 52357.9400275886,
+"pool_created": "2024-09-10T18:53:08Z"
+}
+},
+{
+"file": "23Lb6pSqtigcZh3aAJ7HfxJNEq9Fm4SeQ87VKEQtQ1G3.json",
+"meta": {
+"sym": "PEPE",
+"pool": "23Lb6pSqtigcZh3aAJ7HfxJNEq9Fm4SeQ87VKEQtQ1G3",
+"mint": "BktN8iz9mV9MEPwLDZKMSCzqwZQ5kXt5QM4z6DjSDXen",
+"dex": "raydium",
+"liq": 2810230.12,
+"mcap": 2999802,
+"created": 1785870610000,
+"group": "launch"
+}
+},
+{
+"file": "2866MvCKPGz9LdnPcmPueoV3mA2Ac1ceEQ8Xqb9VNefu.json",
+"meta": {
+"sym": "PENGU",
+"pool": "2866MvCKPGz9LdnPcmPueoV3mA2Ac1ceEQ8Xqb9VNefu",
+"mint": "2zMMhcVQEXDtdE6vsFS7S7D5oUodfJHE8vd1gnBouauv",
+"dex": "orca",
+"liq": 247443.9447,
+"mcap": 389095168,
+"created": 1734440426000,
+"group": "established",
+"vol24": 362784.870660766,
+"pool_created": "2026-01-26T07:13:42Z"
+}
+},
+{
+"file": "2Te5d4JLjj6ffyudymRpVBeTmom14yRfc4ZANNhCVSjy.json",
+"meta": {
+"sym": "FISH",
+"pool": "2Te5d4JLjj6ffyudymRpVBeTmom14yRfc4ZANNhCVSjy",
+"mint": "Fy6R7i9gfCSmtz3tCdmv4mVKLxPAp8qJFvLNvi5Apump",
+"dex": "pumpswap",
+"liq": 7660.82,
+"mcap": 11551,
+"created": 1791656706000,
+"group": "launch"
+}
+},
+{
+"file": "2aGHaYdxcs1dcfxPxFtiQiidUKtBEAcw7wDYJv4i7xnB.json",
+"meta": {
+"sym": "DDP",
+"pool": "2aGHaYdxcs1dcfxPxFtiQiidUKtBEAcw7wDYJv4i7xnB",
+"mint": "9on6ihNg6KffTxfxf5rnmEVrxSz1TF8pF3R3FLUzpump",
+"dex": "pumpswap",
+"liq": 7144.47,
+"mcap": 12286,
+"created": 1784738208000,
+"group": "launch"
+}
+},
+{
+"file": "2c4griocfspxhzyQfva2cRRcAiaEEpo8dtgqbNJ8YkLV.json",
+"meta": {
+"sym": "ZBC",
+"pool": "2c4griocfspxhzyQfva2cRRcAiaEEpo8dtgqbNJ8YkLV",
+"mint": "BgUV7QgNzeFzVvZmKSD7sWP69kZf6iaBtn6yd3P9pump",
+"dex": "pumpfun",
+"liq": 0,
+"mcap": 2276.42,
+"created": 1793448341000,
+"group": "launch"
+}
+},
+{
+"file": "2eppuTK8uFyiAhpmWzhnBN7VKJcHFX6JRgFvrWXHyTbR.json",
+"meta": {
+"sym": "Jesus",
+"pool": "2eppuTK8uFyiAhpmWzhnBN7VKJcHFX6JRgFvrWXHyTbR",
+"mint": "CBtVtvgUWKEMVTatt3wBtSk7uYF5zDp2RchE4MdTpump",
+"dex": "pumpfun",
+"liq": 0,
+"mcap": 2278.54,
+"created": 1793372325000,
+"group": "launch"
+}
+},
+{
+"file": "2nBqHqGCcDdRqL8GTjyZ82xvKp7qCHXj6YNR6KZuXy3s.json",
+"meta": {
+"sym": "Presidents",
+"pool": "2nBqHqGCcDdRqL8GTjyZ82xvKp7qCHXj6YNR6KZuXy3s",
+"mint": "ALFLYPuyHM5dx23vNJT6mVZtYAfjXRFp6VRjDL8NQqNg",
+"dex": "pumpswap",
+"liq": 7737.83,
+"mcap": 9169,
+"created": 1780691520000,
+"group": "launch"
+}
+},
+{
+"file": "2of1ckKRoyu1dLmGzYMgKVfZBVenowmHRDBnL7Fzq3nR.json",
+"meta": {
+"sym": "moneycoin",
+"pool": "2of1ckKRoyu1dLmGzYMgKVfZBVenowmHRDBnL7Fzq3nR",
+"mint": "2YbUBvuyRuQXkJgABi7GNcgM4K5okiFE1jVNd2S9pump",
+"dex": "pumpfun",
+"liq": 0,
+"mcap": 2276.42,
+"created": 1793350873000,
+"group": "launch"
+}
+},
+{
+"file": "2qFEi1rTPDwzLr1N1KbQ7c8s3S6oS5mxYR8sN65bvvxs.json",
+"meta": {
+"sym": "PEPE",
+"pool": "2qFEi1rTPDwzLr1N1KbQ7c8s3S6oS5mxYR8sN65bvvxs",
+"mint": "7nfd3f4sxQcMgxEbvNFu3UJstmLXcWUywAsts5xuiFF3",
+"dex": "raydium",
+"liq": 3656644.03,
+"mcap": 3999751,
+"created": 1787376815000,
+"group": "launch"
+}
+},
+{
+"file": "3364H2G3Kt536qgfV4az9HhN42i4owXGpcs4LuenHCBA.json",
+"meta": {
+"sym": "CTO",
+"pool": "3364H2G3Kt536qgfV4az9HhN42i4owXGpcs4LuenHCBA",
+"mint": "EWgq2xUb6eVCApeQombkPxd6uFjM8j9zRUXFS9MjKTiv",
+"dex": "pumpswap",
+"liq": 15411.75,
+"mcap": 29956,
+"created": 1788959412000,
+"group": "launch"
+}
+},
+{
+"file": "3C5YE97HADPDxZehYq9Cis8AXr9aNyrUsczKzE1nDbW9.json",
+"meta": {
+"sym": "TRUMP",
+"pool": "3C5YE97HADPDxZehYq9Cis8AXr9aNyrUsczKzE1nDbW9",
+"mint": "6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN",
+"dex": "meteora",
+"liq": 5041469.3404,
+"mcap": 309557893,
+"created": 1737191463000,
+"group": "established",
+"vol24": 3641916.53303292,
+"pool_created": "2025-01-18T06:53:58Z"
+}
+},
+{
+"file": "3GHhAERuGx17to3Dx9GyFNzYdqpwJDfdDjHffUv7DbD4.json",
+"meta": {
+"sym": "NIGHT",
+"pool": "3GHhAERuGx17to3Dx9GyFNzYdqpwJDfdDjHffUv7DbD4",
+"mint": "6vABB3vK3DxYJsTqV3XkWDXbnQXobfvCKXQrqTc3qEZw",
+"dex": "raydium",
+"liq": 38818542.39,
+"mcap": 39080256,
+"created": 1793259102000,
+"group": "launch"
+}
+},
+{
+"file": "3HTnMc3VST1A4LXc96FXkYTuGS1BW4dAZ88NV1KXETHA.json",
+"meta": {
+"sym": "Diamond",
+"pool": "3HTnMc3VST1A4LXc96FXkYTuGS1BW4dAZ88NV1KXETHA",
+"mint": "2RfEP34MY4zy2U5KzRLkZcY7z8sFM1uNaTGEYmznjpb9",
+"dex": "meteora",
+"liq": 0,
+"mcap": 778454,
+"created": 1793993443000,
+"group": "launch"
+}
+},
+{
+"file": "3W52e55EmfHQ3dS2JkEFxkCa3M1Jh4TQrrhSeoGcvH2v.json",
+"meta": {
+"sym": "Ghost",
+"pool": "3W52e55EmfHQ3dS2JkEFxkCa3M1Jh4TQrrhSeoGcvH2v",
+"mint": "6vvAJefZDsCzbFQxQ8PbmqWstUULKLpEHYCL1FXtpump",
+"dex": "pumpfun",
+"liq": 0,
+"mcap": 2276.42,
+"created": 1793443950000,
+"group": "launch"
+}
+},
+{
+"file": "3hCWyGJyuvjxrgLvu6QQgrTeDWYfUvvdPNk6SHXiP1Hj.json",
+"meta": {
+"sym": "RICH",
+"pool": "3hCWyGJyuvjxrgLvu6QQgrTeDWYfUvvdPNk6SHXiP1Hj",
+"mint": "5hiLgyybrAYPpUwNFa38agfZ8iEtnahWKAPixcfspump",
+"dex": "pumpswap",
+"liq": 24440.43,
+"mcap": 26164,
+"created": 1779482818000,
+"group": "launch"
+}
+},
+{
+"file": "3nwzFjN3s1hE8CgqQED7S5JtREcCLStdkhRvLJvf7Uwp.json",
+"meta": {
+"sym": "ANSEMWIFE",
+"pool": "3nwzFjN3s1hE8CgqQED7S5JtREcCLStdkhRvLJvf7Uwp",
+"mint": "8B3UJbbPWfg2DLF7iWzm9WnXH9y5jhYUUoZaLhqvpump",
+"dex": "pumpswap",
+"liq": 9506.5,
+"mcap": 9375,
+"created": 1783435237000,
+"group": "launch"
+}
+},
+{
+"file": "3qGVHAS7kGDteP2PCjjWx2pn1r2ZuPZSxiXU43mW2QCM.json",
+"meta": {
+"sym": "America",
+"pool": "3qGVHAS7kGDteP2PCjjWx2pn1r2ZuPZSxiXU43mW2QCM",
+"mint": "CzFG4qBi3okM9xsWh66t9q87ZNipPnvdtPGGWzFMpump",
+"dex": "pumpfun",
+"liq": 0,
+"mcap": 2268.31,
+"created": 1789817279000,
+"group": "launch"
+}
+},
+{
+"file": "3sjNoCnkkhWPVXYGDtem8rCciHSGc9jSFZuUAzKbvRVp.json",
+"meta": {
+"sym": "ZEREBRO",
+"pool": "3sjNoCnkkhWPVXYGDtem8rCciHSGc9jSFZuUAzKbvRVp",
+"mint": "8x5VqbHA8D7NkD52uNuS5nnt3PwA8pLD34ymskeSo2Wn",
+"dex": "raydium",
+"liq": 2362536.9974,
+"mcap": 23026123,
+"created": 1730142507000,
+"group": "established",
+"vol24": 290706.790035438,
+"pool_created": "2024-10-28T19:08:28Z"
+}
+},
+{
+"file": "43qpA8fJVMKz9PCpzCF2tU2HCL6Zcvcqkept94ZC3v9w.json",
+"meta": {
+"sym": "POPE",
+"pool": "43qpA8fJVMKz9PCpzCF2tU2HCL6Zcvcqkept94ZC3v9w",
+"mint": "2nkBLdbbpNGeaRzRXhF5T6fFvo1RGnk9WvJ19YhWpump",
+"dex": "pumpfun",
+"liq": 0,
+"mcap": 2292.72,
+"created": 1785361168000,
+"group": "launch"
+}
+},
+{
+"file": "4AZRPNEfCJ7iw28rJu5aUyeQhYcvdcNm8cswyL51AY9i.json",
+"meta": {
+"sym": "PNUT",
+"pool": "4AZRPNEfCJ7iw28rJu5aUyeQhYcvdcNm8cswyL51AY9i",
+"mint": "2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump",
+"dex": "raydium",
+"liq": 2365738.1852,
+"mcap": 2217.21,
+"created": 1731746417000,
+"group": "established",
+"vol24": 246458.722572528,
+"pool_created": "2024-10-31T15:06:47Z"
+}
+},
+{
+"file": "4FWeZ2Qq9KYaL3XNLYPQjfTXrtDxAhtN9iaYB2g8zL32.json",
+"meta": {
+"sym": "$AGENT ",
+"pool": "4FWeZ2Qq9KYaL3XNLYPQjfTXrtDxAhtN9iaYB2g8zL32",
+"mint": "8s3WHpnp9LrfsDktRxzaxyahddL4XRo5xNiwq4whpump",
+"dex": "pumpfun",
+"liq": 0,
+"mcap": 2234.63,
+"created": 1790928865000,
+"group": "launch"
+}
+},
+{
+"file": "4LkS8nePcAdGtxP4PkA3hYTehepDgqpfpRimE2A9rAkK.json",
+"meta": {
+"sym": "FART",
+"pool": "4LkS8nePcAdGtxP4PkA3hYTehepDgqpfpRimE2A9rAkK",
+"mint": "76a7g4P4HJmQk4Mrwe6sb6dte7BEMKCaWuHNo51tSTNK",
+"dex": "raydium",
+"liq": 3186.58,
+"mcap": 1702,
+"created": 1789492044000,
+"group": "launch"
+}
+},
+{
+"file": "4hNUSHDFFH5zHCSymrw1UKTit6PckzcR5TZtt4LeXFvg.json",
+"meta": {
+"sym": "CHINA",
+"pool": "4hNUSHDFFH5zHCSymrw1UKTit6PckzcR5TZtt4LeXFvg",
+"mint": "4atCTycWf4ig3TocgPZL64KM9rABkXQQWgMhnDKkGmcR",
+"dex": "meteora",
+"liq": 0.02,
+"mcap": 37849,
+"created": 1793534019000,
+"group": "launch"
+}
+},
+{
+"file": "4iaCa8PCWcP8Gu7QzcpBoAaHV4PwrHCYv3LgKvKTwD1q.json",
+"meta": {
+"sym": "GROK",
+"pool": "4iaCa8PCWcP8Gu7QzcpBoAaHV4PwrHCYv3LgKvKTwD1q",
+"mint": "27aA4uiJe9ZMPxDZ5k22Siwh5uMYzVG8DpBz4mfJpump",
+"dex": "pumpfun",
+"liq": 0,
+"mcap": 2925.88,
+"created": 1793902429000,
+"group": "launch"
+}
+},
+{
+"file": "4s5TkCGMUsnthv7721c4rWJ3AqRpz2h82digzKHxH299.json",
+"meta": {
+"sym": "GOD",
+"pool": "4s5TkCGMUsnthv7721c4rWJ3AqRpz2h82digzKHxH299",
+"mint": "7QefK3dUxmkGWuTBiTPj9JnMHNJA5nJ8ZPEUpHrEpump",
+"dex": "pumpfun",
+"liq": 0,
+"mcap": 2338.68,
+"created": 1791169401000,
+"group": "launch"
+}
+},
+{
+"file": "4w2cysotX6czaUGmmWg13hDpY4QEMG2CzeKYEQyK9Ama.json",
+"meta": {
+"sym": "TROLL",
+"pool": "4w2cysotX6czaUGmmWg13hDpY4QEMG2CzeKYEQyK9Ama",
+"mint": "5UUH9RTDiSpq6HKS6bp4NdU9PNJpXRXuiw6ShBTBhgH2",
+"dex": "orca",
+"liq": 2152712.0946,
+"mcap": 27280447,
+"created": 1779803489000,
+"group": "established",
+"vol24": 422512.557555573,
+"pool_created": "2025-04-20T18:30:26Z"
+}
+},
+{
+"file": "4xxM4cdb6MEsCxM52xvYqkNbzvdeWWsPDZrBcTqVGUar.json",
+"meta": {
+"sym": "GIGA",
+"pool": "4xxM4cdb6MEsCxM52xvYqkNbzvdeWWsPDZrBcTqVGUar",
+"mint": "63LfDmNb3MQ8mw9MtZ2To9bEA2M71kZUUGq5tiJxcqj9",
+"dex": "raydium",
+"liq": 1246650.0038,
+"mcap": 15561969,
+"created": 1704403186000,
+"group": "established",
+"vol24": 82424.8385916906,
+"pool_created": "2024-01-04T22:40:41Z"
+}
+},
+{
+"file": "511v1z7CHabGnYszCHUVKg8WTmm8B1Gjb4WBq1srX3a3.json",
+"meta": {
+"sym": "RKC",
+"pool": "511v1z7CHabGnYszCHUVKg8WTmm8B1Gjb4WBq1srX3a3",
+"mint": "6fcRnpyJLDxgSg1ZUEKGgZ6uG1VwtcuXijTedg7jpump",
+"dex": "pumpfun",
+"liq": 0,
+"mcap": 1121.39,
+"created": 1793482100000,
+"group": "launch"
+}
+},
+{
+"file": "52xwFB7tHPaX3eWgAbSt52pnsMQvjEQNR6JmjcZ6WgA4.json",
+"meta": {
+"sym": "PRESIDENT",
+"pool": "52xwFB7tHPaX3eWgAbSt52pnsMQvjEQNR6JmjcZ6WgA4",
+"mint": "2rQBX5VDmg5G2j5EPWy2E28RBunDn9aJWwCrKvA6NpU5",
+"dex": "meteora",
+"liq": 0.02,
+"mcap": 934785502,
+"created": 1792971960000,
+"group": "launch"
+}
+},
+{
+"file": "54sbyULrreD9HBoV5wRWedeCBEw6gQ7VkdHW18rLX78e.json",
+"meta": {
+"sym": "CTO",
+"pool": "54sbyULrreD9HBoV5wRWedeCBEw6gQ7VkdHW18rLX78e",
+"mint": "8K5X85PAJHAAVSvYaAzgVPPAPsqqHmvx16ZyBiscYF8L",
+"dex": "meteora",
+"liq": 989.12,
+"mcap": 12309,
+"created": 1788252296000,
+"group": "launch"
+}
+},
+{
+"file": "58Pu36JAXSTgFgsUfjHMRC5v5SdVwC8VUzMrMqfnThM6.json",
+"meta": {
+"sym": "GIRL",
+"pool": "58Pu36JAXSTgFgsUfjHMRC5v5SdVwC8VUzMrMqfnThM6",
+"mint": "7TrU2pLuFPA1c2ptSQxuVV8dYSL3tYtWKUhNUDXkpump",
+"dex": "pumpfun",
+"liq": 0,
+"mcap": 2307.36,
+"created": 1793943750000,
+"group": "launch"
+}
+},
+{
+"file": "58oQChx4yWmvKdwLLZzBi4ChoCc2fqCUWBkwMihLYQo2.json",
+"meta": {
+"sym": "SOL",
+"pool": "58oQChx4yWmvKdwLLZzBi4ChoCc2fqCUWBkwMihLYQo2",
+"mint": "So11111111111111111111111111111111111111112",
+"dex": "raydium",
+"liq": null,
+"mcap": null,
+"created": null,
+"group": "benchmark"
+}
+},
+{
+"file": "5HpAjR88ohPMfejPUo8e7cNUraptK9BLd3q9kCLjWoYs.json",
+"meta": {
+"sym": "Rich ",
+"pool": "5HpAjR88ohPMfejPUo8e7cNUraptK9BLd3q9kCLjWoYs",
+"mint": "7T6AVU8WZF3NEDXXfRCrqgxxePn6gG3UQhJTrjz7qyUJ",
+"dex": "raydium",
+"liq": 504.67,
+"mcap": 4314907463,
+"created": 1791306044000,
+"group": "launch"
+}
+},
+{
+"file": "5SfvMb19ji9RrVc6Dkvy1oLzx4vSqU9mRoqmKDz3autg.json",
+"meta": {
+"sym": "DUCK",
+"pool": "5SfvMb19ji9RrVc6Dkvy1oLzx4vSqU9mRoqmKDz3autg",
+"mint": "VSaKbqzzGLSW1MMSeP61iQvsg2ZppP7ARJ34MwBpump",
+"dex": "pumpswap",
+"liq": 1650.13,
+"mcap": 1550,
+"created": 1786392760000,
+"group": "launch"
+}
+},
+{
+"file": "5UWDVbupd73vWBtViCUXcdnnPDiTbbzaenMmMporJAhB.json",
+"meta": {
+"sym": "ZINU",
+"pool": "5UWDVbupd73vWBtViCUXcdnnPDiTbbzaenMmMporJAhB",
+"mint": "64SRUJ8iRov4aorg3v1wx3HsWWgj3phEqnhPXbGjpump",
+"dex": "pumpfun",
+"liq": 0,
+"mcap": 2276.42,
+"created": 1793456143000,
+"group": "launch"
+}
+},
+{
+"file": "5VrEmR5Ti55BMyWVZh4Qs6R7VH1kT8bkssGUAFZ7CWqm.json",
+"meta": {
+"sym": "FROG",
+"pool": "5VrEmR5Ti55BMyWVZh4Qs6R7VH1kT8bkssGUAFZ7CWqm",
+"mint": "6WS1NsTCjB1VFvVL8CjqUkB4VtK4fQ3sMPrN5e7rpump",
+"dex": "pumpswap",
+"liq": 2383.39,
+"mcap": 2043,
+"created": 1786814907000,
+"group": "launch"
+}
+},
+{
+"file": "5b3RoWwCMmL2R72YpPEEp9hKpZ7Y2XwjG4brD8eErKA7.json",
+"meta": {
+"sym": "PEPE",
+"pool": "5b3RoWwCMmL2R72YpPEEp9hKpZ7Y2XwjG4brD8eErKA7",
+"mint": "EGK2NLMyBy4ijKKT2LWxaR5j3iVdYL6BF8hvSM2Cp5Qe",
+"dex": "raydium",
+"liq": 2802186.61,
+"mcap": 3009719,
+"created": 1783141089000,
+"group": "launch"
+}
+},
+{
+"file": "5dRRnfoQ3TmhWyPDHuG4rgphCY37ZPW3KoJaySYwTAA8.json",
+"meta": {
+"sym": "WEN",
+"pool": "5dRRnfoQ3TmhWyPDHuG4rgphCY37ZPW3KoJaySYwTAA8",
+"mint": "DWAi7YhCF59EfLUm9nZwdwJfAyExzqvZCvyax9KakHry",
+"dex": "meteora",
+"liq": 105.95,
+"mcap": 6381,
+"created": 1789139037000,
+"group": "launch"
+}
+},
+{
+"file": "5uTwG3y3F5cx4YkodgTjWEHDrX5HDKZ5bZZ72x8eQ6zE.json",
+"meta": {
+"sym": "PONKE",
+"pool": "5uTwG3y3F5cx4YkodgTjWEHDrX5HDKZ5bZZ72x8eQ6zE",
+"mint": "5z3EqYQo9HiCEs3R84RCDMu2n7anpDMxRhdK8PSWmrRC",
+"dex": "raydium",
+"liq": 1069087.1002,
+"mcap": 8517789,
+"created": 1703383963000,
+"group": "established",
+"vol24": 39774.9084365521,
+"pool_created": "2023-12-24T04:10:28Z"
+}
+},
+{
+"file": "5zpyutJu9ee6jFymDGoK7F6S5Kczqtc9FomP3ueKuyA9.json",
+"meta": {
+"sym": "BONK",
+"pool": "5zpyutJu9ee6jFymDGoK7F6S5Kczqtc9FomP3ueKuyA9",
+"mint": "DezXAZ8z7PnrnRJjz3wXBoRgixCa6xjnB7YaB1pPB263",
+"dex": "raydium",
+"liq": 261796.9117,
+"mcap": 238613603,
+"created": 1773402195000,
+"group": "established",
+"vol24": 200644.02793667,
+"pool_created": "2023-07-05T14:41:09Z"
+}
+},
+{
+"file": "61qDwFAznTA6UmWto8B3fXX8GwbLND1ZAc7tjqmL56nC.json",
+"meta": {
+"sym": "ETH",
+"pool": "61qDwFAznTA6UmWto8B3fXX8GwbLND1ZAc7tjqmL56nC",
+"mint": "BLroVXUy9MZMrrLm9LHitcFghbBuJuk2k1V3iHM2K7Qv",
+"dex": "raydium",
+"liq": 41124731.69,
+"mcap": 41770686,
+"created": 1787158651000,
+"group": "launch"
+}
+},
+{
+"file": "6TycJbh1eYD5nZEUooXPeK9rexyJmLXCfWGAj2VTocRW.json",
+"meta": {
+"sym": "MUSK",
+"pool": "6TycJbh1eYD5nZEUooXPeK9rexyJmLXCfWGAj2VTocRW",
+"mint": "EpkUue8SvNBiYW1XKPPBPKm5tPAL1mqwKqab9KwApump",
+"dex": "pumpswap",
+"liq": 4214.58,
+"mcap": 3563,
+"created": 1785941923000,
+"group": "launch"
+}
+},
+{
+"file": "6jw5agmwfxnFofp38GvfqThVLLLFNZUGERcC8m6MUS3Q.json",
+"meta": {
+"sym": "SHIB",
+"pool": "6jw5agmwfxnFofp38GvfqThVLLLFNZUGERcC8m6MUS3Q",
+"mint": "9bMvs6e2PRpmBUsNd9SHGNBMR1jxQ6PN1UbSZgjvEyrt",
+"dex": "raydium",
+"liq": 5679627.76,
+"mcap": 5949530,
+"created": 1790007971000,
+"group": "launch"
+}
+},
+{
+"file": "78sBWyimVhLumzZg1bdMD6ogGig8QpmgYZqCXNyMxx4z.json",
+"meta": {
+"sym": "UFD",
+"pool": "78sBWyimVhLumzZg1bdMD6ogGig8QpmgYZqCXNyMxx4z",
+"mint": "eL5fUxj2J4CiQsmW85k5FG9DvuQjjUoBHoQBi2Kpump",
+"dex": "raydium",
+"liq": 855333.5098,
+"mcap": 5239123,
+"created": 1734479285000,
+"group": "established",
+"vol24": 41640.581322073,
+"pool_created": "2024-12-17T23:48:05Z"
+}
+},
+{
+"file": "7Ajg51t7V9pkYk7yQBexMLZmPVM8Gdp442Wgrs1no3ys.json",
+"meta": {
+"sym": "cat",
+"pool": "7Ajg51t7V9pkYk7yQBexMLZmPVM8Gdp442Wgrs1no3ys",
+"mint": "5E8RdDo7tp6HkvqiH2uwQ3jUfMhMR3Q4MJZ5i8Dxpump",
+"dex": "pumpswap",
+"liq": 4319,
+"mcap": 4985,
+"created": 1787667566000,
+"group": "launch"
+}
+},
+{
+"file": "7GnXYByz4K5DXpvCGSr62TyYhtVHSvqzq5hCsa4W2yCX.json",
+"meta": {
+"sym": "king",
+"pool": "7GnXYByz4K5DXpvCGSr62TyYhtVHSvqzq5hCsa4W2yCX",
+"mint": "2rFNkrUaPdTFSCNu5KJoGL2Aiq7YZDE8DYZGZzAJCoKc",
+"dex": "pumpswap",
+"liq": 1797.34,
+"mcap": 1686,
+"created": 1791152563000,
+"group": "launch"
+}
+},
+{
+"file": "7HpK3oVxfMnrFSV5LRUyzUCjn98derEYpqr5FTAb6hJs.json",
+"meta": {
+"sym": "GPT",
+"pool": "7HpK3oVxfMnrFSV5LRUyzUCjn98derEYpqr5FTAb6hJs",
+"mint": "HXRzNfYoycJyL6eGDi7LENuhPYbMP341bQ7rfBbnpump",
+"dex": "pumpswap",
+"liq": 1789.12,
+"mcap": 1594,
+"created": 1793959519000,
+"group": "launch"
+}
+},
+{
+"file": "7JE9NCdFhAaiFArf6AgkZAWxPjraPPxcp8Gg6e4Vknt.json",
+"meta": {
+"sym": "GROK",
+"pool": "7JE9NCdFhAaiFArf6AgkZAWxPjraPPxcp8Gg6e4Vknt",
+"mint": "6onu5YwrVVDLyBRaqgppGep36bjYaBAR2gQkJe5Jpump",
+"dex": "pumpswap",
+"liq": 4149.58,
+"mcap": 4421,
+"created": 1791312264000,
+"group": "launch"
+}
+},
+{
+"file": "7PajR5igYx3jk8eHEFfz9J7iXvxeK9W2Yp1x2XT3SkVd.json",
+"meta": {
+"sym": "MOON",
+"pool": "7PajR5igYx3jk8eHEFfz9J7iXvxeK9W2Yp1x2XT3SkVd",
+"mint": "9W9ML53KohjgodwGTf76tKoHHLvqdvdKzifiofiXpump",
+"dex": "pumpswap",
+"liq": 3657.25,
+"mcap": 1968,
+"created": 1781728067000,
+"group": "launch"
+}
+},
+{
+"file": "7Y14sE8wgXbXHx9pxMBVrSGkQJbBzrAQCF9kRJwcLNH5.json",
+"meta": {
+"sym": "MOM",
+"pool": "7Y14sE8wgXbXHx9pxMBVrSGkQJbBzrAQCF9kRJwcLNH5",
+"mint": "BkT4ugpHVpk3qBJAq598hNrvj2dgZfiJwEr9jZgNpump",
+"dex": "pumpfun",
+"liq": 0,
+"mcap": 2275.3,
+"created": 1792598331000,
+"group": "launch"
+}
+},
+{
+"file": "7mFWkzhG17wasMnyvkUn6Fnsi9cKSTz7qUcEFoNdW7Zt.json",
+"meta": {
+"sym": "WAGMI",
+"pool": "7mFWkzhG17wasMnyvkUn6Fnsi9cKSTz7qUcEFoNdW7Zt",
+"mint": "GnM6XZ7DN9KSPW2ZVMNqCggsxjnxHMGb2t4kiWrUpump",
+"dex": "raydium",
+"liq": 142.31,
+"mcap": 189404,
+"created": 1787903238000,
+"group": "launch"
+}
+},
+{
+"file": "7qAVrzrbULwg1B13YseqA95Uapf8EVp9jQE5uipqFMoP.json",
+"meta": {
+"sym": "AI16Z",
+"pool": "7qAVrzrbULwg1B13YseqA95Uapf8EVp9jQE5uipqFMoP",
+"mint": "HeLp6NuQkmYB4pYWo2zYs22mESHXPQYzXbB8n4V98jwC",
+"dex": "raydium",
+"liq": 34727.2704,
+"mcap": 284761,
+"created": 1748216226000,
+"group": "established",
+"vol24": 2051.0186678052,
+"pool_created": "2025-05-25T23:37:07Z"
+}
+},
+{
+"file": "879F697iuDJGMevRkRcnW21fcXiAeLJK1ffsw2ATebce.json",
+"meta": {
+"sym": "MEW",
+"pool": "879F697iuDJGMevRkRcnW21fcXiAeLJK1ffsw2ATebce",
+"mint": "MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5",
+"dex": "raydium",
+"liq": 6950241.4541,
+"mcap": 29361021,
+"created": 1711430534000,
+"group": "established",
+"vol24": 129736.310829672,
+"pool_created": "2024-03-26T05:26:00Z"
+}
+},
+{
+"file": "88v4aoey74npmh3yJS9PWfzWFnuxAyZRkeTLveY7VJrn.json",
+"meta": {
+"sym": "APE",
+"pool": "88v4aoey74npmh3yJS9PWfzWFnuxAyZRkeTLveY7VJrn",
+"mint": "C1MHyoTJpRTeS9AQCyspNVu2EWAYCZwmJ1jNkEArFP1f",
+"dex": "raydium",
+"liq": 89131.59,
+"mcap": 112946,
+"created": 1790097516000,
+"group": "launch"
+}
+},
+{
+"file": "8996bSM4o7eMPCCe5GnaYGbD2sHFZB6azrvi3sJWp8pj.json",
+"meta": {
+"sym": "Diamond",
+"pool": "8996bSM4o7eMPCCe5GnaYGbD2sHFZB6azrvi3sJWp8pj",
+"mint": "6hKSyFr7tAKDzR7VfqbTfSYekpaKY87DEeWMtG7tgxCL",
+"dex": "meteora",
+"liq": 0.01,
+"mcap": 406612387,
+"created": 1793931306000,
+"group": "launch"
+}
+},
+{
+"file": "8A67xG1WKqUPqJvLJZeUDrnpkiVG7dE4BjaRi7xVfDb4.json",
+"meta": {
+"sym": "BPF",
+"pool": "8A67xG1WKqUPqJvLJZeUDrnpkiVG7dE4BjaRi7xVfDb4",
+"mint": "AWqjGVukKcG79uPHm9FcBcbAHmApemZPZetzv69aW7QM",
+"dex": "raydium",
+"liq": 10466.09,
+"mcap": 18217,
+"created": 1793198424000,
+"group": "launch"
+}
+},
+{
+"file": "8WwcNqdZjCY5Pt7AkhupAFknV2txca9sq6YBkGzLbvdt.json",
+"meta": {
+"sym": "PIPPIN",
+"pool": "8WwcNqdZjCY5Pt7AkhupAFknV2txca9sq6YBkGzLbvdt",
+"mint": "Dfh5DzRgSvvCFDoYc2ciTkMrbDfRKybA4SoFbPmApump",
+"dex": "raydium",
+"liq": 2869602.811,
+"mcap": 12464361,
+"created": 1731184061000,
+"group": "established",
+"vol24": 246657.226154564,
+"pool_created": "2024-11-09T20:27:41Z"
+}
+},
+{
+"file": "8uvHDHTwcqry52C66P9o4QaT7shdViBZqf1x99yvpmd4.json",
+"meta": {
+"sym": "HAMSTER",
+"pool": "8uvHDHTwcqry52C66P9o4QaT7shdViBZqf1x99yvpmd4",
+"mint": "5p6jyVk7aSKmwAMsEvz6hg3zJRPFy8Pt85pXC4qnVDbk",
+"dex": "meteora",
+"liq": 0.62,
+"mcap": null,
+"created": 1793659174000,
+"group": "launch"
+}
+},
+{
+"file": "93tjgwff5Ac5ThyMi8C4WejVVQq4tuMeMuYW1LEYZ7bu.json",
+"meta": {
+"sym": "CHILLGUY",
+"pool": "93tjgwff5Ac5ThyMi8C4WejVVQq4tuMeMuYW1LEYZ7bu",
+"mint": "Df6yfrKC8kZE3KNkrHERKzAetSxbrWeniQfyJY4Jpump",
+"dex": "raydium",
+"liq": 1012696.6804,
+"mcap": 7959171,
+"created": 1731701302000,
+"group": "established",
+"vol24": 158133.817559081,
+"pool_created": "2024-11-15T20:08:23Z"
+}
+},
+{
+"file": "98ewLHSKoxMu9g9NguMykjgUFz2rc8WsrscXB67BMubh.json",
+"meta": {
+"sym": "RETARDIO",
+"pool": "98ewLHSKoxMu9g9NguMykjgUFz2rc8WsrscXB67BMubh",
+"mint": "CSRRgTwf9o5KLgguS2M16aEAhV5PUUzfshrAAQ8opump",
+"dex": "raydium",
+"liq": 125952.4716,
+"mcap": 2020503,
+"created": 1706825286000,
+"group": "established",
+"vol24": 292224.45510628,
+"pool_created": "2026-09-01T20:13:17Z"
+}
+},
+{
+"file": "9DiruRpjnAnzhn6ts5HGLouHtJrT1JGsPbXNYCrFz2ad.json",
+"meta": {
+"sym": "MELANIA",
+"pool": "9DiruRpjnAnzhn6ts5HGLouHtJrT1JGsPbXNYCrFz2ad",
+"mint": "FUAfBo2jgks6gB4Z4LfZkqSZgzNucisEHqnNebaRxM1P",
+"dex": "meteora",
+"liq": 7700062.4023,
+"mcap": 52530064,
+"created": 1737320909000,
+"group": "established",
+"vol24": 22022.6119539299,
+"pool_created": "2025-01-19T20:26:00Z"
+}
+},
+{
+"file": "9LkvP9Y8btWwoSawq8wvFiVsjNncnpn4LcixYUyhUp6M.json",
+"meta": {
+"sym": "Jesus",
+"pool": "9LkvP9Y8btWwoSawq8wvFiVsjNncnpn4LcixYUyhUp6M",
+"mint": "77fFKYARcnYdReX2EcUPhrdp9u8K1mYC5B6XQYvPvn4D",
+"dex": "meteora",
+"liq": 0.52,
+"mcap": null,
+"created": 1793647005000,
+"group": "launch"
+}
+},
+{
+"file": "9Tb2ohu5P16BpBarqd3N27WnkF51Ukfs8Z1GzzLDxVZW.json",
+"meta": {
+"sym": "GOAT",
+"pool": "9Tb2ohu5P16BpBarqd3N27WnkF51Ukfs8Z1GzzLDxVZW",
+"mint": "CzLSujWBLFsSjncfkh59rUFqvafWcY5tzedWJSuypump",
+"dex": "raydium",
+"liq": 1183351.7221,
+"mcap": 12137989,
+"created": 1728595144000,
+"group": "established",
+"vol24": 38477.588650235,
+"pool_created": "2024-10-10T21:19:05Z"
+}
+},
+{
+"file": "9iNk2H6kXVgXWbFfGrvYjjS6HjkCyPmQ4inM4tDu47JM.json",
+"meta": {
+"sym": "WTF",
+"pool": "9iNk2H6kXVgXWbFfGrvYjjS6HjkCyPmQ4inM4tDu47JM",
+"mint": "6cozXZxZarjAZPsGesuk8uceecBuWdE2nXimBekpkKnE",
+"dex": "meteora",
+"liq": 0,
+"mcap": null,
+"created": 1781269032000,
+"group": "launch"
+}
+},
+{
+"file": "9ogA17cBCh8sMEFL2VcAw3TCDj9AzFMDyYYfxNNMjuh.json",
+"meta": {
+"sym": "PENGUIN",
+"pool": "9ogA17cBCh8sMEFL2VcAw3TCDj9AzFMDyYYfxNNMjuh",
+"mint": "G3rpabbV6q9T2sHM5hGbuCgsPnTwsubC4BTAczofpump",
+"dex": "pumpswap",
+"liq": 1556.07,
+"mcap": 1479,
+"created": 1791136514000,
+"group": "launch"
+}
+},
+{
+"file": "9t1H1uDJ558iMPNkEPSN1fqkpC4XSPQ6cqSf6uEsTfTR.json",
+"meta": {
+"sym": "SPX",
+"pool": "9t1H1uDJ558iMPNkEPSN1fqkpC4XSPQ6cqSf6uEsTfTR",
+"mint": "J3NKxxXZcnNiMjKw9hYb2K4LUxgwB6t1FtPtQVsv3KFr",
+"dex": "orca",
+"liq": 1762123.8539,
+"mcap": 43087241,
+"created": 1790148870000,
+"group": "established",
+"vol24": 253839.665049706,
+"pool_created": "2023-12-21T16:31:17Z"
+}
+},
+{
+"file": "9tz6vYKiBDLYx2RnGWC5tESu4pyVE4jD6Tm56352UGte.json",
+"meta": {
+"sym": "GME",
+"pool": "9tz6vYKiBDLYx2RnGWC5tESu4pyVE4jD6Tm56352UGte",
+"mint": "8wXtPeU6557ETkp9WHFY1n1EcU6NxDvbAggHGsMYiHsB",
+"dex": "raydium",
+"liq": 835371.2583,
+"mcap": 2212888,
+"created": 1706399443000,
+"group": "established",
+"vol24": 7028.0500151795,
+"pool_created": "2024-01-28T00:50:13Z"
+}
+},
+{
+"file": "9uWW4C36HiCTGr6pZW9VFhr9vdXktZ8NA8jVnzQU35pJ.json",
+"meta": {
+"sym": "BILLY",
+"pool": "9uWW4C36HiCTGr6pZW9VFhr9vdXktZ8NA8jVnzQU35pJ",
+"mint": "3B5wuUrMEi5yATD7on46hKfej3pfmd7t1RKgrsN3pump",
+"dex": "raydium",
+"liq": 257876.1767,
+"mcap": 3188.56,
+"created": 1718588362000,
+"group": "established",
+"vol24": 290.9164001163,
+"pool_created": "2024-06-17T01:39:24Z"
+}
+},
+{
+"file": "A6u8tWDtSNuEyZSZufoP9TGQvuEREKnpGcNP7xUsYMKq.json",
+"meta": {
+"sym": "WEN",
+"pool": "A6u8tWDtSNuEyZSZufoP9TGQvuEREKnpGcNP7xUsYMKq",
+"mint": "WENWENvqqNya429ubCdR81ZmD69brwQaaBYY6p3LCpk",
+"dex": "raydium",
+"liq": 28933.3778,
+"mcap": 3884759,
+"created": 1789142605000,
+"group": "established",
+"vol24": 9344.8995745373,
+"pool_created": "2024-03-19T03:11:43Z"
+}
+},
+{
+"file": "AAEJP3SUSCtJX4zzwPxDp4b3pFL6AXcP23v1X7JY7rNZ.json",
+"meta": {
+"sym": "Jesus",
+"pool": "AAEJP3SUSCtJX4zzwPxDp4b3pFL6AXcP23v1X7JY7rNZ",
+"mint": "4qizrkdhWZBRMSm1BCs1m13Ju3YJxAu4mjbuSKjypump",
+"dex": "pumpswap",
+"liq": 2580.52,
+"mcap": 2572,
+"created": 1793371829000,
+"group": "launch"
+}
+},
+{
+"file": "AAfwx5jD1Vrv6rDgfS2dTFxksm8vsKtCavRv8Zm4xYgw.json",
+"meta": {
+"sym": "agent",
+"pool": "AAfwx5jD1Vrv6rDgfS2dTFxksm8vsKtCavRv8Zm4xYgw",
+"mint": "Cb34QcAU49HiUJnkALvUfdSExmUAZPcPhmtnxqiHpump",
+"dex": "pumpswap",
+"liq": 2073,
+"mcap": 1751,
+"created": 1789367974000,
+"group": "launch"
+}
+},
+{
+"file": "AB1eu2L1Jr3nfEft85AuD2zGksUbam1Kr8MR3uM2sjwt.json",
+"meta": {
+"sym": "FWOG",
+"pool": "AB1eu2L1Jr3nfEft85AuD2zGksUbam1Kr8MR3uM2sjwt",
+"mint": "A8C3xuqscfmyLrte3VmTqrAq8kgMASius9AFNANwpump",
+"dex": "raydium",
+"liq": 1100016.9375,
+"mcap": 3445284,
+"created": 1722303257000,
+"group": "established",
+"vol24": 26600.2298196645,
+"pool_created": "2024-07-30T01:34:18Z"
+}
+},
+{
+"file": "AaVcWiDQ4i3cjUVcnzoNdrJtinzGgFev1dKC6DyFj2K1.json",
+"meta": {
+"sym": "Rich",
+"pool": "AaVcWiDQ4i3cjUVcnzoNdrJtinzGgFev1dKC6DyFj2K1",
+"mint": "uWxjAWXBwcExC8mPd9TW4UrdTYyRRKVSSR6ctEApump",
+"dex": "pumpswap",
+"liq": 1700.93,
+"mcap": 1607,
+"created": 1785778914000,
+"group": "launch"
+}
+},
+{
+"file": "AgFnRLUScRD2E4nWQxW73hdbSN7eKEUb2jHX7tx9YTYc.json",
+"meta": {
+"sym": "SLERF",
+"pool": "AgFnRLUScRD2E4nWQxW73hdbSN7eKEUb2jHX7tx9YTYc",
+"mint": "7BgBvyjrZX1YKz4oh9mjb8ZScatkkwb8DzFx7LoiVkM3",
+"dex": "raydium",
+"liq": 13508848.425,
+"mcap": 7815959,
+"created": 1710747025000,
+"group": "established",
+"vol24": 15586.2087931952,
+"pool_created": "2024-03-18T06:54:00Z"
+}
+},
+{
+"file": "Ah4uFFTm6x9Z8FLt3Mt9FzjqBVggZyQf6DiXi6qmhfBa.json",
+"meta": {
+"sym": "Yams",
+"pool": "Ah4uFFTm6x9Z8FLt3Mt9FzjqBVggZyQf6DiXi6qmhfBa",
+"mint": "81KNhgSwaCnWGR6PFS68E58WoYvwFeJ1AtE9KsGipump",
+"dex": "pumpswap",
+"liq": 21853.21,
+"mcap": 87303,
+"created": 1793914690000,
+"group": "launch"
+}
+},
+{
+"file": "AiQ7zeFPqa6GPxaaphcPchVzZbE39Y6cS6VvNUnDhy1N.json",
+"meta": {
+"sym": "MIDTERM",
+"pool": "AiQ7zeFPqa6GPxaaphcPchVzZbE39Y6cS6VvNUnDhy1N",
+"mint": "DS8nzMM3Mf5j5gWbCUGw9Sx6Q52Aaaw2sbijxsZWc51X",
+"dex": "raydium",
+"liq": 9328462.46,
+"mcap": 9496867,
+"created": 1786916871000,
+"group": "launch"
+}
+},
+{
+"file": "AtWMAA6T9t8cq8XCccCFPGDNNQYXhScuNuY6WVRi7FKe.json",
+"meta": {
+"sym": "LOCKIN",
+"pool": "AtWMAA6T9t8cq8XCccCFPGDNNQYXhScuNuY6WVRi7FKe",
+"mint": "8Ki8DpuWNxu9VsS3kQbarsCWMcFGWkzzA8pUPto9zBd5",
+"dex": "raydium",
+"liq": 217407.4357,
+"mcap": 807174,
+"created": 1710550043000,
+"group": "established",
+"vol24": 15828.2201111111,
+"pool_created": "2024-03-16T00:50:00Z"
+}
+},
+{
+"file": "B3w9ZzWJf8z9h1RiG1ZHxDYyDCHXfnANoHBB8tMtjJrE.json",
+"meta": {
+"sym": "WIF",
+"pool": "B3w9ZzWJf8z9h1RiG1ZHxDYyDCHXfnANoHBB8tMtjJrE",
+"mint": "CFU2Cvn3Wzb5tG6BmL2AFgmGtHDzRVgBu1zg7WTMpump",
+"dex": "pumpswap",
+"liq": 1678.32,
+"mcap": 1577,
+"created": 1785702423000,
+"group": "launch"
+}
+},
+{
+"file": "B4PHSkL6CeZbxVqm1aUPQuVpc5ERFcaZj7u9dhtphmVX.json",
+"meta": {
+"sym": "ACT",
+"pool": "B4PHSkL6CeZbxVqm1aUPQuVpc5ERFcaZj7u9dhtphmVX",
+"mint": "GJAFwWjJ3vnTsrQVabjBVK2TYB1YtRCQXRDfDgUnpump",
+"dex": "raydium",
+"liq": 1210357.0712,
+"mcap": 8718173,
+"created": 1729337799000,
+"group": "established",
+"vol24": 135372.999903451,
+"pool_created": "2024-10-19T11:36:39Z"
+}
+},
+{
+"file": "BFGevYeWTpmCiivqEQgQ8ij5kdDJMiJwHzDPrR4jtHAv.json",
+"meta": {
+"sym": "PEPE",
+"pool": "BFGevYeWTpmCiivqEQgQ8ij5kdDJMiJwHzDPrR4jtHAv",
+"mint": "C79TGDN6JEsfrrHTYJZGvkyRC1wJCuoJdFNstNFieJ64",
+"dex": "raydium",
+"liq": 2478013.68,
+"mcap": 2889976,
+"created": 1787204993000,
+"group": "launch"
+}
+},
+{
+"file": "BGKynmmFSnmuD78UDnR4sqVva9xnqrNHozJkRSTWUyC6.json",
+"meta": {
+"sym": "DUCK",
+"pool": "BGKynmmFSnmuD78UDnR4sqVva9xnqrNHozJkRSTWUyC6",
+"mint": "7vMdDDnbpLiUHcP3Fxy5dhQjsVBUgDiG9JP1BZospump",
+"dex": "pumpswap",
+"liq": 2200.29,
+"mcap": 1995,
+"created": 1786295640000,
+"group": "launch"
+}
+},
+{
+"file": "BMh3pFZw5M4PvQvENd9yRQFKePjjUM2zTtKrKTvXMYSt.json",
+"meta": {
+"sym": "NUB",
+"pool": "BMh3pFZw5M4PvQvENd9yRQFKePjjUM2zTtKrKTvXMYSt",
+"mint": "4QsNTBKwHgyYUUHq9tDzk1CCVu7y5hK7z3GE9R36pump",
+"dex": "pumpswap",
+"liq": 432333.5102,
+"mcap": 1701081,
+"created": 1789750120000,
+"group": "established",
+"vol24": 6652.578671599,
+"pool_created": "2026-09-18T16:48:40Z"
+}
+},
+{
+"file": "BSzedbEvWRqVksaF558epPWCM16avEpyhm2HgSq9WZyy.json",
+"meta": {
+"sym": "SC",
+"pool": "BSzedbEvWRqVksaF558epPWCM16avEpyhm2HgSq9WZyy",
+"mint": "6D7NaB2xsLd7cauWu1wKk6KBsJohJmP2qZH9GEfVi5Ui",
+"dex": "raydium",
+"liq": 237129.7391,
+"mcap": 612620,
+"created": 1711451776000,
+"group": "established",
+"vol24": 3391.4410964725,
+"pool_created": "2024-03-26T11:18:00Z"
+}
+},
+{
+"file": "BVdvwrdjMw1n7oweb8aD5ndh6FXCtMHAze8kWEwJjrrM.json",
+"meta": {
+"sym": "CHINA",
+"pool": "BVdvwrdjMw1n7oweb8aD5ndh6FXCtMHAze8kWEwJjrrM",
+"mint": "655Qc1NrNZPQCz3BUdkrL3m1UMc2Myk29nxJCwgp93au",
+"dex": "meteora",
+"liq": 0.47,
+"mcap": null,
+"created": 1793535372000,
+"group": "launch"
+}
+},
+{
+"file": "C7saQrX3feJRESyC3ggSkCDPAKLPYrwcFuFNRcPk9wUo.json",
+"meta": {
+"sym": "MOMS",
+"pool": "C7saQrX3feJRESyC3ggSkCDPAKLPYrwcFuFNRcPk9wUo",
+"mint": "HDYP5e1dUM3zjqw3tQvDHDxtt6CKxkgyEN3NdNcXTRiX",
+"dex": "raydium",
+"liq": 42097.38,
+"mcap": 315253,
+"created": 1784501349000,
+"group": "launch"
+}
+},
+{
+"file": "CCZ8VRyB2y8PCfHkpcavBcCr69ivk5oRmFgeUe1NXg4a.json",
+"meta": {
+"sym": "ZBC",
+"pool": "CCZ8VRyB2y8PCfHkpcavBcCr69ivk5oRmFgeUe1NXg4a",
+"mint": "Hn5ps7jWTpqohqRbJCK2oNQgpVrqxagttVzxVDd3pump",
+"dex": "pumpfun",
+"liq": 0,
+"mcap": 2276.42,
+"created": 1793448716000,
+"group": "launch"
+}
+},
+{
+"file": "CEtoxs4G1T2FwyTMWbioC4PzPBjEcJ5njgDB3ce7Fhom.json",
+"meta": {
+"sym": "CUM",
+"pool": "CEtoxs4G1T2FwyTMWbioC4PzPBjEcJ5njgDB3ce7Fhom",
+"mint": "5VaS1MxRCiVAUWK2Cn3TERmHd1PgCuAWxN6SShbon6ea",
+"dex": "meteora",
+"liq": 2295.47,
+"mcap": 2355,
+"created": 1792618113000,
+"group": "launch"
+}
+},
+{
+"file": "CKuwAXUbnxmeCNurN5VvyC7kLz42JnQtyh2nyFJ8Kv1X.json",
+"meta": {
+"sym": "PIRATE",
+"pool": "CKuwAXUbnxmeCNurN5VvyC7kLz42JnQtyh2nyFJ8Kv1X",
+"mint": "6mXFCoZ515w37YfmwXGJMPfQfiK5tr9WkihW3oN9pump",
+"dex": "pumpswap",
+"liq": 46209.27,
+"mcap": 216365,
+"created": 1793639984000,
+"group": "launch"
+}
+},
+{
+"file": "CV2m2hK9wfugve2dySNLSWQuyM9R2tRwXeUTuUWzh8Dr.json",
+"meta": {
+"sym": "MYRO",
+"pool": "CV2m2hK9wfugve2dySNLSWQuyM9R2tRwXeUTuUWzh8Dr",
+"mint": "Bm3dgkZrjH7eaz1GBH1R2ZHkp7nZUoPNJhjekoxepump",
+"dex": "pumpswap",
+"liq": 88463.3499,
+"mcap": 1158753,
+"created": 1782148537000,
+"group": "established",
+"vol24": 2080.1342849223,
+"pool_created": "2026-06-22T17:15:37Z"
+}
+},
+{
+"file": "CbLAwSoewxPL2sGZsAZT1JH9ABm2MPCEhJsaM1rnLsuG.json",
+"meta": {
+"sym": "DUCK",
+"pool": "CbLAwSoewxPL2sGZsAZT1JH9ABm2MPCEhJsaM1rnLsuG",
+"mint": "CNoayxFVo2woVY6PrvBQepfasEFb6Xy9Z8w7ygaxfun",
+"dex": "meteora",
+"liq": 3647.64,
+"mcap": 21961,
+"created": 1788714062000,
+"group": "launch"
+}
+},
+{
+"file": "Ci1G12VCvyqRQfNDHTpKCoSFWAxZYq7ubJqkEqQabUs1.json",
+"meta": {
+"sym": "DIAMOND",
+"pool": "Ci1G12VCvyqRQfNDHTpKCoSFWAxZYq7ubJqkEqQabUs1",
+"mint": "6VhsEMoJYj7bLes24qTTp8XYRjGNgLufWJt3FwGCdjzT",
+"dex": "pumpswap",
+"liq": 9116.28,
+"mcap": 17472,
+"created": 1786985324000,
+"group": "launch"
+}
+},
+{
+"file": "CpsMssqi3P9VMvNqxrdWVbSBCwyUHbGgNcrw7MorBq3g.json",
+"meta": {
+"sym": "GRIFFAIN",
+"pool": "CpsMssqi3P9VMvNqxrdWVbSBCwyUHbGgNcrw7MorBq3g",
+"mint": "KENJSUYLASHUMfHyy5o4Hp2FdNqZg1AsUPhfH2kYvEP",
+"dex": "raydium",
+"liq": 1390472.9259,
+"mcap": 10000649,
+"created": 1730593613000,
+"group": "established",
+"vol24": 119023.523604799,
+"pool_created": "2024-11-03T00:26:56Z"
+}
+},
+{
+"file": "DMNhu3zga5tcaNHGk2Hht7xhQccQ3gQvmbVNYpNyDjQq.json",
+"meta": {
+"sym": "BOB",
+"pool": "DMNhu3zga5tcaNHGk2Hht7xhQccQ3gQvmbVNYpNyDjQq",
+"mint": "2CfdUgAV8EV86u1FhvnrB6MUULjaC1zUo8XfJ8jj5ye3",
+"dex": "meteora",
+"liq": 0,
+"mcap": 2,
+"created": 1789739551000,
+"group": "launch"
+}
+},
+{
+"file": "DNWtvtHYRFnpJFuoAcRgTekVaDozjaeun8EpfCpCAxbE.json",
+"meta": {
+"sym": "SHIB",
+"pool": "DNWtvtHYRFnpJFuoAcRgTekVaDozjaeun8EpfCpCAxbE",
+"mint": "HBnDpTaKRvfiH9RjDnMexavq4GwCQ2BPg4t4YScBhe2P",
+"dex": "raydium",
+"liq": 344281.26,
+"mcap": 548006,
+"created": 1785042558000,
+"group": "launch"
+}
+},
+{
+"file": "DSUvc5qf5LJHHV5e2tD184ixotSnCnwj7i4jJa4Xsrmt.json",
+"meta": {
+"sym": "BOME",
+"pool": "DSUvc5qf5LJHHV5e2tD184ixotSnCnwj7i4jJa4Xsrmt",
+"mint": "ukHH6c7mMyiWCf1b9pnWe25TSpkDDt3H5pQZgZ74J82",
+"dex": "raydium",
+"liq": 11251892.2093,
+"mcap": 39855983,
+"created": 1710401208000,
+"group": "established",
+"vol24": 848652.778772931,
+"pool_created": "2024-03-14T07:30:00Z"
+}
+},
+{
+"file": "DTXPQjK4ae4h2Wc7D5Rpij8YmSQxqLuTcNKrpBCjcAN9.json",
+"meta": {
+"sym": "LIBRA",
+"pool": "DTXPQjK4ae4h2Wc7D5Rpij8YmSQxqLuTcNKrpBCjcAN9",
+"mint": "7Zt2KUh5mkpEpPGcNcFy51aGkh9Ycb5ELcqRH1n2GmAe",
+"dex": "raydium",
+"liq": 14627.4204,
+"mcap": 59257,
+"created": 1720206200000,
+"group": "established",
+"vol24": 25.514811652,
+"pool_created": "2024-07-05T19:04:05Z"
+}
+},
+{
+"file": "EFFyyBKPnUoqNGYXxn4ynwXzRx3cLPPz6GuKgp7VzKbC.json",
+"meta": {
+"sym": "COIN",
+"pool": "EFFyyBKPnUoqNGYXxn4ynwXzRx3cLPPz6GuKgp7VzKbC",
+"mint": "3xvLSHrLcM7246X1vu34cM9gNX741kQrzqj6T2HhLvXp",
+"dex": "raydium",
+"liq": 8335.48,
+"mcap": 2727667,
+"created": 1787631939000,
+"group": "launch"
+}
+},
+{
+"file": "EKiRQmpX1Rdbcr8rpAX7R7aEPbeteXPQfKqtEp2y6btx.json",
+"meta": {
+"sym": "RETARD",
+"pool": "EKiRQmpX1Rdbcr8rpAX7R7aEPbeteXPQfKqtEp2y6btx",
+"mint": "ACv7iJ7xVfohvfXp3dt7AfAPcekL2dHsYCbJw8Vp1osr",
+"dex": "meteora",
+"liq": 48.01,
+"mcap": 17060,
+"created": 1793887179000,
+"group": "launch"
+}
+},
+{
+"file": "EP2ib6dYdEeqD8MfE2ezHCxX3kP3K2eLKkirfPm5eyMx.json",
+"meta": {
+"sym": "WIF",
+"pool": "EP2ib6dYdEeqD8MfE2ezHCxX3kP3K2eLKkirfPm5eyMx",
+"mint": "EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm",
+"dex": "raydium",
+"liq": 4362768.65,
+"mcap": 4477,
+"created": 1717345411000,
+"group": "established",
+"vol24": 134218.833891945,
+"pool_created": "2023-11-20T20:10:04Z"
+}
+},
+{
+"file": "EbAuPetBjCk3oXQhrDM89WvijUeRjPrrTpmQMphGh51p.json",
+"meta": {
+"sym": "Jesus",
+"pool": "EbAuPetBjCk3oXQhrDM89WvijUeRjPrrTpmQMphGh51p",
+"mint": "FgssigTgpp1EAZaAvmFJDQ8mXEatZZ6CNvmGg7Sppump",
+"dex": "pumpswap",
+"liq": 1701.66,
+"mcap": 1623,
+"created": 1790908973000,
+"group": "launch"
+}
+},
+{
+"file": "EkHWcjpNiu8N368E9f4Hkzab3nVdAAg6BLWtVmZGL2t8.json",
+"meta": {
+"sym": "HAMSTER",
+"pool": "EkHWcjpNiu8N368E9f4Hkzab3nVdAAg6BLWtVmZGL2t8",
+"mint": "7gCND4jhgJ8Mq1XxNhRdercinXh7fcCDPjA9uEQLk3f2",
+"dex": "raydium",
+"liq": 22705.22,
+"mcap": 15189,
+"created": 1793658869000,
+"group": "launch"
+}
+},
+{
+"file": "Epvp7qMYAF21VVjacdB3VfKn6nnXQSF4rGYu8sD6Bkow.json",
+"meta": {
+"sym": "SAMO",
+"pool": "Epvp7qMYAF21VVjacdB3VfKn6nnXQSF4rGYu8sD6Bkow",
+"mint": "7xKXtg2CW87d97TXJSDpbD5jBkheTqA83TZRuJosgAsU",
+"dex": "orca",
+"liq": 82953.8481,
+"mcap": 1417026,
+"created": 1669603374000,
+"group": "established",
+"vol24": 5059.535002068,
+"pool_created": "2024-08-06T05:12:52Z"
+}
+},
+{
+"file": "EtcwBb9fT7YYAgpkVz6AG1QZwPJxS79Tg2r7TszYuP72.json",
+"meta": {
+"sym": "JAILSTOOL",
+"pool": "EtcwBb9fT7YYAgpkVz6AG1QZwPJxS79Tg2r7TszYuP72",
+"mint": "AxriehR6Xw3adzHopnvMn7GcpRFcD41ddpiTWMg6pump",
+"dex": "raydium",
+"liq": 366663.138,
+"mcap": 841067,
+"created": 1739047404000,
+"group": "established",
+"vol24": 1443.9555395033,
+"pool_created": "2025-02-08T20:43:25Z"
+}
+},
+{
+"file": "Eyo6q4wAEpSC17kJrJv1wb1SGWm8XkmDen91gpPceFNA.json",
+"meta": {
+"sym": "SHIB",
+"pool": "Eyo6q4wAEpSC17kJrJv1wb1SGWm8XkmDen91gpPceFNA",
+"mint": "CqBnCqyELDf2GJ3SWDrTCAKGridg6XioQv1gMQd7s9oL",
+"dex": "raydium",
+"liq": 5117794.9,
+"mcap": 5389848,
+"created": 1788973618000,
+"group": "launch"
+}
+},
+{
+"file": "F1DEbrSpLvhuN8MqGJWNeZwtfZqydb84LWvq5LoNYELj.json",
+"meta": {
+"sym": "BARS",
+"pool": "F1DEbrSpLvhuN8MqGJWNeZwtfZqydb84LWvq5LoNYELj",
+"mint": "2AG4HMFdBYEHoofZCR1anuiPoSVNWwWGQbTRL6WWpump",
+"dex": "pumpswap",
+"liq": 26296.88,
+"mcap": 107682,
+"created": 1779315754000,
+"group": "launch"
+}
+},
+{
+"file": "FA2RXFoSY2c7Gs4hv9CAgfQhpMB1fLnYgEcY2BBMD7Co.json",
+"meta": {
+"sym": "Mom",
+"pool": "FA2RXFoSY2c7Gs4hv9CAgfQhpMB1fLnYgEcY2BBMD7Co",
+"mint": "APm7winxFDmQTFCHYgMcfEQzdShSdJGjsHS7MbrJpump",
+"dex": "pumpfun",
+"liq": 0,
+"mcap": 5.97,
+"created": 1793989960000,
+"group": "launch"
+}
+},
+{
+"file": "FRhB8L7Y9Qq41qZXYLtC2nw8An1RJfLLxRF2x9RwLLMo.json",
+"meta": {
+"sym": "POPCAT",
+"pool": "FRhB8L7Y9Qq41qZXYLtC2nw8An1RJfLLxRF2x9RwLLMo",
+"mint": "7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr",
+"dex": "orca",
+"liq": 2664262.4741,
+"mcap": 32313242,
+"created": 1794600432000,
+"group": "established",
+"vol24": 145698.839917459,
+"pool_created": "2023-12-12T22:00:11Z"
+}
+},
+{
+"file": "FU7R2Ck3SDUsDoSyL5rdPrafPNecinfeCQUVWbJV1TSF.json",
+"meta": {
+"sym": "Super",
+"pool": "FU7R2Ck3SDUsDoSyL5rdPrafPNecinfeCQUVWbJV1TSF",
+"mint": "71c59G1HBnGmNXZpxRRjCVBJeLvdoYH9fskYdxB3pump",
+"dex": "pumpswap",
+"liq": 333.52,
+"mcap": 6956,
+"created": 1789861297000,
+"group": "launch"
+}
+},
+{
+"file": "FXrfXhzjmZzwKkwBU5P4ipfqAWmn79Gzz6eEi4nwFW9j.json",
+"meta": {
+"sym": "USELESS",
+"pool": "FXrfXhzjmZzwKkwBU5P4ipfqAWmn79Gzz6eEi4nwFW9j",
+"mint": "94uoHWi64G2kXZhW4upYuQ6Zo49AVVJcdzPHwNEDQheN",
+"dex": "raydium",
+"liq": 244397055.7775,
+"mcap": 247009104,
+"created": 1788534495000,
+"group": "established",
+"vol24": 164626.271835288,
+"pool_created": "2026-09-04T15:08:15Z"
+}
+},
+{
+"file": "FZ8Xxff1HBYbF9WmpYrTu7Y8gcFmTUzQS12KmLHEHWxz.json",
+"meta": {
+"sym": "duck",
+"pool": "FZ8Xxff1HBYbF9WmpYrTu7Y8gcFmTUzQS12KmLHEHWxz",
+"mint": "Gu29wuSbMdQKPpkmZ4wpiURgQbYohpBFpwPbzJLbz8Mr",
+"dex": "pumpswap",
+"liq": 1647.65,
+"mcap": 1555,
+"created": 1787596523000,
+"group": "launch"
+}
+},
+{
+"file": "Fndy2dRmxnBj8Vt8WwjSsTrLkzKp1CUU3LcP9peCqgZw.json",
+"meta": {
+"sym": "WIF",
+"pool": "Fndy2dRmxnBj8Vt8WwjSsTrLkzKp1CUU3LcP9peCqgZw",
+"mint": "4APbcuA4Eqj1vbmjTq2nnTyCAE18aK8kkmzE5LaTpump",
+"dex": "pumpswap",
+"liq": 1847.54,
+"mcap": 1694,
+"created": 1792519283000,
+"group": "launch"
+}
+},
+{
+"file": "Fsh341BW29hKREf9tuWqKBXxRSXNV3752E7pgH4LPXqU.json",
+"meta": {
+"sym": "GOLD",
+"pool": "Fsh341BW29hKREf9tuWqKBXxRSXNV3752E7pgH4LPXqU",
+"mint": "LRxbtkvPfpctgR6MS52MAwtobrCCY9KiJgKMmpPpump",
+"dex": "pumpswap",
+"liq": 248550.97,
+"mcap": 10135790,
+"created": 1782067821000,
+"group": "launch"
+}
+},
+{
+"file": "Fu8TYp4V2FM4SWaPh6DZ3hcsYa9fUkLQKXiyiaXhbBKm.json",
+"meta": {
+"sym": "King",
+"pool": "Fu8TYp4V2FM4SWaPh6DZ3hcsYa9fUkLQKXiyiaXhbBKm",
+"mint": "3aJzmQq2TPX5xd9Dx1A4HhYNXDLAcWVwegdq5T47pump",
+"dex": "pumpswap",
+"liq": 1651.83,
+"mcap": 1535,
+"created": 1793737026000,
+"group": "launch"
+}
+},
+{
+"file": "FyDF3vKQFbcvNTsBi7L7LremrFPmXKbQqgAgnPg1hXXd.json",
+"meta": {
+"sym": "ALCH",
+"pool": "FyDF3vKQFbcvNTsBi7L7LremrFPmXKbQqgAgnPg1hXXd",
+"mint": "HNg5PYJmtqcmzXrv6S9zP1CDKk5BgDuyFBxbvNApump",
+"dex": "raydium",
+"liq": 2320864.8388,
+"mcap": 32080952,
+"created": 1732730211000,
+"group": "established",
+"vol24": 150029.834983643,
+"pool_created": "2024-11-27T17:56:51Z"
+}
+},
+{
+"file": "G291pF5oXdHcUcHkRTMXvFiqkN1gDmsc52GcDB6QXSuL.json",
+"meta": {
+"sym": "based",
+"pool": "G291pF5oXdHcUcHkRTMXvFiqkN1gDmsc52GcDB6QXSuL",
+"mint": "baseRqFhgQeeSg2jNaEBmjW8LGLzbt9MFrivnoYCpKy",
+"dex": "pumpswap",
+"liq": 2048.82,
+"mcap": 1905,
+"created": 1791648858000,
+"group": "launch"
+}
+},
+{
+"file": "GKegpd7MqegCd5M25R9gMKVgKbfRaUc4RiMyWQouNWeY.json",
+"meta": {
+"sym": "Grok",
+"pool": "GKegpd7MqegCd5M25R9gMKVgKbfRaUc4RiMyWQouNWeY",
+"mint": "DEafa7gPSNtSzXFrgVGjbpAJNfQTF83eso8m2pFQpump",
+"dex": "pumpswap",
+"liq": 1428.06,
+"mcap": 1409,
+"created": 1790695773000,
+"group": "launch"
+}
+},
+{
+"file": "GhT9uW7J1h1sHp99bkyzbYSd86GChYRxcKrDPoifVYf9.json",
+"meta": {
+"sym": "Zomb",
+"pool": "GhT9uW7J1h1sHp99bkyzbYSd86GChYRxcKrDPoifVYf9",
+"mint": "Ger6qR3frvVRyUmPckJg1rQpjshY8iuoWoEFPM6kpump",
+"dex": "pumpfun",
+"liq": 0,
+"mcap": 4002.7,
+"created": 1779564892000,
+"group": "launch"
+}
+},
+{
+"file": "GiV7bAkQ6dipyPd5rFuoQeLLBJCNrRwP57dETVe6ourc.json",
+"meta": {
+"sym": "APE",
+"pool": "GiV7bAkQ6dipyPd5rFuoQeLLBJCNrRwP57dETVe6ourc",
+"mint": "2Wkip2U5x93mjaAvoq8zaedweP73GgRtbaQhNcwXpump",
+"dex": "pumpswap",
+"liq": 12415.25,
+"mcap": 20017,
+"created": 1780590372000,
+"group": "launch"
+}
+},
+{
+"file": "GiVZsG11PN5V8m5Zq6uSunuF59YenwGEKaxi3htcfc1j.json",
+"meta": {
+"sym": "WOJAK",
+"pool": "GiVZsG11PN5V8m5Zq6uSunuF59YenwGEKaxi3htcfc1j",
+"mint": "J1QycZXP9ajpC9cspe2wgK58u8cVJ8fiL4X5dbUKaCeM",
+"dex": "pumpfun",
+"liq": 0,
+"mcap": 17997.38,
+"created": 1792710787000,
+"group": "launch"
+}
+},
+{
+"file": "GopbRvPRzwU2iM6gFQNTMUfCj1s1e215pzGz4R8TLdXC.json",
+"meta": {
+"sym": "BEAR",
+"pool": "GopbRvPRzwU2iM6gFQNTMUfCj1s1e215pzGz4R8TLdXC",
+"mint": "ECzCvAK6a8ePxG2WUXmn1n1DfFSE8t3uLGoWfQG9pump",
+"dex": "pumpfun",
+"liq": 0,
+"mcap": 3980.26,
+"created": 1791131487000,
+"group": "launch"
+}
+},
+{
+"file": "H3Vt76srKmAVWGpoDnHgZYyEhpJCBLaQTWXjys2sz71U.json",
+"meta": {
+"sym": "CTO",
+"pool": "H3Vt76srKmAVWGpoDnHgZYyEhpJCBLaQTWXjys2sz71U",
+"mint": "GdfKhH7LkDhukJ18fbC9nQztTmTu6qtmxpwWDpa2pump",
+"dex": "pumpswap",
+"liq": 3091.3,
+"mcap": 1657,
+"created": 1780164084000,
+"group": "launch"
+}
+},
+{
+"file": "H75NfKXLfQkemtJRmJYXyoVueTCNRQwqkLntKKgNDynS.json",
+"meta": {
+"sym": "FISH",
+"pool": "H75NfKXLfQkemtJRmJYXyoVueTCNRQwqkLntKKgNDynS",
+"mint": "9hX1BbhNyqfJQjTikiQrotUp6UTBWXnEDgAb5VATpump",
+"dex": "pumpswap",
+"liq": 3743.42,
+"mcap": 4353,
+"created": 1791871029000,
+"group": "launch"
+}
+},
+{
+"file": "HDQxHgZTxKnsfE3uPKqkuwRf9mMGRmgFQF7c55dCHsJz.json",
+"meta": {
+"sym": "MINI",
+"pool": "HDQxHgZTxKnsfE3uPKqkuwRf9mMGRmgFQF7c55dCHsJz",
+"mint": "61G5ZPHNECfrmqnX6Kkakso5UP9bp42yoxwmtoEgXgGY",
+"dex": "meteora",
+"liq": 0.02,
+"mcap": 16427,
+"created": 1788975479000,
+"group": "launch"
+}
+},
+{
+"file": "HDyqb8GqEy9LGQhwuVURGa8UUzJRhyi5YHxADAy7YyKa.json",
+"meta": {
+"sym": "President",
+"pool": "HDyqb8GqEy9LGQhwuVURGa8UUzJRhyi5YHxADAy7YyKa",
+"mint": "8puaJB31LjH931StbQqxnDPUVoiXLps2WUk4DV8rpump",
+"dex": "pumpfun",
+"liq": 0,
+"mcap": 2845.67,
+"created": 1793884661000,
+"group": "launch"
+}
+},
+{
+"file": "HHXQfx5i2cez4WcBwXjai7TtnZTk5Byp3od6thPhETNe.json",
+"meta": {
+"sym": "dog",
+"pool": "HHXQfx5i2cez4WcBwXjai7TtnZTk5Byp3od6thPhETNe",
+"mint": "9gAVAtdnsrniW3GCwsvDeRPf5eJDjtT9S5bu1j7tpump",
+"dex": "pumpswap",
+"liq": 31306.68,
+"mcap": 102923,
+"created": 1782796791000,
+"group": "launch"
+}
+},
+{
+"file": "HL4KFTfhZZMm7NGefszQxzJ3M6CaDWE7TesyuRuQYmMJ.json",
+"meta": {
+"sym": "SWARMS",
+"pool": "HL4KFTfhZZMm7NGefszQxzJ3M6CaDWE7TesyuRuQYmMJ",
+"mint": "74SBV4zDXxTRgv1pEMoECskKBkZHc2yGPnc7GYVepump",
+"dex": "raydium",
+"liq": 1198235.3599,
+"mcap": 6761603,
+"created": 1734670055000,
+"group": "established",
+"vol24": 159942.805439835,
+"pool_created": "2024-12-20T04:47:36Z"
+}
+},
+{
+"file": "HQD2NdUSWG44Q8ykKUZEuRvM9MmrkvEeP83pzFGqDg97.json",
+"meta": {
+"sym": "ROCKETCOIN",
+"pool": "HQD2NdUSWG44Q8ykKUZEuRvM9MmrkvEeP83pzFGqDg97",
+"mint": "5w5JdVK6US9psmRPXxiQoyAvYUCkdvCeR5yfnaJRA6ea",
+"dex": "meteora",
+"liq": 1195.09,
+"mcap": 2390,
+"created": 1793068755000,
+"group": "launch"
+}
+},
+{
+"file": "HSRx4CRd7KbBRFvdEeiAkZ7TjLjWYMBqKppTe6PWEayR.json",
+"meta": {
+"sym": "CTO",
+"pool": "HSRx4CRd7KbBRFvdEeiAkZ7TjLjWYMBqKppTe6PWEayR",
+"mint": "8gJUTwn9XqbKVHmScBVs6Gx3Vcf3b9C9DQsvGVrmbm12",
+"dex": "pumpswap",
+"liq": 3366.21,
+"mcap": 3754,
+"created": 1785115430000,
+"group": "launch"
+}
+},
+{
+"file": "HcPgh6B2yHNvT6JsEmkrHYT8pVHu9Xiaoxm4Mmn2ibWw.json",
+"meta": {
+"sym": "MOTHER",
+"pool": "HcPgh6B2yHNvT6JsEmkrHYT8pVHu9Xiaoxm4Mmn2ibWw",
+"mint": "3S8qX1MsMqRbiwKg2cQyx7nis1oHMgaCuc9c4VfvVdPN",
+"dex": "raydium",
+"liq": 171308.0301,
+"mcap": 214546,
+"created": 1716930276000,
+"group": "established",
+"vol24": 49.3945677199,
+"pool_created": "2024-05-28T21:04:37Z"
+}
+},
+{
+"file": "HjkzsREzPCVdb3bvXfEcxRQak9Fqcbgu6MQjNs9KqT4C.json",
+"meta": {
+"sym": "Diamond",
+"pool": "HjkzsREzPCVdb3bvXfEcxRQak9Fqcbgu6MQjNs9KqT4C",
+"mint": "74J2r38zeEMNvXX9gz2v9JsLdVbz6famQuNzNYNgPgNr",
+"dex": "meteora",
+"liq": 0,
+"mcap": 117169018,
+"created": 1793991428000,
+"group": "launch"
+}
+},
+{
+"file": "Hk3P7DvFnKCBoD6Q2vy9keHVePKQVJEsFQVybje7N7tq.json",
+"meta": {
+"sym": "MOG",
+"pool": "Hk3P7DvFnKCBoD6Q2vy9keHVePKQVJEsFQVybje7N7tq",
+"mint": "26VfKb7jjtdEdvfovoBijScoZmJbWWasFZkgfUD5w7cy",
+"dex": "raydium",
+"liq": 38897.9999,
+"mcap": 33273529,
+"created": 1746670075000,
+"group": "established",
+"vol24": 25754.3390516876,
+"pool_created": "2025-05-08T02:07:55Z"
+}
+},
+{
+"file": "HqCyXJPkN6AaDENirdKb5aAxouD2gEAiH9YoRgRGcCnr.json",
+"meta": {
+"sym": "RUGRIOT",
+"pool": "HqCyXJPkN6AaDENirdKb5aAxouD2gEAiH9YoRgRGcCnr",
+"mint": "EWuKfiF8mQFo4YWtKbALzyFtYMhxePjs1HJ4eCG9pump",
+"dex": "pumpswap",
+"liq": 39170.32,
+"mcap": 270962,
+"created": 1791742129000,
+"group": "launch"
+}
+},
+{
+"file": "J3b6dvheS2Y1cbMtVz5TCWXNegSjJDbUKxdUVDPoqmS7.json",
+"meta": {
+"sym": "ARC",
+"pool": "J3b6dvheS2Y1cbMtVz5TCWXNegSjJDbUKxdUVDPoqmS7",
+"mint": "61V8vBaqAGMpgDQi4JcAwo1dmBGHsyhzodcPqnEVpump",
+"dex": "raydium",
+"liq": 2735726.4582,
+"mcap": 30576764,
+"created": 1733865287000,
+"group": "established",
+"vol24": 266630.030073466,
+"pool_created": "2024-12-10T21:14:49Z"
+}
+},
+{
+"file": "J9N69oXWRvW8Qgif2C51KhdsdXmWuqTemD3kgiyQMSZa.json",
+"meta": {
+"sym": "WTF",
+"pool": "J9N69oXWRvW8Qgif2C51KhdsdXmWuqTemD3kgiyQMSZa",
+"mint": "9xJnXcRrB7XrBC6uTx9FtR6ZsJUC1fzrVgr2fPr1yAub",
+"dex": "meteora",
+"liq": 154.16,
+"mcap": 3800,
+"created": 1788807827000,
+"group": "launch"
+}
+},
+{
+"file": "JCM8ew8JWMP6sC6aZG99RK99c4An3s5r6RhWq6D7C2ye.json",
+"meta": {
+"sym": "FRYBOY",
+"pool": "JCM8ew8JWMP6sC6aZG99RK99c4An3s5r6RhWq6D7C2ye",
+"mint": "4j9yGmz9NSeVGQDNexgJHpc3vqCRcXuUao7ikUEppump",
+"dex": "pumpfun",
+"liq": 0,
+"mcap": 2247.34,
+"created": 1793303140000,
+"group": "launch"
+}
+},
+{
+"file": "JTsSu7MiYCFAoMGNL9zwR2UzLCCJKNA6KpQJFQzppEx.json",
+"meta": {
+"sym": "WIF",
+"pool": "JTsSu7MiYCFAoMGNL9zwR2UzLCCJKNA6KpQJFQzppEx",
+"mint": "E7ayy5Se6gjwCNtw9NP629AucnTgqab4SSmSxDpUpump",
+"dex": "pumpswap",
+"liq": 4246.45,
+"mcap": 4477,
+"created": 1793500416000,
+"group": "launch"
+}
+},
+{
+"file": "RwmnTQsC6Ehy5be9fD2kcqXn3hqjyGk9rJTo4WmdY2G.json",
+"meta": {
+"sym": "JESUS",
+"pool": "RwmnTQsC6Ehy5be9fD2kcqXn3hqjyGk9rJTo4WmdY2G",
+"mint": "ESZbVhATdwe2fxUdXtq2YEabDvPpYzkTxv5Bvd2Wpump",
+"dex": "pumpfun",
+"liq": 0,
+"mcap": 747.18,
+"created": 1790961998000,
+"group": "launch"
+}
+},
+{
+"file": "SvNzkwThwbH8bMf9UMS1QZiDNbCtGSLHo7EePkuaSqw.json",
+"meta": {
+"sym": "RUG",
+"pool": "SvNzkwThwbH8bMf9UMS1QZiDNbCtGSLHo7EePkuaSqw",
+"mint": "RUGx1zSD7LCVqFgTYQWNiJKSkDcfN3yRR5XoFoAXRUG",
+"dex": "meteora",
+"liq": 19.23,
+"mcap": 5113,
+"created": 1790485628000,
+"group": "launch"
+}
+},
+{
+"file": "Tuy6gMupGQN7wCZ8rVP1EuLRYB132VSo9Smy4AJvQgn.json",
+"meta": {
+"sym": "FARTCOIN",
+"pool": "Tuy6gMupGQN7wCZ8rVP1EuLRYB132VSo9Smy4AJvQgn",
+"mint": "9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump",
+"dex": "pumpswap",
+"liq": 771619.8376,
+"mcap": 94506,
+"created": 1764248812000,
+"group": "established",
+"vol24": 424242.094971413,
+"pool_created": "2025-06-03T19:41:28Z"
+}
+},
+{
+"file": "Xc1UA6u3hFnifQqo8DCxEgPTfSwQVF945wLzr3KRYPF.json",
+"meta": {
+"sym": "\ud83d\ude80",
+"pool": "Xc1UA6u3hFnifQqo8DCxEgPTfSwQVF945wLzr3KRYPF",
+"mint": "EHKV2fbHzx3pggFD1BMUaCEqSwiFe4xtjxmA3MGevvEe",
+"dex": "pumpswap",
+"liq": 6254.78,
+"mcap": 4112,
+"created": 1781274154000,
+"group": "launch"
+}
+},
+{
+"file": "ntms39AuHVwy4NkY4f73uQ7qMFeSiMVTaZbNR7qL4vp.json",
+"meta": {
+"sym": "PEPE",
+"pool": "ntms39AuHVwy4NkY4f73uQ7qMFeSiMVTaZbNR7qL4vp",
+"mint": "FapHHLT2Log3nX1RQynuYbTWPx5kwxswaJuYLxiwy8ir",
+"dex": "raydium",
+"liq": 3893945.45,
+"mcap": 4182543,
+"created": 1791955301000,
+"group": "launch"
+}
+},
+{
+"file": "zcdAw3jpcqEY8JYVxNVMqs2cU35cyDdy4ot7V8edNhz.json",
+"meta": {
+"sym": "DADDY",
+"pool": "zcdAw3jpcqEY8JYVxNVMqs2cU35cyDdy4ot7V8edNhz",
+"mint": "4Cnk9EPnW5ixfLZatCPJjDB1PUtcRpVVgTQukm9epump",
+"dex": "raydium",
+"liq": 538902.897,
+"mcap": 3019210,
+"created": 1717964299000,
+"group": "established",
+"vol24": 24235.7767208786,
+"pool_created": "2024-06-09T20:18:21Z"
+}
+},
+{
+"file": "zxTpi4BtaWX3mgdAPoezkMD1hxx8CdeCfrqXMWvSCLX.json",
+"meta": {
+"sym": "STONK",
+"pool": "zxTpi4BtaWX3mgdAPoezkMD1hxx8CdeCfrqXMWvSCLX",
+"mint": "6GmAFSYs4gk3FDao5FzzySQpPZaWsa4rUJHacpMpUNgx",
+"dex": "meteora",
+"liq": 2186332.38,
+"mcap": 47939864,
+"created": 1786531900000,
+"group": "launch"
+}
+}
+]

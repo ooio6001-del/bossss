@@ -1,0 +1,204 @@
+{
+ "mode": "PAPER",
+ "note": "frac<0 means a fixed USD amount per buy (e.g. -3.0 = $3 per buy). start_ts is set on first run.",
+ "books": [
+  {
+   "id": "H7-07282",
+   "label": "#1 H7-07282 @ $20",
+   "frac": 0.2,
+   "maxpos": 5,
+   "balance": 20.0,
+   "sizing": "20% of equity per trade, up to 5 open",
+   "entry": "Washout-gate: first hour of a 10-bar closing low above its 336h SMA only if the token dumped 16%+ in an hour within the last 36h",
+   "exit": "stop -33%, trail 22% after +65%, exit after 408h",
+   "strategy_id": "H7-07282",
+   "row": {
+    "id": "H7-07282",
+    "batch": "7",
+    "family": "washout_gate",
+    "params": "{\"entry\": \"dn10_336\", \"gate\": \"dump_16_36\", \"desc\": \"Washout-gate: first hour of a 10-bar closing low above its 336h SMA only if the token dumped 16%+ in an hour within the last 36h\"}",
+    "exit_params": "[1000000000.0, 0.33, 0.65, 0.22, 408.0, 1000000000.0, 1.0]",
+    "entry": "Washout-gate: first hour of a 10-bar closing low above its 336h SMA only if the token dumped 16%+ in an hour within the last 36h",
+    "exit": "stop -33%, trail 22% after +65%, exit after 408h"
+   },
+   "backtest_note": {
+    "end": 1021.0494,
+    "ret": 50.0525,
+    "trades": 137,
+    "win": 0.5036,
+    "dd": 0.5444,
+    "r30": -0.5083,
+    "r30flat": -0.4178,
+    "hret": 0.2345,
+    "hflat": 0.118,
+    "wf_n": 25,
+    "wf_pct": 72.0,
+    "wf_roll_pct": 73.33
+   }
+  },
+  {
+   "id": "H7-04028",
+   "label": "#2 H7-04028 @ $20",
+   "frac": 0.5,
+   "maxpos": 2,
+   "balance": 20.0,
+   "sizing": "50% of equity per trade, up to 2 open",
+   "entry": "Washout-gate: first hour of a 8-bar closing low above its 336h SMA only if the token dumped 16%+ in an hour within the last 24h",
+   "exit": "stop -33%, trail 22% after +65%, exit after 408h",
+   "strategy_id": "H7-04028",
+   "row": {
+    "id": "H7-04028",
+    "batch": "7",
+    "family": "washout_gate",
+    "params": "{\"entry\": \"dn8_336\", \"gate\": \"dump_16_24\", \"desc\": \"Washout-gate: first hour of a 8-bar closing low above its 336h SMA only if the token dumped 16%+ in an hour within the last 24h\"}",
+    "exit_params": "[1000000000.0, 0.33, 0.65, 0.22, 408.0, 1000000000.0, 1.0]",
+    "entry": "Washout-gate: first hour of a 8-bar closing low above its 336h SMA only if the token dumped 16%+ in an hour within the last 24h",
+    "exit": "stop -33%, trail 22% after +65%, exit after 408h"
+   },
+   "backtest_note": {
+    "end": 1006.1142,
+    "ret": 49.3057,
+    "trades": 104,
+    "win": 0.4904,
+    "dd": 0.6584,
+    "r30": -0.9167,
+    "r30flat": -0.9139,
+    "hret": 1.5967,
+    "hflat": 0.1432,
+    "wf_n": 25,
+    "wf_pct": 92.0,
+    "wf_roll_pct": 100.0
+   }
+  },
+  {
+   "id": "H7-07157",
+   "label": "#3 H7-07157 @ $20",
+   "frac": 0.34,
+   "maxpos": 3,
+   "balance": 20.0,
+   "sizing": "34% of equity per trade, up to 3 open",
+   "entry": "Washout-gate: first hour of a 10-bar closing low above its 312h SMA only if the token dumped 16%+ in an hour within the last 36h",
+   "exit": "stop -33%, trail 22% after +65%, exit after 408h",
+   "strategy_id": "H7-07157",
+   "row": {
+    "id": "H7-07157",
+    "batch": "7",
+    "family": "washout_gate",
+    "params": "{\"entry\": \"dn10_312\", \"gate\": \"dump_16_36\", \"desc\": \"Washout-gate: first hour of a 10-bar closing low above its 312h SMA only if the token dumped 16%+ in an hour within the last 36h\"}",
+    "exit_params": "[1000000000.0, 0.33, 0.65, 0.22, 408.0, 1000000000.0, 1.0]",
+    "entry": "Washout-gate: first hour of a 10-bar closing low above its 312h SMA only if the token dumped 16%+ in an hour within the last 36h",
+    "exit": "stop -33%, trail 22% after +65%, exit after 408h"
+   },
+   "backtest_note": {
+    "end": 953.9987,
+    "ret": 46.6999,
+    "trades": 117,
+    "win": 0.4872,
+    "dd": 0.7316,
+    "r30": -0.717,
+    "r30flat": -0.4257,
+    "hret": 3.8218,
+    "hflat": 3.1373,
+    "wf_n": 25,
+    "wf_pct": 68.0,
+    "wf_roll_pct": 66.67
+   }
+  },
+  {
+   "id": "THREE-DOLLAR-BUYS-3START",
+   "label": "three dollar buys (H6-01098 @ $3 start)",
+   "frac": 0.28,
+   "maxpos": 3,
+   "balance": 3.0,
+   "sizing": "28% of equity per trade, up to 3 open",
+   "entry": "Washout-gate: first hour of a 8-bar closing low above its 120h SMA only if the token dumped 16%+ in an hour within the last 16h",
+   "exit": "stop -30%, trail 20% after +60%, exit after 384h",
+   "strategy_id": "H6-01098",
+   "row": {
+    "id": "H6-01098",
+    "batch": "6",
+    "family": "washout_gate",
+    "params": "{\"entry\": \"dn8_120\", \"gate\": \"dump_16_16\", \"desc\": \"Washout-gate: first hour of a 8-bar closing low above its 120h SMA only if the token dumped 16%+ in an hour within the last 16h\"}",
+    "exit_params": "[1000000000.0, 0.3, 0.6, 0.2, 384.0, 1000000000.0, 1.0]",
+    "entry": "Washout-gate: first hour of a 8-bar closing low above its 120h SMA only if the token dumped 16%+ in an hour within the last 16h",
+    "exit": "stop -30%, trail 20% after +60%, exit after 384h"
+   },
+   "backtest_note": {
+    "end": 0.1395,
+    "ret": -0.9535,
+    "trades": 40,
+    "win": 0.25,
+    "dd": 0.9535,
+    "r30flat": -0.9342,
+    "hflat": -0.9122,
+    "wf_n": 25,
+    "wf_pct": 16.0,
+    "wf_roll_pct": 26.67
+   }
+  },
+  {
+   "id": "H6-01098-175",
+   "label": "H6-01098 @ native $175",
+   "frac": 0.28,
+   "maxpos": 3,
+   "balance": 175.0,
+   "sizing": "28% of equity per trade, up to 3 open",
+   "entry": "Washout-gate: first hour of a 8-bar closing low above its 120h SMA only if the token dumped 16%+ in an hour within the last 16h",
+   "exit": "stop -30%, trail 20% after +60%, exit after 384h",
+   "strategy_id": "H6-01098",
+   "row": {
+    "id": "H6-01098",
+    "batch": "6",
+    "family": "washout_gate",
+    "params": "{\"entry\": \"dn8_120\", \"gate\": \"dump_16_16\", \"desc\": \"Washout-gate: first hour of a 8-bar closing low above its 120h SMA only if the token dumped 16%+ in an hour within the last 16h\"}",
+    "exit_params": "[1000000000.0, 0.3, 0.6, 0.2, 384.0, 1000000000.0, 1.0]",
+    "entry": "Washout-gate: first hour of a 8-bar closing low above its 120h SMA only if the token dumped 16%+ in an hour within the last 16h",
+    "exit": "stop -30%, trail 20% after +60%, exit after 384h"
+   },
+   "backtest_note": {
+    "end": 1149.2419,
+    "ret": 5.5671,
+    "trades": 96,
+    "win": 0.4479,
+    "dd": 0.5449,
+    "r30flat": 0.3191,
+    "hflat": 0.2827,
+    "wf_n": 25,
+    "wf_pct": 96.0,
+    "wf_roll_pct": 93.33
+   }
+  },
+  {
+   "id": "THREE-DOLLAR-BUYS-50",
+   "label": "three dollar buys \u2014 $50 (fixed $3 per buy)",
+   "frac": -3.0,
+   "maxpos": 50,
+   "balance": 50.0,
+   "sizing": "fixed $3 per buy, long-only, as many open as cash covers",
+   "entry": "Washout-gate: first hour of a 8-bar closing low above its 120h SMA only if the token dumped 16%+ in an hour within the last 16h",
+   "exit": "stop -30%, trail 20% after +60%, exit after 384h",
+   "strategy_id": "H6-01098",
+   "row": {
+    "id": "H6-01098",
+    "batch": "6",
+    "family": "washout_gate",
+    "params": "{\"entry\": \"dn8_120\", \"gate\": \"dump_16_16\", \"desc\": \"Washout-gate: first hour of a 8-bar closing low above its 120h SMA only if the token dumped 16%+ in an hour within the last 16h\"}",
+    "exit_params": "[1000000000.0, 0.3, 0.6, 0.2, 384.0, 1000000000.0, 1.0]",
+    "entry": "Washout-gate: first hour of a 8-bar closing low above its 120h SMA only if the token dumped 16%+ in an hour within the last 16h",
+    "exit": "stop -30%, trail 20% after +60%, exit after 384h"
+   },
+   "backtest_note": {
+    "end": 57.9054,
+    "ret": 0.1581,
+    "trades": 158,
+    "win": 0.3734,
+    "dd": 0.2428,
+    "r30flat": -0.1065,
+    "hflat": -0.0184,
+    "wf_n": 25,
+    "wf_pct": 92.0,
+    "wf_roll_pct": 93.33
+   }
+  }
+ ]
+}
